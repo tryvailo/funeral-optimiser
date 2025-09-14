@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Compliance | Clear Funeral Costs</title>
+    <meta name="description" content="Privacy Policy, Terms of Service, GDPR Compliance and legal information for Clear Funeral Costs - transparent funeral cost analysis service.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-primary: #1a237e;
+            --charcoal-text: #2d3748;
+            --burgundy-accent: #744c2c;
+            --warm-grey-bg: #f7fafc;
+            --muted-blue: #4a5568;
+            --warm-cream: #fffaf0;
+            --pure-white: #ffffff;
+            --burgundy-hover: #5a3921;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            color: var(--charcoal-text);
+            font-size: 16px;
+            background-color: var(--warm-cream);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .clear-highlight {
+            color: var(--burgundy-accent);
+            font-weight: 700;
+        }
+
+        .home-link {
+            color: var(--pure-white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--pure-white);
+        }
+
+        /* NAVIGATION */
+        .legal-nav {
+            background: var(--warm-grey-bg);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--burgundy-accent);
+        }
+
+        .nav-title {
+            font-size: 2rem;
+            color: var(--navy-primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--navy-primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            border-color: var(--burgundy-accent);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+
+        .legal-section {
+            background: var(--pure-white);
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--burgundy-accent);
+        }
+
+        .legal-section h2 {
+            color: var(--navy-primary);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--warm-grey-bg);
+        }
+
+        .legal-section h3 {
+            color: var(--navy-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+        }
+
+        .legal-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .legal-section ul,
+        .legal-section ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .legal-section li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: rgba(116, 76, 44, 0.1);
+            border: 1px solid var(--burgundy-accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--burgundy-accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: var(--warm-grey-bg);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .contact-info strong {
+            color: var(--navy-primary);
+        }
+
+        .back-to-top {
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .back-to-top a {
+            color: var(--burgundy-accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+        }
+
+        .external-link {
+            color: var(--burgundy-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .external-link:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: var(--muted-blue);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--charcoal-text);
+            color: var(--pure-white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--pure-white);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .legal-section {
+                padding: 25px 20px;
+            }
+
+            .nav-title {
+                font-size: 1.7rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* ACCESSIBILITY */
+        *:focus {
+            outline: 3px solid var(--burgundy-accent);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* SMOOTH SCROLLING */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="brand-name">
+                    <span class="clear-highlight">Clear</span> Funeral Costs
+                </h1>
+                <a href="/" class="home-link">← Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="legal-nav">
+        <div class="container">
+            <h1 class="nav-title">Legal & Compliance</h1>
+            <ul class="nav-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#refund">Refund Policy</a></li>
+                <li><a href="#gdpr">GDPR & Compliance</a></li>
+                <li><a href="#cookies">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- PRIVACY POLICY -->
+            <section id="privacy" class="legal-section">
+                <h2>Privacy Policy</h2>
+                <p class="last-updated">Last updated: January 2025</p>
+
+                <p>Clear Funeral Costs ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website ClearFuneralCosts.co.uk and use our funeral cost analysis services.</p>
+
+                <h3>Information We Collect</h3>
+                
+                <h4>Personal Information</h4>
+                <ul>
+                    <li><strong>Contact Information:</strong> Email address, postal code, phone number (if provided)</li>
+                    <li><strong>Payment Information:</strong> Billing details when purchasing our services (processed securely via Stripe)</li>
+                    <li><strong>Communication Records:</strong> Records of correspondence with our support team</li>
+                </ul>
+
+                <h4>Technical Information</h4>
+                <ul>
+                    <li><strong>Usage Data:</strong> Pages visited, time spent, interaction patterns</li>
+                    <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
+                    <li><strong>Analytics Data:</strong> Aggregated and anonymized usage statistics</li>
+                </ul>
+
+                <h3>How We Use Your Information</h3>
+                <ol>
+                    <li><strong>Service Delivery:</strong> To provide funeral cost analysis and recommendations</li>
+                    <li><strong>Communication:</strong> To respond to inquiries and provide customer support</li>
+                    <li><strong>Service Improvement:</strong> To enhance our platform and user experience</li>
+                    <li><strong>Legal Compliance:</strong> To meet regulatory requirements including CMA transparency obligations</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h4>Our Independence Commitment</h4>
+                    <p>We never share your personal information with funeral directors or receive commissions from them. Your data is used solely to provide independent analysis and recommendations.</p>
+                </div>
+
+                <h3>Data Sharing and Disclosure</h3>
+                <p>We do not sell, trade, or rent your personal information. We may share information only in these limited circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Trusted third parties who assist in operating our website (hosting, payment processing, analytics)</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to protect our legal rights</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                </ul>
+
+                <h3>Data Security</h3>
+                <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes:</p>
+                <ul>
+                    <li>SSL encryption for all data transmission</li>
+                    <li>Secure data storage with reputable cloud providers</li>
+                    <li>Regular security audits and updates</li>
+                    <li>Limited access to personal data on a need-to-know basis</li>
+                </ul>
+
+                <h3>Data Retention</h3>
+                <p>We retain your personal information only as long as necessary for the purposes outlined in this policy or as required by law. Typically:</p>
+                <ul>
+                    <li><strong>Account Data:</strong> Until account deletion is requested</li>
+                    <li><strong>Transaction Records:</strong> 7 years for tax and accounting purposes</li>
+                    <li><strong>Analytics Data:</strong> 26 months in aggregated, anonymized form</li>
+                </ul>
+
+                <div class="contact-info">
+                    <strong>Contact Us About Privacy:</strong><br>
+                    Email: privacy@ClearFuneralCosts.co.uk<br>
+                    Data Protection Officer: Clear Funeral Costs Ltd<br>
+                    Address: [Company Address], United Kingdom
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top ↑</a>
+                </div>
+            </section>
+
+            <!-- TERMS OF SERVICE -->
+            <section id="terms" class="legal-section">
+                <h2>Terms of Service</h2>
+                <p class="last-updated">Last updated: January 2025</p>
+
+                <p>These Terms of Service ("Terms") govern your access to and use of Clear Funeral Costs services. By accessing or using our services, you agree to be bound by these Terms.</p>
+
+                <h3>Our Services</h3>
+                <p>Clear Funeral Costs provides funeral cost analysis and comparison services for UK families. Our services include:</p>
+                <ul>
+                    <li>Free funeral cost analysis based on postal code</li>
+                    <li>Comprehensive cost optimization reports</li>
+                    <li>Funeral director comparison data</li>
+                    <li>Negotiation guidance and support materials</li>
+                </ul>
+
+                <h3>Service Accuracy and Limitations</h3>
+                <div class="highlight-box">
+                    <h4>Important Notice</h4>
+                    <p>Our analysis is based on publicly available data mandated by the Competition and Markets Authority (CMA). While we strive for accuracy, funeral costs may vary and final prices are subject to confirmation with funeral directors.</p>
+                </div>
+
+                <h3>User Responsibilities</h3>
+                <p>When using our services, you agree to:</p>
+                <ol>
+                    <li>Provide accurate and complete information</li>
+                    <li>Use the service for lawful purposes only</li>
+                    <li>Not attempt to reverse engineer or copy our analysis methods</li>
+                    <li>Respect intellectual property rights</li>
+                    <li>Not share purchased reports with third parties</li>
+                </ol>
+
+                <h3>Payment Terms</h3>
+                <ul>
+                    <li><strong>Free Services:</strong> Available without payment or registration</li>
+                    <li><strong>Premium Reports:</strong> One-time payment of £39 (or current listed price)</li>
+                    <li><strong>Payment Processing:</strong> Handled securely via Stripe</li>
+                    <li><strong>Refunds:</strong> Subject to our 60-day money-back guarantee (see Refund Policy)</li>
+                </ul>
+
+                <h3>Intellectual Property</h3>
+                <p>All content, analysis methods, algorithms, and materials on our platform are protected by copyright and other intellectual property laws. You receive a limited license to use our services for personal, non-commercial purposes.</p>
+
+                <h3>Disclaimers and Limitations</h3>
+                <p>Clear Funeral Costs provides information services only. We are not:</p>
+                <ul>
+                    <li>A funeral director or funeral service provider</li>
+                    <li>Responsible for the quality or conduct of third-party funeral directors</li>
+                    <li>Liable for decisions made based on our analysis</li>
+                    <li>Guaranteeing specific savings amounts (subject to refund policy)</li>
+                </ul>
+
+                <h3>Termination</h3>
+                <p>We may terminate or suspend access to our services immediately, without prior notice, for conduct that we believe violates these Terms or is harmful to our business, users, or third parties.</p>
+
+                <h3>Governing Law</h3>
+                <p>These Terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+                <h3>Changes to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Continued use of our services after changes constitutes acceptance of the new Terms.</p>
+
+                <div class="contact-info">
+                    <strong>Legal Inquiries:</strong><br>
+                    Email: legal@ClearFuneralCosts.co.uk<br>
+                    Clear Funeral Costs Ltd<br>
+                    [Company Address], United Kingdom
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top ↑</a>
+                </div>
+            </section>
+
+            <!-- REFUND POLICY -->
+            <section id="refund" class="legal-section">
+                <h2>60-Day Money-Back Guarantee & Refund Policy</h2>
+                <p class="last-updated">Last updated: January 2025</p>
+
+                <div class="highlight-box">
+                    <h4>Our Guarantee</h4>
+                    <p>If you don't save at least £500 using our recommendations, we'll refund every penny within 60 days - no questions asked.</p>
+                </div>
+
+                <h3>Eligibility Criteria</h3>
+                <p>Our money-back guarantee applies when:</p>
+                <ol>
+                    <li>You purchase our Complete Funeral Cost Optimiser Package</li>
+                    <li>You follow our recommendations in good faith</li>
+                    <li>You can demonstrate that savings were less than £500</li>
+                    <li>You request a refund within 60 days of purchase</li>
+                </ol>
+
+                <h3>Refund Process</h3>
+                <ol>
+                    <li><strong>Contact Us:</strong> Email refunds@ClearFuneralCosts.co.uk with your order details</li>
+                    <li><strong>Documentation:</strong> Provide evidence of costs incurred following our recommendations</li>
+                    <li><strong>Review:</strong> We'll review your case within 5 business days</li>
+                    <li><strong>Processing:</strong> Approved refunds are processed within 7 business days</li>
+                    <li><strong>Payment:</strong> Refunds are issued to the original payment method</li>
+                </ol>
+
+                <h3>What We Need for Refund Claims</h3>
+                <ul>
+                    <li>Proof of purchase from Clear Funeral Costs</li>
+                    <li>Documentation of funeral costs incurred</li>
+                    <li>Evidence that our recommendations were followed</li>
+                    <li>Timeline showing when services were arranged</li>
+                </ul>
+
+                <h3>Refund Timeframes</h3>
+                <ul>
+                    <li><strong>Standard Refund:</strong> 5-7 business days to original payment method</li>
+                    <li><strong>Credit Card:</strong> May take additional 2-3 days depending on bank</li>
+                    <li><strong>PayPal:</strong> Usually instant once processed</li>
+                </ul>
+
+                <h3>Exceptions</h3>
+                <p>Refunds may not be available in these circumstances:</p>
+                <ul>
+                    <li>Request made after 60-day guarantee period</li>
+                    <li>Failure to follow provided recommendations</li>
+                    <li>Changes in family requirements after purchase</li>
+                    <li>Force majeure events affecting funeral costs</li>
+                </ul>
+
+                <h3>Consumer Rights</h3>
+                <p>This guarantee is in addition to your statutory rights under UK consumer protection law. You may have additional rights under the Consumer Rights Act 2015 and Consumer Contracts Regulations 2013.</p>
+
+                <div class="highlight-box">
+                    <h4>No Questions Asked Policy</h4>
+                    <p>If you're not completely satisfied with our service for any reason, contact us within 60 days for a full refund. We stand behind our commitment to helping families save money during difficult times.</p>
+                </div>
+
+                <div class="contact-info">
+                    <strong>Refund Requests:</strong><br>
+                    Email: refunds@ClearFuneralCosts.co.uk<br>
+                    Phone: [Support Phone Number]<br>
+                    Response Time: Within 24 hours
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top ↑</a>
+                </div>
+            </section>
+
+            <!-- GDPR COMPLIANCE -->
+            <section id="gdpr" class="legal-section">
+                <h2>GDPR Compliance & Regulatory Notices</h2>
+                <p class="last-updated">Last updated: January 2025</p>
+
+                <p>Clear Funeral Costs is committed to compliance with the General Data Protection Regulation (GDPR) and UK data protection laws. This section outlines your rights and our obligations under these regulations.</p>
+
+                <h3>Your Data Protection Rights</h3>
+                <p>Under GDPR and UK GDPR, you have the following rights regarding your personal data:</p>
+
+                <ol>
+                    <li><strong>Right of Access:</strong> Request copies of your personal data</li>
+                    <li><strong>Right to Rectification:</strong> Request correction of inaccurate data</li>
+                    <li><strong>Right to Erasure:</strong> Request deletion of your personal data</li>
+                    <li><strong>Right to Restrict Processing:</strong> Limit how we process your data</li>
+                    <li><strong>Right to Data Portability:</strong> Receive your data in a structured format</li>
+                    <li><strong>Right to Object:</strong> Object to processing for specific purposes</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Withdraw consent for data processing</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h4>Exercising Your Rights</h4>
+                    <p>To exercise any of these rights, contact our Data Protection Officer at privacy@ClearFuneralCosts.co.uk. We will respond within one month of your request.</p>
+                </div>
+
+                <h3>Lawful Basis for Processing</h3>
+                <p>We process your personal data under the following lawful bases:</p>
+                <ul>
+                    <li><strong>Consent:</strong> For marketing communications and optional services</li>
+                    <li><strong>Contract:</strong> To provide our funeral cost analysis services</li>
+                    <li><strong>Legitimate Interests:</strong> For service improvement and fraud prevention</li>
+                    <li><strong>Legal Obligation:</strong> To comply with CMA reporting requirements</li>
+                </ul>
+
+                <h3>Data Transfers</h3>
+                <p>Your personal data may be transferred to and processed in countries outside the UK/EEA. When this occurs, we ensure adequate protection through:</p>
+                <ul>
+                    <li>Standard Contractual Clauses approved by the European Commission</li>
+                    <li>Adequacy decisions for data transfers to approved countries</li>
+                    <li>Binding Corporate Rules for transfers within corporate groups</li>
+                </ul>
+
+                <h3>Regulatory Compliance</h3>
+                
+                <h4>Competition and Markets Authority (CMA)</h4>
+                <p>Our data processing activities comply with the CMA Funerals Market Investigation Order 2021, including:</p>
+                <ul>
+                    <li>Use of CMA-mandated funeral director pricing data</li>
+                    <li>Transparency in our cost comparison methodologies</li>
+                    <li>Independence from funeral director commercial interests</li>
+                </ul>
+
+                <h4>Information Commissioner's Office (ICO)</h4>
+                <p>Clear Funeral Costs is registered with the ICO (Registration Number: [ICO Number]). For data protection concerns, you can contact:</p>
+                
+                <div class="contact-info">
+                    <strong>ICO Contact Information:</strong><br>
+                    Website: <a href="https://ico.org.uk" class="external-link" target="_blank">ico.org.uk</a><br>
+                    Phone: 0303 123 1113<br>
+                    Post: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF
+                </div>
+
+                <h3>Data Breach Notification</h3>
+                <p>In the event of a data breach that may result in high risk to your rights and freedoms, we will:</p>
+                <ol>
+                    <li>Notify the ICO within 72 hours of becoming aware</li>
+                    <li>Inform affected individuals without undue delay</li>
+                    <li>Provide clear information about the breach and our response</li>
+                    <li>Offer guidance on protective measures you can take</li>
+                </ol>
+
+                <h3>Children's Privacy</h3>
+                <p>Our services are not intended for children under 16. We do not knowingly collect personal data from children. If we become aware that a child has provided personal data, we will take steps to delete such information.</p>
+
+                <h3>Automated Decision Making</h3>
+                <p>Our funeral cost analysis involves automated processing to generate recommendations. You have the right to:</p>
+                <ul>
+                    <li>Request human intervention in the decision-making process</li>
+                    <li>Express your point of view regarding automated decisions</li>
+                    <li>Contest decisions made solely by automated means</li>
+                </ul>
+
+                <div class="contact-info">
+                    <strong>Data Protection Officer:</strong><br>
+                    Email: dpo@ClearFuneralCosts.co.uk<br>
+                    Clear Funeral Costs Ltd<br>
+                    [Company Address], United Kingdom
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top ↑</a>
+                </div>
+            </section>
+
+            <!-- COOKIE POLICY -->
+            <section id="cookies" class="legal-section">
+                <h2>Cookie Policy</h2>
+                <p class="last-updated">Last updated: January 2025</p>
+
+                <p>This Cookie Policy explains how Clear Funeral Costs uses cookies and similar technologies when you visit our website ClearFuneralCosts.co.uk.</p>
+
+                <h3>What Are Cookies</h3>
+                <p>Cookies are small text files stored on your device when you visit a website. They help websites remember information about your visit, making your next visit easier and the site more useful to you.</p>
+
+                <h3>Types of Cookies We Use</h3>
+
+                <h4>Essential Cookies</h4>
+                <p>These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.</p>
+                <ul>
+                    <li><strong>Session cookies:</strong> Maintain your session while browsing</li>
+                    <li><strong>Security cookies:</strong> Help identify and prevent security risks</li>
+                    <li><strong>Load balancing cookies:</strong> Ensure optimal website performance</li>
+                </ul>
+
+                <h4>Analytics Cookies</h4>
+                <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Tracks website usage and performance</li>
+                    <li><strong>Hotjar:</strong> Records user interactions to improve user experience</li>
+                    <li><strong>Internal analytics:</strong> Our own tracking for service optimization</li>
+                </ul>
+
+                <h4>Functional Cookies</h4>
+                <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences.</p>
+                <ul>
+                    <li><strong>Preference cookies:</strong> Remember your choices and settings</li>
+                    <li><strong>Language cookies:</strong> Remember your language preference</li>
+                    <li><strong>Form cookies:</strong> Remember partially completed forms</li>
+                </ul>
+
+                <h4>Marketing Cookies</h4>
+                <p>These cookies track your browsing habits to show you relevant advertisements.</p>
+                <ul>
+                    <li><strong>Google Ads:</strong> Delivers targeted advertising</li>
+                    <li><strong>Facebook Pixel:</strong> Tracks conversions from social media</li>
+                    <li><strong>Retargeting pixels:</strong> Show relevant ads on other websites</li>
+                </ul>
+
+                <h3>Cookie Duration</h3>
+                <ul>
+                    <li><strong>Session cookies:</strong> Deleted when you close your browser</li>
+                    <li><strong>Persistent cookies:</strong> Remain on your device for up to 2 years</li>
+                    <li><strong>Analytics cookies:</strong> Typically stored for 26 months</li>
+                    <li><strong>Marketing cookies:</strong> Usually expire after 90 days</li>
+                </ul>
+
+                <h3>Managing Your Cookie Preferences</h3>
+                
+                <div class="highlight-box">
+                    <h4>Cookie Consent</h4>
+                    <p>When you first visit our website, you'll see a cookie banner allowing you to choose which types of cookies to accept. You can modify these preferences at any time.</p>
+                </div>
+
+                <h4>Browser Settings</h4>
+                <p>You can control cookies through your browser settings:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+                    <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+                    <li><strong>Safari:</strong> Preferences > Privacy > Manage Website Data</li>
+                    <li><strong>Edge:</strong> Settings > Site permissions > Cookies and site data</li>
+                </ul>
+
+                <h4>Third-Party Opt-Outs</h4>
+                <ul>
+                    <li><strong>Google Analytics:</strong> <a href="https://tools.google.com/dlpage/gaoptout" class="external-link" target="_blank">Google Analytics Opt-out</a></li>
+                    <li><strong>Google Ads:</strong> <a href="https://adssettings.google.com" class="external-link" target="_blank">Google Ad Settings</a></li>
+                    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/settings/?tab=ads" class="external-link" target="_blank">Facebook Ad Preferences</a></li>
+                </ul>
+
+                <h3>Impact of Disabling Cookies</h3>
+                <p>Disabling certain cookies may affect your experience:</p>
+                <ul>
+                    <li><strong>Essential cookies:</strong> Website may not function properly</li>
+                    <li><strong>Analytics cookies:</strong> We can't improve our services based on usage data</li>
+                    <li><strong>Functional cookies:</strong> You may need to re-enter preferences</li>
+                    <li><strong>Marketing cookies:</strong> You may see less relevant advertisements</li>
+                </ul>
+
+                <h3>Other Tracking Technologies</h3>
+                <p>In addition to cookies, we may use:</p>
+                <ul>
+                    <li><strong>Web beacons:</strong> Small transparent images that track email opens</li>
+                    <li><strong>Local storage:</strong> Stores data locally on your device</li>
+                    <li><strong>Fingerprinting:</strong> Identifies devices based on configuration</li>
+                </ul>
+
+                <h3>Updates to This Policy</h3>
+                <p>We may update this Cookie Policy to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new policy on this page.</p>
+
+                <div class="contact-info">
+                    <strong>Cookie Questions:</strong><br>
+                    Email: cookies@ClearFuneralCosts.co.uk<br>
+                    Subject: Cookie Policy Inquiry
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top ↑</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <span class="clear-highlight">Clear</span> Funeral Costs. All rights reserved.</p>
+            <p>Helping families make informed decisions during difficult times.</p>
+            <p><a href="index.html">Return to ClearFuneralCosts.co.uk</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links and back to top
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                if (targetId === 'top' || targetId === '') {
+                    // Scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Scroll to specific element
+                    const target = document.querySelector('#' + targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('.legal-section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightCurrentSection);
+        window.addEventListener('load', highlightCurrentSection);
+
+        // Enhanced accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        // Ensure home link works
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeLink = document.querySelector('.home-link');
+            if (homeLink) {
+                homeLink.addEventListener('click', function(e) {
+                    // Let the browser handle the navigation naturally
+                    console.log('Navigating to home page...');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
