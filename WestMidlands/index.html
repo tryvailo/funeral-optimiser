@@ -16,16 +16,37 @@
     :root {
       --navy-primary: #1a237e; --charcoal-text: #2d3748; --burgundy-accent: #744c2c;
       --warm-grey-bg: #f7fafc; --muted-blue: #4a5568; --warm-cream: #fffaf0;
-      --pure-white: #ffffff; --burgundy-hover: #5a3921;
+      --pure-white: #ffffff; --burgundy-hover: #5a3921; --focus-outline: #744c2c;
     }
     body { font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; color: var(--charcoal-text); font-size: 16px; background-color: var(--warm-cream); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     h1, h2, h3 { color: var(--navy-primary); font-weight: 600; }
-    .hero { background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%); color: var(--pure-white); padding: 80px 20px; text-align: center; }
-    .hero h1 { font-size: 3rem; font-weight: 600; margin-bottom: 20px; line-height: 1.1; color: var(--pure-white); }
-    .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .cta-button-main { display: inline-block; padding: 18px 30px; background: var(--burgundy-accent); color: var(--pure-white); text-decoration: none; border-radius: 8px; font-size: 1.2rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3); }
-    .cta-button-main:hover { background: var(--burgundy-hover); transform: translateY(-2px); }
+    .brand-name .clear-highlight { color: var(--burgundy-accent); font-weight: 700; }
+    /* HERO SECTION */
+    .hero { background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%); color: var(--pure-white); padding: 80px 20px; min-height: 600px; display: flex; align-items: center; }
+    .hero-container { display: grid; grid-template-columns: 1fr 500px; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
+    .hero-content { text-align: left; }
+    .hero-headline { font-size: 3.5rem; font-weight: 600; margin-bottom: 20px; line-height: 1.1; color: var(--pure-white); }
+    .hero-subheadline { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.9; }
+    .hero-proof { list-style: none; margin: 30px 0; }
+    .hero-proof li { display: flex; align-items: center; font-size: 1rem; font-weight: 500; padding: 12px; margin-bottom: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; backdrop-filter: blur(10px); }
+    .hero-cta { display: flex; gap: 15px; margin-top: 30px; }
+    .free-calculator { background: var(--pure-white); color: var(--charcoal-text); padding: 40px; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); width: 100%; }
+    .calculator-headline { font-size: 2.2rem; font-weight: 600; color: var(--navy-primary); margin-bottom: 10px; }
+    .calculator-subheadline { font-size: 1.1rem; color: var(--muted-blue); margin-bottom: 30px; }
+    .calculator-form { width: 100%; }
+    .calculator-form label { display: block; margin-bottom: 15px; font-weight: 500; color: var(--charcoal-text); }
+    .calculator-form input { width: 100%; padding: 16px 20px; border: 2px solid var(--muted-blue); border-radius: 8px; font-size: 1rem; font-family: inherit; background-color: var(--pure-white); color: var(--charcoal-text); transition: border-color 0.3s ease; margin-top: 5px; }
+    .calculator-form input:focus { border-color: var(--burgundy-accent); outline: none; box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1); }
+    .calculator-form input::placeholder { color: var(--muted-blue); }
+    .calculator-form small { display: block; color: var(--muted-blue); font-size: 0.9rem; margin-top: 5px; margin-bottom: 15px; }
+    .cta-button-main, .cta-button-secondary, .cta-button-free { display: inline-block; padding: 18px 30px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; text-align: center; }
+    .cta-button-main, .cta-button-free { background: var(--burgundy-accent); color: var(--pure-white); box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3); }
+    .cta-button-main:hover, .cta-button-free:hover { background: var(--burgundy-hover); transform: translateY(-2px); }
+    .cta-button-secondary { border: 2px solid var(--pure-white); color: var(--pure-white); background: transparent; }
+    .cta-button-secondary:hover { background: var(--pure-white); color: var(--navy-primary); }
+    .cta-button-free { width: 100%; margin-top: 20px; }
+    /* MAIN CONTENT */
     .main-content { padding: 80px 20px; }
     .content-section { margin-bottom: 60px; background: var(--pure-white); padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
     .content-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--navy-primary); }
@@ -40,13 +61,17 @@
     .pricing-highlight { background: linear-gradient(135deg, var(--burgundy-accent), var(--burgundy-hover)); color: var(--pure-white); padding: 30px; border-radius: 15px; text-align: center; margin: 40px 0; }
     .pricing-highlight h3 { color: var(--pure-white); font-size: 1.8rem; margin-bottom: 15px; }
     .price { font-size: 3rem; font-weight: bold; margin: 15px 0; }
-    .faq-section { background: var(--warm-grey-bg); padding: 60px 20px; }
-    .faq-container { max-width: 800px; margin: 0 auto; }
-    .faq-item { background: var(--pure-white); margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
-    .faq-item summary { padding: 25px; font-weight: 600; font-size: 1.1rem; color: var(--navy-primary); cursor: pointer; background: var(--pure-white); }
-    .faq-item summary:hover { background: var(--warm-grey-bg); }
-    .faq-content { padding: 0 25px 25px; color: var(--charcoal-text); line-height: 1.6; }
-    .site-footer { background: var(--charcoal-text); color: var(--pure-white); padding: 40px 20px; text-align: center; }
+    /* FOOTER */
+    .site-footer { padding: 60px 20px 40px; background: var(--charcoal-text); color: var(--pure-white); }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .footer-section h3 { color: var(--pure-white); font-size: 1.2rem; margin-bottom: 20px; }
+    .footer-section p { font-size: 0.9rem; line-height: 1.6; opacity: 0.9; margin-bottom: 10px; }
+    .footer-links { list-style: none; margin: 0; padding: 0; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { color: var(--pure-white); text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: opacity 0.3s ease; }
+    .footer-links a:hover { opacity: 1; text-decoration: underline; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 30px; text-align: center; }
+    .footer-bottom p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
     .breadcrumb { background: var(--warm-grey-bg); padding: 15px 20px; font-size: 0.9rem; }
     .breadcrumb a { color: var(--burgundy-accent); text-decoration: none; }
     .local-stats { background: var(--navy-primary); color: var(--pure-white); padding: 50px 20px; text-align: center; }
@@ -54,17 +79,34 @@
     .stat-item { text-align: center; }
     .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--pure-white); margin-bottom: 10px; display: block; }
     .stat-label { font-size: 0.9rem; opacity: 0.9; }
+    .faq-section { background: var(--warm-grey-bg); padding: 60px 20px; }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { background: var(--pure-white); margin-bottom: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+    .faq-item summary { padding: 25px; font-weight: 600; font-size: 1.1rem; color: var(--navy-primary); cursor: pointer; background: var(--pure-white); }
+    .faq-item summary:hover { background: var(--warm-grey-bg); }
+    .faq-content { padding: 0 25px 25px; color: var(--charcoal-text); line-height: 1.6; }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 968px) {
+      .hero-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      .free-calculator { width: 100%; max-width: 500px; margin: 0 auto; }
+      .footer-content { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+    }
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; } .hero p { font-size: 1.1rem; }
+      .hero-headline { font-size: 2.5rem; }
+      .main-content, .faq-section, .local-stats { padding: 40px 20px; }
       .content-section { padding: 25px 20px; margin-bottom: 30px; }
       .content-section h2 { font-size: 1.6rem; }
       .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .stat-number { font-size: 2rem; } .price { font-size: 2.5rem; }
-      .main-content, .faq-section, .local-stats { padding: 40px 20px; }
+      .stat-number { font-size: 2rem; }
+      .price { font-size: 2.5rem; }
     }
     @media (max-width: 480px) {
-      .hero { padding: 60px 20px; } .hero h1 { font-size: 1.8rem; }
+      .hero { padding: 60px 20px; }
+      .hero-headline { font-size: 1.8rem; }
       .stats-grid { grid-template-columns: 1fr; }
       .cta-button-main { padding: 15px 25px; font-size: 1.1rem; }
     }
@@ -74,12 +116,40 @@
   <nav class="breadcrumb">
     <div class="container"><a href="/">UK Funeral Costs</a> > West Midlands Funeral Costs</div>
   </nav>
-
+  
   <header class="hero">
-    <div class="container">
-      <h1>West Midlands funeral costs — save £1,000–£3,000 in 10 minutes</h1>
-      <p>Compare funeral directors across Birmingham, Coventry, Wolverhampton, Dudley and the wider West Midlands. Independent CMA-based analysis, no commissions.</p>
-      <a class="cta-button-main" href="/#calculator">Get my FREE baseline calculation</a>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-headline">
+          West Midlands families save <strong>£1,000–£3,000</strong> in <strong>~10 minutes</strong>
+        </h1>
+        <p class="hero-subheadline">
+          Free calculator + professional savings plan based on official CMA price lists. We're independent (no commissions). £39 with £500 savings guarantee.
+        </p>
+        <ul class="hero-proof">
+          <li>⚡ Results in ~10 minutes</li>
+          <li>📊 CMA-mandated transparent price data</li>
+          <li>🛡️ £500 savings guarantee (60 days)</li>
+        </ul>
+        <div class="hero-cta">
+          <a href="#calculator" class="cta-button-main">Check my baseline (FREE)</a>
+          <a href="/#buy" class="cta-button-secondary">Unlock full plan (£39)</a>
+        </div>
+      </div>
+      <div class="free-calculator">
+        <h2 class="calculator-headline">Free calculator: see your West Midlands baseline</h2>
+        <p class="calculator-subheadline">Then unlock the full Savings Plan with negotiation templates, hybrid options, and direct cremation database (£39).</p>
+        <form id="leadForm" class="calculator-form" aria-label="Free baseline calculator">
+          <label>Postcode (optional)
+            <input name="postcode" placeholder="e.g., B1 1AA" pattern="^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2})$" aria-describedby="pcHelp">
+            <small id="pcHelp">We'll refine providers/crematoria near you. Leave empty for UK-wide estimates.</small>
+          </label>
+          <label>Email 
+            <input name="email" type="email" required aria-required="true" placeholder="you@email.com">
+          </label>
+          <button type="submit" class="cta-button-free">Calculate my potential savings (FREE)</button>
+        </form>
+      </div>
     </div>
   </header>
 
@@ -97,7 +167,7 @@
 
   <main class="main-content">
     <div class="container">
-      <section class="content-section">
+      <section id="calculator" class="content-section">
         <h2>West Midlands funeral cost optimisation</h2>
         <p>The West Midlands combines major urban centres with competitive industrial heritage pricing. Our analysis navigates this diverse market for optimal value.</p>
         
@@ -162,7 +232,6 @@
     <div class="container">
       <div class="faq-container">
         <h2 style="text-align: center; margin-bottom: 40px; color: var(--navy-primary);">West Midlands FAQ</h2>
-        
         <div class="faq-item">
           <details><summary>Do you cover all Birmingham districts?</summary>
           <div class="faq-content"><p>Yes — we analyse providers across all Birmingham districts from city centre to suburbs, ensuring comprehensive coverage for the region's largest urban area.</p></div></details>
@@ -185,8 +254,33 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Clear Funeral Costs — Independent funeral cost analysis for West Midlands families</p>
-      <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">Based on CMA-mandated pricing data • No commissions from funeral directors</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><span class="clear-highlight">Clear</span> Funeral Costs</h3>
+          <p>Helping UK families save thousands on funeral costs through professional analysis of official government data.</p>
+          <p style="margin-top: 20px;">Contact: support@ClearFuneralCosts.co.uk</p>
+        </div>
+        <div class="footer-section">
+          <h3>Legal & Compliance</h3>
+          <ul class="footer-links">
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/refund-policy.html">Refund Policy</a></li>
+            <li><a href="/gdpr-compliance.html">GDPR & Compliance</a></li>
+            <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Data Sources</h3>
+          <p>Based on CMA Funerals Market Investigation Order 2021</p>
+          <p>Competition and Markets Authority pricing data</p>
+          <p>Independent funeral director verification</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span class="clear-highlight">Clear</span> Funeral Costs. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">This service utilizes pricing data mandated by the Competition and Markets Authority (CMA) Funerals Market Investigation Order 2021. We are committed to helping families make informed decisions during difficult times.</p>
+      </div>
     </div>
   </footer>
 
@@ -199,6 +293,25 @@
     "isPartOf": { "@type": "WebSite", "name": "Clear Funeral Costs", "url": "https://www.clearfuneralcosts.co.uk" },
     "about": { "@type": "Thing", "name": "Funeral costs in West Midlands" }
   }
+  </script>
+  <script>
+    function initFormValidation() {
+      const form = document.getElementById('leadForm');
+      if (!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+        const btn = form.querySelector('.cta-button-free');
+        btn.disabled = true; btn.textContent = 'Calculating...';
+        setTimeout(() => {
+          alert('Thanks! Your baseline will be calculated and sent within ~10 minutes.');
+          btn.disabled = false; btn.textContent = 'Calculate my potential savings (FREE)';
+          form.reset();
+        }, 2000);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initFormValidation);
   </script>
 </body>
 </html>

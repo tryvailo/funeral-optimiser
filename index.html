@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funeral Cost Optimiser — Save £1,000–£3,000 in 10 Minutes | Clear Funeral Costs (UK)</title>
+  <title>Funeral Cost Optimiser — Save £1,000—£3,000 in 10 Minutes | Clear Funeral Costs (UK)</title>
   <meta name="description" content="UK families: calculate your funeral baseline and get a personalised savings plan in ~10 minutes based on CMA price lists. Independent. £39 with £500 savings guarantee.">
   <style>
     * {
@@ -473,8 +473,14 @@
       transition: transform 0.3s ease;
     }
 
-    .region-links li:hover {
+    .region-links li.available:hover {
       transform: translateY(-5px);
+    }
+
+    .region-links li.coming-soon {
+      background: #f8f9fa;
+      opacity: 0.6;
+      cursor: default;
     }
 
     .region-links a {
@@ -488,6 +494,24 @@
 
     .region-links a:hover {
       color: var(--burgundy-accent);
+    }
+
+    .region-links li.coming-soon span {
+      display: block;
+      padding: 20px;
+      color: #6c757d;
+      font-weight: 600;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .region-links li.coming-soon small {
+      font-size: 0.8rem;
+      color: #adb5bd;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 5px;
+      display: block;
     }
 
     .muted {
@@ -703,7 +727,7 @@
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-headline">
-          UK families save <strong>£1,000–£3,000</strong> in <strong>~10 minutes</strong> — Funeral Cost Optimiser
+          UK families save <strong>£1,000—£3,000</strong> in <strong>~10 minutes</strong> — Funeral Cost Optimiser
         </h1>
         <p class="hero-subheadline">
           Free calculator + professional savings plan based on official CMA price lists. We're independent (no commissions). £39 with £500 savings guarantee.
@@ -736,13 +760,7 @@
     </div>
   </header>
 
-  <!-- CALCULATOR INTRO -->
-  <section id="calculator" class="calculator-section">
-    <div class="container">
-      <h2 class="calculator-headline" style="text-align: center; color: var(--navy-primary);">Free calculator: see your UK baseline in 10 minutes</h2>
-      <p class="calculator-subheadline" style="text-align: center;">Then unlock the full Savings Plan with negotiation templates, hybrid options, and direct cremation database (£39).</p>
-    </div>
-  </section>
+
 
   <!-- HOW WE CALCULATE (5 steps + scoring) -->
   <section id="method" class="solution-section">
@@ -803,15 +821,15 @@
     <div class="container">
       <h2>Popular regional pages</h2>
       <ul class="region-links">
-        <li><a href="/london_funeral_costs.html">London funeral costs</a></li>
-        <li><a href="/south_east_england_funeral_costs.html">South East England funeral costs</a></li>
-        <li><a href="/south_west_england_funeral_costs.html">South West England funeral costs</a></li>
-        <li><a href="/east_of_england_funeral_costs.html">East of England funeral costs</a></li>
-        <li><a href="/west_midlands_funeral_costs.html">West Midlands funeral costs</a></li>
-        <li><a href="/east_midlands_funeral_costs.html">East Midlands funeral costs</a></li>
-        <li><a href="/yorkshire_funeral_costs.html">Yorkshire & the Humber funeral costs</a></li>
-        <li><a href="/north_west_funeral_costs.html">North West England funeral costs</a></li>
-        <li><a href="/north_east_funeral_costs.html">North East England funeral costs</a></li>
+        <li class="available"><a href="fixed_south_east_england.html">South East England funeral costs</a></li>
+        <li class="coming-soon"><span>London funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>South West England funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>East of England funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>West Midlands funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>East Midlands funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>Yorkshire & the Humber funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>North West England funeral costs<small>Coming soon</small></span></li>
+        <li class="coming-soon"><span>North East England funeral costs<small>Coming soon</small></span></li>
       </ul>
       <p class="muted">We're adding more regional detail over time (same method, local data).</p>
     </div>
@@ -820,7 +838,7 @@
   <!-- FINAL CTA -->
   <section id="final-cta" class="final-cta">
     <div class="container">
-      <h2>Ready to save £1,000–£3,000 in ~10 minutes?</h2>
+      <h2>Ready to save £1,000—£3,000 in ~10 minutes?</h2>
       <a href="#buy" class="cta-button-main">Unlock full savings plan (£39)</a>
       <p class="trust-note">We're independent (no commissions). Based on CMA price lists.</p>
     </div>
