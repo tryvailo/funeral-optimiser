@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Funeral Cost Analysis - ClearFuneralCosts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-primary: #1a237e;
+            --charcoal-text: #1f2937;
+            --burgundy-accent: #744c2c;
+            --warm-grey-bg: #f7fafc;
+            --muted-blue: #374151;
+            --warm-cream: #fffaf0;
+            --pure-white: #ffffff;
+            --burgundy-hover: #5a3921;
+            --grey-hover: #2d3748;
+            --focus-outline: #744c2c;
+            --text-secondary: #1f2937;
+            --text-muted: #374151;
+            --muted-amber: #d97706;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--charcoal-text);
+            background-color: var(--warm-cream);
+            margin: 0;
+            padding: 0;
+        }
+
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        /* HEADER */
+        .report-header {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
+            color: var(--pure-white);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .company-logo {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .clear-highlight {
+            color: var(--burgundy-accent);
+            font-weight: 700;
+        }
+
+        .report-title {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .report-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .report-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* EXECUTIVE SUMMARY */
+        .executive-summary {
+            background: var(--warm-grey-bg);
+            padding: 32px 24px;
+            border-left: 4px solid var(--burgundy-accent);
+        }
+
+        .summary-title {
+            color: var(--navy-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .savings-highlight {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 24px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .savings-amount {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .savings-subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .authority-proof {
+            background: rgba(26, 35, 126, 0.08);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid var(--navy-primary);
+        }
+
+        /* OPTIONS SECTION */
+        .report-section {
+            padding: 32px 24px;
+            border-bottom: 1px solid var(--warm-grey-bg);
+        }
+
+        .section-title {
+            color: var(--navy-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--warm-grey-bg);
+        }
+
+        .option-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            background: var(--pure-white);
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .option-card.recommended {
+            border-color: var(--burgundy-accent);
+            background: rgba(116, 76, 44, 0.03);
+        }
+
+        .recommended-badge {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .option-title {
+            color: var(--navy-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .option-savings {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--burgundy-accent);
+            text-align: right;
+        }
+
+        .savings-percentage {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            display: block;
+        }
+
+        .option-description {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .option-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .highlight-box {
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .pros-box {
+            background: rgba(116, 76, 44, 0.08);
+            border-left: 3px solid var(--burgundy-accent);
+        }
+
+        .cons-box {
+            background: rgba(217, 119, 6, 0.08);
+            border-left: 3px solid var(--muted-amber);
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--navy-primary);
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-list li {
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .pros-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--burgundy-accent);
+            font-weight: bold;
+        }
+
+        .cons-box li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--muted-amber);
+            font-weight: bold;
+        }
+
+        /* MARKET INSIGHT */
+        .market-insight {
+            background: var(--warm-grey-bg);
+            padding: 24px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .insight-title {
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .insight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 16px;
+            background: var(--pure-white);
+            border-radius: 4px;
+        }
+
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--burgundy-accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* LIMITATIONS */
+        .limitations {
+            background: rgba(217, 119, 6, 0.08);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--muted-amber);
+            margin: 20px 0;
+        }
+
+        .limitations-title {
+            color: var(--muted-amber);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .limitations-list {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* UPGRADE CTA */
+        .upgrade-cta {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
+            color: var(--pure-white);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .social-proof {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .mini-testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .testimonial-savings {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            margin-left: 6px;
+        }
+
+        .value-list {
+            list-style: none;
+            text-align: left;
+            max-width: 480px;
+            margin: 0 auto 24px;
+        }
+
+        .value-list li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .value-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .cta-primary {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 16px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--pure-white);
+            padding: 16px 28px;
+            border: 2px solid var(--pure-white);
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-primary:hover {
+            background: var(--burgundy-hover);
+            transform: translateY(-1px);
+        }
+
+        .cta-secondary:hover {
+            background: var(--pure-white);
+            color: var(--navy-primary);
+        }
+
+        .guarantee-text {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        /* FOOTER */
+        .report-footer {
+            background: var(--charcoal-text);
+            color: var(--pure-white);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .footer-contact {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .report-container {
+                margin: 8px;
+                border-radius: 6px;
+            }
+
+            .report-header,
+            .executive-summary,
+            .report-section,
+            .upgrade-cta {
+                padding: 24px 20px;
+            }
+
+            .report-title {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+
+            .savings-amount {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .option-highlights {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .option-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .option-savings {
+                text-align: left;
+                margin-top: 8px;
+            }
+
+            .option-title {
+                font-size: 1.1rem;
+            }
+
+            .option-description {
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .cta-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-subtitle {
+                font-size: 1rem;
+            }
+            
+            .insight-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .mini-testimonial {
+                padding: 12px;
+            }
+
+            .social-proof {
+                padding: 16px;
+                font-size: 0.9rem;
+            }
+
+            .value-list {
+                font-size: 0.9rem;
+                max-width: 100%;
+                margin: 0 auto 20px;
+            }
+
+            .value-list li {
+                margin-bottom: 6px;
+                padding-left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .report-container {
+                margin: 4px;
+            }
+
+            .report-header,
+            .executive-summary,
+            .report-section,
+            .upgrade-cta {
+                padding: 20px 16px;
+            }
+
+            .report-title {
+                font-size: 1.4rem;
+            }
+
+            .savings-amount {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .option-card {
+                padding: 20px;
+            }
+
+            .option-title {
+                font-size: 1rem;
+            }
+
+            .option-savings {
+                font-size: 1.1rem;
+            }
+
+            .savings-percentage {
+                font-size: 0.85rem;
+            }
+
+            .highlight-box {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+
+            .insight-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 1.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .cta-title {
+                font-size: 1.3rem;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+
+            .limitations-list {
+                font-size: 0.85rem;
+            }
+
+            .footer-contact {
+                font-size: 0.9rem;
+            }
+
+            .footer-disclaimer {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* ACCESSIBILITY */
+        @media (max-width: 768px) {
+            .cta-primary,
+            .cta-secondary {
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+
+            .option-card {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(116, 76, 44, 0.1);
+            }
+
+            .authority-proof,
+            .limitations {
+                line-height: 1.6;
+            }
+
+            .option-highlights .highlight-box {
+                margin-bottom: 8px;
+            }
+
+            a, button {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --charcoal-text: #000000;
+                --text-muted: #000000;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- HEADER -->
+        <header class="report-header">
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="report-title">Your Funeral Cost Analysis</h1>
+            <p class="report-subtitle">Potential Savings Analysis for Brighton, East Sussex</p>
+            <p class="report-date">Generated: 17th September 2025</p>
+        </header>
+
+        <!-- EXECUTIVE SUMMARY -->
+        <section class="executive-summary">
+            <h2 class="summary-title">Executive Summary</h2>
+            
+            <div class="savings-highlight">
+                <div class="savings-amount">£500 - £2,500</div>
+                <div class="savings-subtitle">Potential savings identified in your area</div>
+            </div>
+
+            <div class="authority-proof">
+                <strong>Official CMA Data Analysis:</strong> Based on mandatory government pricing from <strong>18 funeral directors</strong> and <strong>5 crematoria</strong> in your area. This is the same data the Competition and Markets Authority uses to monitor the funeral industry.
+            </div>
+
+            <p><strong>Our Initial Analysis:</strong> Through strategic provider selection, service optimisation, and timing adjustments, funeral costs in your area can typically be reduced by 15-60% whilst maintaining dignity and quality of service.</p>
+            
+            <p style="margin-top: 16px;"><strong>Important:</strong> These are potential savings ranges only. Your exact savings depend on your specific needs, which we analyse in our premium report.</p>
+        </section>
+
+        <!-- OPTIMIZATION OPTIONS -->
+        <section class="report-section">
+            <h2 class="section-title">Your Cost Optimisation Scenarios</h2>
+            
+            <!-- CONSERVATIVE OPTION -->
+            <div class="option-card">
+                <div class="option-header">
+                    <h3 class="option-title">Conservative Approach</h3>
+                    <div class="option-savings">
+                        £500 - £800
+                        <span class="savings-percentage">10-15% reduction</span>
+                    </div>
+                </div>
+                
+                <p class="option-description">
+                    Simple provider and timing optimisations with minimal changes to traditional funeral arrangements. Perfect for families wanting modest savings without disruption.
+                </p>
+                
+                <div class="option-highlights">
+                    <div class="highlight-box pros-box">
+                        <div class="highlight-title">Advantages</div>
+                        <ul class="highlight-list">
+                            <li>Minimal family disruption</li>
+                            <li>Traditional timing maintained</li>
+                            <li>Simple implementation</li>
+                            <li>Local providers only</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box cons-box">
+                        <div class="highlight-title">Considerations</div>
+                        <ul class="highlight-list">
+                            <li>Limited savings potential</li>
+                            <li>Higher overall costs</li>
+                            <li>Misses major opportunities</li>
+                            <li>Standard pricing accepted</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BALANCED OPTION (RECOMMENDED) -->
+            <div class="option-card recommended">
+                <div class="recommended-badge">MOST POPULAR</div>
+                <div class="option-header">
+                    <h3 class="option-title">Balanced Optimisation</h3>
+                    <div class="option-savings">
+                        £1,200 - £1,800
+                        <span class="savings-percentage">25-35% reduction</span>
+                    </div>
+                </div>
+                
+                <p class="option-description">
+                    Strategic combination of provider selection, timing adjustments, and selective service modifications whilst maintaining funeral dignity. The most popular choice amongst UK families.
+                </p>
+                
+                <div class="option-highlights">
+                    <div class="highlight-box pros-box">
+                        <div class="highlight-title">Advantages</div>
+                        <ul class="highlight-list">
+                            <li>Substantial cost savings</li>
+                            <li>Maintains dignity & tradition</li>
+                            <li>Manageable coordination</li>
+                            <li>Flexible timeline</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box cons-box">
+                        <div class="highlight-title">Considerations</div>
+                        <ul class="highlight-list">
+                            <li>Some timing flexibility needed</li>
+                            <li>May require 20-minute travel</li>
+                            <li>2-week planning period</li>
+                            <li>Minor service adjustments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAXIMUM SAVINGS OPTION -->
+            <div class="option-card">
+                <div class="option-header">
+                    <h3 class="option-title">Maximum Savings</h3>
+                    <div class="option-savings">
+                        £2,000 - £2,500
+                        <span class="savings-percentage">45-60% reduction</span>
+                    </div>
+                </div>
+                
+                <p class="option-description">
+                    Direct cremation approach with separate celebration of life service, maximising cost savings through complete service restructuring. Modern approach gaining popularity.
+                </p>
+                
+                <div class="option-highlights">
+                    <div class="highlight-box pros-box">
+                        <div class="highlight-title">Advantages</div>
+                        <ul class="highlight-list">
+                            <li>Maximum financial savings</li>
+                            <li>Flexible celebration planning</li>
+                            <li>Reduced time pressure</li>
+                            <li>High personalisation</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box cons-box">
+                        <div class="highlight-title">Considerations</div>
+                        <ul class="highlight-list">
+                            <li>Non-traditional approach</li>
+                            <li>Requires family coordination</li>
+                            <li>Separate memorial planning</li>
+                            <li>May not suit all expectations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARKET INSIGHT -->
+        <section class="report-section">
+            <div class="market-insight">
+                <h3 class="insight-title">Local Market Analysis - Brighton Area</h3>
+                <div class="insight-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">£4,280</div>
+                        <div class="stat-label">Average local cost</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">£1,850</div>
+                        <div class="stat-label">Price variation range</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Funeral directors analysed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Crematoria compared</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIMITATIONS -->
+        <section class="report-section">
+            <div class="limitations">
+                <div class="limitations-title">Important Limitations of This Free Analysis</div>
+                <div class="limitations-list">
+                    • <strong>Estimates only:</strong> These are potential savings ranges based on regional averages<br>
+                    • <strong>No specific details:</strong> Exact provider contacts and pricing not included<br>
+                    • <strong>No implementation guide:</strong> Step-by-step instructions require premium analysis<br>
+                    • <strong>No personalisation:</strong> Your specific needs and preferences not considered<br>
+                    • <strong>No guarantee:</strong> Actual savings depend on your specific circumstances
+                </div>
+            </div>
+        </section>
+
+        <!-- UPGRADE CTA -->
+        <section class="upgrade-cta">
+            <h2 class="cta-title">Get Your Complete Implementation Plan</h2>
+            <p class="cta-subtitle">
+                This preview shows your potential. Get the exact calculations, provider contacts, and step-by-step guide to implement these savings.
+            </p>
+
+            <div class="social-proof">
+                <div style="font-weight: 600; margin-bottom: 16px;">
+                    2,847 UK families have already saved an average of £1,680 using our premium analysis
+                </div>
+                <div class="testimonial-grid">
+                    <div class="mini-testimonial">
+                        <div class="testimonial-text">"Saved £1,700 on mum's funeral without compromising dignity"</div>
+                        <div class="testimonial-author">Sarah M., Brighton <span class="testimonial-savings">£1,700</span></div>
+                    </div>
+                    <div class="mini-testimonial">
+                        <div class="testimonial-text">"The direct cremation guide saved us £2,400"</div>
+                        <div class="testimonial-author">James T., Reading <span class="testimonial-savings">£2,400</span></div>
+                    </div>
+                    <div class="mini-testimonial">
+                        <div class="testimonial-text">"Even the negotiation scripts were worth the £39"</div>
+                        <div class="testimonial-author">Margaret P., Surrey <span class="testimonial-savings">£800+</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="value-list">
+                <li><strong>Exact savings calculations</strong> (not ranges) - know precisely what you'll save</li>
+                <li><strong>Direct provider contact details</strong> and phone numbers ready to call</li>
+                <li><strong>14-day step-by-step implementation roadmap</strong> with daily actions</li>
+                <li><strong>Negotiation scripts and email templates</strong> to secure best prices</li>
+                <li><strong>Off-peak timing strategies</strong> and booking guidance worth £100-400</li>
+                <li><strong>60-day email support</strong> for any questions during implementation</li>
+                <li><strong>£500+ savings guarantee</strong> or complete money-back refund</li>
+            </ul>
+            
+            <div class="cta-buttons">
+                <a href="/premium-questionnaire" class="cta-primary">
+                    Get Complete Analysis - £39
+                </a>
+                <a href="/how-it-works" class="cta-secondary">
+                    Learn More
+                </a>
+            </div>
+            
+            <p class="guarantee-text">
+                60-day money-back guarantee if you don't save at least £500 • Independent analysis with no hidden fees
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="report-footer">
+            <div class="footer-contact">
+                support@clearfuneralcosts.co.uk | Mon-Fri 9am-5pm
+            </div>
+            <div class="footer-disclaimer">
+                This analysis is based on official CMA (Competition and Markets Authority) data as of September 2025. 
+                Prices may vary and should be confirmed with providers. ClearFuneralCosts is independent 
+                and receives no commissions from funeral directors. Always verify details before making decisions.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced CTA click tracking
+        document.querySelectorAll('.cta-primary, .cta-secondary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Track conversion events
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'upgrade_click', {
+                        'event_category': 'conversion',
+                        'event_label': this.textContent.trim(),
+                        'value': 39
+                    });
+                }
+                
+                // Add loading state for primary CTA
+                if (this.classList.contains('cta-primary')) {
+                    const originalText = this.textContent;
+                    this.textContent = 'Preparing questionnaire...';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 3000);
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
