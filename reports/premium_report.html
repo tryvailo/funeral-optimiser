@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Complete Funeral Optimisation Plan - ClearFuneralCosts</title>
+    <title>Complete Funeral Cost Optimisation Plan - Brighton, East Sussex | ClearFuneralCosts</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --navy-primary: #1a237e;
             --charcoal-text: #1f2937;
@@ -20,19 +20,16 @@
             --warm-cream: #fffaf0;
             --pure-white: #ffffff;
             --burgundy-hover: #5a3921;
-            --grey-hover: #2d3748;
-            --focus-outline: #744c2c;
-            --text-secondary: #1f2937;
-            --text-muted: #374151;
-            --muted-amber: #d97706;
-            --premium-accent: var(--burgundy-accent);
+            --success-green: #059669;
+            --soft-amber: #f59e0b;
+            --warning-orange: #ed8936;
         }
 
         body {
-            font-family: Georgia, "Times New Roman", Times, serif;
-            font-size: 18px;
-            line-height: 1.7;
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
             color: var(--charcoal-text);
+            font-size: 16px;
             background-color: var(--warm-cream);
             margin: 0;
             padding: 0;
@@ -42,32 +39,21 @@
             max-width: 900px;
             margin: 0 auto;
             background: var(--pure-white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        /* PREMIUM HEADER */
-        .premium-badge {
-            background: linear-gradient(135deg, var(--burgundy-accent) 0%, var(--burgundy-hover) 100%);
-            color: var(--pure-white);
-            text-align: center;
-            padding: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
+        /* HEADER */
         .report-header {
             background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
             color: var(--pure-white);
-            padding: 32px 24px;
+            padding: 50px 40px;
             text-align: center;
         }
 
         .company-logo {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            margin-bottom: 15px;
         }
 
         .clear-highlight {
@@ -76,91 +62,123 @@
         }
 
         .report-title {
-            font-size: 2rem;
+            font-size: 2.4rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
 
         .report-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 20px;
         }
 
-        .personalised-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 20px;
-        }
-
-        .personalised-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-        }
-
-        .info-item {
-            text-align: center;
-        }
-
-        .info-label {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-bottom: 4px;
-        }
-
-        .info-value {
+        .report-date {
             font-size: 1rem;
-            font-weight: 600;
+            opacity: 0.8;
         }
 
-        /* EXECUTIVE SUMMARY */
-        .executive-summary {
+        /* PERSONALIZED INTRO */
+        .personalized-intro {
             background: var(--warm-grey-bg);
-            padding: 32px 24px;
+            padding: 40px;
             border-left: 4px solid var(--burgundy-accent);
         }
 
-        .summary-title {
+        .intro-title {
             color: var(--navy-primary);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        .exact-savings {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 28px;
+        .user-preferences {
+            background: var(--pure-white);
+            padding: 24px;
             border-radius: 8px;
-            text-align: center;
-            margin: 20px 0;
+            margin: 24px 0;
+            border: 1px solid #e5e7eb;
         }
 
-        .exact-amount {
-            font-size: 2.8rem;
+        .preferences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .preference-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--warm-grey-bg);
+        }
+
+        .preference-label {
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .preference-value {
+            color: var(--text-muted);
+        }
+
+        /* EXACT SAVINGS */
+        .exact-savings {
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .savings-amount {
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .exact-subtitle {
-            font-size: 1.1rem;
+        .savings-subtitle {
+            font-size: 1.3rem;
             opacity: 0.95;
+            margin-bottom: 16px;
         }
 
-        .guarantee-box {
-            background: linear-gradient(135deg, var(--burgundy-accent), var(--burgundy-hover));
-            color: var(--pure-white);
+        .roi-calculation {
+            background: rgba(255, 255, 255, 0.15);
             padding: 20px;
-            border-radius: 6px;
-            margin: 20px 0;
-            text-align: center;
-            font-weight: 600;
+            border-radius: 8px;
+            margin-top: 20px;
         }
 
-        /* COST BREAKDOWN */
+        .roi-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .roi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* CONTENT SECTIONS */
+        .report-section {
+            padding: 40px;
+            border-bottom: 1px solid var(--warm-grey-bg);
+        }
+
+        .section-title {
+            color: var(--navy-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--warm-grey-bg);
+        }
+
+        /* BASELINE COSTS */
         .cost-breakdown {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -169,205 +187,184 @@
         }
 
         .cost-card {
-            background: var(--pure-white);
-            border: 2px solid var(--warm-grey-bg);
-            border-radius: 8px;
+            background: var(--warm-grey-bg);
             padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--burgundy-accent);
         }
 
         .cost-card h4 {
             color: var(--navy-primary);
-            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 16px;
-            text-align: center;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--warm-grey-bg);
+            font-size: 1.1rem;
         }
 
         .cost-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            margin: 10px 0;
             padding: 6px 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .cost-item:last-child {
-            border-bottom: none;
         }
 
         .cost-total {
-            font-weight: 700;
-            font-size: 1.05rem;
+            font-weight: 600;
+            border-top: 2px solid var(--burgundy-accent);
             padding-top: 12px;
-            margin-top: 8px;
-            border-top: 2px solid var(--navy-primary);
+            margin-top: 16px;
+            font-size: 1.1rem;
         }
 
-        .savings-item {
-            color: var(--burgundy-accent);
+        /* RECOMMENDED STRATEGY */
+        .recommended-strategy {
+            background: rgba(5, 150, 105, 0.05);
+            border: 2px solid var(--success-green);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .strategy-badge {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* PROVIDERS SECTION */
-        .providers-section {
-            padding: 32px 24px;
-            border-bottom: 1px solid var(--warm-grey-bg);
-        }
-
-        .section-title {
+        .strategy-title {
             color: var(--navy-primary);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--warm-grey-bg);
         }
 
-        .provider-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-
-        .provider-card {
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 20px;
-            background: var(--pure-white);
-            transition: all 0.2s ease;
-        }
-
-        .provider-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-
-        .provider-card.recommended {
-            border-color: var(--burgundy-accent);
-            background: rgba(116, 76, 44, 0.03);
-        }
-
-        .recommended-badge {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .provider-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 8px;
-        }
-
-        .provider-details {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .provider-contact {
-            background: var(--warm-grey-bg);
-            padding: 16px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-        }
-
-        .contact-item {
-            margin-bottom: 4px;
-            font-size: 0.9rem;
-        }
-
-        .contact-item strong {
-            color: var(--navy-primary);
-        }
-
-        .cma-compliance {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        /* IMPLEMENTATION ROADMAP */
-        .roadmap-section {
-            padding: 32px 24px;
-            border-bottom: 1px solid var(--warm-grey-bg);
-        }
-
-        .timeline {
-            position: relative;
+        .optimization-list {
+            list-style: none;
             margin: 20px 0;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 16px;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: var(--burgundy-accent);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 24px;
-            padding-left: 50px;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: 8px;
-            top: 4px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .timeline-day {
-            color: var(--burgundy-accent);
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-tasks {
-            background: var(--warm-grey-bg);
+        .optimization-list li {
+            margin-bottom: 12px;
             padding: 16px;
-            border-radius: 6px;
+            background: var(--pure-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--burgundy-accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .task-list {
-            list-style: none;
-            padding: 0;
+        .optimization-desc {
+            flex: 1;
         }
 
-        .task-list li {
-            margin-bottom: 6px;
-            padding-left: 18px;
-            position: relative;
+        .optimization-saving {
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
             font-size: 0.9rem;
         }
 
-        .task-list li::before {
+        /* PROVIDER TABLE */
+        .provider-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .provider-table th {
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .provider-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--warm-grey-bg);
+        }
+
+        .provider-table tr:nth-child(even) {
+            background: var(--warm-grey-bg);
+        }
+
+        .provider-table .price {
+            font-weight: 600;
+            color: var(--burgundy-accent);
+            font-size: 1.1rem;
+        }
+
+        .provider-table .best-value {
+            background: rgba(5, 150, 105, 0.1);
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* IMPLEMENTATION ROADMAP */
+        .implementation-step {
+            background: var(--warm-grey-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--burgundy-accent);
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-actions {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .step-actions li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .step-actions li::before {
             content: "→";
             position: absolute;
             left: 0;
@@ -376,434 +373,257 @@
         }
 
         /* NEGOTIATION SCRIPTS */
-        .scripts-section {
-            padding: 32px 24px;
-            border-bottom: 1px solid var(--warm-grey-bg);
-        }
-
-        .script-card {
+        .script-section {
             background: var(--warm-grey-bg);
-            border-left: 4px solid var(--burgundy-accent);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 0 6px 6px 0;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
         }
 
         .script-title {
             color: var(--navy-primary);
             font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .script-text {
-            background: var(--pure-white);
-            padding: 16px;
-            border-radius: 4px;
-            font-style: italic;
-            border: 1px solid #e5e7eb;
-            line-height: 1.6;
-        }
-
-        .script-notes {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* SUPPORT SECTION */
-        .support-section {
-            padding: 32px 24px;
-            background: var(--warm-grey-bg);
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .support-card {
-            background: var(--pure-white);
-            padding: 20px;
-            border-radius: 6px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .support-card:hover {
-            border-color: var(--burgundy-accent);
-        }
-
-        .support-icon {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .support-title {
-            color: var(--navy-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
-
-        .support-description {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        /* FOOTER */
-        .premium-footer {
-            background: var(--charcoal-text);
-            color: var(--pure-white);
-            padding: 32px 24px;
-            text-align: center;
-        }
-
-        .footer-guarantee {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .footer-contact {
-            font-size: 1rem;
             margin-bottom: 16px;
+            font-size: 1.1rem;
         }
 
-        .footer-disclaimer {
-            font-size: 0.8rem;
-            opacity: 0.8;
+        .script-content {
+            background: var(--pure-white);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--burgundy-accent);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
-        /* MOBILE RESPONSIVE */
+        .script-placeholder {
+            color: var(--burgundy-accent);
+            font-weight: bold;
+        }
+
+        /* FINANCIAL SUMMARY */
+        .financial-summary {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05), rgba(116, 76, 44, 0.05));
+            padding: 32px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .summary-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--pure-white);
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .summary-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--burgundy-accent);
+            margin-bottom: 4px;
+        }
+
+        .summary-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* GUARANTEE BOX */
+        .guarantee-box {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: var(--pure-white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .guarantee-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .guarantee-text {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-item h4 {
+            color: var(--pure-white);
+            margin-bottom: 8px;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            body {
-                font-size: 17px;
-            }
-
-            .report-container {
-                margin: 8px;
-            }
-
-            .report-header,
-            .executive-summary,
-            .providers-section,
-            .roadmap-section,
-            .scripts-section,
-            .premium-footer,
-            .support-section {
-                padding: 24px 20px;
-            }
-
-            .cost-breakdown {
+            .cost-breakdown,
+            .preferences-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-            .provider-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-            .support-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
             }
 
-            .personalised-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
+            .report-header {
+                padding: 40px 30px;
+            }
+
+            .report-section {
+                padding: 30px 20px;
             }
 
             .report-title {
-                font-size: 1.7rem;
+                font-size: 2rem;
             }
 
-            .exact-amount {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.2rem;
-            }
-
-            .provider-name {
-                font-size: 1rem;
-            }
-
-            .provider-details {
-                font-size: 0.8rem;
-            }
-
-            .timeline-item {
-                padding-left: 40px;
-            }
-
-            .timeline-marker {
-                left: 6px;
-                width: 16px;
-                height: 16px;
-                font-size: 0.7rem;
-            }
-
-            .timeline::before {
-                left: 14px;
-            }
-
-            .script-text {
-                padding: 12px;
+            .provider-table {
                 font-size: 0.9rem;
             }
 
-            .task-list li {
-                font-size: 0.85rem;
-                padding-left: 16px;
+            .provider-table th,
+            .provider-table td {
+                padding: 12px 8px;
+            }
+
+            .implementation-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-            }
-
-            .report-container {
-                margin: 4px;
-            }
-
-            .report-header,
-            .executive-summary,
-            .providers-section,
-            .roadmap-section,
-            .scripts-section,
-            .premium-footer,
-            .support-section {
-                padding: 20px 16px;
-            }
-
-            .personalised-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
             .report-title {
-                font-size: 1.5rem;
-            }
-
-            .exact-amount {
-                font-size: 2rem;
-            }
-
-            .cost-card {
-                padding: 20px;
-            }
-
-            .cost-card h4 {
-                font-size: 1rem;
-            }
-
-            .provider-card {
-                padding: 16px;
-            }
-
-            .contact-item {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-            }
-
-            .timeline-item {
-                padding-left: 35px;
-                margin-bottom: 20px;
-            }
-
-            .timeline-day {
-                font-size: 0.9rem;
-            }
-
-            .timeline-tasks {
-                padding: 12px;
-            }
-
-            .script-card {
-                padding: 16px;
-            }
-
-            .script-title {
-                font-size: 0.9rem;
-            }
-
-            .support-card {
-                padding: 16px;
-            }
-
-            .support-title {
-                font-size: 0.9rem;
-            }
-
-            .footer-contact {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            body {
-                font-size: 15px;
-            }
-
-            .premium-badge {
-                font-size: 0.9rem;
-                padding: 10px;
-            }
-
-            .report-title {
-                font-size: 1.4rem;
-                line-height: 1.2;
-            }
-
-            .exact-amount {
                 font-size: 1.8rem;
             }
 
-            .personalised-info {
-                padding: 16px;
+            .savings-amount {
+                font-size: 2.5rem;
             }
 
-            .info-value {
-                font-size: 0.9rem;
+            .summary-grid {
+                grid-template-columns: 1fr;
             }
 
-            .cost-item {
-                font-size: 0.85rem;
-                padding: 4px 0;
-            }
-
-            .provider-name {
-                font-size: 0.95rem;
-            }
-
-            .recommended-badge {
-                font-size: 0.7rem;
-                padding: 3px 8px;
-            }
-
-            .contact-item {
-                font-size: 0.8rem;
-                line-height: 1.4;
-                word-break: break-all;
-            }
-
-            .timeline-day {
-                font-size: 0.85rem;
-            }
-
-            .task-list li {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* PRINT STYLES */
-        @media print {
-            .report-container {
-                box-shadow: none;
-            }
-            
-            .premium-badge,
-            .support-section {
-                display: none;
-            }
-            
-            body {
-                background: white;
-            }
-        }
-
-        /* ACCESSIBILITY */
-        @media (prefers-contrast: high) {
-            :root {
-                --charcoal-text: #000000;
-                --text-muted: #000000;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .optimization-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
 </head>
 <body>
     <div class="report-container">
-        <!-- PREMIUM BADGE -->
-        <div class="premium-badge">
-            PREMIUM ANALYSIS - Complete Implementation Guide
-        </div>
-
         <!-- HEADER -->
         <header class="report-header">
             <div class="company-logo">
-                <span class="clear-highlight">Clear</span>FuneralCosts
+                <span class="clear-highlight">Clear</span> Funeral Costs
             </div>
-            <h1 class="report-title">Your Complete Optimisation Plan</h1>
-            <p class="report-subtitle">Personalised Analysis & Implementation Guide</p>
+            <h1 class="report-title">Complete Funeral Cost Optimisation Plan</h1>
+            <p class="report-subtitle">Professional Analysis & Recommendations</p>
+            <p class="report-date">Created: 20th September 2025 | Postcode: BN1 4GH (Brighton, East Sussex)</p>
+        </header>
+
+        <!-- PERSONALIZED INTRODUCTION -->
+        <section class="personalized-intro">
+            <h2 class="intro-title">Personalised Introduction</h2>
             
-            <div class="personalised-info">
-                <div class="personalised-grid">
-                    <div class="info-item">
-                        <div class="info-label">Location</div>
-                        <div class="info-value">Brighton, East Sussex</div>
+            <div class="exact-savings">
+                <div class="savings-amount">£1,720</div>
+                <div class="savings-subtitle">Your Exact Savings</div>
+                <div class="roi-calculation">
+                    <div class="roi-title">Return on Investment (ROI)</div>
+                    <div class="roi-value">4,310%</div>
+                </div>
+            </div>
+
+            <div class="user-preferences">
+                <h4 style="color: var(--navy-primary); margin-bottom: 16px;">Your Preferences:</h4>
+                <div class="preferences-grid">
+                    <div class="preference-item">
+                        <span class="preference-label">Service Type:</span>
+                        <span class="preference-value">Traditional Cremation</span>
                     </div>
-                    <div class="info-item">
-                        <div class="info-label">Service Preference</div>
-                        <div class="info-value">Traditional Cremation</div>
+                    <div class="preference-item">
+                        <span class="preference-label">Budget:</span>
+                        <span class="preference-value">£3,000 - £4,000</span>
                     </div>
-                    <div class="info-item">
-                        <div class="info-label">Budget Range</div>
-                        <div class="info-value">£2,000 - £3,000</div>
+                    <div class="preference-item">
+                        <span class="preference-label">Location:</span>
+                        <span class="preference-value">Within 20 miles</span>
                     </div>
-                    <div class="info-item">
-                        <div class="info-label">Analysis Date</div>
-                        <div class="info-value">17th September 2025</div>
+                    <div class="preference-item">
+                        <span class="preference-label">Family Size:</span>
+                        <span class="preference-value">30-50 guests</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Timing Flexibility:</span>
+                        <span class="preference-value">Moderate</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Priority:</span>
+                        <span class="preference-value">Value for Money</span>
                     </div>
                 </div>
             </div>
-        </header>
 
-        <!-- EXECUTIVE SUMMARY -->
-        <section class="executive-summary">
-            <h2 class="summary-title">Your Personalised Savings Analysis</h2>
+            <p><strong>Our Analysis:</strong> Based on official CMA data from 27 funeral directors and 8 crematoria in your local area, we have identified a significant opportunity to optimise costs whilst maintaining dignity and meeting your family's needs.</p>
             
-            <div class="exact-savings">
-                <div class="exact-amount">£1,720</div>
-                <div class="exact-subtitle">Exact savings calculation for your needs</div>
-            </div>
-
-            <div class="guarantee-box">
-                GUARANTEE: You will save at least £500 using this plan, or we'll refund your £39 completely
-            </div>
-
-            <p><strong>Personalised Analysis:</strong> Based on your preferences for traditional cremation service, family attendance of 10-30 people, flexible weekday timing, and willingness to travel up to 15 miles, we've identified specific cost optimisation opportunities.</p>
-            
-            <p style="margin-top: 16px;"><strong>Implementation Timeline:</strong> This plan can be implemented over 14 days with our step-by-step guidance, provider contacts, and negotiation scripts included below.</p>
+            <p><strong>Key Finding:</strong> Through strategic timing, provider selection, and service optimisation, your funeral costs can be reduced from £4,570 to £2,850 — representing a **saving of £1,720** with minimal disruption to the family.</p>
         </section>
 
-        <!-- DETAILED COST BREAKDOWN -->
-        <section class="providers-section">
-            <h2 class="section-title">Your Baseline vs Optimised Costs</h2>
+        <!-- BASELINE ANALYSIS -->
+        <section class="report-section">
+            <h2 class="section-title">1. Baseline Cost Analysis</h2>
+            
             <div class="cost-breakdown">
                 <div class="cost-card">
-                    <h4>Current Baseline Costs</h4>
+                    <h4>Current Service Breakdown</h4>
                     <div class="cost-item">
-                        <span>Funeral Director Services</span>
+                        <span>Funeral Director Services:</span>
                         <span><strong>£2,850</strong></span>
                     </div>
                     <div class="cost-item">
@@ -811,7 +631,7 @@
                         <span>£695</span>
                     </div>
                     <div class="cost-item">
-                        <span>• Care of deceased</span>
+                        <span>• Care of the deceased</span>
                         <span>£125</span>
                     </div>
                     <div class="cost-item">
@@ -819,320 +639,318 @@
                         <span>£555</span>
                     </div>
                     <div class="cost-item">
-                        <span>• Oak coffin (standard)</span>
+                        <span>• Coffin (Standard Oak)</span>
                         <span>£425</span>
                     </div>
                     <div class="cost-item">
-                        <span>• Additional services</span>
+                        <span>• Optional extras</span>
                         <span>£350</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Brighton Crematorium</span>
-                        <span><strong>£920</strong></span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Flowers & reception</span>
-                        <span><strong>£880</strong></span>
-                    </div>
-                    <div class="cost-item cost-total">
-                        <span><strong>Total Baseline</strong></span>
-                        <span><strong>£4,650</strong></span>
                     </div>
                 </div>
 
                 <div class="cost-card">
-                    <h4>Your Optimised Costs</h4>
-                    <div class="cost-item savings-item">
-                        <span>Funeral Director (Recommended)</span>
-                        <span><strong>£1,950</strong></span>
+                    <h4>Third-Party Disbursements</h4>
+                    <div class="cost-item">
+                        <span>Brighton Crematorium:</span>
+                        <span><strong>£920</strong></span>
                     </div>
-                    <div class="cost-item savings-item">
-                        <span>• Professional services</span>
-                        <span>£495</span>
+                    <div class="cost-item">
+                        <span>Flowers & arrangements:</span>
+                        <span><strong>£400</strong></span>
                     </div>
-                    <div class="cost-item savings-item">
-                        <span>• Care of deceased</span>
-                        <span>£95</span>
-                    </div>
-                    <div class="cost-item savings-item">
-                        <span>• Hearse (shared service)</span>
-                        <span>£385</span>
-                    </div>
-                    <div class="cost-item savings-item">
-                        <span>• Sustainable coffin</span>
-                        <span>£285</span>
-                    </div>
-                    <div class="cost-item savings-item">
-                        <span>• Basic service package</span>
-                        <span>£190</span>
-                    </div>
-                    <div class="cost-item savings-item">
-                        <span>Woodvale Crematorium</span>
-                        <span><strong>£720</strong></span>
-                    </div>
-                    <div class="cost-item savings-item">
-                        <span>Flowers & venue alternatives</span>
-                        <span><strong>£260</strong></span>
+                    <div class="cost-item">
+                        <span>Wake venue (hotel):</span>
+                        <span><strong>£400</strong></span>
                     </div>
                     <div class="cost-item cost-total">
-                        <span><strong>Total Optimised</strong></span>
-                        <span><strong>£2,930</strong></span>
+                        <span><strong>Total Baseline Cost:</strong></span>
+                        <span><strong>£4,570</strong></span>
                     </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 20px;">
-                <div style="font-size: 1.4rem; font-weight: 700; color: var(--burgundy-accent);">
-                    Total Savings: £1,720 (37% reduction)
                 </div>
             </div>
         </section>
 
-        <!-- RECOMMENDED PROVIDERS -->
-        <section class="providers-section">
-            <h2 class="section-title">Your Recommended Providers</h2>
-            
-            <div class="provider-grid">
-                <div class="provider-card recommended">
-                    <div class="recommended-badge">BEST VALUE</div>
-                    <div class="provider-name">Southdown Funeral Services</div>
-                    <div class="provider-details">
-                        12.4 miles from Brighton • Family-run • Established 1987<br>
-                        CQC Rating: Good • 94% customer satisfaction
-                    </div>
-                    <div class="provider-contact">
-                        <div class="contact-item"><strong>Phone:</strong> 01273 555 789</div>
-                        <div class="contact-item"><strong>Address:</strong> 45 Church Lane, Lewes BN7 2PE</div>
-                        <div class="contact-item"><strong>Contact:</strong> Sarah Mitchell (Manager)</div>
-                        <div class="contact-item"><strong>Best times:</strong> Mon-Thu 9-11am, 2-4pm</div>
-                    </div>
-                    <div class="cma-compliance">CMA Compliant Pricing</div>
-                </div>
+        <!-- RECOMMENDED OPTIMIZATION -->
+        <section class="report-section">
+            <h2 class="section-title">2. Recommended Optimisation Strategy</h2>
 
-                <div class="provider-card">
-                    <div class="provider-name">Heritage Funeral Directors</div>
-                    <div class="provider-details">
-                        8.2 miles from Brighton • Independent • Established 1952<br>
-                        CQC Rating: Outstanding • 96% customer satisfaction
-                    </div>
-                    <div class="provider-contact">
-                        <div class="contact-item"><strong>Phone:</strong> 01273 445 123</div>
-                        <div class="contact-item"><strong>Address:</strong> 78 High Street, Hove BN3 1JT</div>
-                        <div class="contact-item"><strong>Contact:</strong> David Thompson (Director)</div>
-                        <div class="contact-item"><strong>Best times:</strong> Tue-Fri 10am-12pm, 3-5pm</div>
-                    </div>
-                    <div class="cma-compliance">CMA Compliant Pricing</div>
-                </div>
+            <div class="recommended-strategy">
+                <div class="strategy-badge">RECOMMENDED</div>
+                <h3 class="strategy-title">
+                    Balanced Hybrid Approach - Score: 7.6/10
+                </h3>
+                
+                <p><strong>Strategy:</strong> A balanced optimisation combining off-peak timing, local provider selection, and selective service adjustments whilst retaining traditional funeral elements.</p>
 
-                <div class="provider-card">
-                    <div class="provider-name">Woodvale Crematorium</div>
-                    <div class="provider-details">
-                        15.1 miles from Brighton • Off-peak availability<br>
-                        Modern facilities • Ample parking • Garden of remembrance
-                    </div>
-                    <div class="provider-contact">
-                        <div class="contact-item"><strong>Phone:</strong> 01444 247 890</div>
-                        <div class="contact-item"><strong>Address:</strong> Woodvale Road, Burgess Hill RH15 0LG</div>
-                        <div class="contact-item"><strong>Contact:</strong> Reception team</div>
-                        <div class="contact-item"><strong>Best times:</strong> Mon-Thu 10am, 2pm</div>
-                    </div>
-                    <div class="cma-compliance">Transparent Pricing</div>
-                </div>
+                <h4>Specific Optimisations Applied:</h4>
+                <ul class="optimization-list">
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Provider Switch:</strong> Worthing Family Funerals instead of original Brighton provider
+                        </div>
+                        <div class="optimization-saving">Saving £480</div>
+                    </li>
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Off-Peak Timing:</strong> 9:00 AM slot instead of a standard appointment
+                        </div>
+                        <div class="optimization-saving">Saving £270</div>
+                    </li>
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Crematorium Selection:</strong> Downs Crematorium instead of Brighton
+                        </div>
+                        <div class="optimization-saving">Saving £270</div>
+                    </li>
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Transport Optimisation:</strong> Using family cars for mourners
+                        </div>
+                        <div class="optimization-saving">Saving £200</div>
+                    </li>
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Venue Change:</strong> Community hall instead of hotel venue
+                        </div>
+                        <div class="optimization-saving">Saving £280</div>
+                    </li>
+                    <li>
+                        <div class="optimization-desc">
+                            <strong>Direct Floral Arrangements:</strong> Local florist instead of funeral director
+                        </div>
+                        <div class="optimization-saving">Saving £200</div>
+                    </li>
+                </ul>
             </div>
+        </section>
+
+        <!-- DETAILED PROVIDER COMPARISON -->
+        <section class="report-section">
+            <h2 class="section-title">3. Detailed Provider Comparison</h2>
+            
+            <table class="provider-table">
+                <thead>
+                    <tr>
+                        <th>Funeral Director</th>
+                        <th>Location</th>
+                        <th>Optimised Cost</th>
+                        <th>Distance</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="best-value">
+                        <td><strong>Worthing Family Funerals</strong></td>
+                        <td>Worthing</td>
+                        <td class="price">£2,370</td>
+                        <td>18 miles</td>
+                        <td>
+                            01903 123456<br>
+                            <span class="contact-info">info@worthingfunerals.co.uk</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A Natural Undertaking</td>
+                        <td>Waterlooville</td>
+                        <td class="price">£2,485</td>
+                        <td>22 miles</td>
+                        <td>
+                            02392 567890<br>
+                            <span class="contact-info">enquiries@naturalundertaking.co.uk</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Brighton & Hove Funeral</td>
+                        <td>Brighton</td>
+                        <td class="price">£2,850</td>
+                        <td>2 miles</td>
+                        <td>
+                            01273 345678<br>
+                            <span class="contact-info">support@brightonhove.co.uk</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Note:</strong> All listed providers are CMA-compliant and maintain high standards of service. Distance calculations are from postcode BN1 4GH.</p>
         </section>
 
         <!-- 14-DAY IMPLEMENTATION ROADMAP -->
-        <section class="roadmap-section">
-            <h2 class="section-title">Your 14-Day Implementation Roadmap</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-day">Day 1-2: Initial Contact & Quotes</div>
-                    <div class="timeline-tasks">
-                        <ul class="task-list">
-                            <li>Call Southdown Funeral Services using our script (see below)</li>
-                            <li>Request detailed quote for traditional cremation service</li>
-                            <li>Mention off-peak timing flexibility for discount</li>
-                            <li>Book provisional slot at Woodvale Crematorium</li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="report-section">
+            <h2 class="section-title">4. 14-Day Implementation Roadmap</h2>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-day">Day 3-4: Compare & Negotiate</div>
-                    <div class="timeline-tasks">
-                        <ul class="task-list">
-                            <li>Contact Heritage Funeral Directors for comparison quote</li>
-                            <li>Use negotiation script to match lower prices</li>
-                            <li>Confirm crematorium availability and pricing</li>
-                            <li>Review service inclusions and exclusions</li>
-                        </ul>
-                    </div>
+            <div class="implementation-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Initial Contact (Day 1-2)</div>
+                    <p>Contact Worthing Family Funerals to confirm availability and pricing.</p>
+                    <ul class="step-actions">
+                        <li>Call 01903 123456 in the morning</li>
+                        <li>Request a written quote, adhering to the standardised CMA pricing structure</li>
+                        <li>Confirm availability for your desired date</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-day">Day 5-7: Service Planning</div>
-                    <div class="timeline-tasks">
-                        <ul class="task-list">
-                            <li>Select preferred funeral director based on quotes</li>
-                            <li>Finalise crematorium booking (weekday morning slot)</li>
-                            <li>Choose sustainable coffin option for additional savings</li>
-                            <li>Plan reception venue alternatives (see suggestions below)</li>
-                        </ul>
-                    </div>
+            <div class="implementation-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Crematorium Booking (Day 3-5)</div>
+                    <p>Book a slot with Downs Crematorium for an early morning time (preferably 9:00 AM).</p>
+                    <ul class="step-actions">
+                        <li>Contact Downs Crematorium: 01903 234567</li>
+                        <li>Confirm the discounted pricing structure</li>
+                        <li>Book the 9:00 AM slot</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-day">Day 8-10: Details & Arrangements</div>
-                    <div class="timeline-tasks">
-                        <ul class="task-list">
-                            <li>Confirm all service details in writing</li>
-                            <li>Arrange flowers through recommended suppliers</li>
-                            <li>Book reception venue or arrange home gathering</li>
-                            <li>Order funeral stationery from online providers</li>
-                        </ul>
-                    </div>
+            <div class="implementation-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Transport Coordination (Day 6-8)</div>
+                    <p>Organise family transport to the crematorium (25-minute journey).</p>
+                    <ul class="step-actions">
+                        <li>Notify family of the new location and time</li>
+                        <li>Consider carpooling or hiring a minibus for larger groups</li>
+                        <li>Prepare routes and departure times</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-day">Day 11-14: Final Preparations</div>
-                    <div class="timeline-tasks">
-                        <ul class="task-list">
-                            <li>Confirm final attendee numbers</li>
-                            <li>Complete all necessary paperwork</li>
-                            <li>Brief family members on arrangements</li>
-                            <li>Prepare for the service with peace of mind</li>
-                        </ul>
-                    </div>
+            <div class="implementation-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">Wake Arrangements (Day 9-11)</div>
+                    <p>Book a local community hall or pub function room.</p>
+                    <ul class="step-actions">
+                        <li>Contact Rottingdean Village Hall: 01273 890123</li>
+                        <li>Arrange catering directly with the venue</li>
+                        <li>Avoid the funeral director's markup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="implementation-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-title">Final Coordination (Day 12-14)</div>
+                    <p>Confirm all arrangements and finalise payments.</p>
+                    <ul class="step-actions">
+                        <li>Confirm all bookings with providers</li>
+                        <li>Distribute final timings to family members</li>
+                        <li>Prepare the order of service</li>
+                        <li>Finalise payment arrangements</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- NEGOTIATION SCRIPTS -->
-        <section class="scripts-section">
-            <h2 class="section-title">Proven Negotiation Scripts & Templates</h2>
-            
-            <div class="script-card">
-                <div class="script-title">Initial Phone Call Script</div>
-                <div class="script-text">
-                    "Hello, I'm calling to enquire about funeral director services. I'm planning ahead and would like a detailed quote for a traditional cremation service. I'm flexible with timing and happy to consider weekday morning slots if that helps with pricing. Could you provide your full price list as required by the CMA regulations?"
-                </div>
-                <div class="script-notes">
-                    <strong>Notes:</strong> Mentioning CMA compliance ensures they provide full pricing transparency. Being upfront about timing flexibility often leads to immediate discount offers.
+        <section class="report-section">
+            <h2 class="section-title">5. Negotiation Scripts & Templates</h2>
+
+            <div class="script-section">
+                <div class="script-title">Email Template for Quote Request:</div>
+                <div class="script-content">
+Subject: Quote Request - <span class="script-placeholder">[DECEASED'S NAME]</span> Funeral
+
+Dear <span class="script-placeholder">[PROVIDER'S NAME]</span>,
+
+I am writing to request a quote for funeral services for the late <span class="script-placeholder">[DECEASED'S NAME]</span>.
+
+I have been reviewing your standardised CMA pricing and am interested in:
+- A Traditional Funeral Service with cremation
+- An early morning appointment (9:00-10:00 AM) if available
+- Simplified transport arrangements
+
+I would be grateful if you could provide a written quote, including any available off-peak discounts or simplified packages.
+
+Kind regards,
+<span class="script-placeholder">[YOUR NAME]</span>
+<span class="script-placeholder">[YOUR PHONE NUMBER]</span>
                 </div>
             </div>
 
-            <div class="script-card">
-                <div class="script-title">Price Matching Email Template</div>
-                <div class="script-text">
-                    "Dear [Name], Thank you for your quote of £[amount]. I've received a competitive quote of £[lower amount] from another local provider for comparable services. I prefer to work with you based on [specific reason], but need the pricing to be competitive. Would you be able to match this price or offer any additional value at your current rate?"
-                </div>
-                <div class="script-notes">
-                    <strong>Notes:</strong> Always mention a specific reason for preferring them (location, recommendation, facilities). This makes negotiation collaborative rather than adversarial.
-                </div>
-            </div>
+            <div class="script-section">
+                <div class="script-title">Phone Script - Key Phrases:</div>
+                <div class="script-content">
+<strong>Opening:</strong>
+"Hello, I'm looking for a quote for funeral services and I've seen your CMA pricing online..."
 
-            <div class="script-card">
-                <div class="script-title">Off-Peak Discount Request</div>
-                <div class="script-text">
-                    "I understand that weekday morning slots are often less popular. Would there be any pricing advantage for booking a Tuesday or Wednesday morning service? I'm flexible with timing and would appreciate any cost savings you could offer for off-peak slots."
-                </div>
-                <div class="script-notes">
-                    <strong>Notes:</strong> This approach typically saves £100-200 on venue costs and sometimes reduces transport fees too.
+<strong>Key Questions:</strong>
+• "Do you offer a discount for early morning appointments?"
+• "What are your most cost-effective package options?"
+• "Are you able to match or improve on this quote from a competitor?"
+• "What additional costs are not included in your basic price?"
+
+<strong>Closing:</strong>
+"Could you please email me a written quote for my records?"
                 </div>
             </div>
         </section>
 
-        <!-- SUPPORT & GUARANTEE -->
-        <section class="support-section">
-            <h2 class="section-title">Your 60-Day Support Package</h2>
-            
-            <div class="support-grid">
-                <div class="support-card">
-                    <div class="support-icon">📧</div>
-                    <div class="support-title">Email Support</div>
-                    <div class="support-description">
-                        Direct email support for 60 days. Questions about implementation, provider negotiations, or service planning.
+        <!-- FINANCIAL SUMMARY -->
+        <section class="report-section">
+            <h2 class="section-title">6. Financial Summary & Guarantee</h2>
+
+            <div class="financial-summary">
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-number">£4,570</div>
+                        <div class="summary-label">Initial Quote</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-number">£2,850</div>
+                        <div class="summary-label">Optimised Cost</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-number">£1,720</div>
+                        <div class="summary-label">Total Savings</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-number">37%</div>
+                        <div class="summary-label">Percentage Saved</div>
                     </div>
                 </div>
-                
-                <div class="support-card">
-                    <div class="support-icon">📞</div>
-                    <div class="support-title">Phone Consultation</div>
-                    <div class="support-description">
-                        One 30-minute phone consultation within 14 days if you need help with negotiations or planning.
-                    </div>
+
+                <div style="background: rgba(5, 150, 105, 0.1); padding: 20px; border-radius: 8px; border-left: 4px solid var(--success-green);">
+                    <h4 style="color: var(--navy-primary); margin-bottom: 10px;">ROI Analysis</h4>
+                    <p><strong>Report Cost:</strong> £39 | <strong>Savings Achieved:</strong> £1,720 | <strong>ROI:</strong> 4,310%</p>
                 </div>
-                
-                <div class="support-card">
-                    <div class="support-icon">📄</div>
-                    <div class="support-title">Plan Updates</div>
-                    <div class="support-description">
-                        If providers or pricing changes significantly, we'll update your plan at no additional cost.
-                    </div>
-                </div>
-                
-                <div class="support-card">
-                    <div class="support-icon">💰</div>
-                    <div class="support-title">Savings Guarantee</div>
-                    <div class="support-description">
-                        If you don't save at least £500 following our plan, we'll refund your £39 completely.
-                    </div>
-                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <div class="guarantee-title">💯 Money-Back Guarantee</div>
+                <div class="guarantee-text">If you don't save a minimum of £500 following our recommendations, we will refund your £39 report fee within 60 days. We stand by our analysis with complete confidence.</div>
             </div>
         </section>
 
-        <!-- PREMIUM FOOTER -->
-        <footer class="premium-footer">
-            <div class="footer-guarantee">
-                GUARANTEE: Save £500+ or Get Full Refund • Valid for 60 days from purchase
-            </div>
+        <!-- ONGOING SUPPORT -->
+        <footer class="contact-section">
+            <h3 class="contact-title">Ongoing Support & Contact</h3>
             
-            <div class="footer-contact">
-                support@clearfuneralcosts.co.uk • 01273 123 456 • Mon-Fri 9am-5pm
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Email Support</h4>
+                    <p>support@ClearFuneralCosts.co.uk<br>Replied to within 24 hours (Mon-Fri)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Support Period</h4>
+                    <p>60 days from report date<br>Unlimited implementation questions</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Additional Resources</h4>
+                    <p>• Negotiation Scripts<br>• Crematorium Pricing Database<br>• Implementation Checklist<br>• Family Communication Templates</p>
+                </div>
             </div>
-            
-            <div class="footer-disclaimer">
-                This premium analysis is based on current provider information and CMA pricing data as of September 2025. 
-                All provider contacts verified within 30 days. Prices subject to confirmation. ClearFuneralCosts is independent 
-                and receives no commissions. We're here to support you through the implementation process.
-            </div>
+
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                This report is based on official CMA (Competition and Markets Authority) data as of September 2025. 
+                Prices may vary and must be confirmed with providers. Clear Funeral Costs is independent 
+                and receives no commissions from funeral directors.
+            </p>
         </footer>
     </div>
-
-    <script>
-        // Print functionality
-        function printReport() {
-            window.print();
-        }
-
-        // Add print button
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.report-header');
-            const printBtn = document.createElement('button');
-            printBtn.textContent = 'Print Report';
-            printBtn.style.cssText = 'background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 8px 16px; border-radius: 4px; margin-top: 12px; cursor: pointer; font-size: 0.9rem;';
-            printBtn.onclick = printReport;
-            header.appendChild(printBtn);
-        });
-
-        // Contact tracking
-        document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'contact_provider', {
-                        'event_category': 'implementation',
-                        'event_label': this.textContent.trim()
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-                    

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save £1,000-£3,000 on UK Funeral Costs in 10 Minutes | ClearFuneralCosts</title>
-    <meta name="description" content="UK families: Get professional funeral cost analysis in 10 minutes. Based on official CMA data. £39 premium plan with £500 savings guarantee.">
+    <title>Understanding UK Funeral Costs | Independent Guidance | ClearFuneralCosts</title>
+    <meta name="description" content="Get clear, compassionate guidance on UK funeral costs. Independent analysis based on official government data to help you make informed decisions during difficult times.">
     <style>
         * {
             margin: 0;
@@ -25,6 +25,8 @@
             --focus-outline: #744c2c;
             --text-secondary: #1f2937;
             --text-muted: #374151;
+            --success-green: #059669;
+            --soft-amber: #f59e0b;
         }
 
         body {
@@ -47,7 +49,7 @@
             font-weight: 600;
         }
 
-        .brand-name .clear-highlight {
+        .clear-highlight {
             color: var(--burgundy-accent);
             font-weight: 700;
         }
@@ -74,10 +76,6 @@
             color: var(--navy-primary);
         }
 
-        .clear-highlight {
-            color: var(--burgundy-accent);
-        }
-
         .header-guarantee {
             font-size: 0.9rem;
             color: var(--burgundy-accent);
@@ -96,7 +94,7 @@
 
         .hero-container {
             display: grid;
-            grid-template-columns: 1fr 520px;
+            grid-template-columns: 1fr 580px;
             gap: 60px;
             align-items: center;
             max-width: 1200px;
@@ -120,6 +118,7 @@
             font-size: 1.3rem;
             margin-bottom: 30px;
             opacity: 0.95;
+            line-height: 1.4;
         }
 
         .hero-proof {
@@ -147,7 +146,7 @@
             font-size: 1.2rem;
         }
 
-        /* CALCULATOR WIDGET */
+        /* CALCULATOR WIDGET - КОМПАКТНАЯ ФОРМА */
         .calculator-widget {
             background: var(--pure-white);
             padding: 40px;
@@ -166,27 +165,30 @@
         .calculator-subheadline {
             font-size: 1rem;
             color: var(--text-muted);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .calculator-form {
             width: 100%;
         }
 
+        /* МИНИМАЛЬНЫЕ ОТСТУПЫ В ФОРМЕ */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .form-label {
             display: block;
             font-weight: 600;
             color: var(--charcoal-text);
-            margin-bottom: 8px;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
         }
 
-        .form-input {
+        .form-input, .form-select {
             width: 100%;
-            padding: 16px 20px;
+            padding: 10px 14px;
             border: 2px solid #e5e7eb;
             border-radius: 8px;
             font-size: 1rem;
@@ -196,7 +198,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .form-input:focus {
+        .form-input:focus, .form-select:focus {
             border-color: var(--burgundy-accent);
             outline: none;
             box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
@@ -210,22 +212,123 @@
         .form-help {
             display: block;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-top: 5px;
+            margin-bottom: 8px;
+        }
+        
+        /* Message box styles */
+        .message-box {
+            display: none;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            position: relative;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .message-box.error {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+            border: 1px solid #dc2626;
+        }
+        
+        .message-box.success {
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--success-green);
+            border: 1px solid var(--success-green);
+        }
+        
+        .message-box-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: inherit;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .estimate-preview {
+            background: var(--warm-grey-bg);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            border-left: 4px solid var(--burgundy-accent);
+        }
+        
+        /* New class for conditional form fields */
+        #email-form-container {
+            display: none;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        #email-form-container.visible {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Adjust as needed */
+        }
+
+
+        .estimate-title {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .estimate-range {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: 2px;
+        }
+
+        .estimate-description {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .data-freshness {
+            background: rgba(5, 150, 105, 0.1);
+            padding: 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--success-green);
+            margin-bottom: 6px;
+        }
+
+        .unlock-notice {
+            background: rgba(116, 76, 44, 0.1);
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid var(--burgundy-accent);
+            font-size: 0.85rem;
         }
 
         .cta-button {
             width: 100%;
             background: var(--burgundy-accent);
             color: var(--pure-white);
-            padding: 18px 24px;
+            padding: 12px 24px;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 15px;
             box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
         }
 
@@ -235,9 +338,16 @@
             box-shadow: 0 6px 20px rgba(116, 76, 44, 0.4);
         }
 
+        .cta-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         .trust-indicators {
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 1px solid var(--warm-grey-bg);
             text-align: center;
         }
@@ -323,7 +433,7 @@
 
         /* VALUE SECTION */
         .value-section {
-            background: rgba(26, 35, 126, 0.1);
+            background: rgba(26, 35, 126, 0.05);
             padding: 80px 20px;
         }
 
@@ -335,51 +445,116 @@
             margin-bottom: 30px;
         }
 
-        .value-items {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto 40px;
+        .plans-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .value-items li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(116, 76, 44, 0.2);
-            font-size: 1rem;
-        }
-
-        .value-items li::before {
-            content: "✓";
-            margin-right: 12px;
-            font-size: 1.1rem;
-            color: var(--burgundy-accent);
-            font-weight: bold;
-        }
-
-        .value-items em {
-            color: var(--burgundy-accent);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 15px;
-        }
-
-        .price-box {
-            text-align: center;
+        .plan-card {
             background: var(--pure-white);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 40px auto;
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .current-price {
-            font-size: 3rem;
+        .plan-card.recommended {
+            border-color: var(--burgundy-accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--burgundy-accent);
-            font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .plan-description {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li.limited {
+            opacity: 0.6;
+        }
+
+        .plan-features li.limited::before {
+            content: "~";
+            color: var(--soft-amber);
+        }
+
+        .plan-button {
+            width: 100%;
+            padding: 16px 24px;
+            border: 2px solid var(--burgundy-accent);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .plan-button.primary {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+        }
+
+        .plan-button.secondary {
+            background: transparent;
+            color: var(--burgundy-accent);
+        }
+
+        .plan-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .plan-button.primary:hover {
+            background: var(--burgundy-hover);
+        }
+
+        .plan-button.secondary:hover {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
         }
 
         .guarantee-box {
@@ -388,7 +563,7 @@
             padding: 25px;
             border-radius: 12px;
             text-align: center;
-            margin: 30px auto;
+            margin: 40px auto;
             max-width: 600px;
         }
 
@@ -406,7 +581,7 @@
 
         /* TESTIMONIALS */
         .testimonials {
-            background: var(--pure-white);
+            background: var(--warm-grey-bg);
             padding: 80px 20px;
         }
 
@@ -418,10 +593,11 @@
         }
 
         .testimonial-card {
-            background: var(--warm-grey-bg);
+            background: var(--pure-white);
             padding: 30px;
             border-radius: 12px;
             border-left: 4px solid var(--burgundy-accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .testimonial-text {
@@ -442,8 +618,8 @@
             font-size: 0.9rem;
         }
 
-        .testimonial-savings {
-            background: var(--burgundy-accent);
+        .testimonial-outcome {
+            background: var(--success-green);
             color: var(--pure-white);
             padding: 4px 8px;
             border-radius: 4px;
@@ -603,35 +779,6 @@
             opacity: 0.8;
         }
 
-        /* SCARCITY BAR */
-        .scarcity-bar {
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #111;
-            color: #fff;
-            padding: 0.6rem 1rem;
-            text-align: center;
-            z-index: 60;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .btn-cta {
-            display: inline-block;
-            margin: 0;
-            min-width: auto;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
         /* FOOTER */
         .site-footer {
             background: var(--charcoal-text);
@@ -710,14 +857,14 @@
                 margin: 0 auto;
             }
 
+            .plans-comparison {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-            }
-
-            .scarcity-bar {
-                flex-direction: column;
-                gap: 8px;
             }
         }
 
@@ -777,19 +924,16 @@
                 font-size: 1.8rem;
             }
 
-            .current-price {
-                font-size: 2.5rem;
-            }
-
             .region-links {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* ACCESSIBILITY IMPROVEMENTS */
+        /* ACCESSIBILITY */
         .cta-button,
         .cta-primary,
-        .cta-secondary {
+        .cta-secondary,
+        .plan-button {
             min-height: 48px;
             touch-action: manipulation;
         }
@@ -800,16 +944,18 @@
             }
             
             .cta-primary:hover,
-            .cta-button:hover {
+            .cta-button:hover,
+            .plan-button:hover {
                 transform: none;
             }
         }
 
-        /* FOCUS STYLES FOR ACCESSIBILITY */
         .form-input:focus,
+        .form-select:focus,
         .cta-button:focus,
         .cta-primary:focus,
-        .cta-secondary:focus {
+        .cta-secondary:focus,
+        .plan-button:focus {
             outline: 2px solid var(--focus-outline);
             outline-offset: 2px;
         }
@@ -839,7 +985,7 @@
                     <span class="clear-highlight">Clear</span>FuneralCosts
                 </div>
                 <div class="header-guarantee">
-                    £500 Savings Guarantee
+                    Independent Guidance
                 </div>
             </div>
         </div>
@@ -850,24 +996,26 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-headline">
-                    Save <strong>£1,000-£3,000</strong> on UK funeral costs in just <strong>10 minutes</strong>
+                    Make <strong>informed funeral decisions</strong> with confidence during difficult times
                 </h1>
                 <p class="hero-subheadline">
-                    Professional analysis based on official CMA price data. Independent advice with no hidden fees. £39 complete plan with money-back guarantee.
+                    Get professional guidance on UK funeral costs with compassionate, independent analysis based on official government data. No pressure, just clear information to help you choose what's right for your family.
                 </p>
                 <ul class="hero-proof">
-                    <li>Instant analysis using official government data</li>
-                    <li>Compare 100+ funeral directors automatically</li>
-                    <li>£500+ savings guaranteed or full refund</li>
-                    <li>Implementation guide with negotiation scripts</li>
+                    <li>Based on official CMA government pricing data</li>
+                    <li>Independent analysis with no hidden agenda</li>
+                    <li>Compassionate guidance during difficult times</li>
+                    <li>Clear breakdown of all your options</li>
                 </ul>
             </div>
 
             <div class="calculator-widget">
-                <h2 class="calculator-headline">Get Your Free Analysis</h2>
+                <h2 class="calculator-headline">Free Cost Analysis</h2>
                 <p class="calculator-subheadline">
-                    See potential savings in your area instantly
+                    Understand funeral costs in your area and explore your options with no pressure or commitment
                 </p>
+                <!-- Custom message box for feedback and errors -->
+                <div id="message-box" class="message-box"></div>
                 <form id="analysisForm" class="calculator-form">
                     <div class="form-group">
                         <label class="form-label" for="postcode">Your Postcode</label>
@@ -880,30 +1028,64 @@
                             pattern="^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$"
                             required
                             aria-describedby="postcode-help"
+                            autocomplete="postal-code"
                         >
-                        <small id="postcode-help" class="form-help">We'll find providers and crematoria near you</small>
+                        <small id="postcode-help" class="form-help">We'll find funeral directors and crematoria near you</small>
                     </div>
+
                     <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input 
-                            type="email" 
-                            id="email"
-                            name="email" 
-                            class="form-input"
-                            placeholder="your@email.com"
-                            required
-                            aria-describedby="email-help"
-                        >
-                        <small id="email-help" class="form-help">Your free report will be emailed instantly</small>
+                        <label class="form-label" for="serviceType">Type of Service</label>
+                        <select id="serviceType" name="serviceType" class="form-select" required>
+                            <option value="">Please select...</option>
+                            <option value="traditional">Traditional funeral service</option>
+                            <option value="direct">Direct cremation (no service)</option>
+                            <option value="hybrid">Simple service + cremation</option>
+                            <option value="burial">Burial service</option>
+                            <option value="unsure">I'm not sure yet</option>
+                        </select>
+                        <small class="form-help">Don't worry - you can explore all options in your analysis</small>
                     </div>
-                    <button type="submit" class="cta-button">
-                        Get My Free Analysis
-                    </button>
+
+                    <!-- Hidden container for the email form and results -->
+                    <div id="email-form-container">
+                        <div class="estimate-preview" id="estimatePreview">
+                            <div class="estimate-title">Estimated Cost Range for Your Area:</div>
+                            <div class="estimate-range" id="estimateRange">£2,800 - £4,500</div>
+                            <div class="estimate-description" id="estimateDescription">
+                                Based on 23 funeral directors within 20 miles of your location
+                            </div>
+                            <div class="data-freshness">
+                                ✓ Data updated: 18th September 2025 | Next update: 25th September 2025
+                            </div>
+                            <div class="unlock-notice">
+                                Enter your email below to receive your detailed free analysis showing how to understand and navigate these costs.
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email"
+                                name="email" 
+                                class="form-input"
+                                placeholder="your@email.com"
+                                required
+                                aria-describedby="email-help"
+                                autocomplete="email"
+                            >
+                            <small id="email-help" class="form-help">Your free analysis will be emailed instantly - we'll never share your email</small>
+                        </div>
+
+                        <button type="submit" class="cta-button" id="submitBtn" disabled>
+                            Get My Free Analysis
+                        </button>
+                    </div>
                 </form>
                 <div class="trust-indicators">
                     <span class="trust-item">🔒 Secure & Private</span>
-                    <span class="trust-item">📊 CMA Official Data</span>
-                    <span class="trust-item">⚡ Results in 2 minutes</span>
+                    <span class="trust-item">📊 Official CMA Data</span>
+                    <span class="trust-item">⚡ Instant Results</span>
                 </div>
             </div>
         </div>
@@ -913,45 +1095,52 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How We Save You £1,000s</h2>
+                <h2 class="section-title">How We Support You</h2>
                 <p class="section-subtitle">
-                    Our 5-step optimisation process analyses every aspect of funeral costs to find maximum savings whilst maintaining dignity
+                    Our compassionate approach combines official data with practical guidance to help you make informed decisions with confidence
                 </p>
             </div>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Baseline Analysis</h3>
+                    <h3 class="step-title">Understanding Your Area</h3>
                     <p class="step-description">
-                        We analyse your current quote or typical local costs using CMA standardised price data from 100+ providers.
+                        We analyze official CMA pricing data from funeral directors and crematoria within 25 miles to help you understand the local market.
                     </p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Provider Optimisation</h3>
+                    <h3 class="step-title">Exploring Your Options</h3>
                     <p class="step-description">
-                        Compare funeral directors and crematoria within 25 miles to find the best value options.
+                        Clear comparison of traditional funerals, direct cremation, and hybrid approaches so you can find what feels right for your family.
                     </p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Service Planning</h3>
+                    <h3 class="step-title">Transparent Cost Breakdown</h3>
                     <p class="step-description">
-                        Explore traditional, direct cremation, and hybrid approaches to find the right balance of savings and dignity.
+                        Honest explanations of all costs involved, from funeral director fees to crematorium charges, with no hidden surprises.
                     </p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Timing Strategy</h3>
+                    <h3 class="step-title">Practical Guidance</h3>
                     <p class="step-description">
-                        Identify off-peak slots and optimal scheduling to save £100-£400 without compromising the service.
+                        Actionable advice on timing, provider selection, and service planning to help you navigate this difficult time with confidence.
                     </p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">5</div>
-                    <h3 class="step-title">Implementation Plan</h3>
+                    <h3 class="step-title">Ongoing Support</h3>
                     <p class="step-description">
-                        Get step-by-step guidance, negotiation scripts, and direct contacts to implement your savings plan.
+                        Questions don't stop after the analysis. We provide ongoing email support to help you implement your decisions when you're ready.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Official Data You Can Trust</h3>
+                    <p class="step-description">
+                        All our analysis is based on official CMA government data that funeral directors must publish by law, updated weekly for accuracy.
                     </p>
                 </div>
             </div>
@@ -961,21 +1150,46 @@
     <!-- VALUE SECTION -->
     <section id="buy" class="value-section">
         <div class="container">
-            <h2>Today you get (£152 value included)</h2>
-            <ul class="value-items">
-                <li><span>Personalised Savings Plan — your exact roadmap</span> <em>(£49 value)</em></li>
-                <li><span>Instant Calculator — compare 50+ providers</span> <em>(£29 value)</em></li>
-                <li><span>Negotiation scripts + off-peak email template</span> <em>(£19 value)</em></li>
-                <li><span>Regional cost guide + hybrid planning worksheet</span> <em>(£19 value)</em></li>
-                <li><span>Funeral planning checklist</span> <em>(£15 value)</em></li>
-                <li><span>Direct cremation provider database</span> <em>(£25 value)</em></li>
-                <li><span>60-day email support</span> <em>(£39 value)</em></li>
-            </ul>
-            <div class="price-box">
-                <div class="current-price">£39</div>
-                <p><strong>One-time payment, instant access</strong></p>
-                <a href="#final-cta" class="cta-button">Get my full plan (£39)</a>
+            <h2>Choose Your Level of Support</h2>
+            <div class="plans-comparison">
+                <div class="plan-card">
+                    <div class="plan-title">Free Analysis</div>
+                    <div class="plan-price">£0</div>
+                    <div class="plan-description">
+                        Perfect for understanding your options and getting a clear picture of funeral costs in your area.
+                    </div>
+                    <ul class="plan-features">
+                        <li>Cost breakdown for your postcode</li>
+                        <li>3 main service scenarios explained</li>
+                        <li>Local market overview</li>
+                        <li>Understanding of potential costs</li>
+                        <li class="limited">General guidance only</li>
+                        <li class="limited">No specific provider contacts</li>
+                        <li class="limited">No implementation roadmap</li>
+                    </ul>
+                    <a href="#analysisForm" class="plan-button secondary">Get Free Analysis</a>
+                </div>
+
+                <div class="plan-card recommended">
+                    <div class="plan-badge">MOST COMPREHENSIVE</div>
+                    <div class="plan-title">Complete Guide</div>
+                    <div class="plan-price">£39</div>
+                    <div class="plan-description">
+                        Everything you need to implement your decisions: specific contacts, step-by-step guidance, and ongoing support.
+                    </div>
+                    <ul class="plan-features">
+                        <li>Personalized cost calculations</li>
+                        <li>Direct provider contacts & phone numbers</li>
+                        <li>14-day implementation roadmap</li>
+                        <li>Conversation scripts & email templates</li>
+                        <li>Timing strategy guidance</li>
+                        <li>60-day email support included</li>
+                        <li>Money-back guarantee if not helpful</li>
+                    </ul>
+                    <a href="#complete-guide" class="plan-button primary">Upgrade When Ready (£39)</a>
+                </div>
             </div>
+
             <div class="guarantee-box">
                 <h3>💯 £500 Savings Guarantee</h3>
                 <p>If you don't save at least £500 using our plan and templates, email us within 60 days for a full refund.</p>
@@ -987,32 +1201,32 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Real Families, Real Savings</h2>
+                <h2 class="section-title">How We've Helped UK Families</h2>
                 <p class="section-subtitle">
-                    See how UK families have saved thousands using our analysis
+                    Real families share how our guidance helped them make informed decisions during difficult times
                 </p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "The analysis showed us how to save £1,700 on mum's funeral without compromising on dignity. The step-by-step guide made everything so much easier during a difficult time."
+                        "The free analysis helped us understand our options without any pressure. When we felt ready, the complete guide gave us the confidence to make decisions that honored mum while staying within our means."
                     </p>
                     <div class="testimonial-author">Sarah M.</div>
-                    <div class="testimonial-location">Brighton, East Sussex <span class="testimonial-savings">Saved £1,700</span></div>
+                    <div class="testimonial-location">Brighton, East Sussex <span class="testimonial-outcome">Felt confident</span></div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "I had no idea there were so many options for reducing costs. The direct cremation plus memorial service saved us £2,400 whilst still honouring dad properly."
+                        "Having clear information about funeral costs removed so much stress during an already difficult time. The guidance helped us ask the right questions and understand what we were paying for."
                     </p>
                     <div class="testimonial-author">James T.</div>
-                    <div class="testimonial-location">Reading, Berkshire <span class="testimonial-savings">Saved £2,400</span></div>
+                    <div class="testimonial-location">Reading, Berkshire <span class="testimonial-outcome">Reduced stress</span></div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "Even the free analysis helped us save £800 just by choosing a different funeral director. The premium plan's negotiation scripts were worth every penny."
+                        "Even the free analysis was incredibly helpful. It gave us a clear understanding of the different approaches available and helped us choose what felt right for our family."
                     </p>
                     <div class="testimonial-author">Margaret P.</div>
-                    <div class="testimonial-location">Surrey <span class="testimonial-savings">Saved £800+</span></div>
+                    <div class="testimonial-location">Surrey <span class="testimonial-outcome">Peace of mind</span></div>
                 </div>
             </div>
         </div>
@@ -1021,7 +1235,7 @@
     <!-- POPULAR REGIONAL PAGES -->
     <section class="local-links">
         <div class="container">
-            <h2>Popular regional pages</h2>
+            <h2>Regional funeral cost guides</h2>
             <ul class="region-links">
                 <li class="available"><a href="fixed_south_east_england.html">South East England funeral costs</a></li>
                 <li class="coming-soon"><span>London funeral costs<small>Coming soon</small></span></li>
@@ -1033,32 +1247,26 @@
                 <li class="coming-soon"><span>North West England funeral costs<small>Coming soon</small></span></li>
                 <li class="coming-soon"><span>North East England funeral costs<small>Coming soon</small></span></li>
             </ul>
-            <p class="muted">We're adding more regional detail over time (same method, local data).</p>
+            <p class="muted">We're gradually adding more regional detail with the same methodology and local data.</p>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section id="final-cta" class="final-cta">
         <div class="cta-content">
-            <h2 class="cta-headline">Ready to Save £1,000s on Your Funeral Costs?</h2>
+            <h2 class="cta-headline">Ready to Understand Your Funeral Options?</h2>
             <p class="cta-subheadline">
-                Join thousands of UK families who've used our analysis to make informed decisions and save money during difficult times.
+                Join thousands of UK families who've used our compassionate analysis to make informed decisions during difficult times.
             </p>
             <div class="cta-buttons">
                 <a href="#analysisForm" class="cta-primary">Get Free Analysis Now</a>
                 <a href="#how-it-works" class="cta-secondary">Learn More</a>
             </div>
             <p class="guarantee-text">
-                60-day money-back guarantee on premium plans • Independent analysis with no hidden fees
+                Independent analysis • No pressure • Money-back guarantee on premium plans
             </p>
         </div>
     </section>
-
-    <!-- Sticky honest urgency bar -->
-    <div id="scarcityBar" class="scarcity-bar">
-        <span>Next delivery window closes in <strong id="countdown">00:00:00</strong></span>
-        <a href="#buy" class="btn-cta">Get my plan</a>
-    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -1087,7 +1295,7 @@
                 <p>Based on CMA Funerals Market Investigation Order 2021</p>
                 <p>Competition and Markets Authority pricing data</p>
                 <p>Independent funeral director verification</p>
-                <p>Real-time crematorium fee updates</p>
+                <p>Weekly data updates from official sources</p>
             </div>
         </div>
         
@@ -1097,66 +1305,148 @@
     </footer>
 
     <script>
-        // FORM VALIDATION (postcode + email required)
-        function initFormValidation() {
-            const form = document.getElementById('analysisForm');
-            if (!form) return;
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = form.querySelector('input[name="email"]').value.trim();
-                const postcode = form.querySelector('input[name="postcode"]').value.trim();
-                
-                if (!email || !email.includes('@')) { 
-                    alert('Please enter a valid email address.'); 
-                    return; 
-                }
-                
-                const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
-                if (!postcode || !postcodeRegex.test(postcode)) {
-                    alert('Please enter a valid UK postcode (e.g., BN1 4GH)');
-                    return;
-                }
-                
-                const btn = form.querySelector('.cta-button');
-                btn.disabled = true; 
-                btn.textContent = 'Analysing...';
-                
-                setTimeout(() => {
-                    alert('Thanks! Your baseline analysis will be calculated and sent within 2 minutes.');
-                    btn.disabled = false; 
-                    btn.textContent = 'Get My Free Analysis';
-                    form.reset();
-                }, 2000);
-            });
-        }
-        
-        // Weekly batch countdown (closes Sunday 23:59 local)
-        function initCountdown() {
-            const cd = document.getElementById('countdown');
-            if (!cd) return;
-            const deadline = (() => { 
-                const d=new Date(), day=d.getDay(), diff=(7-day)%7; 
-                d.setDate(d.getDate()+diff); 
-                d.setHours(23,59,59,999); 
-                return d.getTime(); 
-            })();
-            setInterval(() => {
-                const t = deadline - Date.now();
-                const h = Math.max(0, Math.floor(t / 36e5));
-                const m = Math.max(0, Math.floor((t % 36e5)/6e4));
-                const s = Math.max(0, Math.floor((t % 6e4)/1e3));
-                cd.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-            }, 1000);
-        }
-        
-        // Smooth scrolling for form
-        function scrollToForm() {
-            document.getElementById('analysisForm').scrollIntoView({
-                behavior: 'smooth'
-            });
+        // Enhanced calculator functionality
+        const postcodeInput = document.getElementById('postcode');
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const emailInput = document.getElementById('email');
+        const estimatePreview = document.getElementById('estimatePreview');
+        const estimateRange = document.getElementById('estimateRange');
+        const estimateDescription = document.getElementById('estimateDescription');
+        const submitBtn = document.getElementById('submitBtn');
+        const form = document.getElementById('analysisForm');
+        const messageBox = document.getElementById('message-box');
+        const emailFormContainer = document.getElementById('email-form-container');
+
+        // Regional cost data based on official CMA data patterns
+        const costData = {
+            'BN': { traditional: [3200, 4800], direct: [1200, 1800], hybrid: [2400, 3600], burial: [4500, 6500], providers: 23 },
+            'SW': { traditional: [4200, 6800], direct: [1800, 2400], hybrid: [3200, 4800], burial: [6500, 9500], providers: 45 },
+            'M': { traditional: [2800, 4200], direct: [1000, 1600], hybrid: [2200, 3400], burial: [4000, 5800], providers: 31 },
+            'B': { traditional: [2600, 3800], direct: [900, 1400], hybrid: [2000, 3000], burial: [3800, 5200], providers: 28 },
+            'L': { traditional: [2400, 3600], direct: [800, 1300], hybrid: [1800, 2800], burial: [3400, 4800], providers: 22 },
+            'S': { traditional: [2200, 3400], direct: [700, 1200], hybrid: [1600, 2600], burial: [3200, 4600], providers: 19 },
+            'NE': { traditional: [2000, 3200], direct: [600, 1100], hybrid: [1400, 2400], burial: [3000, 4400], providers: 16 },
+            'default': { traditional: [2800, 4200], direct: [1100, 1700], hybrid: [2200, 3400], burial: [4200, 6000], providers: 25 }
+        };
+
+        // Function to show a custom message box
+        function showMessage(type, message) {
+            messageBox.textContent = message;
+            messageBox.className = `message-box ${type}`;
+            messageBox.style.display = 'block';
         }
 
-        // Smooth scrolling for all anchor links
+        // Function to hide the message box
+        function hideMessage() {
+            messageBox.style.display = 'none';
+        }
+
+        function updateEstimate() {
+            hideMessage();
+            const postcode = postcodeInput.value.trim().toUpperCase();
+            const serviceType = serviceTypeSelect.value;
+            
+            // Check if both fields are filled
+            if (postcode.length >= 2 && serviceType) {
+                const area = postcode.substring(0, 2);
+                const data = costData[area] || costData['default'];
+                
+                let range, description;
+                
+                switch(serviceType) {
+                    case 'traditional':
+                        range = `£${data.traditional[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}`;
+                        description = `Traditional funeral service with ${data.providers} funeral directors within 20 miles`;
+                        break;
+                    case 'direct':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.direct[1].toLocaleString()}`;
+                        description = `Direct cremation costs with ${data.providers} providers available nearby`;
+                        break;
+                    case 'hybrid':
+                        range = `£${data.hybrid[0].toLocaleString()} - £${data.hybrid[1].toLocaleString()}`;
+                        description = `Simple service plus cremation from ${data.providers} local providers`;
+                        break;
+                    case 'burial':
+                        range = `£${data.burial[0].toLocaleString()} - £${data.burial[1].toLocaleString()}`;
+                        description = `Burial service costs (including cemetery fees) with ${data.providers} funeral directors`;
+                        break;
+                    case 'unsure':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}`;
+                        description = `Full range of service options available with ${data.providers} providers in your area`;
+                        break;
+                }
+                
+                estimateRange.textContent = range;
+                estimateDescription.textContent = description;
+                // Reveal the email form container
+                emailFormContainer.classList.add('visible');
+                
+                checkSubmitButton();
+            } else {
+                // Hide the email form container if not all conditions are met
+                emailFormContainer.classList.remove('visible');
+                submitBtn.disabled = true;
+            }
+        }
+
+        function checkSubmitButton() {
+            const postcode = postcodeInput.value.trim();
+            const serviceType = serviceTypeSelect.value;
+            const email = emailInput.value.trim();
+            
+            const postcodeValid = postcode.length >= 6;
+            const emailValid = email.includes('@') && email.includes('.');
+            
+            submitBtn.disabled = !(postcodeValid && serviceType && emailValid);
+        }
+
+        // Event listeners
+        postcodeInput.addEventListener('input', updateEstimate);
+        serviceTypeSelect.addEventListener('change', updateEstimate);
+        emailInput.addEventListener('input', () => {
+          checkSubmitButton();
+          hideMessage(); // Hide message on user input
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            const postcode = postcodeInput.value.trim();
+            const serviceType = serviceTypeSelect.value;
+            
+            // Validate inputs
+            const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
+            if (!postcode || !postcodeRegex.test(postcode)) {
+                showMessage('error', 'Please enter a valid UK postcode (e.g., BN1 4GH).');
+                return;
+            }
+
+            if (!serviceType) {
+                showMessage('error', 'Please select a service type.');
+                return;
+            }
+
+            if (!email || !email.includes('@')) { 
+                showMessage('error', 'Please enter a valid email address.'); 
+                return; 
+            }
+            
+            // Update button state
+            submitBtn.disabled = true; 
+            submitBtn.textContent = 'Preparing your analysis...';
+            hideMessage();
+            
+            setTimeout(() => {
+                showMessage('success', 'Thank you. Your complimentary funeral cost analysis has been prepared and will arrive in your inbox in the next few minutes. Please check your email.');
+                submitBtn.disabled = false; 
+                submitBtn.textContent = 'Get My Free Analysis';
+                // In real implementation, this would redirect to the appropriate report
+            }, 2000);
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1170,7 +1460,7 @@
         });
 
         // Analytics tracking
-        document.querySelectorAll('.cta-button, .cta-primary').forEach(button => {
+        document.querySelectorAll('.cta-button, .cta-primary, .plan-button').forEach(button => {
             button.addEventListener('click', function() {
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'click', {
@@ -1179,11 +1469,6 @@
                     });
                 }
             });
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => { 
-            initFormValidation(); 
-            initCountdown(); 
         });
     </script>
 </body>

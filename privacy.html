@@ -14,20 +14,21 @@
 
         :root {
             --navy-primary: #1a237e;
-            --charcoal-text: #2d3748;
+            --charcoal-text: #1f2937;
             --burgundy-accent: #744c2c;
             --warm-grey-bg: #f7fafc;
-            --muted-blue: #4a5568;
+            --muted-blue: #374151;
             --warm-cream: #fffaf0;
             --pure-white: #ffffff;
             --burgundy-hover: #5a3921;
+            --grey-hover: #2d3748;
         }
 
         body {
             font-family: Georgia, 'Times New Roman', serif;
             line-height: 1.6;
             color: var(--charcoal-text);
-            font-size: 16px;
+            font-size: 18px;
             background-color: var(--warm-cream);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -73,7 +74,7 @@
             text-decoration: none;
             padding: 8px 16px;
             border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 4px;
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
@@ -109,17 +110,20 @@
             color: var(--navy-primary);
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 500;
+            border-radius: 8px;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: 1px solid transparent;
         }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
+        
+        .nav-links a.active {
             background: var(--burgundy-accent);
             color: var(--pure-white);
-            border-color: var(--burgundy-accent);
+        }
+
+        .nav-links a:hover:not(.active),
+        .nav-links a:focus:not(.active) {
+            background: rgba(116, 76, 44, 0.1);
         }
 
         /* MAIN CONTENT */
@@ -185,7 +189,7 @@
         .contact-info {
             background: var(--warm-grey-bg);
             padding: 15px 20px;
-            border-radius: 6px;
+            border-radius: 8px;
             margin: 20px 0;
         }
 
@@ -203,7 +207,7 @@
             text-decoration: none;
             font-weight: 500;
             padding: 8px 12px;
-            border-radius: 4px;
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
@@ -215,7 +219,7 @@
         .external-link {
             color: var(--burgundy-accent);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .external-link:hover {
@@ -252,6 +256,9 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -345,7 +352,7 @@
                 <ul>
                     <li><strong>Usage Data:</strong> Pages visited, time spent, interaction patterns</li>
                     <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
-                    <li><strong>Analytics Data:</strong> Aggregated and anonymized usage statistics</li>
+                    <li><strong>Analytics Data:</strong> Aggregated and anonymised usage statistics</li>
                 </ul>
 
                 <h3>How We Use Your Information</h3>
@@ -370,7 +377,7 @@
                 </ul>
 
                 <h3>Data Security</h3>
-                <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes:</p>
+                <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. This includes:</p>
                 <ul>
                     <li>SSL encryption for all data transmission</li>
                     <li>Secure data storage with reputable cloud providers</li>
@@ -383,7 +390,7 @@
                 <ul>
                     <li><strong>Account Data:</strong> Until account deletion is requested</li>
                     <li><strong>Transaction Records:</strong> 7 years for tax and accounting purposes</li>
-                    <li><strong>Analytics Data:</strong> 26 months in aggregated, anonymized form</li>
+                    <li><strong>Analytics Data:</strong> 26 months in aggregated, anonymised form</li>
                 </ul>
 
                 <div class="contact-info">
@@ -409,7 +416,7 @@
                 <p>Clear Funeral Costs provides funeral cost analysis and comparison services for UK families. Our services include:</p>
                 <ul>
                     <li>Free funeral cost analysis based on postal code</li>
-                    <li>Comprehensive cost optimization reports</li>
+                    <li>Comprehensive cost optimisation reports</li>
                     <li>Funeral director comparison data</li>
                     <li>Negotiation guidance and support materials</li>
                 </ul>
