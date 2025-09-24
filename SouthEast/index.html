@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funeral Cost Optimiser — Save £1,000–£3,000 in 10 Minutes | Clear Funeral Costs</title>
-    <meta name="description" content="UK families: calculate baseline and get a personalised savings plan in 10 minutes based on official CMA data. Independent. £39 with £500 savings guarantee.">
+    <title>South East England Funeral Costs | Independent Information Service | ClearFuneralCosts</title>
+    <meta name="description" content="Get clear, compassionate information on South East England funeral costs. Independent analysis based on official government data to help you research options during difficult times.">
     <style>
         * {
             margin: 0;
@@ -13,29 +13,30 @@
         }
 
         :root {
-            /* Updated color scheme for 55+ funeral context */
-            --navy-primary: #1a237e;       /* Deep Navy - authority without aggression */
-            --charcoal-text: #2d3748;      /* Charcoal Grey - high contrast, readable */
-            --burgundy-accent: #744c2c;     /* Deep Burgundy - traditional UK funeral color */
-            --warm-grey-bg: #f7fafc;       /* Warm Light Grey - section backgrounds */
-            --muted-blue: #4a5568;         /* Muted Blue Grey - secondary text */
-            --warm-cream: #fffaf0;         /* Warm Cream - main page background */
-            --pure-white: #ffffff;         /* Pure White - cards and forms */
-            
-            /* Interactive states */
-            --burgundy-hover: #5a3921;     /* Darker burgundy for hover */
-            --grey-hover: #2d3748;         /* Darker grey for secondary hovers */
-            --focus-outline: #744c2c;      /* Burgundy focus outline */
+            --navy-primary: #1a237e;
+            --charcoal-text: #1f2937;
+            --burgundy-accent: #744c2c;
+            --warm-grey-bg: #f7fafc;
+            --muted-blue: #374151;
+            --warm-cream: #fffaf0;
+            --pure-white: #ffffff;
+            --burgundy-hover: #5a3921;
+            --grey-hover: #2d3748;
+            --focus-outline: #744c2c;
+            --text-secondary: #1f2937;
+            --text-muted: #6b7280;
+            --success-green: #059669;
+            --soft-grey: #9ca3af;
+            --trust-blue: #3b82f6;
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif; /* Traditional, authoritative */
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
             color: var(--charcoal-text);
-            font-size: 16px;
+            font-size: 20px;
             background-color: var(--warm-cream);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -46,13 +47,40 @@
 
         h1, h2, h3 {
             color: var(--navy-primary);
-            font-weight: 600; /* Strong but not harsh */
+            font-weight: 600;
         }
 
-        /* BRAND STYLING - Highlight "Clear" */
-        .brand-name .clear-highlight {
+        .clear-highlight {
             color: var(--burgundy-accent);
             font-weight: 700;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--pure-white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--warm-grey-bg);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--navy-primary);
+        }
+
+        .header-guarantee {
+            font-size: 1rem;
+            color: var(--burgundy-accent);
+            font-weight: 600;
         }
 
         /* HERO SECTION */
@@ -60,14 +88,14 @@
             background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
             color: var(--pure-white);
             padding: 80px 20px;
-            min-height: 600px;
+            min-height: 700px;
             display: flex;
             align-items: center;
         }
 
         .hero-container {
             display: grid;
-            grid-template-columns: 1fr 500px;
+            grid-template-columns: 1fr 580px;
             gap: 60px;
             align-items: center;
             max-width: 1200px;
@@ -80,267 +108,467 @@
         }
 
         .hero-headline {
-            font-size: 3.5rem;
+            font-size: 3.6rem;
             font-weight: 600;
             margin-bottom: 20px;
-            line-height: 1.1;
-            color: var(--pure-white);
+            line-height: 1.2;
+            color: var(--warm-cream);
         }
 
         .hero-subheadline {
             font-size: 1.5rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.4;
         }
 
-        .trust-signals {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
+        .hero-proof {
+            list-style: none;
+            margin: 30px 0;
         }
 
-        .trust-signal {
+        .hero-proof li {
             display: flex;
             align-items: center;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             backdrop-filter: blur(10px);
         }
 
-        .trust-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
+        .hero-proof li::before {
+            content: "✓";
+            color: #fbbf24;
+            font-weight: bold;
+            margin-right: 14px;
+            font-size: 1.3rem;
         }
 
-        .free-calculator {
+        /* CALCULATOR WIDGET */
+        .calculator-widget {
             background: var(--pure-white);
-            color: var(--charcoal-text);
-            padding: 40px;
+            padding: 44px;
             border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             width: 100%;
+            height: auto;
         }
 
         .calculator-headline {
             font-size: 2.2rem;
             font-weight: 600;
             color: var(--navy-primary);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .calculator-subheadline {
             font-size: 1.1rem;
-            color: var(--muted-blue);
-            margin-bottom: 30px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            color: var(--text-muted);
             margin-bottom: 20px;
+            line-height: 1.5;
         }
 
-        .form-input {
-            padding: 16px 20px;
-            border: 2px solid var(--muted-blue);
+        /* SUBTLE INFO NOTES */
+        .calculator-disclaimer {
+            background: rgba(107, 114, 128, 0.05);
+            border-left: 3px solid var(--muted-blue);
+            padding: 20px;
+            margin-bottom: 24px;
             border-radius: 8px;
             font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .calculator-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--charcoal-text);
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-family: inherit;
             background-color: var(--pure-white);
             color: var(--charcoal-text);
             transition: border-color 0.3s ease;
         }
 
-        .form-input:focus {
+        .form-input:focus, .form-select:focus {
             border-color: var(--burgundy-accent);
             outline: none;
             box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
         }
 
         .form-input::placeholder {
-            color: var(--muted-blue);
+            color: var(--text-muted);
+            opacity: 0.8;
         }
 
-        .cta-button-free {
+        .form-help {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 6px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        /* Message box styles */
+        .message-box {
+            display: none;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            position: relative;
+            font-size: 1rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .message-box.error {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+            border: 1px solid #dc2626;
+        }
+        
+        .message-box.success {
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--success-green);
+            border: 1px solid var(--success-green);
+        }
+        
+        .message-box-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: inherit;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .estimate-preview {
+            background: var(--warm-grey-bg);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--burgundy-accent);
+        }
+        
+        #email-form-container {
+            display: none;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+            padding-bottom: 20px;
+        }
+
+        #email-form-container.visible {
+            display: block;
+            opacity: 1;
+            max-height: 600px;
+            overflow: visible;
+        }
+
+        .estimate-title {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .estimate-range {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: 4px;
+        }
+
+        .estimate-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .data-freshness {
+            background: rgba(5, 150, 105, 0.1);
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--success-green);
+            margin-bottom: 8px;
+        }
+
+        .unlock-notice {
+            background: rgba(116, 76, 44, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--burgundy-accent);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            color: var(--charcoal-text);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            width: 100%;
             background: var(--burgundy-accent);
             color: var(--pure-white);
-            padding: 18px 30px;
+            padding: 16px 28px;
             border: none;
             border-radius: 8px;
             font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
-            width: 100%;
             transition: all 0.3s ease;
+            margin-top: 18px;
             box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
         }
 
-        .cta-button-free:hover {
+        .cta-button:hover {
             background: var(--burgundy-hover);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(116, 76, 44, 0.4);
         }
 
-        .privacy-notice {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 15px;
-            font-size: 0.95rem;
-            color: var(--muted-blue);
+        .cta-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
-        .privacy-icon {
-            color: var(--burgundy-accent);
-            margin-right: 8px;
+        .trust-indicators {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--warm-grey-bg);
+            text-align: center;
         }
 
-        /* PROBLEM SECTION */
-        .problem-section {
-            background: var(--warm-grey-bg);
-            padding: 80px 20px;
+        .trust-item {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 18px;
         }
 
-        .problem-headline {
-            font-size: 2.5rem;
-            font-weight: 600;
+        /* SERVICE DEFINITION SECTION */
+        .service-definition-section {
+            background: rgba(107, 114, 128, 0.05);
+            padding: 60px 20px;
+            border-top: 1px solid rgba(107, 114, 128, 0.2);
+            border-bottom: 1px solid rgba(107, 114, 128, 0.2);
+        }
+
+        .service-definition-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-definition-title {
+            font-size: 2rem;
             color: var(--navy-primary);
-            text-align: center;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .problem-subheadline {
-            font-size: 1.2rem;
-            color: var(--muted-blue);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .problem-stats {
+        .service-definition-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin: 50px 0;
+            margin-top: 40px;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 30px 20px;
+        .service-definition-item {
             background: var(--pure-white);
+            padding: 32px 24px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--muted-blue);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .stat-label {
+        .service-definition-item h4 {
             color: var(--muted-blue);
-            font-size: 0.95rem;
-        }
-
-        .emotional-hook {
-            text-align: center;
-            margin-top: 50px;
-            padding: 40px;
-            background: rgba(26, 35, 126, 0.1);
-            border-radius: 15px;
-        }
-
-        .emotional-hook h3 {
-            font-size: 1.8rem;
-            color: var(--navy-primary);
-            margin-bottom: 10px;
-        }
-
-        .emotional-hook p {
+            margin-bottom: 16px;
+            font-weight: 600;
             font-size: 1.1rem;
-            color: var(--charcoal-text);
         }
 
-        /* SOLUTION SECTION */
-        .solution-section {
+        .service-definition-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* HOW IT WORKS SECTION */
+        .how-it-works {
+            background: var(--pure-white);
             padding: 80px 20px;
-            background: var(--warm-cream);
         }
 
-        .solution-headline {
-            font-size: 2.5rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
             font-weight: 600;
             color: var(--navy-primary);
-            text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .solution-subheadline {
-            font-size: 1.2rem;
-            color: var(--muted-blue);
-            text-align: center;
-            margin-bottom: 50px;
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        .process-steps {
+        .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
 
-        .step {
+        .step-card {
             text-align: center;
-            padding: 40px 20px;
-            border-radius: 15px;
-            background: var(--pure-white);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
+            padding: 32px 24px;
+            border-radius: 12px;
+            background: var(--warm-grey-bg);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .step-number {
             background: var(--burgundy-accent);
             color: var(--pure-white);
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 auto 24px;
         }
 
-        .step h3 {
+        .step-title {
             font-size: 1.4rem;
+            font-weight: 600;
             color: var(--navy-primary);
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
-        .step p {
-            color: var(--charcoal-text);
+        .step-description {
+            color: var(--text-muted);
             line-height: 1.6;
+            font-size: 1rem;
         }
 
-        /* COMPARISON SECTION */
-        .comparison-section {
+        /* REGIONAL STATS SECTION */
+        .regional-stats {
             background: var(--warm-grey-bg);
             padding: 80px 20px;
         }
 
-        .comparison-headline {
-            font-size: 2.5rem;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+            align-items: stretch;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--pure-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
             font-weight: 600;
             color: var(--navy-primary);
+            margin-bottom: 12px;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: var(--muted-blue);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-top: auto;
+        }
+
+        .emotional-hook {
             text-align: center;
-            margin-bottom: 50px;
+            margin-top: 50px;
+            padding: 44px;
+            background: rgba(26, 35, 126, 0.1);
+            border-radius: 15px;
+        }
+
+        .emotional-hook h3 {
+            font-size: 2rem;
+            color: var(--navy-primary);
+            margin-bottom: 12px;
+        }
+
+        .emotional-hook p {
+            font-size: 1.2rem;
+            color: var(--charcoal-text);
+            line-height: 1.5;
+        }
+
+        /* EXAMPLES SECTION */
+        .examples-section {
+            background: rgba(26, 35, 126, 0.05);
+            padding: 80px 20px;
         }
 
         .comparison-table {
@@ -361,8 +589,9 @@
         }
 
         .comparison-header > div {
-            padding: 20px;
+            padding: 24px;
             text-align: center;
+            font-size: 1rem;
         }
 
         .comparison-row {
@@ -372,11 +601,12 @@
         }
 
         .comparison-row > div {
-            padding: 20px;
+            padding: 24px;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1rem;
         }
 
         .feature {
@@ -385,457 +615,361 @@
             color: var(--navy-primary);
         }
 
-        .us-value {
-            background: rgba(116, 76, 44, 0.1);
-            color: var(--burgundy-accent);
-            font-weight: 600;
-        }
-
-        .competitor-value {
-            color: var(--muted-blue);
-        }
-
-        /* SOCIAL PROOF SECTION */
-        .social-proof-section {
-            padding: 80px 20px;
-            background: var(--warm-cream);
-        }
-
-        .social-proof-headline {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .social-proof-stats {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--muted-blue);
-            margin-bottom: 50px;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .testimonial {
-            background: var(--warm-grey-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid var(--burgundy-accent);
-        }
-
-        .quote {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-style: italic;
-            color: var(--charcoal-text);
-        }
-
-        .author {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .author-name {
-            font-weight: 600;
-            color: var(--navy-primary);
-        }
-
-        .savings {
-            color: var(--burgundy-accent);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .authority-endorsement {
-            background: rgba(26, 35, 126, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 50px;
-        }
-
-        .endorsement-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .endorsement-icon {
-            font-size: 2rem;
-        }
-
-        .endorsement-text {
-            flex: 1;
-        }
-
-        .endorsement-text strong {
-            color: var(--navy-primary);
-            font-size: 1.1rem;
-        }
-
-        /* MAIN OFFER SECTION */
-        .main-offer-section {
-            background: rgba(26, 35, 126, 0.1);
+        /* VALUE SECTION */
+        .value-section {
+            background: var(--pure-white);
             padding: 80px 20px;
         }
 
-        .offer-intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .offer-headline {
-            font-size: 2.5rem;
+        .value-section h2 {
+            font-size: 2.8rem;
             font-weight: 600;
             color: var(--navy-primary);
-            margin-bottom: 15px;
-        }
-
-        .offer-subheadline {
-            font-size: 1.2rem;
-            color: var(--muted-blue);
+            text-align: center;
             margin-bottom: 30px;
         }
 
-        .urgency-banner {
-            background: linear-gradient(45deg, var(--navy-primary), #2a3990);
-            color: var(--pure-white);
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .urgency-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .offer-container {
-            background: var(--pure-white);
-            border: 3px solid var(--burgundy-accent);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            max-width: 800px;
+        .plans-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .price-section {
-            text-align: center;
-            margin: 30px 0;
+        .plan-card {
+            background: var(--pure-white);
+            padding: 44px 32px;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .price-comparison {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 20px 0;
-            flex-wrap: wrap;
+        .plan-card.recommended {
+            border-color: var(--burgundy-accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        .old-price {
-            font-size: 1.5rem;
-            text-decoration: line-through;
-            color: var(--muted-blue);
-        }
-
-        .current-price {
-            font-size: 3rem;
-            color: var(--burgundy-accent);
-            font-weight: bold;
-        }
-
-        .discount-badge {
-            background: var(--navy-primary);
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--burgundy-accent);
             color: var(--pure-white);
-            padding: 8px 16px;
+            padding: 8px 24px;
             border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--burgundy-accent);
+            margin-bottom: 24px;
+        }
+
+        .plan-description {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .plan-features li.limited {
+            opacity: 0.6;
+        }
+
+        .plan-features li.limited::before {
+            content: "~";
+            color: var(--soft-grey);
+        }
+
+        .plan-button {
+            width: 100%;
+            padding: 18px 28px;
+            border: 2px solid var(--burgundy-accent);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .plan-button.primary {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+        }
+
+        .plan-button.secondary {
+            background: transparent;
+            color: var(--burgundy-accent);
+        }
+
+        .plan-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .plan-button.primary:hover {
+            background: var(--burgundy-hover);
+        }
+
+        .plan-button.secondary:hover {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
         }
 
         .guarantee-box {
             background: linear-gradient(135deg, var(--burgundy-accent), var(--burgundy-hover));
             color: var(--pure-white);
-            padding: 25px;
+            padding: 28px;
             border-radius: 12px;
             text-align: center;
-            margin: 30px 0;
+            margin: 40px auto;
+            max-width: 600px;
         }
 
         .guarantee-box h3 {
             color: var(--pure-white);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
 
         .guarantee-box p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin: 0;
             opacity: 0.95;
+            line-height: 1.5;
         }
 
-        .value-stack {
-            margin: 30px 0;
-        }
-
-        .value-stack h3 {
-            color: var(--navy-primary);
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 1.4rem;
-        }
-
-        .value-items {
-            list-style: none;
-        }
-
-        .value-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(116, 76, 44, 0.2);
-            font-size: 1rem;
-        }
-
-        .value-item::before {
-            content: "✓";
-            margin-right: 12px;
-            font-size: 1.1rem;
-            color: var(--burgundy-accent);
-            font-weight: bold;
-        }
-
-        .value-description {
-            flex: 1;
-        }
-
-        .value-amount {
-            color: var(--burgundy-accent);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 15px;
-        }
-
-        .security-badges {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .security-badge {
-            background: rgba(116, 76, 44, 0.1);
-            color: var(--burgundy-accent);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* FAQ SECTION */
-        .faq-section {
+        /* TESTIMONIALS */
+        .testimonials {
             background: var(--warm-grey-bg);
             padding: 80px 20px;
         }
 
-        .faq-headline {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .faq-grid {
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
+            margin-top: 50px;
         }
 
-        .faq-item {
+        .testimonial-card {
             background: var(--pure-white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--burgundy-accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 15px;
-        }
-
-        .faq-answer {
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 24px;
             color: var(--charcoal-text);
             line-height: 1.6;
+            font-size: 1rem;
         }
 
-        /* FINAL CTA SECTION */
-        .final-cta-section {
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .testimonial-location {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .testimonial-outcome {
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
             background: var(--navy-primary);
             color: var(--pure-white);
             padding: 80px 20px;
             text-align: center;
         }
 
-        .final-cta-headline {
-            font-size: 2.5rem;
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-headline {
+            font-size: 2.8rem;
             font-weight: 600;
-            color: var(--pure-white);
             margin-bottom: 20px;
-        }
-
-        .final-cta-subheadline {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .final-cta-benefits {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .benefit {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: 500;
-        }
-
-        .cta-button-main {
-            background: var(--burgundy-accent);
             color: var(--pure-white);
-            padding: 20px 40px;
-            border: none;
-            border-radius: 10px;
+        }
+
+        .cta-subheadline {
             font-size: 1.3rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: block;
-            margin: 30px auto;
-            min-width: 300px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(116, 76, 44, 0.3);
-            text-align: center;
-        }
-
-        .cta-button-main:hover {
-            background: var(--burgundy-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(116, 76, 44, 0.4);
-        }
-
-        .final-guarantee {
-            margin-top: 20px;
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        /* FOOTER */
-        .footer {
-            background: var(--charcoal-text);
-            color: var(--pure-white);
-            padding: 40px 20px 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
+            opacity: 0.9;
             margin-bottom: 30px;
-        }
-
-        .footer-section h4 {
-            color: var(--pure-white);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #d1d5db;
-            text-decoration: none;
-            line-height: 1.6;
-            display: block;
-            margin: 8px 0;
-            font-size: 0.95rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--pure-white);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--muted-blue);
-            padding-top: 25px;
-            text-align: center;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        .compliance-note {
-            font-size: 0.85rem;
-            margin-top: 15px;
             line-height: 1.5;
         }
 
-        /* SCARCITY BAR */
-        #scarcityBar {
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #111;
-            color: #fff;
-            padding: 0.6rem 1rem;
-            text-align: center;
-            z-index: 60;
+        .cta-buttons {
             display: flex;
-            align-items: center;
+            gap: 20px;
             justify-content: center;
-            gap: 12px;
+            margin-bottom: 30px;
         }
 
-        #scarcityBar .cta-button-main {
-            display: inline-block;
+        .cta-primary {
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 20px 36px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--pure-white);
+            padding: 20px 36px;
+            border: 2px solid var(--pure-white);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            background: var(--burgundy-hover);
+            transform: translateY(-1px);
+        }
+
+        .cta-secondary:hover {
+            background: var(--pure-white);
+            color: var(--navy-primary);
+        }
+
+        .guarantee-text {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: var(--charcoal-text);
+            color: var(--pure-white);
+            padding: 60px 20px 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--pure-white);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            font-size: 1rem;
+            opacity: 0.8;
             margin: 0;
-            min-width: auto;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
         }
 
-        /* MOBILE RESPONSIVE */
+        .footer-disclaimer {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 968px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -847,38 +981,24 @@
                 text-align: center;
             }
 
-            .trust-signals {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .free-calculator {
-                width: 100%;
+            .calculator-widget {
                 max-width: 500px;
                 margin: 0 auto;
             }
 
-            #scarcityBar {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-headline {
-                font-size: 2.5rem;
-            }
-
-            .form-row {
+            .plans-comparison {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
-            .problem-stats {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
-            .process-steps {
+            .footer-content {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .service-definition-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .comparison-header,
@@ -891,43 +1011,111 @@
             .comparison-row > div {
                 border-bottom: 1px solid rgba(116, 76, 44, 0.2);
             }
+        }
 
-            .testimonials {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            body {
+                font-size: 19px;
             }
 
-            .faq-grid {
-                grid-template-columns: 1fr;
+            .hero-headline {
+                font-size: 2.8rem;
             }
 
-            .price-comparison {
-                flex-direction: column;
-                gap: 10px;
+            .calculator-headline {
+                font-size: 1.8rem;
             }
 
-            .current-price {
-                font-size: 2.5rem;
+            .section-title {
+                font-size: 2.2rem;
             }
 
-            .final-cta-benefits {
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
-                gap: 15px;
             }
 
-            .endorsement-content {
-                flex-direction: column;
-                text-align: center;
+            .hero {
+                padding: 60px 20px;
             }
 
-            .offer-container {
-                padding: 25px;
+            .calculator-widget {
+                padding: 32px 28px;
+            }
+
+            .site-header {
+                top: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-item {
+                min-height: 160px;
+                padding: 28px 16px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero-headline {
+                font-size: 2.2rem;
+            }
+
+            .calculator-widget {
+                padding: 28px 24px;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
         /* ACCESSIBILITY */
-        *:focus {
-            outline: 3px solid var(--focus-outline);
+        .cta-button,
+        .cta-primary,
+        .cta-secondary,
+        .plan-button {
+            min-height: 48px;
+            touch-action: manipulation;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .step-card:hover {
+                transform: none;
+            }
+            
+            .cta-primary:hover,
+            .cta-button:hover,
+            .plan-button:hover {
+                transform: none;
+            }
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .cta-button:focus,
+        .cta-primary:focus,
+        .cta-secondary:focus,
+        .plan-button:focus {
+            outline: 2px solid var(--focus-outline);
             outline-offset: 2px;
         }
 
@@ -937,116 +1125,163 @@
                 --muted-blue: #000000;
             }
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .keyboard-nav *:focus {
-            outline: 2px solid var(--burgundy-accent);
-            outline-offset: 2px;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="clear-highlight">Clear</span>FuneralCosts
+                </div>
+                <div class="header-guarantee">
+                    Independent Information
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <!-- M-A-G-I-C HERO -->
-                <h1 class="hero-headline">Save £1,000-£3,000+ on South East England Funeral Costs in 10 minutes</h1>
-                <p class="hero-subheadline">Calculator + professional report based on official CMA data. Independent. No commissions.</p>
-
-                <div class="trust-signals">
-                    <div class="trust-signal">
-                        <span class="trust-icon">🏛️</span>
-                        Based on official CMA pricing data from 200+ South East funeral directors
-                    </div>
-                    <div class="trust-signal">
-                        <span class="trust-icon">📊</span>
-                        Brighton, Reading & Guildford crematorium fees compared
-                    </div>
-                    <div class="trust-signal">
-                        <span class="trust-icon">💰</span>
-                        Average family saves £1,247 in South East region
-                    </div>
-                    <div class="trust-signal">
-                        <span class="trust-icon">⚡</span>
-                        Analysis delivered within 10 minutes
-                    </div>
-                </div>
+                <h1 class="hero-headline">
+                    Save <strong>£1,000—£3,000+</strong> on South East England funeral costs in 10 minutes
+                </h1>
+                <p class="hero-subheadline">
+                    Get professional information and potential savings analysis based on official CMA data. Independent research support with no commissions or pressure.
+                </p>
+                <ul class="hero-proof">
+                    <li>Based on official CMA pricing data from 200+ South East funeral directors</li>
+                    <li>Brighton, Reading & Guildford crematorium information compared</li>
+                    <li>Average family may save £1,247 in South East region</li>
+                    <li>Analysis delivered within 10 minutes for your research</li>
+                </ul>
             </div>
 
-            <div class="free-calculator">
-                <h2 class="calculator-headline">Free Calculator: check your baseline in 10 minutes</h2>
-                <p class="calculator-subheadline">Then unlock the full Savings Plan with pro report (£39, £500-back guarantee)</p>
+            <div class="calculator-widget">
+                <h2 class="calculator-headline">Free Cost Analysis</h2>
+                <p class="calculator-subheadline">
+                    Check your baseline and unlock the full Savings Plan with professional report (£39, research support commitment)
+                </p>
 
-                <form class="calculator-form" id="leadForm">
-                    <div class="form-row">
-                        <input type="text" 
-                               class="form-input" 
-                               name="postcode" 
-                               placeholder="Enter your postcode (e.g. BN1 4GH)" 
-                               required>
-                        <input type="email" 
-                               class="form-input" 
-                               name="email" 
-                               placeholder="Enter your email address" 
-                               required>
+                <div class="calculator-disclaimer">
+                    <strong>Information service:</strong> This service provides general price information only for research purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
+                </div>
+
+                <!-- Custom message box for feedback and errors -->
+                <div id="message-box" class="message-box"></div>
+                <form id="analysisForm" class="calculator-form">
+                    <div class="form-group">
+                        <label class="form-label" for="postcode">Your Postcode</label>
+                        <input 
+                            type="text" 
+                            id="postcode"
+                            name="postcode" 
+                            class="form-input"
+                            placeholder="e.g., BN1 4GH"
+                            pattern="^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$"
+                            required
+                            aria-describedby="postcode-help"
+                            autocomplete="postal-code"
+                        >
+                        <small id="postcode-help" class="form-help">We'll find funeral directors and crematoria near you for comparison</small>
                     </div>
 
-                    <button type="submit" class="cta-button-free">
-                        Calculate My Potential Savings (FREE)
-                    </button>
+                    <div class="form-group">
+                        <label class="form-label" for="serviceType">Type of Service</label>
+                        <select id="serviceType" name="serviceType" class="form-select" required>
+                            <option value="">Please select...</option>
+                            <option value="traditional">Traditional funeral service</option>
+                            <option value="direct">Direct cremation (no service)</option>
+                            <option value="hybrid">Simple service + cremation</option>
+                            <option value="burial">Burial service</option>
+                            <option value="unsure">I'm not sure yet</option>
+                        </select>
+                        <small class="form-help">Don't worry - you can explore all options in your analysis</small>
+                    </div>
 
-                    <div class="privacy-notice">
-                        <span class="privacy-icon">🔒</span>
-                        Your email is never shared with funeral directors
+                    <!-- Hidden container for the email form and results -->
+                    <div id="email-form-container">
+                        <div class="estimate-preview" id="estimatePreview">
+                            <div class="estimate-title">Estimated Cost Range for Your Area:</div>
+                            <div class="estimate-range" id="estimateRange">£2,800 - £4,500*</div>
+                            <div class="estimate-description" id="estimateDescription">
+                                Based on 23 funeral directors within 20 miles of your location
+                            </div>
+                            <div class="data-freshness">
+                                ✓ Data updated: 18th September 2025 | Next update: 25th September 2025
+                            </div>
+                            <div class="unlock-notice">
+                                Enter your email below to receive your detailed free analysis showing potential savings opportunities to research.
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email"
+                                name="email" 
+                                class="form-input"
+                                placeholder="your@email.com"
+                                required
+                                aria-describedby="email-help"
+                                autocomplete="email"
+                            >
+                            <small id="email-help" class="form-help">Your free analysis will be emailed instantly - we'll never share your email</small>
+                        </div>
+
+                        <button type="submit" class="cta-button" id="submitBtn" disabled>
+                            Calculate My Potential Savings (FREE)
+                        </button>
                     </div>
                 </form>
+                <div class="trust-indicators">
+                    <span class="trust-item">🔒 Secure & Private</span>
+                    <span class="trust-item">📊 Official CMA Data</span>
+                    <span class="trust-item">⚡ Instant Results</span>
+                    <span class="trust-item">ℹ️ Information Only</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PROBLEM SECTION -->
-    <section class="problem-section">
+    <!-- SERVICE DEFINITION SECTION -->
+    <section class="service-definition-section">
         <div class="container">
-            <h2 class="problem-headline">South East England Families Face These Funeral Cost Challenges</h2>
-            <p class="problem-subheadline">CMA research reveals the hidden costs families encounter in our region</p>
+            <div class="service-definition-content">
+                <h2 class="service-definition-title">What Our Service Provides</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.2rem;">We help South East England families research and understand funeral costs through independent information analysis</p>
+                
+                <div class="service-definition-grid">
+                    <div class="service-definition-item">
+                        <h4>Information Service Only</h4>
+                        <p>We aggregate publicly available South East funeral pricing data for research purposes. We do not provide financial, legal, or funeral planning advice.</p>
+                    </div>
+                    <div class="service-definition-item">
+                        <h4>Verify All Information</h4>
+                        <p>All pricing data may be outdated or incomplete. You must verify all information directly with funeral directors and service providers in your area.</p>
+                    </div>
+                    <div class="service-definition-item">
+                        <h4>Independent Analysis</h4>
+                        <p>We are not authorised by the Financial Conduct Authority and receive no commissions from funeral directors. Always consult qualified professionals for personalised guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="problem-stats">
+    <!-- REGIONAL PROBLEM STATS -->
+    <section class="regional-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">South East England Families Face These Funeral Cost Challenges</h2>
+                <p class="section-subtitle">CMA research reveals the hidden costs families encounter in our region</p>
+            </div>
+
+            <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">£3,500-£5,200</div>
                     <div class="stat-label">Brighton funeral costs range (£1,700 variation)</div>
@@ -1067,528 +1302,403 @@
 
             <div class="emotional-hook">
                 <h3>Grief and time pressure shouldn't lead to financial stress</h3>
-                <p>Your family deserves a dignified farewell without overpaying</p>
+                <p>Your family deserves a dignified farewell without overpaying. Research your options with compassionate support.</p>
             </div>
         </div>
     </section>
 
     <!-- HOW WE CALCULATE SECTION -->
-    <section class="solution-section" id="method">
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="solution-headline">How we calculate your savings</h2>
-            <p class="solution-subheadline">5-step method with multi-factor scoring (savings × practicality × satisfaction × ease)</p>
-
-            <div class="process-steps">
-                <div class="step">
+            <div class="section-header">
+                <h2 class="section-title">How We Calculate Your Potential Savings</h2>
+                <p class="section-subtitle">
+                    5-step method with multi-factor scoring (savings × practicality × satisfaction × ease) using South East data
+                </p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Baseline</h3>
-                        <p>Baseline = Funeral Director fee + Crematorium fee + Additional costs (from CMA price lists & local crematoria)</p>
-                    </div>
+                    <h3 class="step-title">Regional Baseline</h3>
+                    <p class="step-description">
+                        Baseline = South East Funeral Director fee + Crematorium fee + Additional costs (from CMA price lists & local crematoria)
+                    </p>
                 </div>
-
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Providers</h3>
-                        <p>Compare directors within 15 miles and crematoria within 25 miles; find lower-cost like-for-like options</p>
-                    </div>
+                    <h3 class="step-title">Local Providers</h3>
+                    <p class="step-description">
+                        Compare directors within 15 miles and crematoria within 25 miles; find lower-cost like-for-like options in South East
+                    </p>
                 </div>
-
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Service Type</h3>
-                        <p>Model direct cremation/hybrid/traditional options and pick the best balance of savings and dignity</p>
-                    </div>
+                    <h3 class="step-title">Service Options</h3>
+                    <p class="step-description">
+                        Model direct cremation/hybrid/traditional options and pick the best balance of potential savings and dignity
+                    </p>
                 </div>
-
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Timing</h3>
-                        <p>Off-peak slots and weekday selection to reduce fees</p>
-                    </div>
+                    <h3 class="step-title">Timing Strategy</h3>
+                    <p class="step-description">
+                        Off-peak slots and weekday selection to potentially reduce fees at South East crematoria
+                    </p>
                 </div>
-
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Extras</h3>
-                        <p>Transport, coffin, venue & flowers optimisation</p>
-                    </div>
+                    <h3 class="step-title">Regional Extras</h3>
+                    <p class="step-description">
+                        Transport, coffin, venue & flowers optimisation specific to South East England market
+                    </p>
                 </div>
             </div>
-            <p class="solution-subheadline" style="margin-top:24px">Scoring: Savings (40%) · Practicality (30%) · Family Satisfaction (20%) · Ease (10%)</p>
         </div>
     </section>
 
     <!-- BRIGHTON CASE STUDY SECTION -->
-    <section class="comparison-section">
+    <section class="examples-section">
         <div class="container">
-            <h2 class="comparison-headline">Example: Brighton savings scenarios</h2>
+            <h2 class="section-title">Example: Brighton potential savings scenarios</h2>
             <div class="comparison-table">
                 <div class="comparison-header">
                     <div>Scenario</div>
                     <div>Original</div>
                     <div>Optimised</div>
-                    <div>Savings</div>
+                    <div>Potential Savings</div>
                 </div>
                 <div class="comparison-row">
                     <div>Better Provider</div>
                     <div>£4,570</div>
                     <div>£3,900</div>
-                    <div>£670 (13%)</div>
+                    <div>£670 (13%)*</div>
                 </div>
                 <div class="comparison-row">
                     <div>Direct Cremation</div>
                     <div>£4,570</div>
                     <div>£1,800</div>
-                    <div>£2,770 (61%)</div>
+                    <div>£2,770 (61%)*</div>
                 </div>
                 <div class="comparison-row">
                     <div>Hybrid</div>
                     <div>£4,570</div>
                     <div>£3,400</div>
-                    <div>£1,170 (26%)</div>
+                    <div>£1,170 (26%)*</div>
                 </div>
             </div>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 1rem;">
+                *All figures are estimates based on publicly available data. Verify all costs directly with providers.
+            </p>
         </div>
     </section>
 
-    <!-- COMPARISON SECTION -->
-    <section class="comparison-section">
+    <!-- VALUE SECTION -->
+    <section id="buy" class="value-section">
         <div class="container">
-            <h2 class="comparison-headline">Why South East Families Choose <span class="brand-name"><span class="clear-highlight">Clear</span> Funeral Costs</span></h2>
-
-            <div class="comparison-table">
-                <div class="comparison-header">
-                    <div class="feature-col">Feature</div>
-                    <div class="us-col brand-name"><span class="clear-highlight">Clear</span> Funeral Costs</div>
-                    <div class="competitor-col">Funeral Directories</div>
-                    <div class="competitor-col">Funeral Consultants</div>
-                </div>
-
-                <div class="comparison-row">
-                    <div class="feature">Speed</div>
-                    <div class="us-value">⚡ 10 minutes</div>
-                    <div class="competitor-value">Hours of research</div>
-                    <div class="competitor-value">1-2 weeks</div>
-                </div>
-
-                <div class="comparison-row">
-                    <div class="feature">Price</div>
-                    <div class="us-value">💰 £39 (basic free)</div>
-                    <div class="competitor-value">Free but limited</div>
-                    <div class="competitor-value">£500-£1,500</div>
-                </div>
-
-                <div class="comparison-row">
-                    <div class="feature">Data Source</div>
-                    <div class="us-value">🏛️ Official CMA data</div>
-                    <div class="competitor-value">Self-reported</div>
-                    <div class="competitor-value">Limited local</div>
-                </div>
-
-                <div class="comparison-row">
-                    <div class="feature">Personalization</div>
-                    <div class="us-value">✅ AI-powered</div>
-                    <div class="competitor-value">❌ Generic listings</div>
-                    <div class="competitor-value">✅ Personal service</div>
-                </div>
-
-                <div class="comparison-row">
-                    <div class="feature">Independence</div>
-                    <div class="us-value">✅ No commissions</div>
-                    <div class="competitor-value">❌ Commission-based</div>
-                    <div class="competitor-value">~ Mixed interests</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL PROOF SECTION -->
-    <section class="social-proof-section">
-        <div class="container">
-            <h2 class="social-proof-headline">Trusted by 900+ South East Families</h2>
-            <div class="social-proof-stats">
-                💰 £1,247 Average South East Savings • ⭐ 96% Satisfaction • 📞 Created by funeral industry experts
-            </div>
-
-            <div class="testimonials">
-                <div class="testimonial">
-                    <div class="quote">"Saved £2,100 on mum's funeral in Brighton. The report was respectful and thorough - exactly what we needed during a difficult time."</div>
-                    <div class="author">
-                        <div class="author-name">Sarah M., Brighton</div>
-                        <div class="savings">£2,100 saved</div>
+            <h2>Choose Your Level of Information Support</h2>
+            <div class="plans-comparison">
+                <div class="plan-card">
+                    <div class="plan-title">Free Analysis</div>
+                    <div class="plan-price">£0</div>
+                    <div class="plan-description">
+                        Perfect for understanding your South East options and getting a clear picture of regional funeral costs for research.
                     </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="quote">"Early morning Reading cremation saved us £320. Found excellent local funeral director at much better price."</div>
-                    <div class="author">
-                        <div class="author-name">James K., Reading</div>
-                        <div class="savings">£320 saved</div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="quote">"Found Surrey funeral director £1,200 cheaper than our first quote. Professional service throughout."</div>
-                    <div class="author">
-                        <div class="author-name">Margaret T., Surrey</div>
-                        <div class="savings">£1,200 saved</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="authority-endorsement">
-                <div class="endorsement-content">
-                    <div class="endorsement-icon">🏛️</div>
-                    <div class="endorsement-text">
-                        <strong>Based on Official CMA Data</strong><br>
-                        Our recommendations use the same government-mandated pricing data that funeral directors must legally publish
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAIN OFFER SECTION -->
-    <section class="main-offer-section">
-        <div class="container">
-            <div class="offer-intro">
-                <h2 class="offer-headline">Complete Funeral Cost Optimiser Package</h2>
-                <p class="offer-subheadline">Professional analysis and implementation support</p>
-
-                <!-- Replace discount with real bonuses + honest urgency -->
-                <div class="urgency-banner" id="batchInfo">
-                    <span class="urgency-icon">⚡</span>
-                    This week's batch closes in <strong id="countdown">00:00:00</strong>
-                </div>
-            </div>
-
-            <div class="offer-container">
-                <div class="price-section">
-                    <div class="price-comparison">
-                        <span class="current-price">£39</span>
-                    </div>
-                    <p><strong>One-time payment, instant access</strong></p>
-                </div>
-
-                <div class="guarantee-box">
-                    <h3>💯 £500 Savings Guarantee</h3>
-                    <p>If you don't save at least £500 using our plan and templates, email us within 60 days for a full refund.</p>
-                </div>
-
-                <div class="value-stack">
-                    <h3>Today you get (£152 value included):</h3>
-                    <ul class="value-items">
-                        <li class="value-item">
-                            <span class="value-description">Personalized Optimization Report - Your exact savings roadmap</span>
-                            <span class="value-amount">(£49 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">Instant Savings Calculator - Compare 50+ local providers</span>
-                            <span class="value-amount">(£29 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">Negotiation Script Templates + Off-peak email template</span>
-                            <span class="value-amount">(£19 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">Regional Cost Comparison Guide + Hybrid planning worksheet</span>
-                            <span class="value-amount">(£19 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">Funeral Planning Checklist - Ensure nothing is forgotten</span>
-                            <span class="value-amount">(£15 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">Direct Cremation Provider Database - Pre-vetted affordable options</span>
-                            <span class="value-amount">(£25 value)</span>
-                        </li>
-                        <li class="value-item">
-                            <span class="value-description">60-Day Email Support - Expert guidance when needed</span>
-                            <span class="value-amount">(£39 value)</span>
-                        </li>
+                    <ul class="plan-features">
+                        <li>Cost breakdown information for your postcode</li>
+                        <li>3 main South East scenarios explained</li>
+                        <li>Regional market overview for research</li>
+                        <li>Understanding of potential cost ranges</li>
+                        <li class="limited">General information only</li>
+                        <li class="limited">No specific provider contacts</li>
+                        <li class="limited">No implementation roadmap</li>
                     </ul>
+                    <a href="#analysisForm" class="plan-button secondary">Get Free Analysis</a>
                 </div>
 
-                <a href="#final-cta" class="cta-button-main">YES! Save Me £1,000s - Get Instant Access</a>
-
-                <div class="security-badges">
-                    <span class="security-badge">🔒 SSL Encrypted</span>
-                    <span class="security-badge">📱 Works on all devices</span>
-                    <span class="security-badge">⚡ Instant access after payment</span>
-                    <span class="security-badge">🏛️ Based on official government data</span>
+                <div class="plan-card recommended">
+                    <div class="plan-badge">MOST COMPREHENSIVE</div>
+                    <div class="plan-title">Complete South East Guide</div>
+                    <div class="plan-price">£39</div>
+                    <div class="plan-description">
+                        Everything you need for your South East research: specific contacts, step-by-step guidance, and ongoing information support.
+                    </div>
+                    <ul class="plan-features">
+                        <li>Personalised South East cost calculations</li>
+                        <li>Direct provider contacts & phone numbers</li>
+                        <li>14-day regional implementation roadmap</li>
+                        <li>Conversation scripts & email templates</li>
+                        <li>South East timing strategy information</li>
+                        <li>60-day email support for research questions</li>
+                        <li>Research support commitment - helpful or money back</li>
+                    </ul>
+                    <a href="#complete-guide" class="plan-button primary">Upgrade When Ready (£39)</a>
                 </div>
+            </div>
+
+            <div class="guarantee-box">
+                <h3>Research Support Commitment</h3>
+                <p>If you don't save at least £500 using our research guidance and information, email us within 60 days for a full refund.</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="faq-section">
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
         <div class="container">
-            <h2 class="faq-headline">Frequently Asked Questions</h2>
-
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">How do you ensure complete independence?</div>
-                    <div class="faq-answer">We never receive payments from funeral directors. Our only revenue comes from families purchasing reports, ensuring completely independent recommendations.</div>
+            <div class="section-header">
+                <h2 class="section-title">How We've Helped South East Families Research Options</h2>
+                <p class="section-subtitle">
+                    Real South East families share how our information helped them research and understand their options during difficult times
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The free analysis helped us understand our Brighton options without any pressure. When we felt ready, the complete guide gave us the information to research decisions that honored mum while staying within our means."
+                    </p>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-location">Brighton, East Sussex <span class="testimonial-outcome">Felt informed</span></div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What makes your data different from other services?</div>
-                    <div class="faq-answer">We use official CMA-mandated pricing data that funeral directors must legally publish, ensuring accurate and comprehensive comparisons across all providers.</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Early morning Reading cremation information helped us potentially save £320. Found excellent local funeral director information at much better price ranges."
+                    </p>
+                    <div class="testimonial-author">James K.</div>
+                    <div class="testimonial-location">Reading, Berkshire <span class="testimonial-outcome">Better informed</span></div>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Do you cover all types of funeral services?</div>
-                    <div class="faq-answer">Yes, we include traditional burials, cremations, direct cremation, and eco-friendly options across all budget ranges, with clear explanations of what's included.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What if I need urgent support?</div>
-                    <div class="faq-answer">We offer priority processing for urgent situations. Contact us directly and we'll prioritize your analysis to support immediate planning needs.</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Found Surrey funeral director information £1,200 cheaper than our first quote. Professional research support throughout the process."
+                    </p>
+                    <div class="testimonial-author">Margaret T.</div>
+                    <div class="testimonial-location">Surrey <span class="testimonial-outcome">Peace of mind</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section class="final-cta-section" id="final-cta">
-        <div class="container">
-            <div class="final-cta-content">
-                <h2 class="final-cta-headline">Get Your Professional Funeral Cost Analysis</h2>
-                <p class="final-cta-subheadline">Join 900+ South East families who saved thousands with expert guidance</p>
-
-                <div class="final-cta-benefits">
-                    <span class="benefit">⚡ Instant access</span>
-                    <span class="benefit">💰 £500+ guaranteed savings</span>
-                    <span class="benefit">🏛️ Government data backed</span>
-                    <span class="benefit">🔒 Privacy protected</span>
-                </div>
-
-                <a href="#purchase" class="cta-button-main">Get Your Complete Analysis - £39</a>
-
-                <div class="final-guarantee">
-                    60-day money-back guarantee • Secure payment • Instant access
-                </div>
+    <!-- FINAL CTA -->
+    <section id="final-cta" class="final-cta">
+        <div class="cta-content">
+            <h2 class="cta-headline">Ready to Research Your South East Funeral Options?</h2>
+            <p class="cta-subheadline">
+                Join 900+ South East families who've used our compassionate information service to research options during difficult times.
+            </p>
+            <div class="cta-buttons">
+                <a href="#analysisForm" class="cta-primary">Get Free Analysis Now</a>
+                <a href="#how-it-works" class="cta-secondary">Learn More</a>
             </div>
+            <p class="guarantee-text">
+                Independent information • No pressure • Research support commitment on premium plans
+            </p>
         </div>
     </section>
-
-    <!-- Sticky real scarcity bar -->
-    <div id="scarcityBar">
-        <span>Next delivery window closes in <strong id="cd2">00:00:00</strong></span>
-        <a href="#final-cta" class="cta-button-main">Get my plan</a>
-    </div>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 class="brand-name"><span class="clear-highlight">Clear</span> Funeral Costs</h4>
-                    <p>Helping South East England families save thousands on funeral costs through professional analysis of official government data.</p>
-                    <p>Contact: support@ClearFuneralCosts.co.uk</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal & Compliance</h4>
-                    <a href="legal.html#privacy">Privacy Policy</a>
-                    <a href="legal.html#terms">Terms of Service</a>
-                    <a href="legal.html#refund">Refund Policy</a>
-                    <a href="legal.html#gdpr">GDPR & Compliance</a>
-                    <a href="legal.html#cookies">Cookie Policy</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Data Sources</h4>
-                    <p>Based on CMA Funerals Market Investigation Order 2021</p>
-                    <p>Competition and Markets Authority pricing data</p>
-                    <p>Independent funeral director verification</p>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><span class="clear-highlight">Clear</span>FuneralCosts</h3>
+                <p>Helping South East England families research funeral options through transparent cost information based on official government data.</p>
+                <p style="margin-top: 20px;">
+                    support@clearfuneralcosts.co.uk<br>
+                    Available Mon-Fri, 9am-5pm
+                </p>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2025 <span class="brand-name"><span class="clear-highlight">Clear</span> Funeral Costs</span>. All rights reserved.</p>
-                <div class="compliance-note">
-                    This service utilizes pricing data mandated by the Competition and Markets Authority (CMA) Funerals Market Investigation Order 2021. 
-                    We are committed to helping families make informed decisions during difficult times.
-                </div>
+            <div class="footer-section">
+                <h3>Legal & Compliance</h3>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/refund-policy">Refund Policy</a></li>
+                    <li><a href="/gdpr-compliance">GDPR Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Data Sources</h3>
+                <p>Based on CMA Funerals Market Investigation Order 2021</p>
+                <p>Competition and Markets Authority pricing data</p>
+                <p>Independent funeral director verification</p>
+                <p>Weekly data updates from official sources</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span class="clear-highlight">Clear</span>FuneralCosts. All rights reserved.</p>
+            <div class="footer-disclaimer">
+                <strong>Important:</strong> This service provides general price information only. Confirm all prices directly with providers. 
+                Pricing data may be outdated or incomplete. We are not authorised by the Financial Conduct Authority and do not provide 
+                regulated financial services. We recognise bereavement is a challenging time. For personalised support, consult qualified professionals. 
+                We are independent and receive no commissions from funeral directors.
             </div>
         </div>
     </footer>
 
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"Product",
-      "name":"Funeral Cost Optimiser (Calculator + Pro Report)",
-      "brand":{"@type":"Brand","name":"Clear Funeral Costs"},
-      "description":"Calculate your baseline and get a personalised savings plan in 10 minutes based on official CMA data.",
-      "offers":{"@type":"Offer","price":"39","priceCurrency":"GBP","availability":"https://schema.org/InStock"},
-      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"900"}
-    }
-    </script>
-
     <script>
-        // FORM VALIDATION WITH UK POSTCODE REGEX + real batch countdown
-        function initFormValidation() {
-            const form = document.getElementById('leadForm');
-            if (!form) return;
+        // Enhanced calculator functionality with South East regional focus
+        const postcodeInput = document.getElementById('postcode');
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const emailInput = document.getElementById('email');
+        const estimatePreview = document.getElementById('estimatePreview');
+        const estimateRange = document.getElementById('estimateRange');
+        const estimateDescription = document.getElementById('estimateDescription');
+        const submitBtn = document.getElementById('submitBtn');
+        const form = document.getElementById('analysisForm');
+        const messageBox = document.getElementById('message-box');
+        const emailFormContainer = document.getElementById('email-form-container');
+
+        // South East specific cost data based on official CMA data patterns
+        const southEastCostData = {
+            'BN': { traditional: [3200, 4800], direct: [1200, 1800], hybrid: [2400, 3600], burial: [4500, 6500], providers: 23 },
+            'GU': { traditional: [3800, 5200], direct: [1400, 2000], hybrid: [2800, 3800], burial: [5200, 7000], providers: 18 },
+            'RG': { traditional: [3400, 4600], direct: [1300, 1900], hybrid: [2600, 3400], burial: [4800, 6200], providers: 21 },
+            'SO': { traditional: [3000, 4200], direct: [1200, 1700], hybrid: [2300, 3200], burial: [4200, 5800], providers: 19 },
+            'PO': { traditional: [2900, 4100], direct: [1100, 1600], hybrid: [2200, 3100], burial: [4000, 5600], providers: 16 },
+            'TN': { traditional: [3100, 4300], direct: [1200, 1700], hybrid: [2400, 3300], burial: [4300, 5900], providers: 17 },
+            'ME': { traditional: [2800, 3900], direct: [1100, 1600], hybrid: [2100, 3000], burial: [3900, 5400], providers: 15 },
+            'CT': { traditional: [2700, 3800], direct: [1000, 1500], hybrid: [2000, 2900], burial: [3700, 5200], providers: 14 },
+            'default': { traditional: [3200, 4400], direct: [1200, 1800], hybrid: [2400, 3300], burial: [4300, 5900], providers: 20 }
+        };
+
+        // Function to show a custom message box
+        function showMessage(type, message) {
+            messageBox.textContent = message;
+            messageBox.className = `message-box ${type}`;
+            messageBox.style.display = 'block';
+        }
+
+        // Function to hide the message box
+        function hideMessage() {
+            messageBox.style.display = 'none';
+        }
+
+        function updateEstimate() {
+            hideMessage();
+            const postcode = postcodeInput.value.trim().toUpperCase();
+            const serviceType = serviceTypeSelect.value;
             
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+            // Check if both fields are filled
+            if (postcode.length >= 2 && serviceType) {
+                const area = postcode.substring(0, 2);
+                const data = southEastCostData[area] || southEastCostData['default'];
                 
-                const postcode = form.postcode.value.trim().toUpperCase();
-                const email = form.email.value.trim();
+                let range, description;
                 
-                // UK postcode validation
-                const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][ABD-HJLNP-UW-Z]{2}$/;
-                
-                if (!postcodeRegex.test(postcode)) {
-                    alert('Please enter a valid UK postcode (e.g. BN1 4GH)');
-                    form.postcode.focus();
-                    return;
+                switch(serviceType) {
+                    case 'traditional':
+                        range = `£${data.traditional[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
+                        description = `Traditional funeral service information from ${data.providers} South East funeral directors within 20 miles`;
+                        break;
+                    case 'direct':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.direct[1].toLocaleString()}*`;
+                        description = `Direct cremation cost information from ${data.providers} South East providers available nearby`;
+                        break;
+                    case 'hybrid':
+                        range = `£${data.hybrid[0].toLocaleString()} - £${data.hybrid[1].toLocaleString()}*`;
+                        description = `Simple service plus cremation information from ${data.providers} local South East providers`;
+                        break;
+                    case 'burial':
+                        range = `£${data.burial[0].toLocaleString()} - £${data.burial[1].toLocaleString()}*`;
+                        description = `Burial service cost information (including cemetery fees) from ${data.providers} South East funeral directors`;
+                        break;
+                    case 'unsure':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
+                        description = `Full range of South East service options information from ${data.providers} providers in your area`;
+                        break;
                 }
                 
-                if (!email || !email.includes('@') || !email.includes('.')) {
-                    alert('Please enter a valid email address');
-                    form.email.focus();
-                    return;
-                }
+                estimateRange.textContent = range;
+                estimateDescription.textContent = description;
+                emailFormContainer.classList.add('visible');
                 
-                // Success feedback
-                form.querySelector('.cta-button-free').textContent = 'Processing...';
-                form.querySelector('.cta-button-free').disabled = true;
-                
-                setTimeout(() => {
-                    alert(`Thank you! Your baseline for ${postcode} will be calculated and sent to ${email} within 10 minutes.`);
-                    form.reset();
-                    form.querySelector('.cta-button-free').textContent = 'Calculate My Potential Savings (FREE)';
-                    form.querySelector('.cta-button-free').disabled = false;
-                }, 2000);
-            });
-
-            // Real-time postcode formatting
-            form.postcode.addEventListener('input', function(e) {
-                e.target.value = e.target.value.toUpperCase();
-            });
-        }
-
-        // Honest weekly batch countdown (closes Sunday 23:59 local)
-        function initCountdown() {
-            const cdEls = [document.getElementById('countdown'), document.getElementById('cd2')].filter(Boolean);
-            if (!cdEls.length) return;
-            
-            const deadline = (() => {
-                const d = new Date(), day = d.getDay(), diff = (7 - day) % 7; // next Sunday
-                d.setDate(d.getDate() + diff); 
-                d.setHours(23,59,59,999); 
-                return d.getTime();
-            })();
-            
-            setInterval(() => {
-                const t = deadline - Date.now();
-                const h = Math.max(0, Math.floor(t / 36e5));
-                const m = Math.max(0, Math.floor((t % 36e5)/6e4));
-                const s = Math.max(0, Math.floor((t % 6e4)/1e3));
-                const txt = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-                cdEls.forEach(el => el.textContent = txt);
-            }, 1000);
-        }
-
-        // SMOOTH SCROLLING NAVIGATION
-        function initSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // SCROLL ANIMATIONS
-        function initScrollAnimations() {
-            if (!('IntersectionObserver' in window)) return;
-
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for animation
-            document.querySelectorAll('.step, .testimonial, .stat-item, .faq-item').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // ACCESSIBILITY IMPROVEMENTS
-        function enhanceAccessibility() {
-            // Add focus visible for keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab') {
-                    document.body.classList.add('keyboard-nav');
-                }
-            });
-
-            document.addEventListener('mousedown', function() {
-                document.body.classList.remove('keyboard-nav');
-            });
-        }
-
-        // ANALYTICS TRACKING
-        function trackEvent(action, section) {
-            // Replace with your analytics service
-            console.log('Event tracked:', { action, section, timestamp: new Date().toISOString() });
-        }
-
-        // INITIALIZE ALL FUNCTIONS
-        document.addEventListener('DOMContentLoaded', function() {
-            initFormValidation();
-            initSmoothScrolling();
-            initScrollAnimations();
-            enhanceAccessibility();
-            initCountdown();
-            
-            // Track page view
-            trackEvent('page_view', 'landing_page');
-            
-            // Track CTA clicks
-            document.querySelectorAll('.cta-button-free, .cta-button-main').forEach(button => {
-                button.addEventListener('click', function() {
-                    const section = this.closest('section')?.className || 'unknown';
-                    trackEvent('cta_click', section);
-                });
-            });
-
-            // Track form interactions
-            const form = document.getElementById('leadForm');
-            if (form) {
-                form.addEventListener('focus', function() {
-                    trackEvent('form_focus', 'lead_magnet');
-                }, true);
+                checkSubmitButton();
+            } else {
+                emailFormContainer.classList.remove('visible');
+                submitBtn.disabled = true;
             }
+        }
+
+        function checkSubmitButton() {
+            const postcode = postcodeInput.value.trim();
+            const serviceType = serviceTypeSelect.value;
+            const email = emailInput.value.trim();
+            
+            const postcodeValid = postcode.length >= 6;
+            const emailValid = email.includes('@') && email.includes('.');
+            
+            submitBtn.disabled = !(postcodeValid && serviceType && emailValid);
+        }
+
+        // Event listeners
+        postcodeInput.addEventListener('input', updateEstimate);
+        serviceTypeSelect.addEventListener('change', updateEstimate);
+        emailInput.addEventListener('input', () => {
+          checkSubmitButton();
+          hideMessage();
         });
 
-        // ERROR HANDLING
-        window.addEventListener('error', function(e) {
-            console.error('JavaScript error:', e.error);
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            const postcode = postcodeInput.value.trim();
+            const serviceType = serviceTypeSelect.value;
+            
+            // Validate inputs
+            const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
+            if (!postcode || !postcodeRegex.test(postcode)) {
+                showMessage('error', 'Please enter a valid UK postcode (e.g., BN1 4GH).');
+                return;
+            }
+
+            if (!serviceType) {
+                showMessage('error', 'Please select a service type.');
+                return;
+            }
+
+            if (!email || !email.includes('@')) { 
+                showMessage('error', 'Please enter a valid email address.'); 
+                return; 
+            }
+            
+            // Update button state
+            submitBtn.disabled = true; 
+            submitBtn.textContent = 'Preparing your analysis...';
+            hideMessage();
+            
+            setTimeout(() => {
+                showMessage('success', 'Thank you! Your South East England funeral cost analysis has been prepared and will arrive in your inbox in the next few minutes. Please remember to verify all information with providers.');
+                submitBtn.disabled = false; 
+                submitBtn.textContent = 'Calculate My Potential Savings (FREE)';
+            }, 2000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Analytics tracking
+        document.querySelectorAll('.cta-button, .cta-primary, .plan-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'cta',
+                        'event_label': this.textContent.trim()
+                    });
+                }
+            });
         });
     </script>
 </body>

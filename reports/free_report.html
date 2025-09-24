@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn How to Save £500–£2,500 on Funeral Costs in Your Area - ClearFuneralCosts</title>
+    <title>Save Up to £2,500 on Funeral Costs in Your Area - ClearFuneralCosts</title>
     <style>
         * {
             margin: 0;
@@ -23,15 +23,17 @@
             --grey-hover: #2d3748;
             --focus-outline: #744c2c;
             --text-secondary: #1f2937;
-            --text-muted: #374151;
+            --text-muted: #6b7280;
             --success-green: #059669;
-            --soft-amber: #f59e0b;
+            --soft-grey: #9ca3af;
+            --sage-green: #84cc16;
+            --trust-blue: #3b82f6;
         }
 
         body {
-            font-family: Georgia, "Times New Roman", Times, serif;
-            font-size: 18px;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 20px;
+            line-height: 1.7;
             color: var(--charcoal-text);
             background-color: var(--warm-cream);
             margin: 0;
@@ -107,13 +109,13 @@
         }
 
         .savings-amount {
-            font-size: 2.4rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
         .savings-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             opacity: 0.95;
         }
 
@@ -141,15 +143,27 @@
         }
 
         .overview-number {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--burgundy-accent);
             margin-bottom: 4px;
         }
 
         .overview-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-muted);
+        }
+
+        /* SUBTLE INFO NOTES */
+        .info-note {
+            background: rgba(107, 114, 128, 0.05);
+            border-left: 3px solid var(--muted-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
         /* SECTIONS */
@@ -206,19 +220,19 @@
 
         .scenario-title {
             color: var(--navy-primary);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
         .scenario-savings {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: var(--success-green);
             text-align: right;
         }
 
         .savings-percentage {
-            font-size: 0.9rem;
+            font-size: 1rem;
             opacity: 0.8;
             display: block;
         }
@@ -268,40 +282,46 @@
             background: rgba(5, 150, 105, 0.08);
         }
 
-        /* LIMITATIONS */
-        .limitations {
-            background: rgba(245, 158, 11, 0.08);
+        /* TRUST INDICATORS */
+        .trust-section {
+            background: rgba(59, 130, 246, 0.05);
             padding: 24px;
             border-radius: 8px;
-            border-left: 4px solid var(--soft-amber);
+            border-left: 4px solid var(--trust-blue);
             margin: 24px 0;
         }
 
-        .limitations-title {
-            color: var(--soft-amber);
+        .trust-section h4 {
+            color: var(--trust-blue);
             font-weight: 600;
-            margin-bottom: 16px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1rem;
         }
 
-        .limitations-list {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
         }
 
-        .limitations-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .limitations-list li::before {
-            content: "⚠";
-            position: absolute;
-            left: 0;
-            color: var(--soft-amber);
-            font-weight: bold;
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--trust-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
         }
 
         /* UPGRADE CTA */
@@ -358,19 +378,18 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #fbbf24;
+            color: #84cc16;
             font-weight: bold;
             font-size: 1.2rem;
         }
 
         .value-list .premium-only {
-            opacity: 0.7;
-            font-style: italic;
+            opacity: 0.8;
         }
 
         .value-list .premium-only::before {
-            content: "🔒";
-            color: #fbbf24;
+            content: "→";
+            color: #84cc16;
         }
 
         .cta-buttons {
@@ -415,7 +434,7 @@
             color: var(--navy-primary);
         }
 
-        .guarantee-text {
+        .commitment-text {
             font-size: 0.9rem;
             opacity: 0.85;
             margin-top: 20px;
@@ -443,7 +462,7 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             body {
-                font-size: 17px;
+                font-size: 19px;
             }
 
             .report-header,
@@ -454,11 +473,11 @@
             }
 
             .report-title {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .savings-amount {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
 
             .scenario-header {
@@ -477,31 +496,35 @@
             }
 
             .provider-table {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
 
             .provider-table th,
             .provider-table td {
-                padding: 12px 8px;
+                padding: 16px 12px;
             }
 
             .analysis-overview {
                 grid-template-columns: 1fr 1fr;
                 gap: 15px;
             }
+
+            .trust-indicators {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
             body {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .report-title {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
             .savings-amount {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .scenario-card {
@@ -510,6 +533,15 @@
 
             .analysis-overview {
                 grid-template-columns: 1fr;
+            }
+
+            .provider-table th,
+            .provider-table td {
+                padding: 14px 10px;
+            }
+
+            .provider-table {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -521,17 +553,17 @@
             <div class="company-logo">
                 <span class="clear-highlight">Clear</span>FuneralCosts
             </div>
-            <h1 class="report-title">Learn How to Save £500–£2,500 on Funeral Costs in Your Area</h1>
-            <p class="report-subtitle">Complimentary Potential Savings Analysis for Brighton, East Sussex</p>
+            <h1 class="report-title">Save Up to £2,500 on Funeral Costs in Your Area</h1>
+            <p class="report-subtitle">Potential Savings Analysis for Brighton, East Sussex</p>
             <p class="report-date">Generated: 20th September 2025</p>
         </header>
 
         <!-- EXECUTIVE SUMMARY -->
         <section class="executive-summary">
-            <h2 class="summary-title">Executive Summary</h2>
+            <h2 class="summary-title">Your Potential Savings Overview</h2>
             
             <div class="savings-highlight">
-                <div class="savings-amount">£500 - £2,500</div>
+                <div class="savings-amount">Save Up to £2,500</div>
                 <div class="savings-subtitle">Potential savings identified in your local area</div>
             </div>
 
@@ -549,7 +581,7 @@
                     <div class="overview-label">Crematoria within 25 miles</div>
                 </div>
                 <div class="overview-item">
-                    <div class="overview-number">£1,850</div>
+                    <div class="overview-number">Up to £1,850</div>
                     <div class="overview-label">Price variation between providers</div>
                 </div>
                 <div class="overview-item">
@@ -558,40 +590,69 @@
                 </div>
             </div>
 
-            <p><strong>Our Initial Analysis:</strong> Through strategic provider selection, service optimisation, and timing adjustments, funeral costs in your area can typically be reduced by 15-60% whilst maintaining dignity and quality of service.</p>
+            <p><strong>Our Analysis Shows:</strong> Through strategic provider selection, service optimization, and timing adjustments, funeral costs in your area might typically be reduced by 15-60% while maintaining dignity and quality of service.</p>
             
-            <p style="margin-top: 16px;"><strong>Important:</strong> These are potential savings ranges only. Your exact savings depend on your specific needs, which we analyse in our premium report.</p>
+            <div class="info-note">
+                <strong>Information service:</strong> Research support based on publicly available data - confirm all prices directly with providers.
+            </div>
+        </section>
+
+        <!-- TRUST INDICATORS -->
+        <section class="report-section">
+            <div class="trust-section">
+                <h4>✓ Research Support Commitment</h4>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <div class="trust-icon">📊</div>
+                        <span>Official CMA price data analysis</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🔍</div>
+                        <span>Comprehensive provider research</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">💡</div>
+                        <span>Actionable cost-saving strategies</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">📞</div>
+                        <span>60-day research support</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- HOW TO USE THIS REPORT -->
         <section class="report-section">
-            <h2 class="section-title">How to Use This Report</h2>
+            <h2 class="section-title">How to Use This Research</h2>
+            
             <p>
-                This complimentary report is designed to give you an overview of the potential savings available in your area. It is not a personalised guide, but a tool to help you start your journey. Please use the following steps to get the most from this analysis:
+                This analysis is designed to help you understand potential savings available in your area. Here's how to get the most from this research:
             </p>
-            <ul class="limitations-list" style="border: none; padding-left: 0; margin-top: 16px;">
-                <li><strong>Step 1: Understand the Averages.</strong> Familiarise yourself with the potential savings ranges and local provider examples to understand the landscape.</li>
-                <li><strong>Step 2: Choose Your Approach.</strong> Review the three scenarios (Conservative, Balanced, Maximum Savings) to find the approach that best fits your needs and priorities.</li>
-                <li><strong>Step 3: Consider Upgrading.</strong> If you need concrete, actionable steps and a money-back guarantee, the premium report will provide the exact contacts, pricing, and a full roadmap.</li>
+            <ul style="margin-top: 16px; padding-left: 20px;">
+                <li><strong>Step 1: Review the Scenarios.</strong> Understand the three approaches (Conservative, Balanced, Maximum Savings) to find what fits your needs.</li>
+                <li><strong>Step 2: Examine Local Providers.</strong> See examples of price variations between funeral directors in your area.</li>
+                <li><strong>Step 3: Verify Current Pricing.</strong> Always confirm pricing and availability directly with funeral directors before making decisions.</li>
+                <li><strong>Step 4: Consider Premium Guidance.</strong> For detailed implementation steps and ongoing support, the premium analysis provides comprehensive guidance.</li>
             </ul>
         </section>
 
         <!-- OPTIMISATION SCENARIOS -->
         <section class="report-section">
-            <h2 class="section-title">Your Three Cost Optimisation Scenarios</h2>
+            <h2 class="section-title">Your Three Cost Optimization Scenarios</h2>
             
             <!-- CONSERVATIVE -->
             <div class="scenario-card">
                 <div class="scenario-header">
                     <h3 class="scenario-title">Conservative Approach</h3>
                     <div class="scenario-savings">
-                        £500 - £800
-                        <span class="savings-percentage">10-15% reduction</span>
+                        You might save £500 - £800
+                        <span class="savings-percentage">10-15% potential reduction</span>
                     </div>
                 </div>
                 
                 <p class="scenario-description">
-                    Minimal changes to traditional funeral arrangements with modest savings. Simple provider and timing optimisations without disrupting family plans.
+                    Minimal changes to traditional funeral arrangements with modest potential savings. Simple provider and timing optimizations without disrupting family plans.
                 </p>
             </div>
 
@@ -599,15 +660,15 @@
             <div class="scenario-card recommended">
                 <div class="recommended-badge">BALANCED</div>
                 <div class="scenario-header">
-                    <h3 class="scenario-title">Balanced Optimisation</h3>
+                    <h3 class="scenario-title">Balanced Optimization</h3>
                     <div class="scenario-savings">
-                        £1,200 - £1,800
-                        <span class="savings-percentage">25-35% reduction</span>
+                        You might save £1,200 - £1,800
+                        <span class="savings-percentage">25-35% potential reduction</span>
                     </div>
                 </div>
                 
                 <p class="scenario-description">
-                    Strategic combination of provider selection, timing adjustments, and selective service modifications whilst maintaining funeral dignity. The most popular choice amongst UK families.
+                    Strategic combination of provider selection, timing adjustments, and selective service modifications while maintaining funeral dignity. The most popular choice among UK families researching costs.
                 </p>
             </div>
 
@@ -616,13 +677,13 @@
                 <div class="scenario-header">
                     <h3 class="scenario-title">Maximum Savings</h3>
                     <div class="scenario-savings">
-                        £2,000 - £2,500
-                        <span class="savings-percentage">45-60% reduction</span>
+                        You might save £2,000 - £2,500
+                        <span class="savings-percentage">45-60% potential reduction</span>
                     </div>
                 </div>
                 
                 <p class="scenario-description">
-                    Direct cremation approach with separate celebration of life service, maximising cost savings through complete service restructuring. Modern approach gaining popularity.
+                    Direct cremation approach with separate celebration of life service, maximizing potential cost savings through complete service restructuring. Modern approach gaining popularity.
                 </p>
             </div>
         </section>
@@ -636,7 +697,7 @@
                     <tr>
                         <th>Funeral Director</th>
                         <th>Location</th>
-                        <th>Basic Cost</th>
+                        <th>Basic Cost (estimated)</th>
                         <th>Distance</th>
                     </tr>
                 </thead>
@@ -644,64 +705,52 @@
                     <tr class="best-value">
                         <td><strong>Worthing Family Funerals</strong></td>
                         <td>Worthing</td>
-                        <td class="price">£2,370</td>
+                        <td class="price">From £2,370</td>
                         <td>18 miles</td>
                     </tr>
                     <tr>
                         <td>A Natural Undertaking</td>
                         <td>Waterlooville</td>
-                        <td class="price">£2,485</td>
+                        <td class="price">From £2,485</td>
                         <td>22 miles</td>
                     </tr>
                     <tr>
                         <td>Brighton & Hove Funeral</td>
                         <td>Brighton</td>
-                        <td class="price">£2,850</td>
+                        <td class="price">From £2,850</td>
                         <td>2 miles</td>
                     </tr>
                     <tr>
                         <td>South Coast Funeral Services</td>
                         <td>Eastbourne</td>
-                        <td class="price">£3,100</td>
+                        <td class="price">From £3,100</td>
                         <td>24 miles</td>
                     </tr>
                 </tbody>
             </table>
 
-            <p><strong>Note:</strong> All listed providers are CMA-compliant and maintain high standards of service. Distance calculations are from postcode BN1 4GH.</p>
-        </section>
-
-        <!-- LIMITATIONS -->
-        <section class="report-section">
-            <div class="limitations">
-                <div class="limitations-title">Important Limitations of This Complimentary Analysis</div>
-                <ul class="limitations-list">
-                    <li><strong>Estimates only:</strong> These are potential savings ranges based on regional averages</li>
-                    <li><strong>No specific details:</strong> Exact provider contacts and pricing not included</li>
-                    <li><strong>No implementation guide:</strong> Step-by-step instructions require premium analysis</li>
-                    <li><strong>No personalisation:</strong> Your specific needs and preferences not considered</li>
-                    <li><strong>No guarantee:</strong> Actual savings depend on your specific circumstances</li>
-                </ul>
+            <div class="info-note">
+                Estimated costs based on publicly available data. Always confirm current pricing directly with service providers. Distance calculations from postcode BN1 4GH.
             </div>
         </section>
 
         <!-- UPGRADE CTA -->
         <section class="upgrade-cta">
-            <h2 class="cta-title">Get Your Complete Implementation Plan</h2>
+            <h2 class="cta-title">Get Your Complete Implementation Guide</h2>
             <p class="cta-subtitle">
-                This preview shows your potential. Get the exact calculations, provider contacts, and step-by-step guide to implement these savings.
+                This overview shows your potential. Get detailed calculations, provider guidance, and step-by-step support to research these savings opportunities.
             </p>
 
             <div class="value-preview">
                 <div class="preview-title">What you'll receive in the Premium version for £39:</div>
                 <ul class="value-list">
-                    <li><strong>Exact savings calculations</strong> (not ranges) — know precisely what you'll save</li>
-                    <li class="premium-only">Direct provider contact details and telephone numbers ready to call</li>
-                    <li class="premium-only">14-day step-by-step implementation roadmap with daily actions</li>
-                    <li class="premium-only">Negotiation scripts and email templates to secure best prices</li>
-                    <li class="premium-only">Off-peak timing strategies and booking guidance worth £100-400</li>
-                    <li class="premium-only">60-day email support for any questions during implementation</li>
-                    <li class="premium-only"><strong>£500+ savings guarantee</strong> or complete money-back refund</li>
+                    <li><strong>Detailed savings calculations</strong> (not just ranges) – better understand potential savings</li>
+                    <li class="premium-only">Provider research guidance and contact details to help with your research</li>
+                    <li class="premium-only">14-day implementation roadmap with suggested daily actions</li>
+                    <li class="premium-only">Negotiation scripts and email templates to help secure better prices</li>
+                    <li class="premium-only">Off-peak timing strategies and booking guidance worth £100-400 potential savings</li>
+                    <li class="premium-only">60-day email support for questions during your research</li>
+                    <li class="premium-only"><strong>Research support commitment</strong> – comprehensive guidance or money back</li>
                 </ul>
             </div>
             
@@ -714,8 +763,8 @@
                 </a>
             </div>
             
-            <p class="guarantee-text">
-                60-day money-back guarantee if you don't save at least £500 • Independent analysis with no hidden fees
+            <p class="commitment-text">
+                60-day money-back research support commitment • Independent analysis with no hidden fees
             </p>
         </section>
 
@@ -725,9 +774,11 @@
                 support@clearfuneralcosts.co.uk | Mon-Fri 9am-5pm
             </div>
             <div class="footer-disclaimer">
-                This analysis is based on official CMA (Competition and Markets Authority) data as of September 2025. 
-                Prices may vary and should be confirmed with providers. ClearFuneralCosts is independent 
-                and receives no commissions from funeral directors. Always verify details before making decisions.
+                <strong>Information Service:</strong> This analysis is based on publicly available pricing data as of September 2025. 
+                Pricing data may be outdated or incomplete. Users must verify all information directly with service providers. 
+                ClearFuneralCosts provides information only and does not provide financial, legal, or professional advice. 
+                We are not authorized by the Financial Conduct Authority. Always verify details before making decisions. 
+                We are independent and receive no commissions from funeral directors.
             </div>
         </footer>
     </div>
