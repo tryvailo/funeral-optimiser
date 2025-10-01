@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Response - ClearFuneralCosts</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; background-color: #fffaf0;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 0;">
+                <table role="presentation" style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+                    
+                    <!-- HEADER -->
+                    <tr>
+                        <td style="background-color: #1a237e; padding: 30px; text-align: center;">
+                            <h1 style="margin: 0; font-size: 24px; font-weight: 600; color: #fffaf0;">
+                                <span style="color: #744c2c; font-weight: 700;">Clear</span>FuneralCosts Support
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- MAIN CONTENT -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #1f2937;">
+                                Hello <strong>{{CUSTOMER_NAME}}</strong>,
+                            </p>
+                            
+                            <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #1f2937;">
+                                Thank you for contacting ClearFuneralCosts support. Here's the response to your question:
+                            </p>
+
+                            <!-- ORIGINAL QUESTION -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 30px 0;">
+                                <tr>
+                                    <td style="background-color: #f7fafc; border-left: 4px solid #374151; padding: 20px; border-radius: 8px;">
+                                        <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: 600; color: #6b7280;">
+                                            YOUR QUESTION:
+                                        </p>
+                                        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #1f2937; font-style: italic;">
+                                            {{ORIGINAL_QUESTION}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- RESPONSE -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 30px 0;">
+                                <tr>
+                                    <td style="background-color: rgba(116, 76, 44, 0.05); border-left: 4px solid #744c2c; padding: 20px; border-radius: 8px;">
+                                        <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: 600; color: #744c2c;">
+                                            OUR RESPONSE:
+                                        </p>
+                                        <div style="font-size: 15px; line-height: 1.7; color: #1f2937;">
+                                            {{SUPPORT_RESPONSE}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- ADDITIONAL RESOURCES (if applicable) -->
+                            {{#if ADDITIONAL_RESOURCES}}
+                            <h3 style="margin: 30px 0 16px 0; font-size: 18px; font-weight: 600; color: #1a237e;">
+                                Additional Resources
+                            </h3>
+                            
+                            <ul style="margin: 0 0 20px 0; padding-left: 20px; color: #1f2937; line-height: 1.8;">
+                                {{#each ADDITIONAL_RESOURCES}}
+                                <li><a href="{{this.url}}" style="color: #744c2c; text-decoration: none; font-weight: 600;">{{this.title}}</a></li>
+                                {{/each}}
+                            </ul>
+                            {{/if}}
+
+                            <!-- FURTHER ASSISTANCE -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 30px 0;">
+                                <tr>
+                                    <td style="background-color: rgba(59, 130, 246, 0.05); padding: 20px; border-radius: 8px; text-align: center;">
+                                        <p style="margin: 0 0 12px 0; font-size: 15px; color: #1f2937;">
+                                            Need further assistance?
+                                        </p>
+                                        <p style="margin: 0; font-size: 14px; color: #374151;">
+                                            Simply reply to this email and we'll be happy to help
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- TICKET INFO -->
+                            <p style="margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280;">
+                                Ticket ID: {{TICKET_ID}} | Response Time: {{RESPONSE_TIME}}
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td style="background-color: #1f2937; padding: 30px; text-align: center;">
+                            <p style="margin: 0 0 12px 0; font-size: 14px; color: #ffffff;">
+                                <span style="color: #744c2c; font-weight: 700;">Clear</span>FuneralCosts Support Team
+                            </p>
+                            <p style="margin: 0 0 16px 0; font-size: 13px; color: rgba(255, 255, 255, 0.8);">
+                                Available Mon-Fri, 9am-5pm
+                            </p>
+                            <p style="margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6);">
+                                support@clearfuneralcosts.co.uk
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

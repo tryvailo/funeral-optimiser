@@ -1,0 +1,748 @@
+/* ============================================
+   CLEARFUNERALCOSTS - PREMIUM REPORT STYLES
+   ============================================ */
+
+/* === CSS VARIABLES === */
+:root {
+    --navy-primary: #1a237e;
+    --charcoal-text: #1f2937;
+    --burgundy-accent: #744c2c;
+    --warm-grey-bg: #f7fafc;
+    --muted-blue: #374151;
+    --warm-cream: #fffaf0;
+    --pure-white: #ffffff;
+    --burgundy-hover: #5a3921;
+    --success-green: #059669;
+    --text-muted: #6b7280;
+    --warning-orange: #ed8936;
+}
+
+/* === BASE STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--charcoal-text);
+    font-size: 18px;
+    background-color: var(--warm-cream);
+    margin: 0;
+    padding: 0;
+}
+
+.report-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--pure-white);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* === HEADER === */
+.report-header {
+    background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
+    color: var(--pure-white);
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.company-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.clear-highlight {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+.report-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.report-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.report-date {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* === INFO NOTES === */
+.info-note {
+    background: rgba(107, 114, 128, 0.05);
+    border-left: 3px solid var(--muted-blue);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* === SERVICE DEFINITION === */
+.service-definition {
+    background: rgba(107, 114, 128, 0.05);
+    border-left: 3px solid var(--muted-blue);
+    padding: 24px;
+    margin: 24px 0;
+    border-radius: 8px;
+}
+
+.service-definition h4 {
+    color: var(--muted-blue);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.service-definition p {
+    font-size: 1rem;
+    color: var(--muted-blue);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* === PERSONALIZED INTRO === */
+.personalized-intro {
+    background: var(--warm-grey-bg);
+    padding: 40px;
+    border-left: 4px solid var(--burgundy-accent);
+}
+
+.intro-title {
+    color: var(--navy-primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.user-preferences {
+    background: var(--pure-white);
+    padding: 28px;
+    border-radius: 8px;
+    margin: 24px 0;
+    border: 1px solid #e5e7eb;
+}
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--warm-grey-bg);
+    font-size: 1rem;
+}
+
+.preference-label {
+    font-weight: 600;
+    color: var(--navy-primary);
+}
+
+.preference-value {
+    color: var(--muted-blue);
+}
+
+/* === EXACT SAVINGS === */
+.exact-savings {
+    background: linear-gradient(135deg, var(--success-green), #047857);
+    color: var(--pure-white);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.savings-amount {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.savings-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    margin-bottom: 16px;
+}
+
+.roi-calculation {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 24px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.roi-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.roi-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.savings-disclaimer {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* === CONTENT SECTIONS === */
+.report-section {
+    padding: 40px;
+    border-bottom: 1px solid var(--warm-grey-bg);
+}
+
+.section-title {
+    color: var(--navy-primary);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--warm-grey-bg);
+}
+
+.section-subtitle {
+    color: var(--muted-blue);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* === BASELINE COSTS === */
+.cost-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.cost-card {
+    background: var(--warm-grey-bg);
+    padding: 28px;
+    border-radius: 12px;
+    border-left: 4px solid var(--burgundy-accent);
+}
+
+.cost-card h4 {
+    color: var(--navy-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    padding: 8px 0;
+    font-size: 1rem;
+}
+
+.cost-total {
+    font-weight: 600;
+    border-top: 2px solid var(--burgundy-accent);
+    padding-top: 12px;
+    margin-top: 16px;
+    font-size: 1.2rem;
+}
+
+/* === RECOMMENDATIONS === */
+.recommendation-card {
+    border: 2px solid var(--warm-grey-bg);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    background: var(--pure-white);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.recommendation-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.recommendation-card.recommended {
+    border-color: var(--success-green);
+    background: rgba(5, 150, 105, 0.05);
+}
+
+.recommendation-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--success-green);
+    color: var(--pure-white);
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.recommendation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.recommendation-title {
+    color: var(--navy-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    flex: 1;
+    min-width: 250px;
+}
+
+.recommendation-score {
+    display: inline-block;
+    background: var(--burgundy-accent);
+    color: var(--pure-white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.recommendation-savings {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--success-green);
+}
+
+.savings-percentage {
+    font-size: 1rem;
+    opacity: 0.8;
+    display: block;
+}
+
+.recommendation-description {
+    color: var(--muted-blue);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* === PROS & CONS === */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.pros, .cons {
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.pros {
+    background: rgba(5, 150, 105, 0.1);
+    border-left: 4px solid var(--success-green);
+}
+
+.cons {
+    background: rgba(237, 137, 54, 0.1);
+    border-left: 4px solid var(--warning-orange);
+}
+
+.pros h5, .cons h5 {
+    color: var(--navy-primary);
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.pros ul, .cons ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1rem;
+}
+
+.pros li, .cons li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.pros li::before {
+    content: "✓";
+    color: var(--success-green);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.cons li::before {
+    content: "!";
+    color: var(--warning-orange);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* === PROVIDER TABLE === */
+.provider-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    background: var(--pure-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.provider-table th {
+    background: var(--navy-primary);
+    color: var(--pure-white);
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.provider-table td {
+    padding: 20px;
+    border-bottom: 1px solid var(--warm-grey-bg);
+    font-size: 1rem;
+}
+
+.provider-table tr:nth-child(even) {
+    background: var(--warm-grey-bg);
+}
+
+.provider-table .price {
+    font-weight: 600;
+    color: var(--burgundy-accent);
+    font-size: 1.2rem;
+}
+
+.provider-table .best-value {
+    background: rgba(5, 150, 105, 0.1);
+}
+
+.contact-info-table {
+    font-size: 0.95rem;
+    color: var(--muted-blue);
+}
+
+/* === IMPLEMENTATION ROADMAP === */
+.implementation-step {
+    background: var(--warm-grey-bg);
+    padding: 28px;
+    border-radius: 12px;
+    border-left: 4px solid var(--burgundy-accent);
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: var(--burgundy-accent);
+    color: var(--pure-white);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-weight: 600;
+    color: var(--navy-primary);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.step-actions {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.step-actions li {
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.step-actions li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--burgundy-accent);
+    font-weight: bold;
+}
+
+/* === NEGOTIATION SCRIPTS === */
+.script-section {
+    background: var(--warm-grey-bg);
+    padding: 28px;
+    border-radius: 12px;
+    margin: 24px 0;
+}
+
+.script-title {
+    color: var(--navy-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.script-content {
+    background: var(--pure-white);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid var(--burgundy-accent);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.script-placeholder {
+    color: var(--burgundy-accent);
+    font-weight: bold;
+}
+
+/* === FINANCIAL SUMMARY === */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.summary-item {
+    text-align: center;
+    padding: 24px;
+    background: var(--warm-grey-bg);
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.summary-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--burgundy-accent);
+    margin-bottom: 4px;
+}
+
+.summary-label {
+    font-size: 1rem;
+    color: var(--muted-blue);
+}
+
+/* === GUARANTEE BOX === */
+.guarantee-box {
+    background: linear-gradient(135deg, var(--success-green), #047857);
+    color: var(--pure-white);
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.guarantee-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.guarantee-text {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+    background: var(--navy-primary);
+    color: var(--pure-white);
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.contact-item h4 {
+    color: var(--pure-white);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* === FOOTER DISCLAIMER === */
+.footer-disclaimer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 24px;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+
+    .cost-breakdown,
+    .preferences-grid,
+    .contact-grid,
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+
+    .report-header {
+        padding: 40px 30px;
+    }
+
+    .report-section,
+    .personalized-intro {
+        padding: 30px 20px;
+    }
+
+    .report-title {
+        font-size: 2.4rem;
+    }
+
+    .savings-amount {
+        font-size: 2.6rem;
+    }
+
+    .provider-table {
+        font-size: 0.95rem;
+    }
+
+    .provider-table th,
+    .provider-table td {
+        padding: 16px 12px;
+    }
+
+    .implementation-step {
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .recommendation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .report-title {
+        font-size: 2rem;
+    }
+
+    .savings-amount {
+        font-size: 2.2rem;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .provider-table th,
+    .provider-table td {
+        padding: 14px 10px;
+    }
+
+    .provider-table {
+        font-size: 0.9rem;
+    }
+
+    .recommendation-title {
+        font-size: 1.3rem;
+    }
+
+    .script-content {
+        font-size: 0.9rem;
+        padding: 16px;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    .report-container {
+        box-shadow: none;
+    }
+
+    .report-header {
+        background: var(--navy-primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .exact-savings,
+    .guarantee-box,
+    .contact-section {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

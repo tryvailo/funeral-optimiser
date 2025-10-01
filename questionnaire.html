@@ -26,7 +26,7 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             font-size: 18px;
             line-height: 1.6;
             color: var(--charcoal-text);
@@ -356,6 +356,61 @@
             opacity: 1;
         }
 
+        /* SUMMARY SECTION */
+        .summary-section {
+            background: var(--warm-grey-bg);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .summary-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 24px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            font-weight: 600;
+            color: var(--charcoal-text);
+        }
+
+        .summary-value {
+            color: var(--muted-blue);
+        }
+
+        .summary-savings-box {
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .summary-savings-amount {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .summary-savings-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
         /* HELP TEXT */
         .help-text {
             font-size: 0.9rem;
@@ -502,6 +557,10 @@
             .trust-indicators {
                 gap: 20px;
             }
+
+            .summary-section {
+                padding: 24px 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -645,7 +704,6 @@
             <p class="help-text">*All costs are estimates based on publicly available data. This helps us prioritise recommendations for your research.</p>
         </section>
 
-        <!-- Continue with other questions - keeping same pattern but adding disclaimers -->
         <!-- QUESTION 2: ATTENDANCE -->
         <section class="question-card hidden" id="question-2">
             <div class="question-header">
@@ -707,20 +765,414 @@
             <p class="help-text">We can research venue costs based on expected attendance.</p>
         </section>
 
-        <!-- Continue pattern for remaining questions but keeping content concise -->
-        
+        <!-- QUESTION 3: BUDGET PREFERENCES -->
+        <section class="question-card hidden" id="question-3">
+            <div class="question-header">
+                <h2 class="question-title">What's your approximate budget?</h2>
+                <p class="question-subtitle">This helps us focus on realistic options to research</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="budget" data-value="budget_2000">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Under £2,000</div>
+                            <div class="option-description">Focus on direct cremation and essential services</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget" data-value="budget_3000">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">£2,000 - £3,000</div>
+                            <div class="option-description">Simple services with some traditional elements</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option highlighted" data-question="budget" data-value="budget_4000">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">£3,000 - £4,000</div>
+                            <div class="option-description">Traditional services with cost optimisation</div>
+                            <div class="option-meta option-savings">Best balance for savings</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget" data-value="budget_5000plus">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">£4,000+</div>
+                            <div class="option-description">Full traditional service with flexibility</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget" data-value="budget_unsure">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Not sure yet</div>
+                            <div class="option-description">Show me options across all price ranges</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Remember: our goal is to help you research the best value within your budget.</p>
+        </section>
+
+        <!-- QUESTION 4: LOCATION FLEXIBILITY -->
+        <section class="question-card hidden" id="question-4">
+            <div class="question-header">
+                <h2 class="question-title">How flexible are you with location?</h2>
+                <p class="question-subtitle">Greater flexibility can unlock more savings opportunities</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="location_flexibility" data-value="local_only">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Must be local (within 5 miles)</div>
+                            <div class="option-description">Convenience is most important</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option highlighted" data-question="location_flexibility" data-value="area_15">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Within my area (5-15 miles)</div>
+                            <div class="option-description">Reasonable travel for better value</div>
+                            <div class="option-meta option-savings">Good savings potential</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option highlighted" data-question="location_flexibility" data-value="regional_25">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Regional (15-25 miles)</div>
+                            <div class="option-description">Worth travelling for significant savings</div>
+                            <div class="option-meta option-savings">Higher savings potential</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="location_flexibility" data-value="anywhere">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Anywhere in South East</div>
+                            <div class="option-description">Maximum flexibility for best value</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Most families find 10-20 mile radius offers the best balance of convenience and savings.</p>
+        </section>
+
+        <!-- QUESTION 5: TIMING FLEXIBILITY -->
+        <section class="question-card hidden" id="question-5">
+            <div class="question-header">
+                <h2 class="question-title">How flexible is your timing?</h2>
+                <p class="question-subtitle">Off-peak times can reduce crematorium fees by £200-£400</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="timing_flexibility" data-value="specific_required">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Specific date required</div>
+                            <div class="option-description">Must be on a particular day</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="timing_flexibility" data-value="weekday_standard">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Weekday, standard hours (10am-3pm)</div>
+                            <div class="option-description">Traditional timing preference</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option highlighted" data-question="timing_flexibility" data-value="weekday_flexible">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Weekday, flexible hours</div>
+                            <div class="option-description">Open to early morning or late afternoon</div>
+                            <div class="option-meta option-savings">Potential savings: £200-£300*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option highlighted" data-question="timing_flexibility" data-value="any_time">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Completely flexible</div>
+                            <div class="option-description">Any day or time that works</div>
+                            <div class="option-meta option-savings">Potential savings: £300-£400*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Early morning slots (8-9am) are often £200-£300 cheaper at many crematoria.</p>
+        </section>
+
+        <!-- QUESTION 6: PRIORITY FACTORS -->
+        <section class="question-card hidden" id="question-6">
+            <div class="question-header">
+                <h2 class="question-title">What matters most to you?</h2>
+                <p class="question-subtitle">Select your top priority (you can choose one)</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option highlighted" data-question="priority" data-value="best_value">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Best value for money</div>
+                            <div class="option-description">Maximum savings while maintaining dignity</div>
+                            <div class="option-meta option-savings">Recommended for cost optimisation</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="priority" data-value="traditional">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Traditional service</div>
+                            <div class="option-description">Maintaining customs and traditions</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="priority" data-value="convenience">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Convenience and simplicity</div>
+                            <div class="option-description">Minimal planning and coordination</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="priority" data-value="personalisation">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Personalisation</div>
+                            <div class="option-description">Unique and meaningful celebration</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Your priority helps us recommend the most suitable research approach.</p>
+        </section>
+
+        <!-- QUESTION 7: ADDITIONAL REQUIREMENTS -->
+        <section class="question-card hidden" id="question-7">
+            <div class="question-header">
+                <h2 class="question-title">Any specific requirements?</h2>
+                <p class="question-subtitle">Select all that apply (multiple selection allowed)</p>
+            </div>
+            
+            <div class="options-container" data-multiple="true">
+                <div class="option" data-question="requirements" data-value="religious_specific">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Religious or cultural requirements</div>
+                            <div class="option-description">Specific faith or cultural traditions</div>
+                        </div>
+                        <div class="option-checkbox">
+                            <span class="checkbox-tick">✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="requirements" data-value="eco_friendly">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Environmentally friendly options</div>
+                            <div class="option-description">Eco-coffins, woodland burial, etc.</div>
+                        </div>
+                        <div class="option-checkbox">
+                            <span class="checkbox-tick">✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="requirements" data-value="repatriation">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Repatriation services</div>
+                            <div class="option-description">International transport of remains</div>
+                        </div>
+                        <div class="option-checkbox">
+                            <span class="checkbox-tick">✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="requirements" data-value="live_streaming">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Live streaming capability</div>
+                            <div class="option-description">For remote family and friends</div>
+                        </div>
+                        <div class="option-checkbox">
+                            <span class="checkbox-tick">✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="requirements" data-value="none">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">No specific requirements</div>
+                            <div class="option-description">Standard services are fine</div>
+                        </div>
+                        <div class="option-checkbox">
+                            <span class="checkbox-tick">✓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Multiple selections allowed. These requirements will be considered in your research plan.</p>
+        </section>
+
+        <!-- QUESTION 8: SUMMARY & CONFIRMATION -->
+        <section class="question-card hidden" id="question-8">
+            <div class="question-header">
+                <h2 class="question-title">Review your preferences</h2>
+                <p class="question-subtitle">Confirm your details before proceeding to payment</p>
+            </div>
+            
+            <div class="summary-section">
+                <h3 class="summary-title">Your Research Preferences</h3>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Service Type:</span>
+                    <span class="summary-value" id="summary-service-type">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Expected Attendance:</span>
+                    <span class="summary-value" id="summary-attendance">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Budget Range:</span>
+                    <span class="summary-value" id="summary-budget">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Location Flexibility:</span>
+                    <span class="summary-value" id="summary-location">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Timing Flexibility:</span>
+                    <span class="summary-value" id="summary-timing">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Priority:</span>
+                    <span class="summary-value" id="summary-priority">-</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span class="summary-label">Requirements:</span>
+                    <span class="summary-value" id="summary-requirements">-</span>
+                </div>
+
+                <div class="summary-savings-box">
+                    <div class="summary-savings-amount" id="final-savings">£1,200 - £2,400</div>
+                    <div class="summary-savings-label">Estimated Potential Savings Range*</div>
+                </div>
+            </div>
+
+            <div class="service-definition">
+                <h4>Next Steps</h4>
+                <p>After completing payment (£39), you'll receive your personalised research plan with:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Detailed cost breakdown for your preferences</li>
+                    <li>Specific funeral director contacts in your area</li>
+                    <li>14-day implementation roadmap</li>
+                    <li>Negotiation scripts and email templates</li>
+                    <li>60-day research support guarantee</li>
+                </ul>
+            </div>
+            
+            <p class="help-text">*All savings are estimates based on publicly available data. Final savings depend on provider selection and actual pricing.</p>
+        </section>
+
         <!-- NAVIGATION -->
         <nav class="navigation">
-            <button class="nav-button previous" id="prev-btn" onclick="previousStep()">
+            <button class="nav-button previous" id="prev-btn" disabled>
                 ← Previous
             </button>
             
-            <button class="nav-button next" id="next-btn" onclick="nextStep()">
+            <button class="nav-button next" id="next-btn" disabled>
                 Next →
             </button>
             
-            <button class="nav-button complete hidden" id="complete-btn" onclick="completeQuestionnaire()">
-                Complete Analysis
+            <button class="nav-button complete hidden" id="complete-btn" disabled>
+                Proceed to Payment (£39)
             </button>
         </nav>
 
@@ -746,12 +1198,52 @@
     </div>
 
     <script>
-        // Same JavaScript functionality but with updated messaging
         let currentStep = 1;
         const totalSteps = 8;
         let responses = {};
         let estimatedSavings = { min: 500, max: 2500 };
         let providerCount = 47;
+
+        // Label mappings for summary
+        const labelMappings = {
+            service_type: {
+                'traditional_burial': 'Traditional Burial Service',
+                'traditional_cremation': 'Traditional Cremation Service',
+                'direct_cremation': 'Direct Cremation',
+                'flexible': 'Open to suggestions'
+            },
+            expected_attendance: {
+                'intimate_10': 'Small gathering (up to 10)',
+                'family_30': 'Family service (10-30)',
+                'community_100': 'Community service (30-100)',
+                'large_100plus': 'Large gathering (100+)'
+            },
+            budget: {
+                'budget_2000': 'Under £2,000',
+                'budget_3000': '£2,000 - £3,000',
+                'budget_4000': '£3,000 - £4,000',
+                'budget_5000plus': '£4,000+',
+                'budget_unsure': 'Not sure yet'
+            },
+            location_flexibility: {
+                'local_only': 'Local only (within 5 miles)',
+                'area_15': 'Within area (5-15 miles)',
+                'regional_25': 'Regional (15-25 miles)',
+                'anywhere': 'Anywhere in South East'
+            },
+            timing_flexibility: {
+                'specific_required': 'Specific date required',
+                'weekday_standard': 'Weekday, standard hours',
+                'weekday_flexible': 'Weekday, flexible hours',
+                'any_time': 'Completely flexible'
+            },
+            priority: {
+                'best_value': 'Best value for money',
+                'traditional': 'Traditional service',
+                'convenience': 'Convenience and simplicity',
+                'personalisation': 'Personalisation'
+            }
+        };
 
         // Initialize questionnaire
         document.addEventListener('DOMContentLoaded', function() {
@@ -774,8 +1266,6 @@
                     }
                 });
             });
-
-            updateNavigationButtons();
         }
 
         function handleSingleChoice(question, value, element) {
@@ -793,11 +1283,28 @@
             updateNavigationButtons();
         }
 
+        function handleMultipleChoice(question, value, element) {
+            element.classList.toggle('selected');
+            
+            if (!responses[question]) {
+                responses[question] = [];
+            }
+            
+            const index = responses[question].indexOf(value);
+            if (index > -1) {
+                responses[question].splice(index, 1);
+            } else {
+                responses[question].push(value);
+            }
+            
+            updateNavigationButtons();
+        }
+
         function updateSavingsEstimate() {
-            // Same logic but with "may save" language
             let minSavings = 500;
             let maxSavings = 2500;
             
+            // Service type impact
             if (responses.service_type === 'direct_cremation') {
                 minSavings += 300;
                 maxSavings += 800;
@@ -806,20 +1313,188 @@
                 maxSavings += 1000;
             }
             
-            estimatedSavings = { min: Math.min(minSavings, 4500), max: Math.min(maxSavings, 5500) };
+            // Location flexibility impact
+            if (responses.location_flexibility === 'regional_25' || responses.location_flexibility === 'anywhere') {
+                minSavings += 200;
+                maxSavings += 400;
+            }
+            
+            // Timing flexibility impact
+            if (responses.timing_flexibility === 'weekday_flexible') {
+                minSavings += 200;
+                maxSavings += 300;
+            } else if (responses.timing_flexibility === 'any_time') {
+                minSavings += 300;
+                maxSavings += 400;
+            }
+            
+            // Budget impact
+            if (responses.budget === 'budget_4000' || responses.budget === 'budget_5000plus') {
+                minSavings += 300;
+                maxSavings += 500;
+            }
+            
+            estimatedSavings = { 
+                min: Math.min(minSavings, 2500), 
+                max: Math.min(maxSavings, 4500) 
+            };
             
             document.getElementById('estimated-savings').textContent = 
                 `£${estimatedSavings.min.toLocaleString()} - £${estimatedSavings.max.toLocaleString()}`;
         }
 
-        function completeQuestionnaire() {
-            if (isCurrentStepValid()) {
-                console.log('Questionnaire responses:', responses);
-                alert('Thank you! Your responses help us provide better price information. Redirecting to secure payment...');
+        function updateProviderCount() {
+            let baseCount = 47;
+            
+            if (responses.location_flexibility === 'regional_25') {
+                baseCount += 15;
+            } else if (responses.location_flexibility === 'anywhere') {
+                baseCount += 30;
+            } else if (responses.location_flexibility === 'local_only') {
+                baseCount -= 10;
+            }
+            
+            providerCount = Math.max(baseCount, 20);
+            document.getElementById('provider-count').textContent = providerCount;
+        }
+
+        function updateUI() {
+            // Update progress bar
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            
+            // Update step counter
+            document.getElementById('current-step').textContent = currentStep;
+            
+            // Show/hide questions
+            for (let i = 1; i <= totalSteps; i++) {
+                const question = document.getElementById(`question-${i}`);
+                if (question) {
+                    if (i === currentStep) {
+                        question.classList.remove('hidden');
+                    } else {
+                        question.classList.add('hidden');
+                    }
+                }
+            }
+            
+            // Update navigation buttons
+            updateNavigationButtons();
+            
+            // Update summary if on last step
+            if (currentStep === 8) {
+                updateSummary();
             }
         }
 
-        // ... (rest of JavaScript functions remain similar but with updated messaging)
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const completeBtn = document.getElementById('complete-btn');
+            
+            // Previous button
+            prevBtn.disabled = currentStep === 1;
+            
+            // Show/hide next vs complete button
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                completeBtn.classList.remove('hidden');
+                completeBtn.disabled = !isCurrentStepValid();
+            } else {
+                nextBtn.classList.remove('hidden');
+                completeBtn.classList.add('hidden');
+                nextBtn.disabled = !isCurrentStepValid();
+            }
+        }
+
+        function isCurrentStepValid() {
+            const currentQuestion = document.getElementById(`question-${currentStep}`);
+            if (!currentQuestion) return false;
+            
+            const container = currentQuestion.querySelector('.options-container');
+            if (!container) return false;
+            
+            if (container.dataset.multiple === 'true') {
+                // For multiple choice, at least one must be selected
+                const questionKey = container.querySelector('.option').dataset.question;
+                return responses[questionKey] && responses[questionKey].length > 0;
+            } else {
+                // For single choice, one must be selected
+                const questionKey = container.querySelector('.option').dataset.question;
+                return responses[questionKey] !== undefined;
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps && isCurrentStepValid()) {
+                currentStep++;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function updateSummary() {
+            // Update all summary fields
+            for (const [key, value] of Object.entries(responses)) {
+                const summaryElement = document.getElementById(`summary-${key.replace('_', '-')}`);
+                if (summaryElement) {
+                    if (Array.isArray(value)) {
+                        // Multiple choice
+                        summaryElement.textContent = value.length > 0 ? 
+                            value.map(v => v.replace(/_/g, ' ')).join(', ') : 
+                            'None selected';
+                    } else {
+                        // Single choice
+                        const mapping = labelMappings[key];
+                        summaryElement.textContent = mapping ? mapping[value] : value;
+                    }
+                }
+            }
+            
+            // Update final savings estimate
+            document.getElementById('final-savings').textContent = 
+                `£${estimatedSavings.min.toLocaleString()} - £${estimatedSavings.max.toLocaleString()}`;
+        }
+
+        function completeQuestionnaire() {
+            if (isCurrentStepValid()) {
+                console.log('Questionnaire completed:', responses);
+                console.log('Estimated savings:', estimatedSavings);
+                
+                // Store data in sessionStorage for payment page
+                sessionStorage.setItem('questionnaireData', JSON.stringify({
+                    responses: responses,
+                    savings: estimatedSavings,
+                    providers: providerCount
+                }));
+                
+                // Redirect to payment page
+                alert('Redirecting to secure payment...');
+                // window.location.href = '/payment.html';
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' && !document.getElementById('next-btn').disabled) {
+                nextStep();
+            } else if (e.key === 'ArrowLeft' && currentStep > 1) {
+                previousStep();
+            }
+        });
+
+        // Add click handlers to navigation buttons
+        document.getElementById('prev-btn').addEventListener('click', previousStep);
+        document.getElementById('next-btn').addEventListener('click', nextStep);
+        document.getElementById('complete-btn').addEventListener('click', completeQuestionnaire);
     </script>
 </body>
 </html>

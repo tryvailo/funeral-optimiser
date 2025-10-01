@@ -5,1085 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding UK Funeral Costs | Independent Information Service | ClearFuneralCosts</title>
     <meta name="description" content="Get clear, compassionate information on UK funeral costs. Independent analysis based on official government data to help you research options during difficult times.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --navy-primary: #1a237e;
-            --charcoal-text: #1f2937;
-            --burgundy-accent: #744c2c;
-            --warm-grey-bg: #f7fafc;
-            --muted-blue: #374151;
-            --warm-cream: #fffaf0;
-            --pure-white: #ffffff;
-            --burgundy-hover: #5a3921;
-            --grey-hover: #2d3748;
-            --focus-outline: #744c2c;
-            --text-secondary: #1f2937;
-            --text-muted: #6b7280;
-            --success-green: #059669;
-            --soft-grey: #9ca3af;
-            --trust-blue: #3b82f6;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--charcoal-text);
-            font-size: 20px;
-            background-color: var(--warm-cream);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            color: var(--navy-primary);
-            font-weight: 600;
-        }
-
-        .clear-highlight {
-            color: var(--burgundy-accent);
-            font-weight: 700;
-        }
-
-        /* HEADER */
-        .site-header {
-            background: var(--pure-white);
-            padding: 15px 0;
-            border-bottom: 1px solid var(--warm-grey-bg);
-            position: sticky;
-            top: 0;
-            z-index: 99;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--navy-primary);
-        }
-
-        .header-guarantee {
-            font-size: 1rem;
-            color: var(--burgundy-accent);
-            font-weight: 600;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, var(--navy-primary) 0%, #2a3990 100%);
-            color: var(--pure-white);
-            padding: 80px 20px;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 580px;
-            gap: 60px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-content {
-            text-align: left;
-        }
-
-        .hero-headline {
-            font-size: 3.6rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: var(--warm-cream);
-        }
-
-        .hero-subheadline {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            line-height: 1.4;
-        }
-
-        .hero-proof {
-            list-style: none;
-            margin: 30px 0;
-        }
-
-        .hero-proof li {
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            font-weight: 500;
-            padding: 14px 18px;
-            margin-bottom: 12px;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-proof li::before {
-            content: "✓";
-            color: #fbbf24;
-            font-weight: bold;
-            margin-right: 14px;
-            font-size: 1.3rem;
-        }
-
-        /* CALCULATOR WIDGET */
-        .calculator-widget {
-    background: var(--pure-white);
-    padding: 44px;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    /* Remove min-height: 800px; */
-    height: auto;  /* Add this */
-}
-
-        .calculator-headline {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 8px;
-        }
-
-        .calculator-subheadline {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        /* SUBTLE INFO NOTES */
-        .calculator-disclaimer {
-            background: rgba(107, 114, 128, 0.05);
-            border-left: 3px solid var(--muted-blue);
-            padding: 20px;
-            margin-bottom: 24px;
-            border-radius: 8px;
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .calculator-form {
-            width: 100%;
-        }
-
-        .form-group {
-            margin-bottom: 12px;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 600;
-            color: var(--charcoal-text);
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .form-input, .form-select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-family: inherit;
-            background-color: var(--pure-white);
-            color: var(--charcoal-text);
-            transition: border-color 0.3s ease;
-        }
-
-        .form-input:focus, .form-select:focus {
-            border-color: var(--burgundy-accent);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
-        }
-
-        .form-input::placeholder {
-            color: var(--text-muted);
-            opacity: 0.8;
-        }
-
-        .form-help {
-            display: block;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 6px;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        
-        /* Message box styles */
-        .message-box {
-            display: none;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            position: relative;
-            font-size: 1rem;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        .message-box.error {
-            background-color: rgba(220, 38, 38, 0.1);
-            color: #dc2626;
-            border: 1px solid #dc2626;
-        }
-        
-        .message-box.success {
-            background-color: rgba(5, 150, 105, 0.1);
-            color: var(--success-green);
-            border: 1px solid var(--success-green);
-        }
-        
-        .message-box-close {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            background: none;
-            border: none;
-            font-size: 1.3rem;
-            cursor: pointer;
-            color: inherit;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .estimate-preview {
-            background: var(--warm-grey-bg);
-            padding: 16px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border-left: 4px solid var(--burgundy-accent);
-        }
-        
-       #email-form-container {
-    display: none;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.5s ease, max-height 0.5s ease;
-}
-
-#email-form-container.visible {
-    display: block;
-    opacity: 1;
-    max-height: 600px;  /* Increase from 500px to 600px */
-    overflow: visible;  /* Add this line to prevent cutoff */
-}
-
-
-        .estimate-title {
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .estimate-range {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--success-green);
-            margin-bottom: 4px;
-        }
-
-        .estimate-description {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .data-freshness {
-            background: rgba(5, 150, 105, 0.1);
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: var(--success-green);
-            margin-bottom: 8px;
-        }
-
-        .unlock-notice {
-            background: rgba(116, 76, 44, 0.1);
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid var(--burgundy-accent);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            color: var(--charcoal-text);
-            font-weight: 500;
-        }
-
-        .cta-button {
-            width: 100%;
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 16px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 18px;
-            box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
-        }
-
-        .cta-button:hover {
-            background: var(--burgundy-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(116, 76, 44, 0.4);
-        }
-
-        .cta-button:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .trust-indicators {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--warm-grey-bg);
-            text-align: center;
-        }
-
-        .trust-item {
-            display: inline-block;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0 18px;
-        }
-
-        /* HOW IT WORKS SECTION */
-        .how-it-works {
-            background: var(--pure-white);
-            padding: 80px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 32px 24px;
-            border-radius: 12px;
-            background: var(--warm-grey-bg);
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .step-number {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0 auto 24px;
-        }
-
-        .step-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 14px;
-        }
-
-        .step-description {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* VALUE SECTION */
-        .value-section {
-            background: rgba(26, 35, 126, 0.05);
-            padding: 80px 20px;
-        }
-
-        .value-section h2 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .plans-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .plan-card {
-            background: var(--pure-white);
-            padding: 44px 32px;
-            border-radius: 12px;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .plan-card.recommended {
-            border-color: var(--burgundy-accent);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .plan-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 8px 24px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .plan-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 10px;
-        }
-
-        .plan-price {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--burgundy-accent);
-            margin-bottom: 24px;
-        }
-
-        .plan-description {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 32px;
-        }
-
-        .plan-features li {
-            padding: 10px 0;
-            padding-left: 28px;
-            position: relative;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .plan-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success-green);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .plan-features li.limited {
-            opacity: 0.6;
-        }
-
-        .plan-features li.limited::before {
-            content: "~";
-            color: var(--soft-grey);
-        }
-
-        .plan-button {
-            width: 100%;
-            padding: 18px 28px;
-            border: 2px solid var(--burgundy-accent);
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .plan-button.primary {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-        }
-
-        .plan-button.secondary {
-            background: transparent;
-            color: var(--burgundy-accent);
-        }
-
-        .plan-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .plan-button.primary:hover {
-            background: var(--burgundy-hover);
-        }
-
-        .plan-button.secondary:hover {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-        }
-
-        .guarantee-box {
-            background: linear-gradient(135deg, var(--burgundy-accent), var(--burgundy-hover));
-            color: var(--pure-white);
-            padding: 28px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 40px auto;
-            max-width: 600px;
-        }
-
-        .guarantee-box h3 {
-            color: var(--pure-white);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
-
-        .guarantee-box p {
-            font-size: 1.1rem;
-            margin: 0;
-            opacity: 0.95;
-            line-height: 1.5;
-        }
-
-        /* SERVICE DEFINITION SECTION - removed bright amber colors */
-        .service-definition-section {
-            background: rgba(107, 114, 128, 0.05);
-            padding: 60px 20px;
-            border-top: 1px solid rgba(107, 114, 128, 0.2);
-            border-bottom: 1px solid rgba(107, 114, 128, 0.2);
-        }
-
-        .service-definition-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .service-definition-title {
-            font-size: 2rem;
-            color: var(--navy-primary);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .service-definition-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-definition-item {
-            background: var(--pure-white);
-            padding: 32px 24px;
-            border-radius: 12px;
-            border-left: 4px solid var(--muted-blue);
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .service-definition-item h4 {
-            color: var(--muted-blue);
-            margin-bottom: 16px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .service-definition-item p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* TESTIMONIALS */
-        .testimonials {
-            background: var(--warm-grey-bg);
-            padding: 80px 20px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: var(--pure-white);
-            padding: 32px;
-            border-radius: 12px;
-            border-left: 4px solid var(--burgundy-accent);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 24px;
-            color: var(--charcoal-text);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--navy-primary);
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .testimonial-location {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .testimonial-outcome {
-            background: var(--success-green);
-            color: var(--pure-white);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-
-        /* LOCAL LINKS SECTION */
-        .local-links {
-            background: var(--warm-cream);
-            padding: 80px 20px;
-        }
-
-        .local-links h2 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--navy-primary);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .region-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            list-style: none;
-            margin: 40px auto;
-            max-width: 1000px;
-        }
-
-        .region-links li {
-            background: var(--pure-white);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .region-links li.available:hover {
-            transform: translateY(-5px);
-        }
-
-        .region-links li.coming-soon {
-            background: #f8f9fa;
-            opacity: 0.6;
-            cursor: default;
-        }
-
-        .region-links a {
-            display: block;
-            padding: 24px;
-            color: var(--navy-primary);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .region-links a:hover {
-            color: var(--burgundy-accent);
-        }
-
-        .region-links li.coming-soon span {
-            display: block;
-            padding: 24px;
-            color: #6c757d;
-            font-weight: 600;
-            border-radius: 8px;
-            position: relative;
-            font-size: 1rem;
-        }
-
-        .region-links li.coming-soon small {
-            font-size: 0.9rem;
-            color: #adb5bd;
-            font-weight: 400;
-            font-style: italic;
-            margin-top: 6px;
-            display: block;
-        }
-
-        .muted {
-            color: var(--muted-blue);
-            text-align: center;
-            font-size: 1rem;
-            margin-top: 30px;
-        }
-
-        /* FINAL CTA */
-        .final-cta {
-            background: var(--navy-primary);
-            color: var(--pure-white);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-headline {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--pure-white);
-        }
-
-        .cta-subheadline {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .cta-primary {
-            background: var(--burgundy-accent);
-            color: var(--pure-white);
-            padding: 20px 36px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: var(--pure-white);
-            padding: 20px 36px;
-            border: 2px solid var(--pure-white);
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .cta-primary:hover {
-            background: var(--burgundy-hover);
-            transform: translateY(-1px);
-        }
-
-        .cta-secondary:hover {
-            background: var(--pure-white);
-            color: var(--navy-primary);
-        }
-
-        .guarantee-text {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background: var(--charcoal-text);
-            color: var(--pure-white);
-            padding: 60px 20px 40px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            color: var(--pure-white);
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-section p {
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.9;
-            margin-bottom: 12px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: var(--pure-white);
-            text-decoration: none;
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .footer-bottom p {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin: 0;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            line-height: 1.6;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 968px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .calculator-widget {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .plans-comparison {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .service-definition-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 19px;
-            }
-
-            .hero-headline {
-                font-size: 2.8rem;
-            }
-
-            .calculator-headline {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero {
-                padding: 60px 20px;
-            }
-
-            .calculator-widget {
-                padding: 32px 28px;
-                min-height: 650px;
-            }
-
-            .site-header {
-                top: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 18px;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero {
-                padding: 40px 15px;
-            }
-
-            .hero-headline {
-                font-size: 2.2rem;
-            }
-
-            .calculator-widget {
-                padding: 28px 24px;
-                min-height: 600px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .region-links {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ACCESSIBILITY */
-        .cta-button,
-        .cta-primary,
-        .cta-secondary,
-        .plan-button {
-            min-height: 48px;
-            touch-action: manipulation;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .step-card:hover {
-                transform: none;
-            }
-            
-            .cta-primary:hover,
-            .cta-button:hover,
-            .plan-button:hover {
-                transform: none;
-            }
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .cta-button:focus,
-        .cta-primary:focus,
-        .cta-secondary:focus,
-        .plan-button:focus {
-            outline: 2px solid var(--focus-outline);
-            outline-offset: 2px;
-        }
-
-        @media (prefers-contrast: high) {
-            :root {
-                --charcoal-text: #000000;
-                --muted-blue: #000000;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -1128,7 +50,6 @@
                     <strong>Information service:</strong> This service provides general price information only for research purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
                 </div>
 
-                <!-- Custom message box for feedback and errors -->
                 <div id="message-box" class="message-box"></div>
                 <form id="analysisForm" class="calculator-form">
                     <div class="form-group">
@@ -1160,11 +81,10 @@
                         <small class="form-help">Don't worry - you can explore all options in your analysis</small>
                     </div>
 
-                    <!-- Hidden container for the email form and results -->
                     <div id="email-form-container">
                         <div class="estimate-preview" id="estimatePreview">
                             <div class="estimate-title">Estimated Cost Range for Your Area:</div>
-                            <div class="estimate-range" id="estimateRange">£2,800 - £4,500</div>
+                            <div class="estimate-range" id="estimateRange">£2,800 - £4,500*</div>
                             <div class="estimate-description" id="estimateDescription">
                                 Based on 23 funeral directors within 20 miles of your location
                             </div>
@@ -1245,7 +165,7 @@
                     <div class="step-number">1</div>
                     <h3 class="step-title">Understanding Your Area</h3>
                     <p class="step-description">
-                        We analyze official CMA pricing data from funeral directors and crematoria within 25 miles to help you understand the local market for research.
+                        We analyse official CMA pricing data from funeral directors and crematoria within 25 miles to help you understand the local market for research.
                     </p>
                 </div>
                 <div class="step-card">
@@ -1349,7 +269,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "The free analysis helped us understand our options without any pressure. When we felt ready, the complete guide gave us the information to research decisions that honored mum while staying within our means."
+                        "The free analysis helped us understand our options without any pressure. When we felt ready, the complete guide gave us the information to research decisions that honoured mum whilst staying within our means."
                     </p>
                     <div class="testimonial-author">Sarah M.</div>
                     <div class="testimonial-location">Brighton, East Sussex <span class="testimonial-outcome">Felt informed</span></div>
@@ -1377,7 +297,7 @@
         <div class="container">
             <h2>Regional funeral cost information</h2>
             <ul class="region-links">
-                <li class="available"><a href="fixed_south_east_england.html">South East England funeral costs</a></li>
+                <li class="available"><a href="SouthEast/index.html">South East England funeral costs</a></li>
                 <li class="coming-soon"><span>London funeral costs<small>Coming soon</small></span></li>
                 <li class="coming-soon"><span>South West England funeral costs<small>Coming soon</small></span></li>
                 <li class="coming-soon"><span>East of England funeral costs<small>Coming soon</small></span></li>
@@ -1405,6 +325,147 @@
             <p class="guarantee-text">
                 Independent information • No pressure • Research support commitment on premium plans
             </p>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Clear answers about our information service</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is this service regulated by the FCA?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and research support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised advice, we recommend consulting with qualified professionals such as solicitors or financial advisers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you receive commissions from funeral directors?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £39 premium reports. This independence ensures our information remains unbiased and focused solely on helping families research their options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I know which option is right for my family?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This is a deeply personal decision that only you and your family can make. Our service provides information about costs and options to help you research possibilities, but we cannot advise which choice is appropriate for your circumstances. Consider factors such as your loved one's wishes, family traditions, budget constraints, and what feels right for you. Many families find it helpful to discuss options together and, if needed, consult with a funeral director or counsellor for personalised guidance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What if prices have changed since your data was collected?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pricing in the funeral industry can change, which is why we emphasise throughout our service that all information must be verified directly with providers.</p>
+                        
+                        <p>We display actual current prices taken directly from funeral directors' official CMA-mandated price lists and crematorium published fee schedules—not just estimated ranges. However, providers may not always update their online catalogues promptly when prices change. Whilst we refresh our database regularly (weekly updates from official sources), there can be a delay between when a provider changes their prices and when they publish updated information.</p>
+                        
+                        <p>This is precisely why verification is essential: the prices we show are accurate to the published data at the time of collection, but you should always contact providers directly to confirm current costs before making any commitments. In our premium reports, we provide direct contact details specifically so you can verify the most up-to-date pricing yourself.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can you guarantee these savings?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, we cannot guarantee specific savings amounts, as this depends entirely on which providers you ultimately choose, current pricing, and your specific requirements. The savings figures we present are estimates based on publicly available data and represent potential opportunities if you follow similar strategies to our research. Our Research Support Commitment (on premium reports) guarantees that our guidance will be helpful—if you don't save at least £500 following our recommendations, we'll refund your £39 report fee. However, actual results will vary based on your individual circumstances and decisions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do you ensure the accuracy of your information?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We utilise advanced data intelligence technologies to aggregate and process information from publicly available sources, including CMA-mandated funeral director price lists, crematorium fee schedules, and official government data. Our systems undergo regular verification and updates to maintain data quality. However, we recognise that pricing can change between updates, which is why we consistently emphasise the importance of verifying all information directly with service providers before making decisions. We view our role as providing a comprehensive starting point for your research, not as a substitute for direct verification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-header">
+                    <h2 class="section-title">About ClearFuneralCosts</h2>
+                    <p class="about-tagline">Born from personal experience, built with compassion</p>
+                </div>
+
+                <div class="about-story">
+                    <div class="story-block">
+                        <h3>Our Story</h3>
+                        <p>ClearFuneralCosts was founded in 2025 following a profoundly difficult year when the founder's wife lost both her parents. During this emotionally overwhelming period, we experienced firsthand the immense challenge of organising funeral arrangements whilst grieving.</p>
+                        
+                        <p>The financial aspects proved particularly daunting—vast amounts of fragmented information existed, but in moments of acute stress and grief, it was utterly unclear where to turn or how to proceed. We found ourselves making important financial decisions during one of life's most vulnerable moments, without clear guidance or transparent information.</p>
+                        
+                        <p>That experience planted the seed for ClearFuneralCosts. No family should face this confusion during bereavement.</p>
+                    </div>
+
+                    <div class="story-block mission-block">
+                        <h3>Our Mission</h3>
+                        <p><strong>We exist to bring clarity and dignity to funeral cost research.</strong> Our mission is to aggregate publicly available pricing data into accessible, compassionate information that helps UK families research their options without pressure, confusion, or bias. We believe transparent information empowers families to make informed decisions that honour their loved ones whilst respecting their financial circumstances.</p>
+                    </div>
+
+                    <div class="story-block">
+                        <h3>Why We're Independent</h3>
+                        <div class="independence-grid">
+                            <div class="independence-item">
+                                <h4>No Commissions</h4>
+                                <p>We receive absolutely no payments, commissions, or referral fees from funeral directors, crematoria, or any service providers.</p>
+                            </div>
+                            <div class="independence-item">
+                                <h4>Information Only</h4>
+                                <p>We're not regulated by the FCA because we provide research information, not advice. We don't arrange funerals or provide regulated services.</p>
+                            </div>
+                            <div class="independence-item">
+                                <h4>Transparent Funding</h4>
+                                <p>Our service is funded solely by optional £39 premium reports. Free analysis remains free, always.</p>
+                            </div>
+                            <div class="independence-item">
+                                <h4>Your Decisions</h4>
+                                <p>We provide information; you make all decisions. We're here to support your research, not to direct your choices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-block commitment-block">
+                        <h3>Our Commitment to You</h3>
+                        <p>We treat every enquiry with the sensitivity it deserves. Behind every postcode entered into our system is a family navigating grief. We're committed to providing clear, accurate, regularly updated information whilst acknowledging that you must verify details with providers directly.</p>
+                        
+                        <p>We're here to help you research options, understand costs, and approach this difficult process with greater confidence. That's our promise.</p>
+                    </div>
+
+                    <div class="story-block contact-block">
+                        <h3>Get in Touch</h3>
+                        <p>Questions about our service? We're here to help.</p>
+                        <p><strong>Email:</strong> <a href="mailto:support@clearfuneralcosts.co.uk">support@clearfuneralcosts.co.uk</a><br>
+                        <strong>Hours:</strong> Monday–Friday, 9am–5pm<br>
+                        <strong>Response time:</strong> Within 24 hours</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1450,172 +511,6 @@
         </div>
     </footer>
 
-    <script>
-        // Enhanced calculator functionality with risk mitigation messaging
-        const postcodeInput = document.getElementById('postcode');
-        const serviceTypeSelect = document.getElementById('serviceType');
-        const emailInput = document.getElementById('email');
-        const estimatePreview = document.getElementById('estimatePreview');
-        const estimateRange = document.getElementById('estimateRange');
-        const estimateDescription = document.getElementById('estimateDescription');
-        const submitBtn = document.getElementById('submitBtn');
-        const form = document.getElementById('analysisForm');
-        const messageBox = document.getElementById('message-box');
-        const emailFormContainer = document.getElementById('email-form-container');
-
-        // Regional cost data based on official CMA data patterns
-        const costData = {
-            'BN': { traditional: [3200, 4800], direct: [1200, 1800], hybrid: [2400, 3600], burial: [4500, 6500], providers: 23 },
-            'SW': { traditional: [4200, 6800], direct: [1800, 2400], hybrid: [3200, 4800], burial: [6500, 9500], providers: 45 },
-            'M': { traditional: [2800, 4200], direct: [1000, 1600], hybrid: [2200, 3400], burial: [4000, 5800], providers: 31 },
-            'B': { traditional: [2600, 3800], direct: [900, 1400], hybrid: [2000, 3000], burial: [3800, 5200], providers: 28 },
-            'L': { traditional: [2400, 3600], direct: [800, 1300], hybrid: [1800, 2800], burial: [3400, 4800], providers: 22 },
-            'S': { traditional: [2200, 3400], direct: [700, 1200], hybrid: [1600, 2600], burial: [3200, 4600], providers: 19 },
-            'NE': { traditional: [2000, 3200], direct: [600, 1100], hybrid: [1400, 2400], burial: [3000, 4400], providers: 16 },
-            'default': { traditional: [2800, 4200], direct: [1100, 1700], hybrid: [2200, 3400], burial: [4200, 6000], providers: 25 }
-        };
-
-        // Function to show a custom message box
-        function showMessage(type, message) {
-            messageBox.textContent = message;
-            messageBox.className = `message-box ${type}`;
-            messageBox.style.display = 'block';
-        }
-
-        // Function to hide the message box
-        function hideMessage() {
-            messageBox.style.display = 'none';
-        }
-
-        function updateEstimate() {
-            hideMessage();
-            const postcode = postcodeInput.value.trim().toUpperCase();
-            const serviceType = serviceTypeSelect.value;
-            
-            // Check if both fields are filled
-            if (postcode.length >= 2 && serviceType) {
-                const area = postcode.substring(0, 2);
-                const data = costData[area] || costData['default'];
-                
-                let range, description;
-                
-                switch(serviceType) {
-                    case 'traditional':
-                        range = `£${data.traditional[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
-                        description = `Traditional funeral service information from ${data.providers} funeral directors within 20 miles`;
-                        break;
-                    case 'direct':
-                        range = `£${data.direct[0].toLocaleString()} - £${data.direct[1].toLocaleString()}*`;
-                        description = `Direct cremation cost information from ${data.providers} providers available nearby`;
-                        break;
-                    case 'hybrid':
-                        range = `£${data.hybrid[0].toLocaleString()} - £${data.hybrid[1].toLocaleString()}*`;
-                        description = `Simple service plus cremation information from ${data.providers} local providers`;
-                        break;
-                    case 'burial':
-                        range = `£${data.burial[0].toLocaleString()} - £${data.burial[1].toLocaleString()}*`;
-                        description = `Burial service cost information (including cemetery fees) from ${data.providers} funeral directors`;
-                        break;
-                    case 'unsure':
-                        range = `£${data.direct[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
-                        description = `Full range of service options information from ${data.providers} providers in your area`;
-                        break;
-                }
-                
-                estimateRange.textContent = range;
-                estimateDescription.textContent = description;
-                // Reveal the email form container
-                emailFormContainer.classList.add('visible');
-                
-                checkSubmitButton();
-            } else {
-                // Hide the email form container if not all conditions are met
-                emailFormContainer.classList.remove('visible');
-                submitBtn.disabled = true;
-            }
-        }
-
-        function checkSubmitButton() {
-            const postcode = postcodeInput.value.trim();
-            const serviceType = serviceTypeSelect.value;
-            const email = emailInput.value.trim();
-            
-            const postcodeValid = postcode.length >= 6;
-            const emailValid = email.includes('@') && email.includes('.');
-            
-            submitBtn.disabled = !(postcodeValid && serviceType && emailValid);
-        }
-
-        // Event listeners
-        postcodeInput.addEventListener('input', updateEstimate);
-        serviceTypeSelect.addEventListener('change', updateEstimate);
-        emailInput.addEventListener('input', () => {
-          checkSubmitButton();
-          hideMessage(); // Hide message on user input
-        });
-
-        // Form submission
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim();
-            const postcode = postcodeInput.value.trim();
-            const serviceType = serviceTypeSelect.value;
-            
-            // Validate inputs
-            const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
-            if (!postcode || !postcodeRegex.test(postcode)) {
-                showMessage('error', 'Please enter a valid UK postcode (e.g., BN1 4GH).');
-                return;
-            }
-
-            if (!serviceType) {
-                showMessage('error', 'Please select a service type.');
-                return;
-            }
-
-            if (!email || !email.includes('@')) { 
-                showMessage('error', 'Please enter a valid email address.'); 
-                return; 
-            }
-            
-            // Update button state
-            submitBtn.disabled = true; 
-            submitBtn.textContent = 'Preparing your information...';
-            hideMessage();
-            
-            setTimeout(() => {
-                showMessage('success', 'Thank you. Your complimentary funeral cost information analysis has been prepared and will arrive in your inbox in the next few minutes. Please check your email and remember to verify all information with providers.');
-                submitBtn.disabled = false; 
-                submitBtn.textContent = 'Get My Free Analysis';
-                // In real implementation, this would redirect to the appropriate report
-            }, 2000);
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Analytics tracking
-        document.querySelectorAll('.cta-button, .cta-primary, .plan-button').forEach(button => {
-            button.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        'event_category': 'cta',
-                        'event_label': this.textContent.trim()
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

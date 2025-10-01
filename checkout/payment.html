@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment - ClearFuneralCosts</title>
+    <meta name="description" content="Complete your purchase securely with Stripe payment processing.">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-primary: #1a237e;
+            --charcoal-text: #1f2937;
+            --burgundy-accent: #744c2c;
+            --warm-grey-bg: #f7fafc;
+            --muted-blue: #374151;
+            --warm-cream: #fffaf0;
+            --pure-white: #ffffff;
+            --burgundy-hover: #5a3921;
+            --success-green: #059669;
+            --soft-amber: #f59e0b;
+            --error-red: #dc2626;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--charcoal-text);
+            background-color: var(--warm-cream);
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .payment-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        .company-logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+        }
+
+        .clear-highlight {
+            color: var(--burgundy-accent);
+            font-weight: 700;
+        }
+
+        .payment-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--charcoal-text);
+            margin-bottom: 8px;
+        }
+
+        .payment-subtitle {
+            font-size: 1.1rem;
+            color: var(--muted-blue);
+        }
+
+        /* LAYOUT */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* LEFT COLUMN - PAYMENT FORM */
+        .payment-section {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--warm-grey-bg);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--charcoal-text);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--burgundy-accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
+        }
+
+        .form-input.error {
+            border-color: var(--error-red);
+        }
+
+        .form-error {
+            color: var(--error-red);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-error.visible {
+            display: block;
+        }
+
+        /* STRIPE ELEMENT */
+        #card-element {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: var(--pure-white);
+        }
+
+        #card-element.StripeElement--focus {
+            border-color: var(--burgundy-accent);
+            box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
+        }
+
+        #card-element.StripeElement--invalid {
+            border-color: var(--error-red);
+        }
+
+        #card-errors {
+            color: var(--error-red);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            min-height: 20px;
+        }
+
+        /* RIGHT COLUMN - ORDER SUMMARY */
+        .order-summary {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .summary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            color: var(--muted-blue);
+        }
+
+        .summary-value {
+            font-weight: 600;
+            color: var(--charcoal-text);
+        }
+
+        .summary-total {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 2px solid var(--burgundy-accent);
+        }
+
+        .summary-total .summary-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--charcoal-text);
+        }
+
+        .summary-total .summary-value {
+            font-size: 1.8rem;
+            color: var(--burgundy-accent);
+        }
+
+        .savings-highlight {
+            background: rgba(5, 150, 105, 0.1);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--success-green);
+        }
+
+        .savings-title {
+            font-weight: 600;
+            color: var(--success-green);
+            margin-bottom: 6px;
+        }
+
+        .savings-amount {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--success-green);
+        }
+
+        /* GUARANTEE BOX */
+        .guarantee-box {
+            background: var(--warm-grey-bg);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .guarantee-title {
+            font-weight: 600;
+            color: var(--burgundy-accent);
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .guarantee-text {
+            font-size: 0.85rem;
+            color: var(--muted-blue);
+            line-height: 1.4;
+        }
+
+        /* PAYMENT BUTTON */
+        .pay-button {
+            width: 100%;
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            padding: 18px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 24px;
+            box-shadow: 0 4px 15px rgba(116, 76, 44, 0.3);
+        }
+
+        .pay-button:hover:not(:disabled) {
+            background: var(--burgundy-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(116, 76, 44, 0.4);
+        }
+
+        .pay-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .pay-button.processing {
+            background: #9ca3af;
+        }
+
+        /* SPINNER */
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* SECURITY BADGES */
+        .security-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+            flex-wrap: wrap;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--muted-blue);
+        }
+
+        .security-icon {
+            font-size: 1.2rem;
+        }
+
+        /* MESSAGE BOX */
+        .message-box {
+            display: none;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .message-box.visible {
+            display: block;
+        }
+
+        .message-box.error {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: var(--error-red);
+            border: 1px solid var(--error-red);
+        }
+
+        .message-box.success {
+            background-color: rgba(5, 150, 105, 0.1);
+            color: var(--success-green);
+            border: 1px solid var(--success-green);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* DISCLAIMER */
+        .disclaimer {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--soft-amber);
+            padding: 16px;
+            margin-top: 24px;
+            border-radius: 8px;
+        }
+
+        .disclaimer-title {
+            font-weight: 600;
+            color: var(--soft-amber);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer-text {
+            font-size: 0.85rem;
+            color: var(--muted-blue);
+            line-height: 1.5;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .payment-section {
+                padding: 28px 24px;
+            }
+
+            .order-summary {
+                padding: 24px 20px;
+            }
+
+            .payment-title {
+                font-size: 1.7rem;
+            }
+
+            .security-section {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .payment-container {
+                padding: 16px;
+            }
+
+            .payment-section {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <!-- HEADER -->
+        <header class="payment-header">
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="payment-title">Secure Payment</h1>
+            <p class="payment-subtitle">Complete your purchase for the Complete South East Guide</p>
+        </header>
+
+        <div class="payment-grid">
+            <!-- LEFT COLUMN - PAYMENT FORM -->
+            <div class="payment-section">
+                <h2 class="section-title">Payment Details</h2>
+
+                <div id="message-box" class="message-box"></div>
+
+                <form id="payment-form">
+                    <!-- BILLING DETAILS -->
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name"
+                            class="form-input" 
+                            placeholder="John Smith"
+                            required
+                            autocomplete="name"
+                        >
+                        <div class="form-error" id="name-error">Please enter your full name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            class="form-input" 
+                            placeholder="your@email.com"
+                            required
+                            autocomplete="email"
+                        >
+                        <div class="form-error" id="email-error">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="postcode">Billing Postcode</label>
+                        <input 
+                            type="text" 
+                            id="postcode" 
+                            name="postcode"
+                            class="form-input" 
+                            placeholder="BN1 4GH"
+                            required
+                            autocomplete="postal-code"
+                        >
+                        <div class="form-error" id="postcode-error">Please enter a valid UK postcode</div>
+                    </div>
+
+                    <!-- CARD DETAILS -->
+                    <div class="form-group">
+                        <label class="form-label">Card Details</label>
+                        <div id="card-element"></div>
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+
+                    <!-- PAYMENT BUTTON -->
+                    <button type="submit" id="submit-button" class="pay-button">
+                        <span id="button-text">Pay £39</span>
+                        <span id="spinner" class="spinner" style="display: none;"></span>
+                    </button>
+
+                    <!-- SECURITY BADGES -->
+                    <div class="security-section">
+                        <div class="security-badge">
+                            <span class="security-icon">🔒</span>
+                            <span>SSL Encrypted</span>
+                        </div>
+                        <div class="security-badge">
+                            <span class="security-icon">💳</span>
+                            <span>Stripe Secure</span>
+                        </div>
+                        <div class="security-badge">
+                            <span class="security-icon">✓</span>
+                            <span>PCI Compliant</span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- DISCLAIMER -->
+                <div class="disclaimer">
+                    <div class="disclaimer-title">Information Service</div>
+                    <p class="disclaimer-text">
+                        This purchase is for general funeral cost information and research support. 
+                        We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN - ORDER SUMMARY -->
+            <div class="order-summary">
+                <h2 class="summary-title">Order Summary</h2>
+
+                <div class="summary-item">
+                    <span class="summary-label">Complete South East Guide</span>
+                    <span class="summary-value">£39.00</span>
+                </div>
+
+                <div class="summary-item">
+                    <span class="summary-label">VAT (0%)</span>
+                    <span class="summary-value">£0.00</span>
+                </div>
+
+                <div class="summary-item summary-total">
+                    <span class="summary-label">Total</span>
+                    <span class="summary-value">£39</span>
+                </div>
+
+                <div class="savings-highlight">
+                    <div class="savings-title">Estimated Potential Savings</div>
+                    <div class="savings-amount" id="order-savings">£1,200 - £2,400</div>
+                    <p style="font-size: 0.85rem; color: var(--muted-blue); margin-top: 8px;">
+                        Based on your questionnaire responses
+                    </p>
+                </div>
+
+                <div class="guarantee-box">
+                    <div class="guarantee-title">60-Day Money-Back Guarantee</div>
+                    <p class="guarantee-text">
+                        If you don't save at least £500 using our guidance, we'll refund every penny
+                    </p>
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+                    <h3 style="font-size: 1rem; font-weight: 600; color: var(--navy-primary); margin-bottom: 12px;">
+                        What You'll Receive:
+                    </h3>
+                    <ul style="font-size: 0.9rem; color: var(--muted-blue); line-height: 1.8; padding-left: 20px;">
+                        <li>Personalised cost breakdown</li>
+                        <li>Direct provider contacts</li>
+                        <li>14-day implementation roadmap</li>
+                        <li>Negotiation scripts</li>
+                        <li>60-day email support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY'); // Replace with your actual key
+        const elements = stripe.elements();
+
+        // Custom styling
+        const style = {
+            base: {
+                fontSize: '16px',
+                color: '#1f2937',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif',
+                '::placeholder': {
+                    color: '#6b7280',
+                },
+            },
+            invalid: {
+                color: '#dc2626',
+                iconColor: '#dc2626',
+            },
+        };
+
+        // Create card element
+        const cardElement = elements.create('card', { style: style });
+        cardElement.mount('#card-element');
+
+        // Handle real-time validation errors
+        cardElement.on('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Load questionnaire data
+        const questionnaireData = JSON.parse(sessionStorage.getItem('questionnaireData') || '{}');
+        if (questionnaireData.savings) {
+            const savingsEl = document.getElementById('order-savings');
+            savingsEl.textContent = `£${questionnaireData.savings.min.toLocaleString()} - £${questionnaireData.savings.max.toLocaleString()}`;
+        }
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const postcode = document.getElementById('postcode');
+
+            // Name validation
+            if (!name.value.trim()) {
+                showFieldError('name');
+                isValid = false;
+            } else {
+                hideFieldError('name');
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                showFieldError('email');
+                isValid = false;
+            } else {
+                hideFieldError('email');
+            }
+
+            // Postcode validation
+            const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
+            if (!postcodeRegex.test(postcode.value.trim())) {
+                showFieldError('postcode');
+                isValid = false;
+            } else {
+                hideFieldError('postcode');
+            }
+
+            return isValid;
+        }
+
+        function showFieldError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const error = document.getElementById(`${fieldId}-error`);
+            field.classList.add('error');
+            error.classList.add('visible');
+        }
+
+        function hideFieldError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const error = document.getElementById(`${fieldId}-error`);
+            field.classList.remove('error');
+            error.classList.remove('visible');
+        }
+
+        function showMessage(type, message) {
+            const messageBox = document.getElementById('message-box');
+            messageBox.className = `message-box ${type} visible`;
+            messageBox.textContent = message;
+            messageBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideMessage() {
+            const messageBox = document.getElementById('message-box');
+            messageBox.classList.remove('visible');
+        }
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            hideMessage();
+
+            if (!validateForm()) {
+                showMessage('error', 'Please correct the errors above before proceeding.');
+                return;
+            }
+
+            // Disable submit button
+            submitButton.disabled = true;
+            buttonText.textContent = 'Processing...';
+            spinner.style.display = 'inline-block';
+            submitButton.classList.add('processing');
+
+            try {
+                // Create payment intent on your server
+                const response = await fetch('/api/create-payment-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: 3900, // £39 in pence
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        postcode: document.getElementById('postcode').value,
+                        questionnaireData: questionnaireData
+                    }),
+                });
+
+                const { clientSecret, error: serverError } = await response.json();
+
+                if (serverError) {
+                    throw new Error(serverError);
+                }
+
+                // Confirm payment with Stripe
+                const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            address: {
+                                postal_code: document.getElementById('postcode').value,
+                            },
+                        },
+                    },
+                });
+
+                if (error) {
+                    // Show error to customer
+                    showMessage('error', error.message);
+                    submitButton.disabled = false;
+                    buttonText.textContent = 'Pay £39';
+                    spinner.style.display = 'none';
+                    submitButton.classList.remove('processing');
+                } else if (paymentIntent.status === 'succeeded') {
+                    // Payment successful
+                    sessionStorage.setItem('paymentSuccess', JSON.stringify({
+                        orderId: paymentIntent.id,
+                        amount: 39,
+                        email: document.getElementById('email').value,
+                        timestamp: new Date().toISOString()
+                    }));
+
+                    // Redirect to thank you page
+                    window.location.href = '/thank-you.html';
+                }
+            } catch (error) {
+                showMessage('error', 'Payment failed. Please try again or contact support.');
+                console.error('Payment error:', error);
+                
+                submitButton.disabled = false;
+                buttonText.textContent = 'Pay £39';
+                spinner.style.display = 'none';
+                submitButton.classList.remove('processing');
+            }
+        });
+
+        // Input validation on blur
+        document.getElementById('name').addEventListener('blur', function() {
+            if (this.value.trim()) hideFieldError('name');
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailRegex.test(this.value)) hideFieldError('email');
+        });
+
+        document.getElementById('postcode').addEventListener('blur', function() {
+            const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
+            if (postcodeRegex.test(this.value.trim())) hideFieldError('postcode');
+        });
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'begin_checkout', {
+                'event_category': 'ecommerce',
+                'value': 39,
+                'currency': 'GBP'
+            });
+        }
+    </script>
+</body>
+</html>
