@@ -21,12 +21,14 @@
     --pure-white: #ffffff;
     --soft-green: #d4edda;
     
-    /* Text Colors */
-    --text-muted: #6b7280;
+    /* Text Colors - UPDATED for better contrast (Compliance Fix: from #6b7280 to #4a5568) */
+    --text-muted: #4a5568; 
     
     /* Utility Colors */
     --border-subtle: #e0ddd8;
     --success-green: #5a7a5f;
+    --burgundy-hover: #6b4a40; /* Added for hover effects */
+    --soft-amber: #f59e0b; /* Added for highlight consistency */
 }
 
 /* === BASE STYLES === */
@@ -69,7 +71,8 @@ body {
 }
 
 .clear-highlight {
-    color: #e8dcc8;
+    /* Using soft-amber for better consistency with other pages */
+    color: var(--soft-amber); 
     font-weight: 700;
 }
 
@@ -537,72 +540,52 @@ body {
     font-size: 1.1rem;
 }
 
-.provider-table .best-value {
-    background: rgba(212, 237, 218, 0.3);
-}
-
 .contact-info-table {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
 /* === IMPLEMENTATION ROADMAP === */
-.implementation-step {
-    background: var(--warm-grey-bg);
-    padding: 28px;
+/* NOTE: Old .implementation-step was removed/modified in favor of new .implementation-day styles */
+
+/* --- CHECKLIST STYLES (New for Gamification) --- */
+.implementation-day {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f7f9fa;
     border-radius: 8px;
-    margin-bottom: 24px;
-    border-left: 4px solid var(--burgundy-accent);
-    display: flex;
-    gap: 24px;
+    border: 1px solid var(--border-subtle);
 }
-
-.step-number {
-    background: var(--burgundy-accent);
-    color: var(--pure-white);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.step-content {
-    flex: 1;
-}
-
-.step-title {
+.implementation-day h3 {
     color: var(--navy-primary);
+    margin-bottom: 15px;
     font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 12px;
 }
+.action-checklist { list-style: none; padding: 0; }
+.checkbox-item { 
+    display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee; 
+    cursor: pointer; font-size: 1rem; user-select: none;
+}
+.checkbox-item:last-child { border-bottom: none; }
+.checkbox-item input[type="checkbox"] { 
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px; border: 2px solid var(--burgundy-accent); border-radius: 4px; 
+    margin-right: 15px; cursor: pointer; flex-shrink: 0; position: relative;
+}
+.checkbox-item input[type="checkbox"]:checked {
+    background-color: var(--success-green);
+    border-color: var(--success-green);
+}
+.checkbox-item input[type="checkbox"]:checked::after {
+    content: '✓'; color: white; font-size: 14px; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%); line-height: 1;
+}
+.checkbox-item input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+/* ----------------------------------------------- */
 
-.step-actions {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0 0 0;
-}
-
-.step-actions li {
-    padding: 10px 0 10px 28px;
-    position: relative;
-    line-height: 1.6;
-    color: var(--charcoal-text);
-}
-
-.step-actions li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--burgundy-accent);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
 
 /* === SCRIPTS === */
 .script-section {
@@ -638,6 +621,46 @@ body {
     color: var(--burgundy-accent);
     font-weight: 600;
 }
+
+/* --- CONFIDENCE SCRIPT STYLES (Readability Fix) --- */
+.script-section blockquote {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-left: 4px solid var(--burgundy-accent);
+    background: rgba(125, 90, 80, 0.05);
+    font-style: italic;
+    color: var(--charcoal-text);
+    font-size: 1.1rem;
+}
+.script-explanation { 
+    background: rgba(90, 122, 95, 0.1); 
+    padding: 15px; 
+    border-left: 4px solid var(--sage-green);
+    border-radius: 4px; 
+    margin-top: 15px; 
+    font-size: 0.9rem; 
+}
+.script-section ul { /* Target the key questions list */
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 15px;
+}
+.script-section ul li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1rem; /* Increase font size for readability */
+}
+.script-section ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--charcoal-text);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+/* -------------------------------- */
+
 
 /* === SUMMARY GRID === */
 .summary-grid {
@@ -750,7 +773,8 @@ body {
     .pros-cons { grid-template-columns: 1fr; }
     .summary-grid { grid-template-columns: repeat(2, 1fr); }
     
-    .implementation-step {
+    .implementation-day {
+        /* Adjusted for new checklist style */
         flex-direction: column;
         padding: 24px;
     }

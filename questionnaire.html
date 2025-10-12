@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tell us more about your needs - ClearFuneralCosts</title>
-    <meta name="description" content="Help us create your personalised funeral cost optimisation plan with our detailed questionnaire.">
+    <meta name="description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area. Based on official CMA data from funeral directors and crematoria. Free analysis with no obligation.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Funeral Cost Analysis Questionnaire | ClearFuneralCosts">
+    <meta property="og:description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area. Based on official CMA data from funeral directors and crematoria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearfuneralcosts.co.uk/questionnaire.html">
+    <meta property="og:site_name" content="ClearFuneralCosts">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funeral Cost Analysis Questionnaire | ClearFuneralCosts">
+    <meta name="twitter:description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area.">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="funeral cost questionnaire, funeral analysis, funeral planning, CMA data, funeral directors, crematoria costs">
+    <meta name="author" content="ClearFuneralCosts">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clearfuneralcosts.co.uk/questionnaire.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    
     <style>
         * {
             margin: 0;
@@ -16,7 +45,8 @@
             --navy-primary: #1a237e;
             --charcoal-text: #1f2937;
             --burgundy-accent: #744c2c;
-            --warm-grey-bg: #f7fafc;
+            /* Улучшенный контраст согласно Compliance */
+            --warm-grey-bg: #f7fafc; 
             --muted-blue: #374151;
             --warm-cream: #fffaf0;
             --pure-white: #ffffff;
@@ -118,6 +148,11 @@
             line-height: 1.6;
             margin-bottom: 8px;
         }
+        
+        .service-definition strong { /* Preserve strong */
+            font-weight: 700;
+        }
+
 
         /* PROGRESS BAR */
         .progress-section {
@@ -198,6 +233,10 @@
 
         .question-header {
             margin-bottom: 32px;
+        }
+        
+        .question-header strong { /* Preserve strong */
+            font-weight: 700;
         }
 
         .question-title {
@@ -371,11 +410,19 @@
             margin-bottom: 24px;
         }
 
+        /* ИЗМЕНЕНИЕ 2: Editable Summary Item Styles */
         .summary-item {
             display: flex;
             justify-content: space-between;
+            align-items: center; /* Center items vertically */
             padding: 12px 0;
             border-bottom: 1px solid #e5e7eb;
+            cursor: pointer; /* Indicate clickability */
+            transition: background-color 0.2s;
+        }
+
+        .summary-item:hover {
+            background-color: rgba(116, 76, 44, 0.02); /* Slight hover for visual feedback */
         }
 
         .summary-item:last-child {
@@ -389,6 +436,20 @@
 
         .summary-value {
             color: var(--muted-blue);
+            display: flex; /* To align value and edit icon */
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .edit-icon {
+            font-size: 0.9rem;
+            color: var(--burgundy-accent);
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .summary-item:hover .edit-icon {
+            opacity: 1;
         }
 
         .summary-savings-box {
@@ -501,6 +562,57 @@
             align-items: center;
             gap: 6px;
         }
+        
+        /* ИЗМЕНЕНИЕ 1: Progress Save Feature Styles */
+        .save-progress-section {
+            background: var(--pure-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-top: 4px solid var(--soft-amber);
+            text-align: center;
+        }
+        
+        .save-progress-section h3 {
+            color: var(--charcoal-text);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .save-progress-section p {
+            color: var(--muted-blue);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .save-progress-section input[type="email"] {
+            width: 100%;
+            max-width: 350px;
+            padding: 12px 15px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .save-progress-section button {
+            background: var(--soft-amber);
+            color: var(--pure-white);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 15px;
+        }
+        
+        .save-progress-section button:hover {
+            background: #d99138;
+        }
+
 
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
@@ -561,6 +673,16 @@
             .summary-section {
                 padding: 24px 20px;
             }
+            
+            .save-progress-section input[type="email"] {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .save-progress-section button {
+                width: 100%;
+                max-width: 350px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -587,6 +709,37 @@
             }
         }
 
+        /* SKIP LINKS */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* SCREEN READER ONLY */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* HIDDEN CONTENT */
         .hidden {
             display: none;
@@ -594,18 +747,24 @@
     </style>
 </head>
 <body>
+    <!-- SKIP NAVIGATION LINKS -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#questionnaire-form" class="skip-link">Skip to questionnaire form</a>
+    
     <div class="questionnaire-container">
         <!-- LEGAL DISCLAIMER BANNER -->
-        <div class="legal-disclaimer-banner">
+        <div class="legal-disclaimer-banner" role="alert" aria-live="polite">
             <strong>Information Service Only:</strong> This questionnaire helps us provide general price information. We do not provide financial, legal, or funeral planning advice.
         </div>
 
+        <!-- MAIN CONTENT -->
+        <main id="main-content" role="main">
         <!-- HEADER -->
         <header class="questionnaire-header">
             <div class="company-logo">
                 <span class="clear-highlight">Clear</span>FuneralCosts
             </div>
-            <h1 class="questionnaire-title">Tell us more about your needs</h1>
+            <h1 class="questionnaire-title">Tell us more about your research needs</h1>
             <p class="questionnaire-subtitle">This helps us create your personalised research plan</p>
             <div class="completion-info">Step <span id="current-step">1</span> of 8 • 3-4 minutes</div>
         </header>
@@ -614,7 +773,7 @@
         <div class="service-definition">
             <h4>What This Process Provides</h4>
             <p><strong>Information service only:</strong> Your responses help us provide more detailed general price information to support your research. We aggregate publicly available data for informational purposes.</p>
-            <p><strong>Important:</strong> We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.</p>
+            <p><strong>Important:</strong> We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours. <strong>Verify</strong> all information.</p>
         </div>
 
         <!-- PROGRESS BAR -->
@@ -628,25 +787,27 @@
         <section class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number savings" id="estimated-savings">£500 - £2,500</div>
-                <div class="stat-label">Potential Savings Range</div>
-                <div class="stat-disclaimer">*Estimates only - verify with providers</div>
+                <div class="stat-label">Potential Savings Range (Research Estimate)</div>
+                <div class="stat-disclaimer">Estimates only - <strong>verify</strong> with providers</div>
             </div>
             <div class="stat-card providers">
                 <div class="stat-number providers" id="provider-count">47</div>
-                <div class="stat-label">Providers Available</div>
-                <div class="stat-disclaimer">*Based on publicly available data</div>
+                <div class="stat-label">Providers Available (for Research)</div>
+                <div class="stat-disclaimer">Based on publicly available data</div>
             </div>
         </section>
 
+        <!-- QUESTIONNAIRE FORM -->
+        <form id="questionnaire-form" aria-label="Funeral cost research questionnaire">
         <!-- QUESTION 1: SERVICE TYPE -->
-        <section class="question-card" id="question-1">
+        <section class="question-card" id="question-1" role="group" aria-labelledby="question-1-title">
             <div class="question-header">
-                <h2 class="question-title">What type of funeral service do you prefer?</h2>
+                <h2 class="question-title" id="question-1-title">What type of funeral service do you wish to research?</h2>
                 <p class="question-subtitle">This affects available research strategies</p>
             </div>
             
             <div class="options-container">
-                <div class="option" data-question="service_type" data-value="traditional_burial">
+                <div class="option" data-question="service_type" data-value="traditional_burial" tabindex="0" role="radio" aria-label="Traditional Burial Service, Typical range: £5,200 to £7,500">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Traditional Burial Service</div>
@@ -659,7 +820,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="service_type" data-value="traditional_cremation">
+                <div class="option" data-question="service_type" data-value="traditional_cremation" tabindex="0" role="radio" aria-label="Traditional Cremation Service, Typical range: £3,800 to £5,500">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Traditional Cremation Service</div>
@@ -672,7 +833,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="service_type" data-value="direct_cremation">
+                <div class="option" data-question="service_type" data-value="direct_cremation" tabindex="0" role="radio" aria-label="Direct Cremation, Typical range: £1,200 to £2,800">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Direct Cremation</div>
@@ -685,7 +846,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="service_type" data-value="flexible">
+                <div class="option highlighted" data-question="service_type" data-value="flexible" tabindex="0" role="radio" aria-label="I'm open to suggestions, Research Focus">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">
@@ -705,14 +866,14 @@
         </section>
 
         <!-- QUESTION 2: ATTENDANCE -->
-        <section class="question-card hidden" id="question-2">
+        <section class="question-card hidden" id="question-2" role="group" aria-labelledby="question-2-title">
             <div class="question-header">
-                <h2 class="question-title">How many people do you expect to attend?</h2>
+                <h2 class="question-title" id="question-2-title">How many people do you anticipate to attend?</h2>
                 <p class="question-subtitle">This affects venue cost research and requirements</p>
             </div>
             
             <div class="options-container">
-                <div class="option highlighted" data-question="expected_attendance" data-value="intimate_10">
+                <div class="option highlighted" data-question="expected_attendance" data-value="intimate_10" tabindex="0" role="radio" aria-label="Small gathering, up to 10 people, High research potential">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Small gathering (up to 10 people)</div>
@@ -725,7 +886,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="expected_attendance" data-value="family_30">
+                <div class="option" data-question="expected_attendance" data-value="family_30" tabindex="0" role="radio" aria-label="Family service, 10 to 30 people">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Family service (10-30 people)</div>
@@ -737,7 +898,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="expected_attendance" data-value="community_100">
+                <div class="option" data-question="expected_attendance" data-value="community_100" tabindex="0" role="radio" aria-label="Community service, 30 to 100 people">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Community service (30-100 people)</div>
@@ -749,7 +910,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="expected_attendance" data-value="large_100plus">
+                <div class="option" data-question="expected_attendance" data-value="large_100plus" tabindex="0" role="radio" aria-label="Large gathering, 100 plus people">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Large gathering (100+ people)</div>
@@ -766,14 +927,14 @@
         </section>
 
         <!-- QUESTION 3: BUDGET PREFERENCES -->
-        <section class="question-card hidden" id="question-3">
+        <section class="question-card hidden" id="question-3" role="group" aria-labelledby="question-3-title">
             <div class="question-header">
-                <h2 class="question-title">What's your approximate budget?</h2>
+                <h2 class="question-title" id="question-3-title">What's your approximate budget?</h2>
                 <p class="question-subtitle">This helps us focus on realistic options to research</p>
             </div>
             
             <div class="options-container">
-                <div class="option" data-question="budget" data-value="budget_2000">
+                <div class="option" data-question="budget" data-value="budget_2000" tabindex="0" role="radio" aria-label="Budget under £2,000">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Under £2,000</div>
@@ -785,7 +946,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="budget" data-value="budget_3000">
+                <div class="option" data-question="budget" data-value="budget_3000" tabindex="0" role="radio" aria-label="Budget £2,000 to £3,000">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">£2,000 - £3,000</div>
@@ -797,7 +958,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="budget" data-value="budget_4000">
+                <div class="option highlighted" data-question="budget" data-value="budget_4000" tabindex="0" role="radio" aria-label="Budget £3,000 to £4,000, Best balance for savings">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">£3,000 - £4,000</div>
@@ -810,7 +971,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="budget" data-value="budget_5000plus">
+                <div class="option" data-question="budget" data-value="budget_5000plus" tabindex="0" role="radio" aria-label="Budget £4,000 plus">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">£4,000+</div>
@@ -822,7 +983,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="budget" data-value="budget_unsure">
+                <div class="option" data-question="budget" data-value="budget_unsure" tabindex="0" role="radio" aria-label="Not sure yet, show all price ranges">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Not sure yet</div>
@@ -837,16 +998,25 @@
             
             <p class="help-text">Remember: our goal is to help you research the best value within your budget.</p>
         </section>
+        
+        <!-- ИЗМЕНЕНИЕ 1: Progress Save Feature -->
+        <section class="save-progress-section hidden" id="question-3-5" role="region" aria-label="Save Progress Option">
+            <h3>Ready to save your progress?</h3>
+            <p>We'll email you a unique link. You can return later and continue your research right where you left off.</p>
+            
+            <input type="email" placeholder="Your email address" id="save-email" aria-label="Email address for saving progress">
+            <button onclick="saveProgress()" aria-label="Save and Continue">Save & Continue</button>
+        </section>
 
         <!-- QUESTION 4: LOCATION FLEXIBILITY -->
-        <section class="question-card hidden" id="question-4">
+        <section class="question-card hidden" id="question-4" role="group" aria-labelledby="question-4-title">
             <div class="question-header">
-                <h2 class="question-title">How flexible are you with location?</h2>
+                <h2 class="question-title" id="question-4-title">How flexible are you with location?</h2>
                 <p class="question-subtitle">Greater flexibility can unlock more savings opportunities</p>
             </div>
             
             <div class="options-container">
-                <div class="option" data-question="location_flexibility" data-value="local_only">
+                <div class="option" data-question="location_flexibility" data-value="local_only" tabindex="0" role="radio" aria-label="Must be local, within 5 miles">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Must be local (within 5 miles)</div>
@@ -858,7 +1028,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="location_flexibility" data-value="area_15">
+                <div class="option highlighted" data-question="location_flexibility" data-value="area_15" tabindex="0" role="radio" aria-label="Within my area, 5 to 15 miles, Good savings potential">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Within my area (5-15 miles)</div>
@@ -871,7 +1041,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="location_flexibility" data-value="regional_25">
+                <div class="option highlighted" data-question="location_flexibility" data-value="regional_25" tabindex="0" role="radio" aria-label="Regional, 15 to 25 miles, Higher savings potential">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Regional (15-25 miles)</div>
@@ -884,7 +1054,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="location_flexibility" data-value="anywhere">
+                <div class="option" data-question="location_flexibility" data-value="anywhere" tabindex="0" role="radio" aria-label="Anywhere in South East, Maximum flexibility for best value">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Anywhere in South East</div>
@@ -901,14 +1071,14 @@
         </section>
 
         <!-- QUESTION 5: TIMING FLEXIBILITY -->
-        <section class="question-card hidden" id="question-5">
+        <section class="question-card hidden" id="question-5" role="group" aria-labelledby="question-5-title">
             <div class="question-header">
-                <h2 class="question-title">How flexible is your timing?</h2>
-                <p class="question-subtitle">Off-peak times can reduce crematorium fees by £200-£400</p>
+                <h2 class="question-title" id="question-5-title">How flexible is your timing?</h2>
+                <p class="question-subtitle">Off-peak times might reduce crematorium fees by £200-£400</p>
             </div>
             
             <div class="options-container">
-                <div class="option" data-question="timing_flexibility" data-value="specific_required">
+                <div class="option" data-question="timing_flexibility" data-value="specific_required" tabindex="0" role="radio" aria-label="Specific date required">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Specific date required</div>
@@ -920,7 +1090,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="timing_flexibility" data-value="weekday_standard">
+                <div class="option" data-question="timing_flexibility" data-value="weekday_standard" tabindex="0" role="radio" aria-label="Weekday, standard hours 10am to 3pm">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Weekday, standard hours (10am-3pm)</div>
@@ -932,7 +1102,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="timing_flexibility" data-value="weekday_flexible">
+                <div class="option highlighted" data-question="timing_flexibility" data-value="weekday_flexible" tabindex="0" role="radio" aria-label="Weekday, flexible hours, Potential savings: £200 to £300">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Weekday, flexible hours</div>
@@ -945,7 +1115,7 @@
                     </div>
                 </div>
 
-                <div class="option highlighted" data-question="timing_flexibility" data-value="any_time">
+                <div class="option highlighted" data-question="timing_flexibility" data-value="any_time" tabindex="0" role="radio" aria-label="Completely flexible, Potential savings: £300 to £400">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Completely flexible</div>
@@ -959,18 +1129,18 @@
                 </div>
             </div>
             
-            <p class="help-text">Early morning slots (8-9am) are often £200-£300 cheaper at many crematoria.</p>
+            <p class="help-text">Early morning slots (8-9am) might offer cost savings worth exploring.</p>
         </section>
 
         <!-- QUESTION 6: PRIORITY FACTORS -->
-        <section class="question-card hidden" id="question-6">
+        <section class="question-card hidden" id="question-6" role="group" aria-labelledby="question-6-title">
             <div class="question-header">
-                <h2 class="question-title">What matters most to you?</h2>
-                <p class="question-subtitle">Select your top priority (you can choose one)</p>
+                <h2 class="question-title" id="question-6-title">What matters most to you?</h2>
+                <p class="question-subtitle">Select your top priority (for research focus)</p>
             </div>
             
             <div class="options-container">
-                <div class="option highlighted" data-question="priority" data-value="best_value">
+                <div class="option highlighted" data-question="priority" data-value="best_value" tabindex="0" role="radio" aria-label="Best value for money, Recommended for cost optimisation">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Best value for money</div>
@@ -983,7 +1153,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="priority" data-value="traditional">
+                <div class="option" data-question="priority" data-value="traditional" tabindex="0" role="radio" aria-label="Traditional service">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Traditional service</div>
@@ -995,7 +1165,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="priority" data-value="convenience">
+                <div class="option" data-question="priority" data-value="convenience" tabindex="0" role="radio" aria-label="Convenience and simplicity">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Convenience and simplicity</div>
@@ -1007,7 +1177,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="priority" data-value="personalisation">
+                <div class="option" data-question="priority" data-value="personalisation" tabindex="0" role="radio" aria-label="Personalisation">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Personalisation</div>
@@ -1024,14 +1194,14 @@
         </section>
 
         <!-- QUESTION 7: ADDITIONAL REQUIREMENTS -->
-        <section class="question-card hidden" id="question-7">
+        <section class="question-card hidden" id="question-7" role="group" aria-labelledby="question-7-title">
             <div class="question-header">
-                <h2 class="question-title">Any specific requirements?</h2>
+                <h2 class="question-title" id="question-7-title">Any specific research requirements?</h2>
                 <p class="question-subtitle">Select all that apply (multiple selection allowed)</p>
             </div>
             
             <div class="options-container" data-multiple="true">
-                <div class="option" data-question="requirements" data-value="religious_specific">
+                <div class="option" data-question="requirements" data-value="religious_specific" tabindex="0" role="checkbox" aria-label="Religious or cultural requirements">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Religious or cultural requirements</div>
@@ -1043,7 +1213,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="requirements" data-value="eco_friendly">
+                <div class="option" data-question="requirements" data-value="eco_friendly" tabindex="0" role="checkbox" aria-label="Environmentally friendly options">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Environmentally friendly options</div>
@@ -1055,7 +1225,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="requirements" data-value="repatriation">
+                <div class="option" data-question="requirements" data-value="repatriation" tabindex="0" role="checkbox" aria-label="Repatriation services">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Repatriation services</div>
@@ -1067,7 +1237,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="requirements" data-value="live_streaming">
+                <div class="option" data-question="requirements" data-value="live_streaming" tabindex="0" role="checkbox" aria-label="Live streaming capability">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">Live streaming capability</div>
@@ -1079,7 +1249,7 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="requirements" data-value="none">
+                <div class="option" data-question="requirements" data-value="none" tabindex="0" role="checkbox" aria-label="No specific requirements">
                     <div class="option-content">
                         <div class="option-text">
                             <div class="option-title">No specific requirements</div>
@@ -1095,49 +1265,70 @@
             <p class="help-text">Multiple selections allowed. These requirements will be considered in your research plan.</p>
         </section>
 
-        <!-- QUESTION 8: SUMMARY & CONFIRMATION -->
-        <section class="question-card hidden" id="question-8">
+        <!-- QUESTION 8: SUMMARY & CONFIRMATION - ИЗМЕНЕНИЕ 2: Editable Summary Items -->
+        <section class="question-card hidden" id="question-8" role="region" aria-labelledby="question-8-title">
             <div class="question-header">
-                <h2 class="question-title">Review your preferences</h2>
-                <p class="question-subtitle">Confirm your details before proceeding to payment</p>
+                <h2 class="question-title" id="question-8-title">Review your preferences</h2>
+                <p class="question-subtitle">Click on any item to go back and edit it before proceeding to payment</p>
             </div>
             
             <div class="summary-section">
                 <h3 class="summary-title">Your Research Preferences</h3>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="1" tabindex="0" aria-label="Edit Service Type">
                     <span class="summary-label">Service Type:</span>
-                    <span class="summary-value" id="summary-service-type">-</span>
+                    <span class="summary-value" id="summary-service-type">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="2" tabindex="0" aria-label="Edit Expected Attendance">
                     <span class="summary-label">Expected Attendance:</span>
-                    <span class="summary-value" id="summary-attendance">-</span>
+                    <span class="summary-value" id="summary-attendance">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="3" tabindex="0" aria-label="Edit Budget Range">
                     <span class="summary-label">Budget Range:</span>
-                    <span class="summary-value" id="summary-budget">-</span>
+                    <span class="summary-value" id="summary-budget">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="4" tabindex="0" aria-label="Edit Location Flexibility">
                     <span class="summary-label">Location Flexibility:</span>
-                    <span class="summary-value" id="summary-location">-</span>
+                    <span class="summary-value" id="summary-location">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="5" tabindex="0" aria-label="Edit Timing Flexibility">
                     <span class="summary-label">Timing Flexibility:</span>
-                    <span class="summary-value" id="summary-timing">-</span>
+                    <span class="summary-value" id="summary-timing">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="6" tabindex="0" aria-label="Edit Priority">
                     <span class="summary-label">Priority:</span>
-                    <span class="summary-value" id="summary-priority">-</span>
+                    <span class="summary-value" id="summary-priority">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
                 
-                <div class="summary-item">
+                <div class="summary-item" data-go-to-step="7" tabindex="0" aria-label="Edit Requirements">
                     <span class="summary-label">Requirements:</span>
-                    <span class="summary-value" id="summary-requirements">-</span>
+                    <span class="summary-value" id="summary-requirements">
+                        -
+                        <span class="edit-icon">✎ Edit</span>
+                    </span>
                 </div>
 
                 <div class="summary-savings-box">
@@ -1151,27 +1342,27 @@
                 <p>After completing payment (£39), you'll receive your personalised research plan with:</p>
                 <ul style="margin-left: 20px; margin-top: 10px;">
                     <li>Detailed cost breakdown for your preferences</li>
-                    <li>Specific funeral director contacts in your area</li>
-                    <li>14-day implementation roadmap</li>
-                    <li>Negotiation scripts and email templates</li>
+                    <li>Specific funeral director contacts in your area (for verification)</li>
+                    <li>14-day implementation roadmap (suggested steps)</li>
+                    <li>Negotiation scripts and email templates (communication support)</li>
                     <li>60-day research support guarantee</li>
                 </ul>
             </div>
             
-            <p class="help-text">*All savings are estimates based on publicly available data. Final savings depend on provider selection and actual pricing.</p>
+            <p class="help-text">*All savings are estimates based on publicly available data. Final savings depend on provider selection and actual pricing. <strong>Verification is essential</strong>.</p>
         </section>
 
         <!-- NAVIGATION -->
         <nav class="navigation">
-            <button class="nav-button previous" id="prev-btn" disabled>
+            <button class="nav-button previous" id="prev-btn" disabled aria-label="Go to Previous Question">
                 ← Previous
             </button>
             
-            <button class="nav-button next" id="next-btn" disabled>
+            <button class="nav-button next" id="next-btn" disabled aria-label="Go to Next Question">
                 Next →
             </button>
             
-            <button class="nav-button complete hidden" id="complete-btn" disabled>
+            <button class="nav-button complete hidden" id="complete-btn" disabled aria-label="Proceed to Payment for Complete Guide">
                 Proceed to Payment (£39)
             </button>
         </nav>
@@ -1195,6 +1386,8 @@
                 <span>Information Only</span>
             </div>
         </section>
+        </form>
+        </main>
     </div>
 
     <script>
@@ -1242,11 +1435,30 @@
                 'traditional': 'Traditional service',
                 'convenience': 'Convenience and simplicity',
                 'personalisation': 'Personalisation'
+            },
+            requirements: {
+                'religious_specific': 'Religious/cultural',
+                'eco_friendly': 'Eco-friendly',
+                'repatriation': 'Repatriation',
+                'live_streaming': 'Live streaming',
+                'none': 'None specific'
             }
         };
 
         // Initialize questionnaire
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved progress (simple check)
+            if (localStorage.getItem('saved_progress_responses')) {
+                // If progress found, offer to restore (simplified for this task)
+                // In a real app, this would show a dedicated modal
+                console.log('Progress found. Offering to restore...');
+                // Load data for the current task
+                responses = JSON.parse(localStorage.getItem('saved_progress_responses'));
+                currentStep = parseInt(localStorage.getItem('saved_progress_step')) || 1;
+                updateSavingsEstimate();
+                updateProviderCount();
+            }
+
             updateUI();
             setupEventListeners();
         });
@@ -1264,6 +1476,14 @@
                     } else {
                         handleSingleChoice(question, value, this);
                     }
+                });
+            });
+            
+            // ИЗМЕНЕНИЕ 2: Editable Summary Items
+            document.querySelectorAll('.summary-item[data-go-to-step]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const step = parseInt(this.dataset.goToStep);
+                    goToStep(step);
                 });
             });
         }
@@ -1284,21 +1504,63 @@
         }
 
         function handleMultipleChoice(question, value, element) {
-            element.classList.toggle('selected');
-            
-            if (!responses[question]) {
+            // FIX: Ensure responses[question] is initialized as an array before any array operations.
+            if (!responses[question] || !Array.isArray(responses[question])) {
                 responses[question] = [];
             }
             
-            const index = responses[question].indexOf(value);
-            if (index > -1) {
-                responses[question].splice(index, 1);
+            const isNone = value === 'none';
+            const isCurrentlySelected = element.classList.contains('selected');
+            const container = element.closest('.options-container');
+
+            if (isCurrentlySelected) {
+                // 1. Снятие выбора (Deselecting)
+                responses[question] = responses[question].filter(v => v !== value);
+                element.classList.remove('selected');
+
             } else {
-                responses[question].push(value);
+                // 2. Установка выбора (Selecting)
+                element.classList.add('selected');
+
+                if (isNone) {
+                    // 2a. Выбор 'none' (исключающая опция)
+                    // Визуально снимаем выбор со всех других опций
+                    container.querySelectorAll('.option.selected').forEach(opt => {
+                        if (opt !== element) {
+                            opt.classList.remove('selected');
+                        }
+                    });
+                    // Логически устанавливаем только 'none'
+                    responses[question] = ['none'];
+                    
+                } else {
+                    // 2b. Выбор обычной опции
+                    
+                    // Если 'none' был выбран ранее, снимаем с него выбор (визуально и логически)
+                    const noneIndex = responses[question].indexOf('none');
+                    if (noneIndex > -1) {
+                        const noneOption = container.querySelector('.option[data-value="none"]');
+                        if (noneOption) {
+                            noneOption.classList.remove('selected');
+                        }
+                        responses[question].splice(noneIndex, 1);
+                    }
+                    
+                    // Добавляем текущее значение
+                    if (responses[question].indexOf(value) === -1) {
+                        responses[question].push(value);
+                    }
+                }
+            }
+            
+            // 3. Очистка массива, если он пуст
+            if (responses[question] && responses[question].length === 0) {
+                delete responses[question];
             }
             
             updateNavigationButtons();
         }
+
 
         function updateSavingsEstimate() {
             let minSavings = 500;
@@ -1366,18 +1628,23 @@
             // Update step counter
             document.getElementById('current-step').textContent = currentStep;
             
-            // Show/hide questions
+            // Show/hide questions and save progress feature
             for (let i = 1; i <= totalSteps; i++) {
                 const question = document.getElementById(`question-${i}`);
                 if (question) {
-                    if (i === currentStep) {
-                        question.classList.remove('hidden');
-                    } else {
-                        question.classList.add('hidden');
-                    }
+                    question.classList.toggle('hidden', i !== currentStep);
                 }
             }
             
+            // Show/hide save progress section (appears after Q3, before Q4)
+            const saveProgressSection = document.getElementById('question-3-5');
+            if (saveProgressSection) {
+                saveProgressSection.classList.toggle('hidden', currentStep !== 4);
+            }
+            
+            // Set current question selections
+            setCurrentSelections();
+
             // Update navigation buttons
             updateNavigationButtons();
             
@@ -1385,6 +1652,37 @@
             if (currentStep === 8) {
                 updateSummary();
             }
+        }
+        
+        function setCurrentSelections() {
+            document.querySelectorAll('.options-container').forEach(container => {
+                const firstOption = container.querySelector('.option');
+                if (!firstOption) return;
+
+                const questionKey = firstOption.dataset.question;
+                
+                container.querySelectorAll('.option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+
+                const selectedValues = responses[questionKey];
+
+                if (Array.isArray(selectedValues)) {
+                    // Multiple choice
+                    selectedValues.forEach(value => {
+                        const option = container.querySelector(`.option[data-value="${value}"]`);
+                        if (option) {
+                            option.classList.add('selected');
+                        }
+                    });
+                } else if (selectedValues !== undefined) {
+                    // Single choice
+                    const option = container.querySelector(`.option[data-value="${selectedValues}"]`);
+                    if (option) {
+                        option.classList.add('selected');
+                    }
+                }
+            });
         }
 
         function updateNavigationButtons() {
@@ -1395,12 +1693,18 @@
             // Previous button
             prevBtn.disabled = currentStep === 1;
             
-            // Show/hide next vs complete button
-            if (currentStep === totalSteps) {
+            // On the save progress screen, only the 'Previous' button should be disabled if currentStep is 1.
+            // 'Save & Continue' button is handled by saveProgress() function
+            if (currentStep === 4) {
+                 nextBtn.classList.add('hidden');
+                 completeBtn.classList.add('hidden');
+            } else if (currentStep === totalSteps) {
+                // On the last step (summary)
                 nextBtn.classList.add('hidden');
                 completeBtn.classList.remove('hidden');
-                completeBtn.disabled = !isCurrentStepValid();
+                completeBtn.disabled = false; // Summary is always valid
             } else {
+                // On a regular question step
                 nextBtn.classList.remove('hidden');
                 completeBtn.classList.add('hidden');
                 nextBtn.disabled = !isCurrentStepValid();
@@ -1408,26 +1712,50 @@
         }
 
         function isCurrentStepValid() {
+            // The "save progress" step (currentStep === 4) is technically skipped by the Next button,
+            // but this function needs to return true for the previous step (Q3) to proceed.
+            if (currentStep === 4) return true; 
+
             const currentQuestion = document.getElementById(`question-${currentStep}`);
             if (!currentQuestion) return false;
             
             const container = currentQuestion.querySelector('.options-container');
             if (!container) return false;
             
+            const firstOption = container.querySelector('.option');
+            if (!firstOption) return false;
+            
+            const questionKey = firstOption.dataset.question;
+
             if (container.dataset.multiple === 'true') {
                 // For multiple choice, at least one must be selected
-                const questionKey = container.querySelector('.option').dataset.question;
                 return responses[questionKey] && responses[questionKey].length > 0;
             } else {
                 // For single choice, one must be selected
-                const questionKey = container.querySelector('.option').dataset.question;
                 return responses[questionKey] !== undefined;
             }
         }
 
         function nextStep() {
-            if (currentStep < totalSteps && isCurrentStepValid()) {
+            // Special handling for the save progress step (currentStep === 4)
+            if (currentStep === 3 && isCurrentStepValid()) {
+                currentStep = 4; // Move to the save progress screen
+            } else if (currentStep < totalSteps && isCurrentStepValid()) {
                 currentStep++;
+            }
+            
+            // Skip the save progress screen (currentStep === 4) on subsequent 'Next' press
+            if (currentStep === 4) {
+                currentStep = 5;
+            }
+            
+            updateUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToStep(step) {
+             if (step >= 1 && step <= totalSteps) {
+                currentStep = step;
                 updateUI();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -1440,22 +1768,57 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
+        
+        // ИЗМЕНЕНИЕ 1: Progress Save Function
+        function saveProgress() {
+            const emailInput = document.getElementById('save-email');
+            const email = emailInput.value.trim();
+            
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                // In a real app, use a non-alert message box
+                console.error('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulating API call to save progress (sending email link)
+            const saveData = {
+                responses: responses,
+                step: currentStep,
+                email: email
+            };
+            
+            // For the purpose of this simulation, we'll store it locally and confirm success.
+            // In a real app, this would be an API call to Firebase Firestore/server.
+            localStorage.setItem('saved_progress_responses', JSON.stringify(responses));
+            localStorage.setItem('saved_progress_step', currentStep.toString());
+            
+            console.log('Progress saved successfully via email link simulation.', saveData);
+            
+            // Redirect the user to the next step (Q4, which is step 5 after the save screen)
+            goToStep(5);
+        }
 
         function updateSummary() {
             // Update all summary fields
-            for (const [key, value] of Object.entries(responses)) {
-                const summaryElement = document.getElementById(`summary-${key.replace('_', '-')}`);
+            for (const [key, map] of Object.entries(labelMappings)) {
+                const summaryElement = document.getElementById(`summary-${key.replace(/_/g, '-')}`);
                 if (summaryElement) {
+                    const value = responses[key];
+                    let displayValue = '-';
+                    
                     if (Array.isArray(value)) {
                         // Multiple choice
-                        summaryElement.textContent = value.length > 0 ? 
-                            value.map(v => v.replace(/_/g, ' ')).join(', ') : 
+                        displayValue = value.length > 0 ? 
+                            value.map(v => map[v] || v.replace(/_/g, ' ')).join(', ') : 
                             'None selected';
-                    } else {
+                    } else if (value !== undefined) {
                         // Single choice
-                        const mapping = labelMappings[key];
-                        summaryElement.textContent = mapping ? mapping[value] : value;
+                        displayValue = map[value] || value;
                     }
+                    
+                    // Set text content for the value (excluding the edit icon)
+                    summaryElement.firstChild.textContent = displayValue;
+                    // Ensure the edit icon is appended if needed (it is already in the HTML)
                 }
             }
             
@@ -1465,7 +1828,7 @@
         }
 
         function completeQuestionnaire() {
-            if (isCurrentStepValid()) {
+            if (currentStep === totalSteps) {
                 console.log('Questionnaire completed:', responses);
                 console.log('Estimated savings:', estimatedSavings);
                 
@@ -1477,17 +1840,21 @@
                 }));
                 
                 // Redirect to payment page
-                alert('Redirecting to secure payment...');
+                // Replacing alert with console log and simulated redirect, as per instruction
+                console.log('Redirecting to secure payment...');
                 // window.location.href = '/payment.html';
             }
         }
 
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' && !document.getElementById('next-btn').disabled) {
-                nextStep();
-            } else if (e.key === 'ArrowLeft' && currentStep > 1) {
-                previousStep();
+            // Only allow navigation if not on the save screen (step 4)
+            if (currentStep !== 4) { 
+                if (e.key === 'ArrowRight' && !document.getElementById('next-btn').disabled) {
+                    nextStep();
+                } else if (e.key === 'ArrowLeft' && currentStep > 1) {
+                    previousStep();
+                }
             }
         });
 

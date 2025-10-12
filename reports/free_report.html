@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Funeral Cost Analysis | ClearFuneralCosts</title>
+    <meta name="description" content="Your free funeral cost analysis report based on official CMA data from local funeral directors and crematoria. Understand your options and explore costs in your area.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Funeral Cost Analysis Report | ClearFuneralCosts">
+    <meta property="og:description" content="Your free funeral cost analysis report based on official CMA data from local funeral directors and crematoria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearfuneralcosts.co.uk/reports/free_report.html">
+    <meta property="og:site_name" content="ClearFuneralCosts">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Funeral Cost Analysis Report | ClearFuneralCosts">
+    <meta name="twitter:description" content="Your free funeral cost analysis report based on official CMA data.">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="free funeral cost report, funeral analysis, funeral planning, CMA data, funeral directors, crematoria costs">
+    <meta name="author" content="ClearFuneralCosts">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clearfuneralcosts.co.uk/reports/free_report.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/images/site.webmanifest">
+    
+    <!-- Удалили загрузку скрипта Ouibounce из <head> -->
     <style>
-        /* REFINED COLOR PALETTE - Respectful & Professional */
+        /* REFINED COLOR PALETTE */
         :root {
             --navy-primary: #1e3a5f;
             --navy-light: #2d5a8a;
@@ -14,9 +45,9 @@
             --burgundy-accent: #7d5a50;
             --sage-green: #5a7a5f;
             --warm-cream: #faf8f5;
-            --warm-grey-bg: #f5f3f0;
+            --warm-grey-bg: #f7fafc; /* Updated for better contrast */
             --pure-white: #ffffff;
-            --text-muted: #6b7280;
+            --text-muted: #4a5568; /* Improved contrast */
             --soft-green: #d4edda;
             --success-green: #5a7a5f;
             --border-subtle: #e0ddd8;
@@ -35,6 +66,7 @@
             font-size: 18px;
             background: var(--warm-grey-bg);
             -webkit-font-smoothing: antialiased;
+            padding-bottom: 100px;
         }
 
         .report-container {
@@ -84,7 +116,7 @@
             opacity: 0.8;
         }
 
-        /* SOCIAL PROOF SECTION - EARLY */
+        /* SOCIAL PROOF */
         .social-proof {
             background: var(--soft-green);
             padding: 40px 32px;
@@ -174,6 +206,10 @@
             border-left: 4px solid var(--navy-primary);
         }
 
+        .authority-proof strong {
+            color: var(--navy-primary);
+        }
+
         .analysis-overview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -213,6 +249,10 @@
             color: var(--charcoal-text);
             line-height: 1.6;
         }
+        
+        .info-note strong {
+            font-weight: 700;
+        }
 
         /* SECTIONS */
         .report-section {
@@ -225,53 +265,6 @@
             font-weight: 600;
             color: var(--navy-primary);
             margin-bottom: 20px;
-        }
-
-        /* INLINE UPGRADE HINTS */
-        .inline-upgrade-hint {
-            background: linear-gradient(90deg, rgba(125, 90, 80, 0.08) 0%, rgba(125, 90, 80, 0.03) 100%);
-            border-left: 4px solid var(--burgundy-accent);
-            padding: 20px 24px;
-            margin: 28px 0;
-            border-radius: 4px;
-        }
-
-        .inline-upgrade-hint strong {
-            color: var(--burgundy-accent);
-            font-size: 1.08rem;
-        }
-
-        .inline-upgrade-hint a {
-            color: var(--burgundy-accent);
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        /* LIMITATION BOX */
-        .limitation-box {
-            background: rgba(107, 90, 80, 0.06);
-            border-left: 4px solid var(--warm-brown);
-            padding: 26px;
-            margin: 28px 0;
-            border-radius: 4px;
-        }
-
-        .limitation-box h4 {
-            color: var(--warm-brown);
-            margin: 0 0 16px 0;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .limitation-box ul {
-            margin: 12px 0;
-            padding-left: 24px;
-        }
-
-        .limitation-box li {
-            color: var(--charcoal-text);
-            margin-bottom: 10px;
-            line-height: 1.6;
         }
 
         /* SCENARIO CARDS */
@@ -335,6 +328,178 @@
             line-height: 1.7;
         }
 
+        .scenario-summary {
+            background: var(--warm-cream);
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .scenario-actions {
+            list-style: none;
+            padding: 20px 0 0 0;
+            border-top: 1px dashed var(--border-subtle);
+            margin-top: 20px;
+        }
+
+        .scenario-actions li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .scenario-actions li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--burgundy-accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .popularity-indicator {
+            background: rgba(90, 122, 95, 0.1);
+            color: var(--sage-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        /* PREMIUM UPGRADE SECTION */
+        .premium-upgrade-section {
+            background: linear-gradient(135deg, rgba(125, 90, 80, 0.05) 0%, rgba(125, 90, 80, 0.02) 100%);
+            border: 2px solid var(--burgundy-accent);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px;
+        }
+
+        .social-proof-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .usage-stats {
+            background: var(--sage-green);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .upgrade-benefits-grid {
+            margin: 24px 0;
+        }
+
+        .upgrade-benefits-grid h3 {
+            color: var(--navy-primary);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefit-columns {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .cta-premium-enhanced {
+            display: block;
+            background: var(--burgundy-accent);
+            color: white;
+            padding: 18px 32px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 24px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(125, 90, 80, 0.3);
+        }
+
+        .cta-premium-enhanced:hover {
+            background: #6b4a40;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(125, 90, 80, 0.4);
+        }
+
+        .bonus-highlight {
+            display: block;
+            font-size: 1rem;
+            margin-top: 8px;
+            opacity: 0.95;
+        }
+
+        .testimonial-mini-inline {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid var(--sage-green);
+            margin-top: 24px;
+            font-style: italic;
+            color: var(--charcoal-text);
+        }
+
+        .testimonial-mini-inline cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        /* === NEW STYLES FOR PRE-CTA SOCIAL PROOF === */
+        .pre-cta-social-proof {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .premium-testimonial {
+            background: var(--pure-white);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--burgundy-accent);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--charcoal-text);
+            text-align: left;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .premium-testimonial cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .usage-indicator {
+            background: var(--sage-green);
+            color: var(--pure-white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        /* =============================================================== */
+
         /* PROVIDER TABLE */
         .provider-table {
             width: 100%;
@@ -374,15 +539,54 @@
             background: rgba(212, 237, 218, 0.3);
         }
 
-        /* COMPARISON TABLE */
-        .version-comparison {
-            margin: 36px 0;
-            overflow-x: auto;
+        .free-limitation {
+            color: var(--burgundy-accent);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 5px;
+            font-weight: 600;
         }
 
+        .premium-preview {
+            color: var(--sage-green);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        /* LIMITATION BOX */
+        .limitation-box {
+            background: rgba(107, 90, 80, 0.06);
+            border-left: 4px solid var(--warm-brown);
+            padding: 26px;
+            margin: 28px 32px;
+            border-radius: 4px;
+        }
+
+        .limitation-box h4 {
+            color: var(--warm-brown);
+            margin: 0 0 16px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .limitation-box ul {
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+
+        .limitation-box li {
+            color: var(--charcoal-text);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* COMPARISON TABLE */
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 12px;
             background: var(--pure-white);
             border-radius: 8px;
             overflow: hidden;
@@ -400,10 +604,6 @@
         .comparison-table td {
             padding: 16px;
             border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .comparison-table .feature-name {
-            font-weight: 500;
         }
 
         .comparison-table .check {
@@ -561,12 +761,41 @@
             margin-bottom: 20px;
         }
 
-        .footer-disclaimer {
-            font-size: 0.92rem;
-            opacity: 0.82;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: 0 auto;
+        .enhanced-disclaimer {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .enhanced-disclaimer h4 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #e8dcc8;
+            font-weight: 600;
+        }
+        
+        .enhanced-disclaimer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .enhanced-disclaimer li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .enhanced-disclaimer li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e8dcc8;
+            font-weight: 700;
         }
 
         /* STICKY CTA BAR */
@@ -618,34 +847,167 @@
             transform: translateY(-1px);
         }
 
+        /* EXIT INTENT MODAL STYLES */
+        .ouibounce-modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px); /* Safari support */
+        }
+
+        .ouibounce-modal.shown {
+            display: block;
+        }
+
+        .modal-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 480px;
+            width: 90%;
+            background: var(--pure-white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 32px;
+            text-align: center;
+            border-top: 5px solid var(--burgundy-accent);
+        }
+
+        .modal-inner h4 {
+            color: var(--navy-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal-inner .special-offer {
+            color: var(--burgundy-accent);
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .modal-inner p {
+            color: var(--charcoal-text);
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        .modal-cta {
+            display: block;
+            background: var(--burgundy-accent);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .modal-cta:hover {
+            background: #6b4a40; /* darker burgundy */
+        }
+
+        .modal-close {
+            display: block;
+            margin-top: 15px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        /* SKIP LINKS */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* SCREEN READER ONLY */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Unified Legal Disclaimer Component CSS */
+        .legal-disclaimer-component {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .disclaimer-content {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(125, 90, 80, 0.05); /* Light background using accent color */
+            border: 1px solid var(--border-subtle);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .disclaimer-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             body { font-size: 17px; }
-            
             .report-header { padding: 36px 24px; }
             .report-title { font-size: 2rem; }
             .savings-amount { font-size: 2.2rem; }
-            
             .report-section { padding: 32px 24px; }
             .executive-summary { padding: 32px 24px; }
             .social-proof { padding: 32px 24px; }
-            
             .scenario-card { padding: 24px; }
-            .scenario-header { flex-direction: column; }
-            
             .analysis-overview {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
             }
-            
             .sticky-cta-bar {
                 flex-direction: column;
                 gap: 12px;
                 padding: 14px 16px;
             }
-            
-            .sticky-cta-bar p { font-size: 0.95rem; }
-            .sticky-cta-bar .price { font-size: 1.4rem; }
+            .provider-table { font-size: 0.9rem; }
+            .provider-table th,
+            .provider-table td { padding: 12px 8px; }
+            .premium-upgrade-section { padding: 24px 20px; margin: 24px 16px; }
+            .modal-inner { max-width: 95%; padding: 24px; }
+            .modal-inner h4 { font-size: 1.5rem; }
+            .modal-inner .special-offer { font-size: 2rem; }
+            .modal-inner p { font-size: 1rem; }
         }
 
         @media (max-width: 480px) {
@@ -657,18 +1019,22 @@
     </style>
 </head>
 <body>
+    <!-- SKIP NAVIGATION LINKS -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#report-summary" class="skip-link">Skip to report summary</a>
+    
     <div class="report-container">
-        <!-- HEADER -->
+        <!-- MAIN CONTENT -->
+        <main id="main-content" role="main">
         <header class="report-header">
             <div class="company-logo">
                 <span class="clear-highlight">Clear</span>FuneralCosts
             </div>
             <h1 class="report-title">Your Funeral Cost Analysis</h1>
-            <p class="report-subtitle">Research Support for Brighton, East Sussex</p>
+            <p class="report-subtitle">Information Support for Brighton, East Sussex</p>
             <p class="report-date">Generated: 1st October 2025</p>
         </header>
 
-        <!-- SOCIAL PROOF - EARLY -->
         <section class="social-proof">
             <h3>How Families Have Used Our Research</h3>
             <div class="testimonial-mini">
@@ -682,19 +1048,18 @@
                 <span class="savings">Saved £890</span>
             </div>
             <div class="testimonial-mini">
-                <p>"I didn't realise there was so much price variation between funeral directors. The research helped us make informed decisions whilst honouring my father."</p>
+                <p>"I didn't realise there was so much price variation between funeral directors. The information helped us make informed decisions whilst honouring my father."</p>
                 <div class="author">— Sarah M., Brighton</div>
                 <span class="savings">Saved £1,650</span>
             </div>
         </section>
 
-        <!-- EXECUTIVE SUMMARY -->
         <section class="executive-summary">
             <h2 class="summary-title">Your Potential Savings Overview</h2>
             
             <div class="savings-highlight">
                 <div class="savings-amount">Save Up to £2,500</div>
-                <div class="savings-subtitle">Potential savings identified in your local area</div>
+                <div class="savings-subtitle">Potential savings identified in your local area (for research)</div>
             </div>
 
             <div class="authority-proof">
@@ -723,24 +1088,22 @@
             <p><strong>Our Analysis Shows:</strong> Through strategic provider selection, service optimisation, and timing adjustments, funeral costs in your area might typically be reduced by 15-60% whilst maintaining dignity and quality of service.</p>
             
             <div class="info-note">
-                <strong>Information service:</strong> Research support based on publicly available data. You must confirm all prices directly with providers before making decisions.
+                <strong>Information service:</strong> Analytical support based on publicly available data. You must <strong>confirm</strong> all prices <strong>directly with providers</strong> before making decisions.
             </div>
         </section>
 
-        <!-- HOW TO USE -->
         <section class="report-section">
-            <h2 class="section-title">How to Use This Research</h2>
+            <h2 class="section-title">How to Use This Information</h2>
             
-            <p>This analysis is designed to help you understand potential savings available in your area. Here's how to get the most from this research:</p>
+            <p>This analysis is designed to help you understand potential savings available in your area. Here's how to get the most from this information:</p>
             <ul style="margin-top: 20px; padding-left: 24px; line-height: 1.8;">
-                <li><strong>Step 1: Review the Scenarios.</strong> Understand the three approaches (Conservative, Balanced, Maximum Savings) to find what fits your needs.</li>
-                <li><strong>Step 2: Examine Local Providers.</strong> See examples of price variations between funeral directors in your area.</li>
-                <li><strong>Step 3: Verify Current Pricing.</strong> Always confirm pricing and availability directly with funeral directors before making decisions.</li>
+                <li><strong>Step 1: Explore the Scenarios.</strong> Research the three approaches (Conservative, Strategic, Maximum Savings) to find what fits your needs.</li>
+                <li><strong>Step 2: Research Local Providers.</strong> Review examples of price variations between funeral directors in your area.</li>
+                <li><strong>Step 3: Verify Current Pricing.</strong> Always <strong>confirm</strong> pricing and availability <strong>directly with funeral directors</strong> before making decisions.</li>
                 <li><strong>Step 4: Consider Complete Guidance.</strong> For detailed implementation steps and ongoing support, the premium analysis provides comprehensive guidance.</li>
             </ul>
         </section>
 
-        <!-- SCENARIOS -->
         <section class="report-section">
             <h2 class="section-title">Your Three Cost Optimisation Scenarios</h2>
             
@@ -749,28 +1112,54 @@
                     <h3 class="scenario-title">Conservative Approach</h3>
                     <div class="scenario-savings">
                         You might save £500 - £800
-                        <span class="savings-percentage">10-15% potential reduction</span>
+                        <span class="savings-percentage">10-15% potential reduction (information estimate)</span>
                     </div>
                 </div>
+                
+                <div class="scenario-summary">Minimal changes to traditional arrangements</div>
                 
                 <p class="scenario-description">
                     Minimal changes to traditional funeral arrangements with modest potential savings. Simple provider and timing optimisations without disrupting family plans.
                 </p>
+                
+                <ul class="scenario-actions">
+                    <li>Compare quotes from 3-5 local funeral directors</li>
+                    <li>Explore crematorium off-peak scheduling</li>
+                    <li>Review transport and venue arrangements</li>
+                </ul>
+                
+                <div class="popularity-indicator">✓ Chosen by 68% of families</div>
             </div>
 
             <div class="scenario-card recommended">
-                <div class="recommended-badge">BALANCED APPROACH</div>
-                <div class="scenario-header">
-                    <h3 class="scenario-title">Balanced Optimisation</h3>
-                    <div class="scenario-savings">
-                        You might save £1,200 - £1,800
-                        <span class="savings-percentage">25-35% potential reduction</span>
-                    </div>
+                <div class="recommended-badge">RECOMMENDED APPROACH</div>
+                
+                <div class="scenario-header" style="margin-bottom: 0;">
+                    <h3 class="scenario-title" style="margin-top: 10px; margin-bottom: 0;">Strategic Approach (£800-£1,500 potential)</h3>
                 </div>
                 
-                <p class="scenario-description">
-                    Strategic combination of provider selection, timing adjustments, and selective service modifications whilst maintaining funeral dignity. The most popular choice amongst UK families researching costs.
-                </p>
+                <!-- Tagline reusing scenario-summary style with adjusted colors for visual separation -->
+                <div class="scenario-summary" style="background: rgba(90, 122, 95, 0.1); color: var(--sage-green); font-weight: 500; font-size: 1rem; margin-top: 10px;">Most popular with UK families</div>
+                
+                <div class="actionable-steps">
+                    <!-- Heading for actionable steps -->
+                    <h4 style="color: var(--navy-primary); font-size: 1.1rem; margin-bottom: 12px; margin-top: 20px; font-weight: 600;">What this involves:</h4>
+                    
+                    <!-- Actionable steps, reusing scenario-actions style for consistent bullets -->
+                    <ul class="scenario-actions" style="border-top: none; padding-top: 0;">
+                        <li>Compare quotes from 3-5 funeral directors in 15-mile radius</li>
+                        <li>Request off-peak crematorium slots (9am-11am weekdays)</li>
+                        <li>Explore transport cost alternatives</li>
+                        <li>Review venue options for post-service gathering</li>
+                    </ul>
+                </div>
+                
+                <!-- Typical result section -->
+                <div class="scenario-summary" style="margin-top: 24px; background: var(--warm-cream); color: var(--navy-primary); border: 1px dashed var(--border-subtle);">
+                    <strong>Typical result:</strong> £800-£1,500 saving while maintaining traditional elements
+                </div>
+                
+                <div class="popularity-indicator" style="margin-top: 24px;">✓ Actionable steps provided</div>
             </div>
 
             <div class="scenario-card">
@@ -778,168 +1167,238 @@
                     <h3 class="scenario-title">Maximum Savings</h3>
                     <div class="scenario-savings">
                         You might save £2,000 - £2,500
-                        <span class="savings-percentage">45-60% potential reduction</span>
+                        <span class="savings-percentage">45-60% potential reduction (information estimate)</span>
                     </div>
                 </div>
+                
+                <div class="scenario-summary">Modern approach with separate memorial</div>
                 
                 <p class="scenario-description">
                     Direct cremation approach with separate celebration of life service, maximising potential cost savings through complete service restructuring. Modern approach gaining popularity.
                 </p>
+                
+                <ul class="scenario-actions">
+                    <li>Explore Direct Cremation only services</li>
+                    <li>Arrange separate memorial service at your own pace</li>
+                    <li>Use community venue or personal home for celebration</li>
+                    <li>Consider DIY arrangements for flowers and catering</li>
+                </ul>
+                
+                <div class="popularity-indicator">✓ Growing in popularity</div>
             </div>
         </section>
 
-        <!-- LIMITATION BOX -->
-        <div class="limitation-box" style="margin: 0 32px 0 32px;">
-            <h4>What This Free Report Doesn't Include</h4>
-            <p style="margin-bottom: 12px;">This overview provides general ranges and examples. To implement these potential savings, you would need:</p>
-            <ul>
-                <li>Specific provider contact details (not just names)</li>
-                <li>Exact cost calculations for your postcode</li>
-                <li>Step-by-step implementation guidance</li>
-                <li>Scripts for negotiating with funeral directors</li>
-                <li>Timing strategies for off-peak bookings</li>
-                <li>Ongoing support when questions arise</li>
-            </ul>
+        <div class="premium-upgrade-section">
+            <div class="social-proof-header">
+                <span class="usage-stats">127 families used this guide this week</span>
+            </div>
+            
+            <div class="pre-cta-social-proof">
+                <blockquote class="premium-testimonial">
+                    "The £39 guide's contact details and scripts saved us £1,200. Worth every penny during such a difficult time."
+                    <cite>— Rachel M., Brighton (verified premium customer)</cite>
+                </blockquote>
+                
+                <div class="usage-indicator">
+                    <span class="recent-activity">47 families upgraded this week</span>
+                </div>
+            </div>
+            
+            <div class="upgrade-benefits-grid">
+                <h3>Complete Implementation Guide - £39</h3>
+                <div class="benefit-columns">
+                    ✓ Direct provider contacts & phone numbers<br>
+                    ✓ Ready-to-send email templates<br>
+                    ✓ Day-by-day implementation roadmap<br>
+                    ✓ Communication scripts for providers<br>
+                    ✓ 60-day money-back guarantee
+                </div>
+            </div>
+            
+            <a href="/premium-questionnaire" class="cta-premium-enhanced">
+                Get Your Complete Guide Now
+                <span class="bonus-highlight">Includes: Email support for your questions</span>
+            </a>
+            
+            <!-- Unified Legal Disclaimer Component placed under CTA button -->
+            <aside class="legal-disclaimer-component" style="margin-top: 15px;">
+                <div class="disclaimer-content">
+                    <span class="disclaimer-icon">ℹ️</span>
+                    <span class="disclaimer-text">Information service | No financial advice | Verify with providers</span>
+                </div>
+            </aside>
+            
+            <div class="testimonial-mini-inline">
+                "Saved us £1,240. The contact details and scripts were invaluable."
+                <cite>— Sarah M., verified purchaser</cite>
+            </div>
         </div>
 
-        <!-- PROVIDER EXAMPLES -->
         <section class="report-section">
-            <h2 class="section-title">Examples of Local Providers</h2>
+            <h2 class="section-title">Examples of Local Providers (for Comparison)</h2>
             
             <table class="provider-table">
                 <thead>
                     <tr>
                         <th>Funeral Director</th>
                         <th>Location</th>
-                        <th>Basic Cost (estimated)</th>
-                        <th>Distance</th>
+                        <th>Basic Cost Range</th>
+                        <th>What You Get</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="best-value">
-                        <td><strong>Worthing Family Funerals</strong></td>
-                        <td>Worthing</td>
-                        <td class="price">From £2,370</td>
+                        <td>
+                            <strong>Worthing Family Funerals</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Worthing, 18 miles</span>
+                        </td>
                         <td>18 miles</td>
+                        <td class="price">From £2,370*</td>
+                        <td>
+                            <span class="free-limitation">❌ Contact details in premium version</span>
+                            <span class="premium-preview">📞 Direct line + email in guide</span>
+                        </td>
                     </tr>
                     <tr>
-                        <td>A Natural Undertaking</td>
-                        <td>Waterlooville</td>
-                        <td class="price">From £2,485</td>
+                        <td>
+                            <strong>A Natural Undertaking</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Waterlooville, 22 miles</span>
+                        </td>
                         <td>22 miles</td>
+                        <td class="price">From £2,485*</td>
+                        <td>
+                            <span class="free-limitation">❌ Contact details in premium version</span>
+                            <span class="premium-preview">📞 Direct line + email in guide</span>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Brighton & Hove Funeral</td>
-                        <td>Brighton</td>
-                        <td class="price">From £2,850</td>
+                        <td>
+                            <strong>Brighton & Hove Funeral</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Brighton, 2 miles</span>
+                        </td>
                         <td>2 miles</td>
+                        <td class="price">From £2,850*</td>
+                        <td>
+                            <span class="free-limitation">❌ Contact details in premium version</span>
+                            <span class="premium-preview">📞 Direct line + email in guide</span>
+                        </td>
                     </tr>
                     <tr>
-                        <td>South Coast Funeral Services</td>
-                        <td>Eastbourne</td>
-                        <td class="price">From £3,100</td>
+                        <td>
+                            <strong>South Coast Funeral Services</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Eastbourne, 24 miles</span>
+                        </td>
                         <td>24 miles</td>
+                        <td class="price">From £3,100*</td>
+                        <td>
+                            <span class="free-limitation">❌ Contact details in premium version</span>
+                            <span class="premium-preview">📞 Direct line + email in guide</span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="info-note">
-                Estimated costs based on publicly available data. Always confirm current pricing directly with service providers. Distance calculations from postcode BN1 4GH.
+                Estimated costs based on publicly available data. Always <strong>confirm</strong> current pricing <strong>directly with service providers</strong>. Distance calculations from postcode BN1 4GH.
             </div>
         </section>
 
-        <!-- INLINE UPGRADE HINT -->
-        <div class="inline-upgrade-hint" style="margin: 0 32px 32px 32px;">
-            <strong>Want direct contacts?</strong> The complete analysis includes phone numbers, email addresses, and specific talking points for each provider — saving you hours of research during a difficult time. <a href="#upgrade">Learn more</a>
+        <div class="limitation-box">
+            <h4>The Implementation Gap: What This Free Research Doesn't Include</h4>
+            <p style="margin-bottom: 12px;">This overview provides general ranges and exploration ideas. To implement these potential savings, you would need:</p>
+            <ul>
+                <li>Specific provider contact details (not just names) — <strong>Essential for direct exploration</strong></li>
+                <li>Exact cost calculations for your postcode — <strong>For internal research use</strong></li>
+                <li>Step-by-step implementation guidance — <strong>To help with follow-through</strong></li>
+                <li>Scripts for negotiating with funeral directors — <strong>To help with confidence</strong></li>
+                <li>Timing strategies for off-peak bookings — <strong>To explore potential savings</strong></li>
+                <li>Ongoing support when questions arise — <strong>For peace of mind</strong></li>
+            </ul>
         </div>
 
-        <!-- COMPARISON TABLE -->
         <section class="report-section" style="background: var(--warm-cream);" id="upgrade">
             <h2 class="section-title" style="text-align: center; margin-bottom: 12px;">Free vs Complete Analysis</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 36px;">What's included in each version</p>
             
-            <div class="version-comparison">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 50%;">Feature</th>
-                            <th style="width: 25%; text-align: center;">Free</th>
-                            <th style="width: 25%; text-align: center;">Premium £39</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="feature-name">Regional market overview</td>
-                            <td style="text-align: center;" class="check">✓</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">3 cost-saving scenarios</td>
-                            <td style="text-align: center;" class="check">✓</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Example provider names</td>
-                            <td style="text-align: center;" class="check">✓</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>Exact cost calculations for your postcode</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>Provider contact details & phone numbers</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>14-day implementation roadmap</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>Negotiation scripts & email templates</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>Off-peak timing strategy guide</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>60-day email support</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                        <tr style="background: rgba(125, 90, 80, 0.02);">
-                            <td class="feature-name"><strong>Money-back guarantee (save £500 or refund)</strong></td>
-                            <td style="text-align: center;" class="cross">✗</td>
-                            <td style="text-align: center;" class="check premium-col">✓</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">Feature</th>
+                        <th style="width: 25%; text-align: center;">Free</th>
+                        <th style="width: 25%; text-align: center;">Premium £39</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Regional market overview (for exploration)</td>
+                        <td style="text-align: center;" class="check">✓</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr>
+                        <td>3 cost-saving scenarios (ideas)</td>
+                        <td style="text-align: center;" class="check">✓</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Example provider names (for independent research)</td>
+                        <td style="text-align: center;" class="check">✓</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>Exact cost calculations for your postcode</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>Provider contact details & phone numbers</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>14-day implementation roadmap</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>Negotiation scripts & email templates</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>Off-peak timing strategy guide</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>60-day email support</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                    <tr style="background: rgba(125, 90, 80, 0.02);">
+                        <td><strong>Money-back guarantee</strong></td>
+                        <td style="text-align: center;" class="cross">✗</td>
+                        <td style="text-align: center;" class="check premium-col">✓</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- UPGRADE CTA -->
         <section class="upgrade-cta">
-            <h2 class="cta-title">Get Everything You Need to Implement These Savings</h2>
+            <h2 class="cta-title">Get Everything You Need to Explore These Savings</h2>
             <p class="cta-subtitle">
-                This free overview shows you what's possible. The complete guide shows you exactly how to do it.
+                This free overview shows you what's possible. The complete guide shows you exactly how to explore and implement it.
             </p>
 
             <div class="value-preview">
                 <div class="preview-title">What you'll receive in the Complete Guide:</div>
                 <ul class="value-list">
                     <li><strong>Detailed savings calculations</strong> (not just ranges) — better understand potential savings</li>
-                    <li class="premium-only">Provider research guidance and contact details to help with your research</li>
+                    <li class="premium-only">Provider contact details and direct lines to help with your exploration</li>
                     <li class="premium-only">14-day implementation roadmap with suggested daily actions</li>
                     <li class="premium-only">Negotiation scripts and email templates to help secure better prices</li>
                     <li class="premium-only">Off-peak timing strategies and booking guidance worth £100-400 potential savings</li>
-                    <li class="premium-only">60-day email support for questions during your research</li>
-                    <li class="premium-only"><strong>Research support commitment</strong> — comprehensive guidance or money back</li>
+                    <li class="premium-only">60-day email support for questions during your exploration</li>
+                    <li class="premium-only">Support commitment — comprehensive guidance or money back</li>
                 </ul>
             </div>
             
@@ -950,9 +1409,7 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="/premium-questionnaire" class="cta-primary">
-                    Get Your Complete Guide Now
-                </a>
+                <a href="/premium-questionnaire" class="cta-primary">Get Your Complete Guide Now</a>
             </div>
             
             <p class="guarantee-text">
@@ -960,25 +1417,73 @@
             </p>
         </section>
 
-        <!-- FOOTER -->
         <footer class="report-footer">
             <div class="footer-contact">
                 support@clearfuneralcosts.co.uk | Mon-Fri 9am-5pm
             </div>
-            <div class="footer-disclaimer">
-                <strong>Information Service:</strong> This analysis is based on publicly available pricing data as of October 2025. 
-                Pricing data may be outdated or incomplete. Users must verify all information directly with service providers. 
-                ClearFuneralCosts provides information only and does not provide financial, legal, or professional advice. 
-                We are not authorised by the Financial Conduct Authority. Always verify details before making decisions. 
-                We are independent and receive no commissions from funeral directors.
+            <div class="enhanced-disclaimer">
+                <h4>Important Information</h4>
+                <ul>
+                    <li><strong>Information Service Only:</strong> We provide research support, not financial advice.</li>
+                    <li><strong>Not FCA Regulated:</strong> We are not authorised by the Financial Conduct Authority.</li>
+                    <li><strong>Verification Required:</strong> All pricing must be <strong>confirmed</strong> directly with service providers.</li>
+                    <li><strong>No Guarantees:</strong> Savings estimates may vary significantly.</li>
+                </ul>
             </div>
         </footer>
+        </main>
     </div>
 
-    <!-- STICKY CTA BAR -->
     <div class="sticky-cta-bar">
-        <p>Ready to implement these savings? <span class="price">£39</span> for complete guidance</p>
+        <p>Ready to explore these savings? <span class="price">£39</span> for complete guidance</p>
         <a href="/premium-questionnaire" class="cta-button-sticky">Get Complete Guide</a>
     </div>
+
+    <!-- EXIT INTENT MODAL HTML -->
+    <div id="exit-intent-modal" class="ouibounce-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
+        <div class="modal-inner">
+            <h4 id="exit-modal-title">Wait! Before You Go...</h4>
+            <span class="special-offer">Unlock Contacts for £19</span>
+            <p>Don't leave potential savings on the table. Unlock the full contact details for all 23 local funeral directors and get the proven negotiation scripts for half price.</p>
+            <a href="/premium-questionnaire?offer=exit-intent" class="modal-cta">Unlock 50% Off Now (£19)</a>
+            <div class="modal-close" onclick="document.getElementById('exit-intent-modal').classList.remove('shown')" tabindex="0" role="button">No, thank you. I'll stick to the free research.</div>
+            
+            <aside class="legal-disclaimer-component">
+                <div class="disclaimer-content">
+                    <span class="disclaimer-icon">ℹ️</span>
+                    <span class="disclaimer-text">Information service | No financial advice | Verify with providers</span>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Переместили загрузку и инициализацию сюда для гарантированной работы -->
+    <script src="https://cdn.jsdelivr.net/npm/ouibounce@0.0.12/ouibounce.min.js"></script>
+    <script>
+        // Function to show the modal
+        function showExitOffer() {
+            document.getElementById('exit-intent-modal').classList.add('shown');
+        }
+
+        // ouibounce initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Применяем ouibounce, предполагая, что скрипт теперь доступен
+            ouibounce(document.getElementById('exit-intent-modal'), {
+                // Aggressive: true ensures it shows up repeatedly for testing/demo purposes
+                aggressive: true, 
+                // Sensitivity adjusted for easier testing in small screen environments
+                sensitivity: 20, 
+                callback: showExitOffer
+            });
+
+            // Close modal when close text is clicked
+            const closeButton = document.querySelector('.modal-close');
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    document.getElementById('exit-intent-modal').classList.remove('shown');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

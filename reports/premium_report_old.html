@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Funeral Cost Implementation Guide | ClearFuneralCosts</title>
+    <!-- ИСПРАВЛЕНО: Правильный относительный путь к файлу CSS -->
+    <link rel="stylesheet" href="../assets/css/premium_report.css">
+    
+    <script>
+        // Placeholder for client-side persistence logic
+        function updateChecklistProgress(checkbox) {
+            const label = checkbox.closest('.checkbox-item').textContent.trim();
+            const checked = checkbox.checked;
+            // Use ID for reliable persistence
+            const itemId = checkbox.id;
+            let progress = JSON.parse(localStorage.getItem('checklistProgress') || '{}');
+
+            if (checked) {
+                progress[itemId] = true;
+            } else {
+                delete progress[itemId];
+            }
+            localStorage.setItem('checklistProgress', JSON.stringify(progress));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+             // Load saved progress (if necessary for a sticky checklist)
+            let progress = JSON.parse(localStorage.getItem('checklistProgress') || '{}');
+            document.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(checkbox => {
+                const itemId = checkbox.id;
+                if (progress[itemId]) {
+                    checkbox.checked = true;
+                }
+                // Trigger change to apply line-through style if checked on load
+                checkbox.dispatchEvent(new Event('change'));
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="report-container">
+        <!-- HEADER -->
+        <header class="report-header">
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="report-title">Complete Funeral Cost Implementation Guide</h1>
+            <p class="report-subtitle">Professional Analysis & Implementation Roadmap</p>
+            <p class="report-date">Generated: 1st October 2025 | Postcode: BN1 4GH (Brighton, East Sussex)</p>
+        </header>
+
+        <!-- QUICK WINS SECTION - Changed language from 'Call' to 'Consider Contacting/Researching' -->
+        <section class="quick-wins-section">
+            <h2 class="quick-wins-title">3 Suggested Actions You May Wish to Explore Today</h2>
+            <p class="quick-wins-subtitle">Start exploring your potential savings strategy immediately with these priority actions</p>
+            
+            <div class="quick-win-card" role="region" aria-label="Quick Action 1: Worthing Family Funerals Research">
+                <div class="win-header">
+                    <div class="win-number">1</div>
+                    <h3 class="win-title">Research Worthing Family Funerals</h3>
+                </div>
+                <p>Consider contacting them to explore early morning rates and mention you're researching providers in the area.</p>
+                <a href="tel:01903123456" class="call-button" aria-label="Call Worthing Family Funerals: 01903 123456">📞 Contact Details: 01903 123456</a>
+            </div>
+
+            <div class="quick-win-card" role="region" aria-label="Quick Action 2: Downs Crematorium Availability Check">
+                <div class="win-header">
+                    <div class="win-number">2</div>
+                    <h3 class="win-title">Check Downs Crematorium Availability</h3>
+                </div>
+                <p>Early morning slots (9:00-10:00am) might offer potential savings. Consider contacting them to inquire about dates within your preferred timeframe to explore this saving.</p>
+                <a href="tel:01903234567" class="call-button" aria-label="Call Downs Crematorium: 01903 234567">📞 Contact Details: 01903 234567</a>
+            </div>
+
+            <div class="quick-win-card" role="region" aria-label="Quick Action 3: Send Quote Request Emails">
+                <div class="win-header">
+                    <div class="win-number">3</div>
+                    <h3 class="win-title">Send Quote Request Emails</h3>
+                </div>
+                <p>Use the email templates in Section 5 to request written quotes from 2-3 providers. This can help create price comparison leverage.</p>
+                <a href="#negotiation-scripts" class="call-button" style="background: var(--warm-brown);" aria-label="Go to Negotiation Scripts and Email Templates">→ Go to Templates</a>
+            </div>
+        </section>
+
+        <!-- PERSONALIZED INTRO -->
+        <section class="personalized-intro report-section">
+            <h2 class="intro-title section-title">Your Personalised Analysis</h2>
+            
+            <div class="service-definition">
+                <h4>Research Support Service</h4>
+                <p><strong>Information service:</strong> ClearFuneralCosts aggregates publicly available funeral pricing data for informational purposes. This report provides research support and guidance.</p>
+                <p><strong>Data verification required:</strong> All pricing data should be <strong>confirmed directly with service providers</strong> before making decisions.</p>
+            </div>
+            
+            <div class="exact-savings">
+                <div class="savings-amount">£1,720</div>
+                <div class="savings-subtitle">Your Potential Savings Calculation (Research Estimate)</div>
+                <div class="roi-calculation">
+                    <div class="roi-title">Return on Investment (ROI)</div>
+                    <div class="roi-value">4,410%</div>
+                </div>
+                <div class="savings-disclaimer">
+                    <strong>Research estimate:</strong> This calculation represents potential savings based on publicly available data. Actual savings may vary and depend on your final provider selection and service requirements.
+                </div>
+            </div>
+
+            <div class="user-preferences">
+                <h4 style="color: var(--navy-primary); margin-bottom: 16px; font-weight: 600;">Your preferences from the questionnaire:</h4>
+                <div class="preferences-grid">
+                    <div class="preference-item">
+                        <span class="preference-label">Service Type:</span>
+                        <span class="preference-value">Traditional Cremation</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Budget:</span>
+                        <span class="preference-value">£3,000 - £4,000</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Travel:</span>
+                        <span class="preference-value">Within 20 miles</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Family Size:</span>
+                        <span class="preference-value">30-50 guests</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Timing:</span>
+                        <span class="preference-value">Moderate Flexibility</span>
+                    </div>
+                    <div class="preference-item">
+                        <span class="preference-label">Priority:</span>
+                        <span class="preference-value">Value for Money</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 24px;"><strong>Our research analysis:</strong> Based on official CMA data from 27 funeral directors and 8 crematoria in your region, we have identified significant cost optimisation opportunities whilst maintaining dignity and meeting your family's needs.</p>
+            
+            <p><strong>Key finding:</strong> Through strategic timing, provider selection, and service optimisation, your funeral costs might potentially be reduced from £4,570 to £2,850 — representing a £1,720 potential saving with minimal family disruption.</p>
+        </section>
+
+        <!-- BASELINE ANALYSIS -->
+        <section class="report-section" role="region" aria-label="Baseline Cost Analysis">
+            <h2 class="section-title">1. Baseline Cost Analysis (for Understanding)</h2>
+            
+            <div class="cost-breakdown">
+                <div class="cost-card">
+                    <h4>Current Quote Breakdown (Research Estimate)</h4>
+                    <div class="cost-item">
+                        <span>Funeral Director Fee:</span>
+                        <span><strong>£2,850</strong>*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>• Professional services</span>
+                        <span>£695*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>• Care of deceased</span>
+                        <span>£125*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>• Hearse & transport</span>
+                        <span>£555*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>• Coffin (standard oak)</span>
+                        <span>£425*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>• Additional services</span>
+                        <span>£350*</span>
+                    </div>
+                </div>
+
+                <div class="cost-card">
+                    <h4>Additional Costs (Research Estimate)</h4>
+                    <div class="cost-item">
+                        <span>Brighton Crematorium:</span>
+                        <span><strong>£920</strong>*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Flowers & tributes:</span>
+                        <span><strong>£400</strong>*</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Reception (hotel):</span>
+                        <span><strong>£400</strong>*</span>
+                    </div>
+                    <div class="cost-item cost-total">
+                        <span><strong>Total Baseline Cost:</strong></span>
+                        <span><strong>£4,570</strong>*</span>
+                    </div>
+                </div>
+            </div>
+            <div class="info-note">
+                All costs are estimates based on publicly available data and may not reflect current pricing. <strong>Verify</strong> all costs <strong>directly with providers</strong> before making decisions.
+            </div>
+        </section>
+
+        <!-- OPTIMIZATION RECOMMENDATIONS -->
+        <section class="report-section" role="region" aria-label="Optimisation Recommendations and Scenarios">
+            <h2 class="section-title">2. Optimisation Recommendations (for Exploration)</h2>
+            <p class="section-subtitle">
+                We have analysed several scenarios for your area. Below are the three most suitable options based on your preferences. Remember to verify all information with providers.
+            </p>
+
+            <!-- RECOMMENDED OPTION -->
+            <div class="recommendation-card recommended">
+                <div class="recommendation-badge">RECOMMENDED FOR YOUR RESEARCH</div>
+                <div class="recommendation-header">
+                    <h3 class="recommendation-title">
+                        Balanced Optimisation (Hybrid Approach)
+                        <span class="recommendation-score">Score: 7.6/10</span>
+                    </h3>
+                    <div class="recommendation-savings">
+                        Potential: £1,720
+                        <span class="savings-percentage">37% potential reduction (research estimate)</span>
+                    </div>
+                </div>
+                
+                <p class="recommendation-description">
+                    A balanced approach combining off-peak timing, strategic provider selection, and selective service modifications whilst maintaining traditional funeral elements. <strong>Important:</strong> All savings are estimated and depend on final provider selection.
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>Potential Advantages</h5>
+                        <ul>
+                            <li>Substantial potential cost savings</li>
+                            <li>May maintain dignity & tradition</li>
+                            <li>Manageable family coordination</li>
+                            <li>Flexible implementation timeline</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>Considerations</h5>
+                        <ul>
+                            <li>Early morning service (9:00am)</li>
+                            <li>25-minute drive to crematorium</li>
+                            <li>Simplified reception venue</li>
+                            <li>Requires 2-week planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--navy-primary); margin: 24px 0 12px 0; font-weight: 600;">Specific Optimisations Suggested for Research:</h4>
+                <ul style="margin: 0; padding-left: 24px; line-height: 1.8;">
+                    <li>Provider Change: Research Worthing Family Funerals vs Brighton original (might save £480*)</li>
+                    <li>Off-Peak Timing: Explore 9:00am slot vs standard time (might save £270*)</li>
+                    <li>Crematorium Selection: Research Downs Crematorium vs Brighton (might save £270*)</li>
+                    <li>Transport Optimisation: Consider family cars for attendees (might save £200*)</li>
+                    <li>Venue Change: Research Community centre vs hotel (might save £280*)</li>
+                    <li>Direct Floral Arrangements: Consider Local florist vs funeral director (might save £200*)</li>
+                </ul>
+                <div class="info-note">
+                    All savings estimates are based on publicly available data. <strong>Verify</strong> actual pricing with each provider.
+                </div>
+            </div>
+
+            <!-- ALTERNATIVE OPTIONS (Conservative) -->
+            <div class="recommendation-card">
+                <div class="recommendation-header">
+                    <h3 class="recommendation-title">
+                        Conservative Approach
+                        <span class="recommendation-score">Score: 6.8/10</span>
+                    </h3>
+                    <div class="recommendation-savings">
+                        Potential: £670
+                        <span class="savings-percentage">15% potential reduction (research estimate)</span>
+                    </div>
+                </div>
+                
+                <p class="recommendation-description">
+                    Minimal changes to traditional funeral arrangements with modest potential savings. Simple provider and timing optimisations without disrupting family plans.
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>Potential Advantages</h5>
+                        <ul>
+                            <li>Minimal family disruption</li>
+                            <li>Same crematorium location</li>
+                            <li>Traditional timing maintained</li>
+                            <li>Simple implementation</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>Considerations</h5>
+                        <ul>
+                            <li>Limited savings potential</li>
+                            <li>Higher overall costs</li>
+                            <li>May miss major opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALTERNATIVE OPTIONS (Maximum Savings) -->
+            <div class="recommendation-card">
+                <div class="recommendation-header">
+                    <h3 class="recommendation-title">
+                        Maximum Savings
+                        <span class="recommendation-score">Score: 7.2/10</span>
+                    </h3>
+                    <div class="recommendation-savings">
+                        Potential: £2,770
+                        <span class="savings-percentage">61% potential reduction (research estimate)</span>
+                    </div>
+                </div>
+                
+                <p class="recommendation-description">
+                    Direct cremation approach with separate celebration of life service, maximising potential cost savings through complete service unbundling. This is a modern approach gaining popularity.
+                </p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>Potential Advantages</h5>
+                        <ul>
+                            <li>Maximum potential financial savings</li>
+                            <li>Flexible celebration planning</li>
+                            <li>Reduced time pressure</li>
+                            <li>Personalisation opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>Considerations
+                        </h5>
+                        <ul>
+                            <li>Non-traditional approach</li>
+                            <li>Requires family coordination</li>
+                            <li>Separate memorial planning</li>
+                            <li>May not suit all expectations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILED PROVIDER COMPARISON -->
+        <section class="report-section" role="region" aria-label="Detailed Provider Comparison">
+            <h2 class="section-title">3. Detailed Provider Comparison (for Verification)</h2>
+            
+            <table class="provider-table">
+                <thead>
+                    <tr>
+                        <th>Funeral Director</th>
+                        <th>Location</th>
+                        <th>Estimated Cost</th>
+                        <th>Distance</th>
+                        <th>Contact Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="best-value">
+                        <td><strong>Worthing Family Funerals</strong></td>
+                        <td>Worthing</td>
+                        <td class="price">£2,370*</td>
+                        <td>18 miles</td>
+                        <td>
+                            01903 123456<br>
+                            <span class="contact-info-table">info@worthingfunerals.co.uk</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A Natural Undertaking</td>
+                        <td>Waterlooville</td>
+                        <td class="price">£2,485*</td>
+                        <td>22 miles</td>
+                        <td>
+                            02392 567890<br>
+                            <span class="contact-info-table">enquiries@naturalundertaking.co.uk</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Brighton & Hove Funeral</td>
+                        <td>Brighton</td>
+                        <td class="price">£2,850*</td>
+                        <td>2 miles</td>
+                        <td>
+                            01273 345678<br>
+                            <span class="contact-info-table">support@brightonhove.co.uk</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-note">
+                All costs are estimates based on publicly available CMA data. Pricing data may be outdated or incomplete. Users must <strong>verify</strong> all information <strong>directly with service providers</strong> before making decisions. Distance calculations from postcode BN1 4GH.
+            </div>
+        </section>
+
+        <!-- 14-DAY IMPLEMENTATION ROADMAP - Changed passive list to interactive checklist -->
+        <section class="report-section" role="region" aria-label="14-Day Research Roadmap">
+            <h2 class="section-title">4. 14-Day Research Roadmap (Suggested Actions)</h2>
+            
+            <div class="service-definition">
+                <h4>Research Guidance</h4>
+                <p>This roadmap provides <strong>suggested actions</strong> for your <strong>research</strong>. All recommendations are for informational purposes only. Always <strong>verify</strong> information independently and make your own decisions.</p>
+            </div>
+
+            <div class="implementation-day">
+                <h3>Day 1-2: Initial Contact & Exploration</h3>
+                <div class="action-checklist" role="group" aria-label="Day 1-2 Checklist">
+                    <label class="checkbox-item" tabindex="0" aria-label="Research Worthing Family Funerals">
+                        <input type="checkbox" id="action_item_1" onchange="updateChecklistProgress(this)" data-day="1">
+                        <span>Research Worthing Family Funerals, contact details provided below</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Request CMA written quote">
+                        <input type="checkbox" id="action_item_2" onchange="updateChecklistProgress(this)" data-day="1">
+                        <span>Request a written quote that matches the CMA standardised pricing structure</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Confirm initial availability">
+                        <input type="checkbox" id="action_item_3" onchange="updateChecklistProgress(this)" data-day="2">
+                        <span>Confirm initial availability for your desired date</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Verify initial pricing information">
+                        <input type="checkbox" id="action_item_4" onchange="updateChecklistProgress(this)" data-day="2">
+                        <span>Verify all pricing information independently</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="implementation-day">
+                <h3>Day 3-5: Crematorium Booking Exploration</h3>
+                <div class="action-checklist" role="group" aria-label="Day 3-5 Checklist">
+                    <label class="checkbox-item" tabindex="0" aria-label="Research Downs Crematorium off-peak slots">
+                        <input type="checkbox" id="action_item_5" onchange="updateChecklistProgress(this)" data-day="3">
+                        <span>Research Downs Crematorium for off-peak slot (9:00am preferred)</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Confirm current pricing structure">
+                        <input type="checkbox" id="action_item_6" onchange="updateChecklistProgress(this)" data-day="4">
+                        <span>Confirm current pricing structure with the crematorium</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Inquire about early morning slot availability">
+                        <input type="checkbox" id="action_item_7" onchange="updateChecklistProgress(this)" data-day="5">
+                        <span>Inquire about early morning slot availability</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Verify all fees and additional charges">
+                        <input type="checkbox" id="action_item_8" onchange="updateChecklistProgress(this)" data-day="5">
+                        <span>Verify all fees and additional charges</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="implementation-day">
+                <h3>Day 6-8: Transport Consideration</h3>
+                <div class="action-checklist" role="group" aria-label="Day 6-8 Checklist">
+                    <label class="checkbox-item" tabindex="0" aria-label="Notify family of location changes">
+                        <input type="checkbox" id="action_item_9" onchange="updateChecklistProgress(this)" data-day="6">
+                        <span>Notify family of the potential new location and time</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Consider carpooling options">
+                        <input type="checkbox" id="action_item_10" onchange="updateChecklistProgress(this)" data-day="7">
+                        <span>Consider carpooling or coach hire for large groups</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Prepare routes and departure times">
+                        <input type="checkbox" id="action_item_11" onchange="updateChecklistProgress(this)" data-day="8">
+                        <span>Prepare routes and departure times</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Account for additional travel time">
+                        <input type="checkbox" id="action_item_12" onchange="updateChecklistProgress(this)" data-day="8">
+                        <span>Account for additional travel time in planning</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="implementation-day">
+                <h3>Day 9-11: Reception Arrangements Exploration</h3>
+                <div class="action-checklist" role="group" aria-label="Day 9-11 Checklist">
+                    <label class="checkbox-item" tabindex="0" aria-label="Research community centre options">
+                        <input type="checkbox" id="action_item_13" onchange="updateChecklistProgress(this)" data-day="9">
+                        <span>Research booking a community centre or pub function room</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Inquire about catering options">
+                        <input type="checkbox" id="action_item_14" onchange="updateChecklistProgress(this)" data-day="10">
+                        <span>Inquire about catering options directly with venues</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Compare costs with funeral director packages">
+                        <input type="checkbox" id="action_item_15" onchange="updateChecklistProgress(this)" data-day="10">
+                        <span>Compare costs with funeral director packages</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Verify all booking terms and conditions">
+                        <input type="checkbox" id="action_item_16" onchange="updateChecklistProgress(this)" data-day="11">
+                        <span>Verify all booking terms and conditions</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="implementation-day">
+                <h3>Day 12-14: Final Coordination & Verification</h3>
+                <div class="action-checklist" role="group" aria-label="Day 12-14 Checklist">
+                    <label class="checkbox-item" tabindex="0" aria-label="Confirm all arrangements with chosen providers">
+                        <input type="checkbox" id="action_item_17" onchange="updateChecklistProgress(this)" data-day="12">
+                        <span>Confirm all arrangements with chosen providers</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Distribute timing information to family members">
+                        <input type="checkbox" id="action_item_18" onchange="updateChecklistProgress(this)" data-day="12">
+                        <span>Distribute timing information to family members</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Prepare the order of service">
+                        <input type="checkbox" id="action_item_19" onchange="updateChecklistProgress(this)" data-day="13">
+                        <span>Prepare the order of service</span>
+                    </label>
+                    <label class="checkbox-item" tabindex="0" aria-label="Finalise payment arrangements and verify all costs">
+                        <input type="checkbox" id="action_item_20" onchange="updateChecklistProgress(this)" data-day="14">
+                        <span>Finalise payment arrangements and <strong>verify</strong> all costs</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEGOTIATION SCRIPTS -->
+        <section class="report-section" id="negotiation-scripts" role="region" aria-label="Communication Scripts for Service Providers">
+            <h2 class="section-title">5. Communication Scripts (for Confidence)</h2>
+
+            <div class="script-section">
+                <div class="script-title">Email Template for Quote Request:</div>
+                <div class="script-content">Subject: Quote Request - <span class="script-placeholder">[DECEASED'S NAME]</span> Funeral
+
+Dear <span class="script-placeholder">[PROVIDER NAME]</span>,
+
+I am writing to request a quote for funeral services for <span class="script-placeholder">[DECEASED'S NAME]</span>. 
+
+I have been reviewing your CMA standardised pricing and am interested in:
+- A traditional funeral service with cremation
+- An early morning time slot (9:00-10:00am) if available
+- Simplified transport arrangements
+
+I would be grateful if you could provide a written quote, including any available discounts for off-peak times or simplified packages.
+
+Best regards,
+<span class="script-placeholder">[YOUR NAME]</span>
+<span class="script-placeholder">[YOUR PHONE NUMBER]</span></div>
+            </div>
+
+            <div class="script-section">
+                <div class="script-title">Telephone Script - Confident Approach:</div>
+                <div class="script-content">
+                    <blockquote style="font-style: italic; color: #4a5568;">
+                        "Hello. I'm <strong>comparing quotes</strong> from several funeral directors for a service for [DECEASED'S NAME]. Can you <strong>email your written quote</strong> by [DATE]? I have already <strong>received quotes</strong> in the range of £2,400 to £3,200."
+                    </blockquote>
+                    <div class="script-explanation">
+                        <strong>Why this works:</strong> Creates urgency + competition + anchoring (anchoring price low).
+                    </div>
+
+                    <strong>Key Questions to Explore:</strong>
+                    <ul>
+                        <li>"Do you <strong>offer any discounts</strong> for early morning slots?"</li>
+                        <li>"What are your most <strong>economical</strong> package options?"</li>
+                        <li>"Can you <strong>match or better</strong> this quote from a competitor?"</li>
+                        <li>"What additional costs are <strong>not included</strong> in your basic price?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-definition">
+                <h4>Important Note on Communication</h4>
+                <p>These scripts are provided as <strong>examples only</strong>. All negotiations and communications with providers are your responsibility. Always <strong>verify</strong> information and make independent decisions.</p>
+            </div>
+        </section>
+
+        <!-- FINANCIAL SUMMARY -->
+        <section class="report-section" role="region" aria-label="Financial Summary and Guarantee">
+            <h2 class="section-title">6. Financial Summary & Research Support Commitment</h2>
+
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-number">£4,570*</div>
+                    <div class="summary-label">Initial Quote (Est.)</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">£2,850*</div>
+                    <div class="summary-label">Optimised Cost (Est.)</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">£1,720*</div>
+                    <div class="summary-label">Potential Savings (Research Estimate)</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">37%*</div>
+                    <div class="summary-label">Potential % Saved (Research Estimate)</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(90, 122, 95, 0.1); padding: 24px; border-radius: 8px; border-left: 4px solid var(--sage-green); margin: 28px 0;">
+                <h4 style="color: var(--navy-primary); margin-bottom: 12px; font-weight: 600;">ROI Analysis</h4>
+                <p style="font-size: 1rem;"><strong>Report Cost:</strong> £39 | <strong>Potential Savings (Research Estimate):</strong> £1,720* | <strong>Potential ROI:</strong> 4,410%*</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">*All calculations are estimates based on publicly available data. Actual results may vary significantly.</p>
+            </div>
+
+            <div class="guarantee-box">
+                <div class="guarantee-title">Research Support Commitment</div>
+                <div class="guarantee-text">If you do not save at least £500 by following our <strong>research recommendations</strong>, we will refund your £39 report fee within 60 days. We stand behind our research with complete confidence.</div>
+            </div>
+
+            <div class="service-definition">
+                <h4>Commitment Terms & Conditions</h4>
+                <p><strong>Support applies when:</strong> You purchase our Complete Funeral Cost Implementation Guide, follow our <strong>recommendations</strong> in good faith, can demonstrate that savings were less than £500, and request a refund within 60 days of purchase.</p>
+                <p><strong>What we need:</strong> Proof of purchase, documentation of funeral costs incurred, evidence that our <strong>recommendations</strong> were followed, and timeline showing when services were arranged.</p>
+            </div>
+        </section>
+
+        <!-- ONGOING SUPPORT -->
+        <footer class="contact-section" role="contentinfo">
+            <h3 class="contact-title">Ongoing Support & Contact</h3>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Email Support</h4>
+                    <p>support@clearfuneralcosts.co.uk<br>Response within 24 hours (Mon-Fri)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Support Period</h4>
+                    <p>60 days from report date<br>Implementation guidance questions</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Additional Resources</h4>
+                    <p>• Negotiation scripts<br>• Crematorium pricing database<br>• Implementation checklist<br>• Family communication templates</p>
+                </div>
+            </div>
+
+            <div class="footer-disclaimer">
+                <div class="enhanced-disclaimer">
+                    <h4>Important Legal Notice</h4>
+                    <ul>
+                        <li><strong>Information Service Only:</strong> We provide research support, not financial advice.</li>
+                        <li><strong>Not FCA Regulated:</strong> We are not authorised by the Financial Conduct Authority.</li>
+                        <li><strong>Verification Required:</strong> All pricing must be <strong>confirmed</strong> directly with service providers.</li>
+                        <li><strong>No Guarantees:</strong> Savings estimates may vary significantly.</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

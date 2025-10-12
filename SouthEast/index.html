@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South East England Funeral Costs | Independent Information Service | ClearFuneralCosts</title>
-    <meta name="description" content="Get clear, compassionate information on South East England funeral costs. Independent analysis based on official government data to help you research options during difficult times.">
+    <title>Save £1,000-£3,000 on South East England funeral costs | ClearFuneralCosts</title>
+    <meta name="description" content="Free 10-minute analysis to help you explore options and save £1,000-£3,000 on South East England funeral costs. Independent analysis based on official CMA data.">
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
         /* Mobile-specific fixes */
@@ -146,6 +146,145 @@
                 padding: 0 16px;
             }
         }
+        
+        /* NEW STYLES FOR COMPLIANCE & UX */
+        
+        /* Spinner styles */
+        .calculating-animation {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--navy-primary);
+            font-weight: 600;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--burgundy-accent);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Micro disclaimer style */
+        .micro-disclaimer {
+            font-size: 0.85rem;
+            color: var(--text-muted); 
+            text-align: center;
+            margin-top: 10px;
+            padding: 5px 0;
+        }
+        
+        .micro-disclaimer i {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--soft-amber);
+            margin-right: 5px;
+        }
+
+        /* Enhanced Disclaimer Component */
+        .enhanced-disclaimer {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 0 auto;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        
+        .enhanced-disclaimer h4 { 
+            color: #e8dcc8; 
+            margin-top: 0; 
+            margin-bottom: 10px; 
+            font-size: 1.1rem; 
+        }
+        
+        .enhanced-disclaimer ul { 
+            list-style: none; 
+            padding-left: 0; 
+            margin: 0; 
+        }
+        
+        .enhanced-disclaimer li { 
+            font-size: 0.9rem; 
+            margin-bottom: 5px; 
+            padding-left: 15px; 
+            position: relative;
+        }
+        
+        .enhanced-disclaimer li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e8dcc8;
+            font-weight: 700;
+        }
+
+        /* NEW STYLES FOR CHECKBOX GROUP (Kept in case of future use but unused in markup) */
+        .checkbox-group {
+            margin-top: 20px;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        
+        .checkbox-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--charcoal-text);
+            cursor: pointer;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border-subtle);
+            border-radius: 4px;
+            flex-shrink: 0;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+        }
+        
+        .checkbox-label input[type="checkbox"]:checked {
+            background-color: var(--burgundy-accent);
+            border-color: var(--burgundy-accent);
+        }
+        
+        .checkbox-label input[type="checkbox"]:checked:after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .checkbox-label input[type="checkbox"]:focus {
+            outline: 2px solid var(--focus-outline);
+            outline-offset: 2px;
+        }
+        
     </style>
 </head>
 <body>
@@ -168,31 +307,33 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-headline">
-                    Save <strong>£1,000–£3,000+</strong> on South East England funeral costs in 10 minutes
+                    Save £1,000—£3,000 on funeral costs
                 </h1>
                 <p class="hero-subheadline">
-                    Get professional information and potential savings analysis based on official CMA data. Independent research support with no commissions or pressure.
+                    Free 10-minute analysis for South East England. Get professional information and potential savings analysis based on official CMA data. Independent analytical support with no commissions or pressure.
                 </p>
                 <ul class="hero-proof">
                     <li>Based on official CMA pricing data from 200+ South East funeral directors</li>
                     <li>Brighton, Reading & Guildford crematorium information compared</li>
-                    <li>Average family may save £1,247 in South East region</li>
-                    <li>Analysis delivered within 10 minutes for your research</li>
+                    <li>Average family may explore potential savings of £1,247 in South East region</li>
+                    <li>Analysis delivered within 10 minutes for your exploration</li>
                 </ul>
             </div>
 
             <div class="calculator-widget">
                 <h2 class="calculator-headline">Free Cost Analysis</h2>
                 <p class="calculator-subheadline">
-                    Check your baseline and unlock the full Savings Plan with professional report (£39, research support commitment)
+                    Understand your baseline and unlock the full Implementation Plan with professional report (£39, support commitment)
                 </p>
 
                 <div class="calculator-disclaimer">
-                    <strong>Information service:</strong> This service provides general price information only for research purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
+                    <strong>Information service:</strong> This service provides general price information for exploration purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
                 </div>
 
                 <div id="message-box" class="message-box"></div>
                 <form id="analysisForm" class="calculator-form">
+                    
+                    <!-- ПОЛЕ 1: POSTCODE -->
                     <div class="form-group">
                         <label class="form-label" for="postcode">Your Postcode</label>
                         <input 
@@ -205,25 +346,38 @@
                             required
                             aria-describedby="postcode-help"
                             autocomplete="postal-code"
+                            aria-label="Enter your postcode"
                         >
                         <small id="postcode-help" class="form-help">We'll find funeral directors and crematoria near you for comparison</small>
                     </div>
 
+                    <!-- ПОЛЕ 2: FUNERAL TYPE (Burial/Cremation) -->
                     <div class="form-group">
-                        <label class="form-label" for="serviceType">Type of Service</label>
-                        <select id="serviceType" name="serviceType" class="form-select" required>
+                        <label class="form-label" for="funeralType">Funeral Type</label>
+                        <select id="funeralType" name="funeralType" class="form-select" required aria-label="Select funeral type">
                             <option value="">Please select...</option>
-                            <option value="traditional">Traditional funeral service</option>
-                            <option value="direct">Direct cremation (no service)</option>
-                            <option value="hybrid">Simple service + cremation</option>
-                            <option value="burial">Burial service</option>
-                            <option value="unsure">I'm not sure yet</option>
+                            <option value="cremation">Cremation</option>
+                            <option value="burial">Burial</option>
                         </select>
-                        <small class="form-help">Don't worry - you can explore all options in your analysis</small>
+                        <small class="form-help">Choose between Burial or Cremation for initial cost analysis</small>
                     </div>
 
+                    <!-- ПОЛЕ 3: CEREMONY TYPE (Religious/Non-Religious) -->
+                    <div class="form-group">
+                        <label class="form-label" for="ceremonyType">Ceremony Type</label>
+                        <select id="ceremonyType" name="ceremonyType" class="form-select" required aria-label="Select ceremony type">
+                            <option value="">Please select...</option>
+                            <option value="religious">Religious Service</option>
+                            <option value="civil">Non-Religious / Civil Service</option>
+                        </select>
+                        <small class="form-help">Helps us refine potential costs for officiant and venue fees</small>
+                    </div>
+                    
+                    <!-- УДАЛЕНО: Type of Service -->
+                    <!-- УДАЛЕНО: Optional Extras (Checkboxes) -->
+
                     <div id="email-form-container">
-                        <div class="estimate-preview" id="estimatePreview">
+                        <div class="estimate-preview" id="estimatePreview" style="display: none;">
                             <div class="estimate-title">Estimated Cost Range for Your Area:</div>
                             <div class="estimate-range" id="estimateRange">£2,800 - £4,500*</div>
                             <div class="estimate-description" id="estimateDescription">
@@ -233,7 +387,17 @@
                                 ✓ Data updated: 18th September 2025 | Next update: 25th September 2025
                             </div>
                             <div class="unlock-notice">
-                                Enter your email below to receive your detailed free analysis showing potential savings opportunities to research.
+                                Enter your email below to receive your detailed free analysis showing potential savings possibilities to investigate.
+                            </div>
+                        </div>
+                        
+                        <div class="estimate-preview" id="estimate-result">
+                            <div class="calculating-animation">
+                                <div class="spinner"></div>
+                                <span>Analysing your area and options...</span>
+                            </div>
+                            <div class="estimate-range" id="estimateRangePlaceholder">
+                                £<span id="min-cost">X,XXX</span> - £<span id="max-cost">X,XXX</span>*
                             </div>
                         </div>
 
@@ -248,13 +412,18 @@
                                 required
                                 aria-describedby="email-help"
                                 autocomplete="email"
+                                aria-label="Enter your email address"
                             >
                             <small id="email-help" class="form-help">Your free analysis will be emailed instantly - we'll never share your email</small>
                         </div>
 
-                        <button type="submit" class="cta-button" id="submitBtn" disabled>
+                        <button type="submit" class="cta-button" id="submitBtn" disabled aria-label="Calculate My Potential Savings (Free)">
                             Calculate My Potential Savings (FREE)
                         </button>
+                        
+                        <p class="micro-disclaimer">
+                            ℹ️ Information service | We don't arrange funerals | No commissions
+                        </p>
                     </div>
                 </form>
                 <div class="trust-indicators">
@@ -272,12 +441,12 @@
         <div class="container">
             <div class="service-definition-content">
                 <h2 class="service-definition-title">What Our Service Provides</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.2rem;">We help South East England families research and understand funeral costs through independent information analysis</p>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.2rem;">We help South East England families understand funeral costs through independent information analysis</p>
                 
                 <div class="service-definition-grid">
                     <div class="service-definition-item">
                         <h4>Information Service Only</h4>
-                        <p>We aggregate publicly available South East funeral pricing data for research purposes. We do not provide financial, legal, or funeral planning advice.</p>
+                        <p>We aggregate publicly available South East funeral pricing data for cost exploration. We do not provide financial, legal, or funeral planning advice.</p>
                     </div>
                     <div class="service-definition-item">
                         <h4>Verify All Information</h4>
@@ -285,7 +454,7 @@
                     </div>
                     <div class="service-definition-item">
                         <h4>Independent Analysis</h4>
-                        <p>We are not authorised by the Financial Conduct Authority and receive no commissions from funeral directors. Always consult qualified professionals for personalised guidance.</p>
+                        <p>We are not authorised by the Financial Conduct Authority and receive no commissions from funeral directors. Always consider consulting qualified professionals for personalised guidance.</p>
                     </div>
                 </div>
             </div>
@@ -297,7 +466,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">South East England Families Face These Funeral Cost Challenges</h2>
-                <p class="section-subtitle">CMA research reveals the hidden costs families encounter in our region</p>
+                <p class="section-subtitle">CMA analysis reveals the hidden costs families encounter in our region</p>
             </div>
 
             <div class="stats-grid">
@@ -307,7 +476,7 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">£1,065 vs £745</div>
-                    <div class="stat-label">Reading cremation: standard vs early morning</div>
+                    <div class="stat-label">Reading cremation: standard vs off-peak exploration</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">47%</div>
@@ -315,13 +484,13 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">89%</div>
-                    <div class="stat-label">never compare prices before choosing</div>
+                    <div class="stat-label">never investigate or compare prices before choosing</div>
                 </div>
             </div>
 
             <div class="emotional-hook">
                 <h3>Grief and time pressure shouldn't lead to financial stress</h3>
-                <p>Your family deserves a dignified farewell without overpaying. Research your options with compassionate support.</p>
+                <p>Your family deserves a dignified farewell without overpaying. Explore your possibilities with compassionate support.</p>
             </div>
         </div>
     </section>
@@ -330,7 +499,7 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How We Calculate Your Potential Savings</h2>
+                <h2 class="section-title">How We Calculate Your Potential Cost Exploration</h2>
                 <p class="section-subtitle">
                     5-step method with multi-factor scoring (savings × practicality × satisfaction × ease) using South East data
                 </p>
@@ -354,14 +523,14 @@
                     <div class="step-number">3</div>
                     <h3 class="step-title">Service Options</h3>
                     <p class="step-description">
-                        Model direct cremation/hybrid/traditional options and pick the best balance of potential savings and dignity
+                        Model direct cremation/hybrid/traditional options and pick the best balance of potential cost exploration and dignity
                     </p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <h3 class="step-title">Timing Strategy</h3>
                     <p class="step-description">
-                        Off-peak slots and weekday selection to potentially reduce fees at South East crematoria
+                        Investigate off-peak slots and weekday selection to potentially reduce fees at South East crematoria
                     </p>
                 </div>
                 <div class="step-card">
@@ -378,7 +547,7 @@
     <!-- BRIGHTON CASE STUDY SECTION -->
     <section class="examples-section">
         <div class="container">
-            <h2 class="section-title">Example: Brighton potential savings scenarios</h2>
+            <h2 class="section-title">Example: Brighton potential cost exploration scenarios</h2>
             <div class="comparison-table">
                 <div class="comparison-header">
                     <div>Scenario</div>
@@ -420,18 +589,18 @@
                     <div class="plan-title">Free Analysis</div>
                     <div class="plan-price">£0</div>
                     <div class="plan-description">
-                        Perfect for understanding your South East options and getting a clear picture of regional funeral costs for research.
+                        Perfect for understanding your South East options and getting a clear picture of regional funeral costs.
                     </div>
                     <ul class="plan-features">
                         <li>Cost breakdown information for your postcode</li>
                         <li>3 main South East scenarios explained</li>
-                        <li>Regional market overview for research</li>
+                        <li>Regional market overview for comparison</li>
                         <li>Understanding of potential cost ranges</li>
                         <li class="limited">General information only</li>
                         <li class="limited">No specific provider contacts</li>
                         <li class="limited">No implementation roadmap</li>
                     </ul>
-                    <a href="#analysisForm" class="plan-button secondary">Get Free Analysis</a>
+                    <a href="#analysisForm" class="plan-button secondary" aria-label="Get Free Analysis">Get Free Analysis</a>
                 </div>
 
                 <div class="plan-card recommended">
@@ -439,7 +608,7 @@
                     <div class="plan-title">Complete South East Guide</div>
                     <div class="plan-price">£39</div>
                     <div class="plan-description">
-                        Everything you need for your South East research: specific contacts, step-by-step guidance, and ongoing information support.
+                        Everything you need for your South East exploration: specific contacts, step-by-step guidance, and ongoing information support.
                     </div>
                     <ul class="plan-features">
                         <li>Personalised South East cost calculations</li>
@@ -447,16 +616,16 @@
                         <li>14-day regional implementation roadmap</li>
                         <li>Conversation scripts & email templates</li>
                         <li>South East timing strategy information</li>
-                        <li>60-day email support for research questions</li>
-                        <li>Research support commitment - helpful or money back</li>
+                        <li>60-day email support for questions</li>
+                        <li>Support commitment - helpful or money back</li>
                     </ul>
-                    <a href="#complete-guide" class="plan-button primary">Upgrade When Ready (£39)</a>
+                    <a href="#complete-guide" class="plan-button primary" aria-label="Upgrade to Complete Guide for £39">Upgrade When Ready (£39)</a>
                 </div>
             </div>
 
             <div class="guarantee-box">
-                <h3>Research Support Commitment</h3>
-                <p>If you don't save at least £500 using our research guidance and information, email us within 60 days for a full refund.</p>
+                <h3>Support Commitment</h3>
+                <p>If you don't save at least £500 using our information guidance, email us within 60 days for a full refund.</p>
             </div>
         </div>
     </section>
@@ -465,15 +634,15 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How We've Helped South East Families Research Options</h2>
+                <h2 class="section-title">How We've Helped South East Families Explore Options</h2>
                 <p class="section-subtitle">
-                    Real South East families share how our information helped them research and understand their options during difficult times
+                    Real South East families share how our information helped them understand possibilities during difficult times
                 </p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "The free analysis helped us understand our Brighton options without any pressure. When we felt ready, the complete guide gave us the information to research decisions that honoured mum whilst staying within our means."
+                        "The free analysis helped us understand our Brighton options without any pressure. When we felt ready, the complete guide gave us the information to make decisions that honoured mum whilst staying within our means."
                     </p>
                     <div class="testimonial-author">Sarah M.</div>
                     <div class="testimonial-location">Brighton, East Sussex <span class="testimonial-outcome">Felt informed</span></div>
@@ -482,12 +651,12 @@
                     <p class="testimonial-text">
                         "Early morning Reading cremation information helped us potentially save £320. Found excellent local funeral director information at much better price ranges."
                     </p>
-                    <div class="testimonial-author">James K.</div>
+                    <div class="testimonial-author">James T.</div>
                     <div class="testimonial-location">Reading, Berkshire <span class="testimonial-outcome">Better informed</span></div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "Found Surrey funeral director information £1,200 cheaper than our first quote. Professional research support throughout the process."
+                        "Found Surrey funeral director information £1,200 cheaper than our first quote. Professional analytical support throughout the process."
                     </p>
                     <div class="testimonial-author">Margaret T.</div>
                     <div class="testimonial-location">Surrey <span class="testimonial-outcome">Peace of mind</span></div>
@@ -499,16 +668,16 @@
     <!-- FINAL CTA -->
     <section id="final-cta" class="final-cta">
         <div class="cta-content">
-            <h2 class="cta-headline">Ready to Research Your South East Funeral Options?</h2>
+            <h2 class="cta-headline">Ready to Explore Your South East Funeral Options?</h2>
             <p class="cta-subheadline">
-                Join 900+ South East families who've used our compassionate information service to research options during difficult times.
+                Join 900+ South East families who've used our compassionate information service to understand possibilities during difficult times.
             </p>
             <div class="cta-buttons">
-                <a href="#analysisForm" class="cta-primary">Get Free Analysis Now</a>
-                <a href="#how-it-works" class="cta-secondary">Learn More</a>
+                <a href="#analysisForm" class="cta-primary" aria-label="Get Free Analysis Now">Get Free Analysis Now</a>
+                <a href="#how-it-works" class="cta-secondary" aria-label="Learn More about our service">Learn More</a>
             </div>
             <p class="guarantee-text">
-                Independent information • No pressure • Research support commitment on premium plans
+                Independent information • No pressure • Support commitment on premium plans
             </p>
         </div>
     </section>
@@ -517,74 +686,44 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Clear answers about our information service</p>
+                <h2 class="section-title">Essential Questions</h2>
+                <p class="section-subtitle">Quick answers about our information service</p>
             </div>
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-label="Is this service regulated by the FCA?">
                         <span>Is this service regulated by the FCA?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and research support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised advice, we recommend consulting with qualified professionals such as solicitors or financial advisers.</p>
+                        <p>No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and analytical support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised guidance, we recommend consulting with qualified professionals such as solicitors or financial advisers.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-label="Do you receive commissions from funeral directors?">
                         <span>Do you receive commissions from funeral directors?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £39 premium reports. This independence ensures our information remains unbiased and focused solely on helping families research their options.</p>
+                        <p>Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £39 premium reports. This independence ensures our information remains unbiased and focused solely on helping families explore their options.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How do I know which option is right for my family?</span>
+                    <button class="faq-question" aria-expanded="false" aria-label="How current is your data?">
+                        <span>How current is your data?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>This is a deeply personal decision that only you and your family can make. Our service provides information about costs and options to help you research possibilities, but we cannot advise which choice is appropriate for your circumstances. Consider factors such as your loved one's wishes, family traditions, budget constraints, and what feels right for you. Many families find it helpful to discuss options together and, if needed, consult with a funeral director or counsellor for personalised guidance.</p>
+                        <p>We display actual current prices taken directly from funeral directors' official CMA-mandated price lists and crematorium published fee schedules—not just estimated ranges. We refresh our database regularly with weekly updates from official sources. However, providers may not always update their online catalogues promptly when prices change. This is precisely why <strong>verification is essential</strong>: the prices we show are accurate to the published data at the time of collection, but you should always <strong>contact providers directly to confirm current costs</strong> before making any commitments.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What if prices have changed since your data was collected?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Pricing in the funeral industry can change, which is why we emphasise throughout our service that all information must be verified directly with providers.</p>
-                        
-                        <p>We display actual current prices taken directly from funeral directors' official CMA-mandated price lists and crematorium published fee schedules—not just estimated ranges. However, providers may not always update their online catalogues promptly when prices change. Whilst we refresh our database regularly (weekly updates from official sources), there can be a delay between when a provider changes their prices and when they publish updated information.</p>
-                        
-                        <p>This is precisely why verification is essential: the prices we show are accurate to the published data at the time of collection, but you should always contact providers directly to confirm current costs before making any commitments. In our premium reports, we provide direct contact details specifically so you can verify the most up-to-date pricing yourself.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can you guarantee these savings?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No, we cannot guarantee specific savings amounts, as this depends entirely on which providers you ultimately choose, current pricing, and your specific requirements. The savings figures we present are estimates based on publicly available data and represent potential opportunities if you follow similar strategies to our research. Our Research Support Commitment (on premium reports) guarantees that our guidance will be helpful—if you don't save at least £500 following our recommendations, we'll refund your £39 report fee. However, actual results will vary based on your individual circumstances and decisions.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How do you ensure the accuracy of your information?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We utilise advanced data intelligence technologies to aggregate and process information from publicly available sources, including CMA-mandated funeral director price lists, crematorium fee schedules, and official government data. Our systems undergo regular verification and updates to maintain data quality. However, we recognise that pricing can change between updates, which is why we consistently emphasise the importance of verifying all information directly with service providers before making decisions. We view our role as providing a comprehensive starting point for your research, not as a substitute for direct verification.</p>
-                    </div>
-                </div>
+            <div class="faq-link-container" style="text-align: center; margin-top: 30px;">
+                <a href="/comprehensive-faq.html" class="faq-link" style="display: inline-block; color: var(--navy-primary); font-weight: 600; text-decoration: none; font-size: 1rem; padding: 12px 24px; border: 2px solid var(--navy-primary); border-radius: 6px; transition: all 0.3s ease;">View all detailed answers →</a>
             </div>
         </div>
     </section>
@@ -610,7 +749,7 @@
 
                     <div class="story-block mission-block">
                         <h3>Our Mission</h3>
-                        <p><strong>We exist to bring clarity and dignity to funeral cost research.</strong> Our mission is to aggregate publicly available pricing data into accessible, compassionate information that helps South East England families research their options without pressure, confusion, or bias. We believe transparent information empowers families to make informed decisions that honour their loved ones whilst respecting their financial circumstances.</p>
+                        <p><strong>We exist to bring clarity and dignity to funeral cost exploration.</strong> Our mission is to aggregate publicly available pricing data into accessible, compassionate information that helps UK families understand their possibilities without pressure, confusion, or bias. We believe transparent information empowers families to make informed decisions that honour their loved ones whilst respecting their financial circumstances.</p>
                     </div>
 
                     <div class="story-block">
@@ -622,7 +761,7 @@
                             </div>
                             <div class="independence-item">
                                 <h4>Information Only</h4>
-                                <p>We're not regulated by the FCA because we provide research information, not advice. We don't arrange funerals or provide regulated services.</p>
+                                <p>We're not regulated by the FCA because we provide information, not advice. We don't arrange funerals or provide regulated services.</p>
                             </div>
                             <div class="independence-item">
                                 <h4>Transparent Funding</h4>
@@ -630,7 +769,7 @@
                             </div>
                             <div class="independence-item">
                                 <h4>Your Decisions</h4>
-                                <p>We provide information; you make all decisions. We're here to support your research, not to direct your choices.</p>
+                                <p>We provide information; you make all decisions. We're here to support your exploration, not to direct your choices.</p>
                             </div>
                         </div>
                     </div>
@@ -639,14 +778,14 @@
                         <h3>Our Commitment to You</h3>
                         <p>We treat every enquiry with the sensitivity it deserves. Behind every postcode entered into our system is a family navigating grief. We're committed to providing clear, accurate, regularly updated information whilst acknowledging that you must verify details with providers directly.</p>
                         
-                        <p>We're here to help you research options, understand costs, and approach this difficult process with greater confidence. That's our promise.</p>
+                        <p>We're here to help you understand options, explore costs, and approach this difficult process with greater confidence. That's our promise.</p>
                     </div>
 
                     <div class="story-block contact-block">
                         <h3>Get in Touch</h3>
                         <p>Questions about our service? We're here to help.</p>
                         <p><strong>Email:</strong> <a href="mailto:support@clearfuneralcosts.co.uk">support@clearfuneralcosts.co.uk</a><br>
-                        <strong>Hours:</strong> Monday–Friday, 9am–5pm<br>
+                        <strong>Hours:</strong> Monday—Friday, 9am—5pm<br>
                         <strong>Response time:</strong> Within 24 hours</p>
                     </div>
                 </div>
@@ -659,7 +798,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><span class="clear-highlight">Clear</span>FuneralCosts</h3>
-                <p>Helping South East England families research funeral options through transparent cost information based on official government data.</p>
+                <p>Helping South East England families explore funeral options through transparent cost information based on official government data.</p>
                 <p style="margin-top: 20px;">
                     support@clearfuneralcosts.co.uk<br>
                     Available Mon-Fri, 9am-5pm
@@ -688,10 +827,19 @@
         <div class="footer-bottom">
             <p>&copy; 2025 <span class="clear-highlight">Clear</span>FuneralCosts. All rights reserved.</p>
             <div class="footer-disclaimer">
-                <strong>Important:</strong> This service provides general price information only. Confirm all prices directly with providers. 
-                Pricing data may be outdated or incomplete. We are not authorised by the Financial Conduct Authority and do not provide 
-                regulated financial services. We recognise bereavement is a challenging time. For personalised support, consult qualified professionals. 
-                We are independent and receive no commissions from funeral directors.
+                <div class="enhanced-disclaimer">
+                    <h4>Important Information</h4>
+                    <ul>
+                        <li><strong>Information Service Only:</strong> We provide analytical support, not financial advice.</li>
+                        <li><strong>Not FCA Regulated:</strong> We are not authorised by the Financial Conduct Authority.</li>
+                        <li><strong>Verification Required:</strong> All pricing must be confirmed with service providers.</li>
+                        <li><strong>No Guarantees:</strong> Savings estimates may vary significantly.</li>
+                        <li><strong>Independence:</strong> We are independent and receive no commissions from funeral directors.</li>
+                    </ul>
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.5; margin-top: 15px;">
+                    We recognise bereavement is a challenging time. For personalised support regarding financial or legal matters, please consult qualified professionals.
+                </p>
             </div>
         </div>
     </footer>
