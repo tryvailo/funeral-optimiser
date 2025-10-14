@@ -73,42 +73,77 @@ function initializeCalculator() {
         
         // Check if both fields are filled
         if (postcode.length >= 2 && serviceType) {
-            const area = postcode.substring(0, 2);
-            const data = southEastCostData[area] || southEastCostData['default'];
+            // Show loading animation
+            showLoadingAnimation();
             
-            let range, description;
-            
-            switch(serviceType) {
-                case 'traditional':
-                    range = `£${data.traditional[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
-                    description = `Traditional funeral service information from ${data.providers} South East funeral directors within 20 miles`;
-                    break;
-                case 'direct':
-                    range = `£${data.direct[0].toLocaleString()} - £${data.direct[1].toLocaleString()}*`;
-                    description = `Direct cremation cost information from ${data.providers} South East providers available nearby`;
-                    break;
-                case 'hybrid':
-                    range = `£${data.hybrid[0].toLocaleString()} - £${data.hybrid[1].toLocaleString()}*`;
-                    description = `Simple service plus cremation information from ${data.providers} local South East providers`;
-                    break;
-                case 'burial':
-                    range = `£${data.burial[0].toLocaleString()} - £${data.burial[1].toLocaleString()}*`;
-                    description = `Burial service cost information (including cemetery fees) from ${data.providers} South East funeral directors`;
-                    break;
-                case 'unsure':
-                    range = `£${data.direct[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
-                    description = `Full range of South East service options information from ${data.providers} providers in your area`;
-                    break;
-            }
-            
-            if (estimateRange) estimateRange.textContent = range;
-            if (estimateDescription) estimateDescription.textContent = description;
-            if (emailFormContainer) emailFormContainer.classList.add('visible');
-            
-            checkSubmitButton();
+            // Simulate processing time (1-2 seconds)
+            setTimeout(() => {
+                const area = postcode.substring(0, 2);
+                const data = southEastCostData[area] || southEastCostData['default'];
+                
+                let range, description;
+                
+                switch(serviceType) {
+                    case 'traditional':
+                        range = `£${data.traditional[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
+                        description = `Traditional funeral service information from ${data.providers} South East funeral directors within 20 miles`;
+                        break;
+                    case 'direct':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.direct[1].toLocaleString()}*`;
+                        description = `Direct cremation cost information from ${data.providers} South East providers available nearby`;
+                        break;
+                    case 'hybrid':
+                        range = `£${data.hybrid[0].toLocaleString()} - £${data.hybrid[1].toLocaleString()}*`;
+                        description = `Simple service plus cremation information from ${data.providers} local South East providers`;
+                        break;
+                    case 'burial':
+                        range = `£${data.burial[0].toLocaleString()} - £${data.burial[1].toLocaleString()}*`;
+                        description = `Burial service cost information (including cemetery fees) from ${data.providers} South East funeral directors`;
+                        break;
+                    case 'unsure':
+                        range = `£${data.direct[0].toLocaleString()} - £${data.traditional[1].toLocaleString()}*`;
+                        description = `Full range of South East service options information from ${data.providers} providers in your area`;
+                        break;
+                }
+                
+                // Hide loading animation and show results
+                hideLoadingAnimation();
+                
+                if (estimateRange) estimateRange.textContent = range;
+                if (estimateDescription) estimateDescription.textContent = description;
+                if (emailFormContainer) emailFormContainer.classList.add('visible');
+                
+                checkSubmitButton();
+            }, 1500); // 1.5 second delay for realistic loading experience
         } else {
             if (emailFormContainer) emailFormContainer.classList.remove('visible');
             if (submitBtn) submitBtn.disabled = true;
+        }
+    }
+
+    /**
+     * Show loading animation
+     */
+    function showLoadingAnimation() {
+        const estimateResult = document.getElementById('estimate-result');
+        const estimatePreview = document.getElementById('estimatePreview');
+        
+        if (estimateResult && estimatePreview) {
+            estimatePreview.style.display = 'none';
+            estimateResult.style.display = 'block';
+        }
+    }
+
+    /**
+     * Hide loading animation and show results
+     */
+    function hideLoadingAnimation() {
+        const estimateResult = document.getElementById('estimate-result');
+        const estimatePreview = document.getElementById('estimatePreview');
+        
+        if (estimateResult && estimatePreview) {
+            estimateResult.style.display = 'none';
+            estimatePreview.style.display = 'block';
         }
     }
 
@@ -162,9 +197,24 @@ function initializeCalculator() {
         
         // Simulate submission (replace with actual API call)
         setTimeout(() => {
-            showMessage('success', 'Thank you! Your South East England funeral cost analysis has been prepared and will arrive in your inbox in the next few minutes. Please remember to verify all information with providers.');
-            submitBtn.disabled = false; 
-            submitBtn.textContent = 'Calculate My Potential Savings (FREE)';
+            showMessage('success', 'Thank you! Your funeral cost analysis has been prepared and will arrive in your inbox in the next few minutes. Please remember to verify all information with providers.');
+            
+            // Redirect to free report page after successful submission
+            setTimeout(() => {
+                // Prepare URL parameters with form data
+                const urlParams = new URLSearchParams();
+                urlParams.set('email', email);
+                urlParams.set('postcode', postcode);
+                urlParams.set('serviceType', serviceType);
+                
+                // Check if we're on a regional page (SouthEast folder)
+                const currentPath = window.location.pathname;
+                if (currentPath.includes('SouthEast/')) {
+                    window.location.href = `../reports/free_report.html?${urlParams.toString()}`;
+                } else {
+                    window.location.href = `reports/free_report.html?${urlParams.toString()}`;
+                }
+            }, 1500);
         }, 2000);
     }
 }

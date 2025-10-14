@@ -297,6 +297,230 @@
                 padding: 20px;
             }
         }
+        
+        /* Complimentary Guide Section Styles */
+        .complimentary-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 48px 32px;
+            margin: 48px 0;
+        }
+        
+        .complimentary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .info-highlight {
+            background: linear-gradient(to right, #f8f9fa 0%, transparent 100%);
+            padding: 20px 24px;
+            border-radius: 8px;
+            border-left: 3px solid var(--sage-green);
+            transition: all 0.3s ease;
+        }
+        
+        .info-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .info-highlight h4 {
+            color: var(--navy-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .info-highlight p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .complimentary-footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .social-proof {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+        }
+        
+        .guarantee {
+            color: var(--text-muted);
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Detailed Guidance Section Styles */
+        .detailed-guidance-section {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 48px 32px;
+            margin: 48px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .guidance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 32px 0;
+        }
+        
+        .section-divider {
+            border-left: 3px solid #e8f4f8;
+            padding-left: 24px;
+            margin: 16px 0;
+            position: relative;
+        }
+        
+        .section-divider h4 {
+            color: var(--navy-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .section-divider p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .comparison-note {
+            color: var(--sage-green);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .guidance-footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .information-confidence {
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Compliance Section Styles */
+        .compliance-section {
+            background: var(--warm-grey-bg);
+            border-top: 2px solid var(--sage-green);
+            padding: 32px 0;
+            margin-top: 48px;
+        }
+        
+        .compliance-content {
+            text-align: center;
+        }
+        
+        .compliance-title {
+            color: var(--navy-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .disclaimer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .disclaimer-item {
+            background: var(--pure-white);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--sage-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .disclaimer-item h4 {
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .disclaimer-item p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .compliance-note {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .compliance-note p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .complimentary-section {
+                padding: 32px 20px;
+                margin: 32px 0;
+            }
+            
+            .complimentary-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .info-highlight {
+                padding: 16px 20px;
+            }
+            
+            .detailed-guidance-section {
+                padding: 32px 20px;
+                margin: 32px 0;
+            }
+            
+            .guidance-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .section-divider {
+                padding-left: 20px;
+            }
+            
+            .compliance-section {
+                padding: 24px 0;
+                margin-top: 32px;
+            }
+            
+            .disclaimer-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .disclaimer-item {
+                padding: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -427,6 +651,43 @@
         </div>
     </section>
 
+    <!-- COMPLIMENTARY GUIDE SECTION -->
+    <section class="complimentary-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Complimentary Guide Includes</h2>
+                <p class="section-subtitle">Educational information to help you understand your options</p>
+            </div>
+            
+            <div class="complimentary-grid">
+                <div class="info-highlight">
+                    <h4>Regional Information Overview</h4>
+                    <p>UK-wide data compilation from publicly available sources across different regions</p>
+                </div>
+                
+                <div class="info-highlight">
+                    <h4>Service Type Education</h4>
+                    <p>Understanding Traditional Burial, Traditional Cremation, Simple Service, and Direct Cremation approaches</p>
+                </div>
+                
+                <div class="info-highlight">
+                    <h4>Cost Range Information</h4>
+                    <p>General cost ranges observed across different service types in your area</p>
+                </div>
+                
+                <div class="info-highlight">
+                    <h4>Planning Considerations</h4>
+                    <p>Educational information about factors that families typically consider</p>
+                </div>
+            </div>
+            
+            <div class="complimentary-footer">
+                <p class="social-proof">Trusted by families across the UK</p>
+                <p class="guarantee">No obligations. Independent information during challenging times.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICE DEFINITION SECTION -->
     <section class="service-definition-section">
         <div class="container">
@@ -545,15 +806,51 @@
                         <li>Conversation scripts & email templates</li>
                         <li>Timing strategy information</li>
                         <li>60-day email support for questions</li>
-                        <li>Helpful or money back guarantee</li>
+                        <li>Information confidence guarantee</li>
                     </ul>
-                    <a href="#complete-guide" class="plan-button primary">Upgrade When Ready (£39)</a>
+                    <a href="questionnaire.html" class="plan-button primary">Upgrade When Ready (£39)</a>
                 </div>
             </div>
 
             <div class="guarantee-box">
-                <h3>Support Commitment</h3>
-                <p>If you don't save at least £500 using our information guidance, email us within 60 days for a full refund.</p>
+                <h3>Information Confidence</h3>
+                <p>If our detailed guidance doesn't help you better understand your options, we offer a full refund within 60 days.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED GUIDANCE SECTION -->
+    <section class="detailed-guidance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">When You're Ready for More Detailed Information</h2>
+                <p class="section-subtitle">Additional guidance for families who want more specific information</p>
+            </div>
+            
+            <div class="guidance-grid">
+                <div class="section-divider">
+                    <h4>Specific Provider Information</h4>
+                    <p>Contact details and location information for funeral directors in your area</p>
+                    <small class="comparison-note">(rather than general market overview)</small>
+                </div>
+
+                <div class="section-divider">
+                    <h4>Implementation Considerations</h4>
+                    <p>Step-by-step information about approaching funeral directors and asking relevant questions</p>
+                    <small class="comparison-note">(rather than just general awareness)</small>
+                </div>
+
+                <div class="section-divider">
+                    <h4>Communication Templates</h4>
+                    <p>Suggested conversation points and email templates for discussions with providers</p>
+                    <small class="comparison-note">(rather than generic guidance)</small>
+                </div>
+            </div>
+            
+            <div class="guidance-footer">
+                <p class="information-confidence">
+                    <strong>Information confidence:</strong> Full refund within 60 days if our detailed information doesn't help you understand your options better
+                </p>
             </div>
         </div>
     </section>
@@ -667,11 +964,38 @@
                         <p>We display actual current prices taken directly from funeral directors' official CMA-mandated price lists and crematorium published fee schedules—not just estimated ranges. We refresh our database regularly with weekly updates from official sources. However, providers may not always update their online catalogues promptly when prices change. This is precisely why <strong>verification is essential</strong>: the prices we show are accurate to the published data at the time of collection, but you should always <strong>contact providers directly to confirm current costs</strong> before making any commitments.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+                        <span>Is this a financial service?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4" aria-labelledby="faq-question-4">
+                        <p>No, we provide educational information based on publicly available data. We do not offer financial, legal, or funeral planning advice. You should verify all information with providers directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+                        <span>What makes the detailed guidance different?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-5" aria-labelledby="faq-question-5">
+                        <p>Our complimentary guide provides general information about options in your area. The detailed guidance includes specific provider contacts, conversation templates, and ongoing email support for families who want more comprehensive information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+                        <span>Do you guarantee savings?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-6" aria-labelledby="faq-question-6">
+                        <p>We do not guarantee financial outcomes. We provide information to help you understand different options available. If our detailed guidance doesn't help you better understand your choices, we offer a full refund within 60 days.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="faq-link-container">
-                <a href="/comprehensive-faq.html" class="faq-link">View all detailed answers →</a>
-            </div>
         </div>
     </section>
 
@@ -735,6 +1059,41 @@
                         <strong>Hours:</strong> Monday—Friday, 9am—5pm<br>
                         <strong>Response time:</strong> Within 24 hours</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE DISCLAIMERS -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="compliance-content">
+                <h3 class="compliance-title">Important Information</h3>
+                
+                <div class="disclaimer-grid">
+                    <div class="disclaimer-item">
+                        <h4>Information Service Only</h4>
+                        <p>We provide analytical support and educational information based on publicly available data. We do not provide financial, legal, or funeral planning advice.</p>
+                    </div>
+                    
+                    <div class="disclaimer-item">
+                        <h4>Not FCA Regulated</h4>
+                        <p>We are not authorised by the Financial Conduct Authority. We are independent and receive no commissions from funeral directors.</p>
+                    </div>
+                    
+                    <div class="disclaimer-item">
+                        <h4>Verification Required</h4>
+                        <p>All pricing information must be confirmed directly with funeral directors and service providers in your area.</p>
+                    </div>
+                    
+                    <div class="disclaimer-item">
+                        <h4>No Financial Guarantees</h4>
+                        <p>We do not guarantee specific savings amounts or financial outcomes. Cost estimates may vary significantly and should be verified with providers.</p>
+                    </div>
+                </div>
+                
+                <div class="compliance-note">
+                    <p>We recognise bereavement is a challenging time. For personalised support regarding financial or legal matters, please consult qualified professionals.</p>
                 </div>
             </div>
         </div>

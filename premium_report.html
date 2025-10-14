@@ -3,45 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Funeral Cost Optimisation Plan | ClearFuneralCosts</title>
+    <title>Complete Funeral Cost Implementation Guide | ClearFuneralCosts</title>
+    <meta name="description" content="Your comprehensive funeral cost analysis report based on official CMA data from local funeral directors and crematoria. Detailed cost breakdown and provider comparison.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premium Funeral Cost Analysis Report | ClearFuneralCosts">
+    <meta property="og:description" content="Your comprehensive funeral cost analysis report based on official CMA data from local funeral directors and crematoria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearfuneralcosts.co.uk/reports/premium_report.html">
+    <meta property="og:site_name" content="ClearFuneralCosts">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Funeral Cost Analysis Report | ClearFuneralCosts">
+    <meta name="twitter:description" content="Your comprehensive funeral cost analysis report based on official CMA data.">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="funeral cost report, funeral analysis, funeral planning, CMA data, funeral directors, crematoria costs">
+    <meta name="author" content="ClearFuneralCosts">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clearfuneralcosts.co.uk/reports/premium_report.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/images/site.webmanifest">
+    
     <link rel="stylesheet" href="../assets/css/premium_report.css">
+    
+    <style>
+        
+        .implementation-day h3 {
+            color: var(--navy-primary);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .task-checkbox-enhanced {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .task-checkbox-enhanced:hover {
+            border-left-color: var(--soft-amber);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .task-checkbox-enhanced input[type="checkbox"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .task-content {
+            flex: 1;
+        }
+        
+        .task-action {
+            display: block;
+            font-weight: 600;
+            color: var(--charcoal-text);
+            margin-bottom: 4px;
+        }
+        
+        .task-checkbox-enhanced input[type="checkbox"]:checked + .task-content .task-action {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        .task-benefit {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--sage-green);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .task-timing {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .progress-motivation {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--burgundy-accent) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .completion-counter {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .savings-tracker {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        /* SKIP LINKS */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--navy-primary);
+            color: var(--pure-white);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* SCREEN READER ONLY */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* GAMIFICATION STYLES */
+        .implementation-checklist-interactive {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        
+        /* New styles for interactive elements requested by user */
+        .task-timing {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        /* === SCRIPT STYLES ENHANCEMENT (Start) === */
+        
+        .script-section .script-content {
+            /* Updated for better readability and structure */
+            background: #f7fafc; /* Light background */
+            padding: 20px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif; /* Changed to a standard, clean font */
+            font-size: 1rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            border: 1px solid var(--border-subtle);
+            color: var(--charcoal-text); /* Ensure good text contrast */
+        }
+
+        .script-section blockquote {
+            /* Updated for better visual separation of the script itself */
+            border-left: 5px solid var(--burgundy-accent);
+            background: var(--warm-cream); /* Cream background for softer contrast */
+            padding: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--navy-primary); /* Stronger text color for the quote */
+            font-size: 1.1rem; /* Slightly larger text */
+            line-height: 1.6;
+            margin: 16px 0;
+        }
+
+        .script-section .script-explanation {
+            /* Updated for cleaner explanation box */
+            background: var(--soft-green); /* Soft green background */
+            border-left: 5px solid var(--sage-green);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .script-section .script-explanation strong {
+            color: var(--navy-primary);
+        }
+
+        .script-section .script-explanation span {
+            color: var(--charcoal-text);
+        }
+
+        .script-section ul { /* Target the key questions list */
+            list-style-type: none; 
+            padding-left: 0;
+            margin-top: 15px;
+            border-top: 1px dashed var(--border-subtle); /* Separator line */
+            padding-top: 15px;
+        }
+        .script-section ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 1rem;
+            color: var(--charcoal-text);
+        }
+        .script-section ul li::before {
+            content: "→"; /* Change bullet to arrow */
+            position: absolute;
+            left: 0;
+            color: var(--burgundy-accent);
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        
+        /* === SCRIPT STYLES ENHANCEMENT (End) === */
+        
+        @media (max-width: 768px) {
+            .task-checkbox-enhanced {
+                padding: 12px;
+            }
+            
+            .task-action {
+                font-size: 0.95rem;
+            }
+            
+            .script-section .script-content, .script-section blockquote {
+                font-size: 0.95rem;
+            }
+            
+            .script-section .script-explanation {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+    <script>
+        // Updated to use data-value for gamification
+        function updateChecklistProgress(checkbox) {
+            
+            // Calculate total completed and savings
+            let completed = 0;
+            let totalSavings = 0;
+            const totalTasks = document.querySelectorAll('.task-checkbox-enhanced input[type="checkbox"]').length;
+            
+            document.querySelectorAll('.task-checkbox-enhanced input[type="checkbox"]').forEach(cb => {
+                const dataValue = parseInt(cb.dataset.value);
+                
+                if (cb.checked) {
+                    completed++;
+                    // Only add savings if data-value is a valid number
+                    if (!isNaN(dataValue)) {
+                        totalSavings += dataValue;
+                    }
+                }
+            });
+            
+            // Update progress display
+            document.getElementById('completion-counter').textContent = `${completed} of ${totalTasks} tasks completed`;
+            document.getElementById('savings-tracker').textContent = `Potential savings unlocked: £${totalSavings.toLocaleString()}`;
+            
+            // Save to localStorage (without using it as state management)
+            try {
+                const progress = {};
+                document.querySelectorAll('.task-checkbox-enhanced input[type="checkbox"]').forEach((cb, idx) => {
+                    if (cb.checked) progress[`task_${idx}`] = true;
+                });
+                localStorage.setItem('checklistProgress', JSON.stringify(progress));
+            } catch (e) {
+                console.log('Progress tracking unavailable');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved progress
+            try {
+                // Ensure the elements exist before attempting to access them
+                const checkboxes = document.querySelectorAll('.task-checkbox-enhanced input[type="checkbox"]');
+                if (checkboxes.length > 0) {
+                    const progress = JSON.parse(localStorage.getItem('checklistProgress') || '{}');
+                    checkboxes.forEach((cb, idx) => {
+                        if (progress[`task_${idx}`]) {
+                            cb.checked = true;
+                        }
+                    });
+                    // Initialize counters after setting checked status
+                    updateChecklistProgress(checkboxes[0]);
+                }
+            } catch (e) {
+                console.log('Could not load progress');
+            }
+        });
+    </script>
 </head>
 <body>
+    <!-- SKIP NAVIGATION LINKS -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#report-summary" class="skip-link">Skip to report summary</a>
+    
     <div class="report-container">
+        <!-- MAIN CONTENT -->
+        <main id="main-content" role="main">
         <!-- HEADER -->
         <header class="report-header">
             <div class="company-logo">
-                <span class="clear-highlight">Clear</span> Funeral Costs
+                <span class="clear-highlight">Clear</span>FuneralCosts
             </div>
-            <h1 class="report-title">Complete Funeral Cost Optimisation Plan</h1>
-            <p class="report-subtitle">Professional Analysis & Recommendations</p>
-            <p class="report-date">Generated: 20th September 2025 | Postcode: BN1 4GH (Brighton, East Sussex)</p>
+            <h1 class="report-title">Complete Funeral Cost Implementation Guide</h1>
+            <p class="report-subtitle">Professional Analysis & Implementation Roadmap</p>
+            <p class="report-date">Generated: 1st October 2025 | Postcode: BN1 4GH (Brighton, East Sussex)</p>
         </header>
 
+        <!-- QUICK WINS SECTION -->
+        <section class="quick-wins-section">
+            <h2 class="quick-wins-title">3 Suggested Actions You May Wish to Explore Today</h2>
+            <p class="quick-wins-subtitle">Start exploring your potential savings strategy immediately with these priority actions</p>
+            
+            <div class="quick-win-card" role="region" aria-label="Quick Action 1: Worthing Family Funerals Research">
+                <div class="win-header">
+                    <div class="win-number">1</div>
+                    <h3 class="win-title">Explore Worthing Family Funerals</h3>
+                </div>
+                <p>Consider contacting them to investigate early morning rates and mention you're comparing providers in the area.</p>
+                <a href="tel:01903123456" class="call-button" aria-label="Call Worthing Family Funerals: 01903 123456">📞 Contact Details: 01903 123456</a>
+            </div>
+
+            <div class="quick-win-card" role="region" aria-label="Quick Action 2: Downs Crematorium Availability Check">
+                <div class="win-header">
+                    <div class="win-number">2</div>
+                    <h3 class="win-title">Check Downs Crematorium Availability</h3>
+                </div>
+                <p>Early morning slots (9:00-10:00am) might offer potential savings. Consider contacting them to inquire about dates within your preferred timeframe.</p>
+                <a href="tel:01903234567" class="call-button" aria-label="Call Downs Crematorium: 01903 234567">📞 Contact Details: 01903 234567</a>
+            </div>
+
+            <div class="quick-win-card" role="region" aria-label="Quick Action 3: Send Quote Request Emails">
+                <div class="win-header">
+                    <div class="win-number">3</div>
+                    <h3 class="win-title">Send Quote Request Emails</h3>
+                </div>
+                <p>Use the email templates in Section 5 to request written quotes from 2-3 providers. This can help create price comparison leverage.</p>
+                <a href="#negotiation-scripts" class="call-button" style="background: var(--warm-brown);" aria-label="Go to Negotiation Scripts and Email Templates">→ Go to Templates</a>
+            </div>
+        </section>
+
         <!-- PERSONALIZED INTRO -->
-        <section class="personalized-intro">
-            <h2 class="intro-title">Personalised Introduction</h2>
+        <section class="personalized-intro report-section">
+            <h2 class="intro-title section-title">Your Personalised Analysis</h2>
             
             <div class="service-definition">
-                <h4>Research Support Service</h4>
-                <p><strong>Information service:</strong> Clear Funeral Costs aggregates publicly available funeral pricing data for informational purposes. This report provides research support and guidance.</p>
+                <h4>Information Support Service</h4>
+                <p><strong>Information service:</strong> ClearFuneralCosts aggregates publicly available funeral pricing data for informational purposes. This report provides analytical support and guidance.</p>
                 <p><strong>Data verification required:</strong> All pricing data should be confirmed directly with service providers before making decisions.</p>
             </div>
             
             <div class="exact-savings">
                 <div class="savings-amount">£1,720</div>
-                <div class="savings-subtitle">Your Potential Savings Calculation</div>
+                <div class="savings-subtitle">Your Potential Savings Calculation (Information Estimate)</div>
                 <div class="roi-calculation">
                     <div class="roi-title">Return on Investment (ROI)</div>
-                    <div class="roi-value">4,310%</div>
+                    <div class="roi-value">4,410%</div>
                 </div>
                 <div class="savings-disclaimer">
-                    <strong>Research estimate:</strong> This calculation represents potential savings based on publicly available data. Actual savings may vary and depend on your final provider selection and service requirements.
+                    <strong>Information estimate:</strong> This calculation represents potential savings based on publicly available data. Actual savings may vary and depend on your final provider selection and service requirements.
                 </div>
             </div>
 
             <div class="user-preferences">
-                <h4 style="color: var(--navy-primary); margin-bottom: 16px;">Your preferences from the questionnaire:</h4>
+                <h4 style="color: var(--navy-primary); margin-bottom: 16px; font-weight: 600;">Your preferences from the questionnaire:</h4>
                 <div class="preferences-grid">
                     <div class="preference-item">
                         <span class="preference-label">Service Type:</span>
@@ -70,21 +418,21 @@
                 </div>
             </div>
 
-            <p><strong>Our research analysis:</strong> Based on official CMA data from 27 funeral directors and 8 crematoria in your region, we have identified significant cost optimisation opportunities whilst maintaining dignity and meeting your family's needs.</p>
+            <p style="margin-top: 24px;"><strong>Our analysis:</strong> Based on official CMA data from 27 funeral directors and 8 crematoria in your region, we have identified significant cost optimisation opportunities whilst maintaining dignity and meeting your family's needs.</p>
             
-            <p><strong>Key finding:</strong> Through strategic timing, provider selection, and service optimisation, your funeral costs might potentially be reduced from £4,570 to £2,850 - representing a £1,720 potential saving with minimal family disruption.</p>
+            <p><strong>Key finding:</strong> Through strategic timing, provider selection, and service optimisation, your funeral costs might potentially be reduced from £4,570 to £2,850 — representing a £1,720 potential saving with minimal family disruption.</p>
         </section>
 
         <!-- BASELINE ANALYSIS -->
-        <section class="report-section">
-            <h2 class="section-title">1. Baseline Cost Analysis</h2>
+        <section class="report-section" role="region" aria-label="Baseline Cost Analysis">
+            <h2 class="section-title">1. Baseline Cost Analysis (for Understanding)</h2>
             
             <div class="cost-breakdown">
                 <div class="cost-card">
-                    <h4>Current Quote Breakdown (Estimated)</h4>
+                    <h4>Current Quote Breakdown (Information Estimate)</h4>
                     <div class="cost-item">
                         <span>Funeral Director Fee:</span>
-                        <span><strong>£2,850*</strong></span>
+                        <span><strong>£2,850</strong>*</span>
                     </div>
                     <div class="cost-item">
                         <span>• Professional services</span>
@@ -109,40 +457,40 @@
                 </div>
 
                 <div class="cost-card">
-                    <h4>Additional Costs (Estimated)</h4>
+                    <h4>Additional Costs (Information Estimate)</h4>
                     <div class="cost-item">
                         <span>Brighton Crematorium:</span>
-                        <span><strong>£920*</strong></span>
+                        <span><strong>£920</strong>*</span>
                     </div>
                     <div class="cost-item">
                         <span>Flowers & tributes:</span>
-                        <span><strong>£400*</strong></span>
+                        <span><strong>£400</strong>*</span>
                     </div>
                     <div class="cost-item">
                         <span>Reception (hotel):</span>
-                        <span><strong>£400*</strong></span>
+                        <span><strong>£400</strong>*</span>
                     </div>
                     <div class="cost-item cost-total">
                         <span><strong>Total Baseline Cost:</strong></span>
-                        <span><strong>£4,570*</strong></span>
+                        <span><strong>£4,570</strong>*</span>
                     </div>
                 </div>
             </div>
             <div class="info-note">
-                All costs are estimates based on publicly available data and may not reflect current pricing. Verify all costs directly with providers.
+                All costs are estimates based on publicly available data and may not reflect current pricing. Verify all costs directly with providers before making decisions.
             </div>
         </section>
 
         <!-- OPTIMIZATION RECOMMENDATIONS -->
-        <section class="report-section">
-            <h2 class="section-title">2. Optimisation Recommendations</h2>
+        <section class="report-section" role="region" aria-label="Optimisation Recommendations and Scenarios">
+            <h2 class="section-title">2. Optimisation Recommendations (for Exploration)</h2>
             <p class="section-subtitle">
                 We have analysed several scenarios for your area. Below are the three most suitable options based on your preferences. Remember to verify all information with providers.
             </p>
 
             <!-- RECOMMENDED OPTION -->
             <div class="recommendation-card recommended">
-                <div class="recommendation-badge">RECOMMENDED</div>
+                <div class="recommendation-badge">RECOMMENDED FOR YOUR EXPLORATION</div>
                 <div class="recommendation-header">
                     <h3 class="recommendation-title">
                         Balanced Optimisation (Hybrid Approach)
@@ -150,7 +498,7 @@
                     </h3>
                     <div class="recommendation-savings">
                         Potential: £1,720
-                        <span class="savings-percentage">37% potential reduction</span>
+                        <span class="savings-percentage">37% potential reduction (information estimate)</span>
                     </div>
                 </div>
                 
@@ -179,21 +527,21 @@
                     </div>
                 </div>
 
-                <h4>Specific Optimisations Applied:</h4>
-                <ul style="margin: 15px 0; padding-left: 20px;">
-                    <li><strong>Provider Change:</strong> Worthing Family Funerals vs Brighton original (may save £480*)</li>
-                    <li><strong>Off-Peak Timing:</strong> 9:00am slot vs standard time (may save £270*)</li>
-                    <li><strong>Crematorium Selection:</strong> Downs Crematorium vs Brighton (may save £270*)</li>
-                    <li><strong>Transport Optimisation:</strong> Family cars for attendees (may save £200*)</li>
-                    <li><strong>Venue Change:</strong> Community centre vs hotel (may save £280*)</li>
-                    <li><strong>Direct Floral Arrangements:</strong> Local florist vs funeral director (may save £200*)</li>
+                <h4 style="color: var(--navy-primary); margin: 24px 0 12px 0; font-weight: 600;">Specific Optimisations Suggested for Exploration:</h4>
+                <ul style="margin: 0; padding-left: 24px; line-height: 1.8;">
+                    <li>Provider Change: Explore Worthing Family Funerals vs Brighton original (might save £480*)</li>
+                    <li>Off-Peak Timing: Investigate 9:00am slot vs standard time (might save £270*)</li>
+                    <li>Crematorium Selection: Compare Downs Crematorium vs Brighton (might save £270*)</li>
+                    <li>Transport Optimisation: Consider family cars for attendees (might save £200*)</li>
+                    <li>Venue Change: Explore Community centre vs hotel (might save £280*)</li>
+                    <li>Direct Floral Arrangements: Consider Local florist vs funeral director (might save £220*)</li>
                 </ul>
                 <div class="info-note">
                     All savings estimates are based on publicly available data. Verify actual pricing with each provider.
                 </div>
             </div>
 
-            <!-- ALTERNATIVE OPTIONS -->
+            <!-- ALTERNATIVE OPTIONS (Conservative) -->
             <div class="recommendation-card">
                 <div class="recommendation-header">
                     <h3 class="recommendation-title">
@@ -202,7 +550,7 @@
                     </h3>
                     <div class="recommendation-savings">
                         Potential: £670
-                        <span class="savings-percentage">15% potential reduction</span>
+                        <span class="savings-percentage">15% potential reduction (information estimate)</span>
                     </div>
                 </div>
                 
@@ -225,12 +573,13 @@
                         <ul>
                             <li>Limited savings potential</li>
                             <li>Higher overall costs</li>
-                            <li>May miss major optimisation opportunities</li>
+                            <li>May miss major opportunities</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- ALTERNATIVE OPTIONS (Maximum Savings) -->
             <div class="recommendation-card">
                 <div class="recommendation-header">
                     <h3 class="recommendation-title">
@@ -239,7 +588,7 @@
                     </h3>
                     <div class="recommendation-savings">
                         Potential: £2,770
-                        <span class="savings-percentage">61% potential reduction</span>
+                        <span class="savings-percentage">61% potential reduction (information estimate)</span>
                     </div>
                 </div>
                 
@@ -263,7 +612,7 @@
                             <li>Non-traditional approach</li>
                             <li>Requires family coordination</li>
                             <li>Separate memorial planning</li>
-                            <li>May not suit all family expectations</li>
+                            <li>May not suit all expectations</li>
                         </ul>
                     </div>
                 </div>
@@ -271,8 +620,8 @@
         </section>
 
         <!-- DETAILED PROVIDER COMPARISON -->
-        <section class="report-section">
-            <h2 class="section-title">3. Detailed Provider Comparison</h2>
+        <section class="report-section" role="region" aria-label="Detailed Provider Comparison">
+            <h2 class="section-title">3. Detailed Provider Comparison (for Verification)</h2>
             
             <table class="provider-table">
                 <thead>
@@ -319,97 +668,238 @@
             </table>
 
             <div class="info-note">
-                All costs are estimates based on publicly available CMA data. Pricing data may be outdated or incomplete. Users must verify all information directly with service providers before making decisions. Distance calculations are from postcode BN1 4GH.
+                All costs are estimates based on publicly available CMA data. Pricing data may be outdated or incomplete. Users must verify all information directly with service providers before making decisions. Distance calculations from postcode BN1 4GH.
             </div>
         </section>
 
-        <!-- 14-DAY IMPLEMENTATION ROADMAP -->
-        <section class="report-section">
-            <h2 class="section-title">4. 14-Day Implementation Roadmap</h2>
+        <!-- 14-DAY IMPLEMENTATION ROADMAP - GAMIFIED -->
+        <section class="report-section" role="region" aria-label="14-Day Implementation Roadmap">
+            <h2 class="section-title">4. 14-Day Implementation Roadmap (Suggested Actions)</h2>
             
             <div class="service-definition">
-                <h4>Implementation Guidance</h4>
-                <p>This roadmap provides suggested actions for your research. All recommendations are for informational purposes only. Always verify information independently and make your own decisions.</p>
+                <h4>Information Guidance</h4>
+                <p>This roadmap provides suggested actions for your exploration. All recommendations are for informational purposes only. Always verify information independently and make your own decisions.</p>
             </div>
 
-            <div class="implementation-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <div class="step-title">Initial Contact (Day 1-2)</div>
-                    <p>Consider contacting Worthing Family Funerals to confirm availability and pricing.</p>
-                    <ul class="step-actions">
-                        <li>Consider calling 01903 123456 in the morning</li>
-                        <li>Request a written quote that matches the CMA standardised pricing structure</li>
-                        <li>Confirm availability for your desired date</li>
-                        <li>Verify all pricing information independently</li>
-                    </ul>
+            <!-- PROGRESS TRACKER - Gamified Header -->
+            <div class="progress-motivation">
+                <span class="completion-counter" id="completion-counter">0 of 20 tasks completed</span>
+                <div class="savings-tracker" id="savings-tracker">Potential savings unlocked: £0</div>
+            </div>
+
+            <div class="implementation-checklist-interactive">
+                
+                <!-- START: Day 1-2 with Gamification -->
+                <div class="implementation-day">
+                    <h3>Day 1-2: Initial Contact & Exploration</h3>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="200">
+                        <div class="task-content">
+                            <span class="task-action">Call Worthing Family Funerals (01903 123456)</span>
+                            <span class="task-benefit">Unlock: £200-400 potential saving</span>
+                            <span class="task-timing">⏰ Best time: 9:00-11:00 AM</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="150">
+                        <div class="task-content">
+                            <span class="task-action">Request Downs Crematorium off-peak rates</span>
+                            <span class="task-benefit">Unlock: £150-300 potential saving</span>
+                            <span class="task-timing">⏰ Call: 01903 234567</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="100">
+                        <div class="task-content">
+                            <span class="task-action">Request CMA standardised written quote (Worthing)</span>
+                            <span class="task-benefit">Unlock: £100 comparison leverage</span>
+                            <span class="task-timing">⏰ Request via email for documentation</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Confirm availability for your desired date</span>
+                            <span class="task-benefit">Essential for scheduling</span>
+                            <span class="task-timing">⏰ Check 2-3 date options</span>
+                        </div>
+                    </label>
                 </div>
-            </div>
+                <!-- END: Day 1-2 with Gamification -->
 
-            <div class="implementation-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <div class="step-title">Crematorium Booking (Day 3-5)</div>
-                    <p>Consider booking Downs Crematorium for an early morning slot (9:00am preferred).</p>
-                    <ul class="step-actions">
-                        <li>Consider contacting Downs Crematorium: 01903 234567</li>
-                        <li>Confirm current pricing structure</li>
-                        <li>Inquire about early morning slot availability</li>
-                        <li>Verify all fees and additional charges</li>
-                    </ul>
+                <div class="implementation-day">
+                    <h3>Day 3-5: Crematorium Booking Exploration</h3>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Contact Downs Crematorium (01903 234567)</span>
+                            <span class="task-benefit">Potential £270 off-peak saving</span>
+                            <span class="task-timing">⏰ Best time: Early morning calls</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Inquire about 9:00-10:00am time slots</span>
+                            <span class="task-benefit">Off-peak discount opportunity</span>
+                            <span class="task-timing">⏰ Ask about weekday rates</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Confirm current crematorium pricing structure</span>
+                            <span class="task-benefit">Verify published rates</span>
+                            <span class="task-timing">⏰ Request written fee schedule</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Verify all additional crematorium fees</span>
+                            <span class="task-benefit">No surprise charges</span>
+                            <span class="task-timing">⏰ Ask about medical referee, certificates</span>
+                        </div>
+                    </label>
                 </div>
-            </div>
 
-            <div class="implementation-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <div class="step-title">Transport Coordination (Day 6-8)</div>
-                    <p>Organise family transport to the crematorium (a 25-minute journey).</p>
-                    <ul class="step-actions">
-                        <li>Notify family of the potential new location and time</li>
-                        <li>Consider carpooling or coach hire for large groups</li>
-                        <li>Prepare routes and departure times</li>
-                        <li>Account for additional travel time in planning</li>
-                    </ul>
+                <div class="implementation-day">
+                    <h3>Day 6-8: Transport Coordination</h3>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Notify family of potential location and time changes</span>
+                            <span class="task-benefit">Early communication prevents issues</span>
+                            <span class="task-timing">⏰ Send group email or message</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Explore carpooling or coach hire options</span>
+                            <span class="task-benefit">Potential £200 transport saving</span>
+                            <span class="task-timing">⏰ Get quotes from local coach companies</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Plan routes and departure times</span>
+                            <span class="task-benefit">Smooth coordination on the day</span>
+                            <span class="task-timing">⏰ Account for 25-min journey time</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Create family transport coordination plan</span>
+                            <span class="task-benefit">Ensure everyone arrives on time</span>
+                            <span class="task-timing">⏰ Share detailed directions</span>
+                        </div>
+                    </label>
                 </div>
-            </div>
 
-            <div class="implementation-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <div class="step-title">Reception Arrangements (Day 9-11)</div>
-                    <p>Consider booking a community centre or pub function room.</p>
-                    <ul class="step-actions">
-                        <li>Consider contacting Rottingdean Village Hall: 01273 890123</li>
-                        <li>Inquire about catering options directly with venues</li>
-                        <li>Compare costs with funeral director packages</li>
-                        <li>Verify all booking terms and conditions</li>
-                    </ul>
+                <div class="implementation-day">
+                    <h3>Day 9-11: Reception Arrangements</h3>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Contact community centres and pub function rooms</span>
+                            <span class="task-benefit">Potential £280 venue saving</span>
+                            <span class="task-timing">⏰ Compare 3-4 options</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Request catering quotes directly from venues</span>
+                            <span class="task-benefit">Better pricing than funeral director packages</span>
+                            <span class="task-timing">⏰ Ask about buffet vs sit-down options</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Compare total reception costs with funeral director packages</span>
+                            <span class="task-benefit">Validate savings opportunity</span>
+                            <span class="task-timing">⏰ Create side-by-side comparison</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Review and confirm booking terms</span>
+                            <span class="task-benefit">Understand cancellation policies</span>
+                            <span class="task-timing">⏰ Get written confirmation</span>
+                        </div>
+                    </label>
                 </div>
-            </div>
 
-            <div class="implementation-step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <div class="step-title">Final Coordination (Day 12-14)</div>
-                    <p>Confirm all arrangements and finalise payments.</p>
-                    <ul class="step-actions">
-                        <li>Confirm all arrangements with chosen providers</li>
-                        <li>Distribute timing information to family members</li>
-                        <li>Prepare the order of service</li>
-                        <li>Finalise payment arrangements and verify all costs</li>
-                    </ul>
+                <div class="implementation-day">
+                    <h3>Day 12-14: Final Coordination & Verification</h3>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Confirm all arrangements with chosen providers</span>
+                            <span class="task-benefit">Final verification call</span>
+                            <span class="task-timing">⏰ Create written checklist</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Distribute final timing details to family</span>
+                            <span class="task-benefit">Everyone informed and prepared</span>
+                            <span class="task-timing">⏰ Send 48 hours before service</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Finalize order of service and readings</span>
+                            <span class="task-benefit">Meaningful ceremony preparation</span>
+                            <span class="task-timing">⏰ Review with celebrant or minister</span>
+                        </div>
+                    </label>
+                    
+                    <label class="task-checkbox-enhanced">
+                        <input type="checkbox" onchange="updateChecklistProgress(this)" data-value="0">
+                        <div class="task-content">
+                            <span class="task-action">Verify all final costs and payment arrangements</span>
+                            <span class="task-benefit">No surprises on payment day</span>
+                            <span class="task-timing">⏰ Get itemized final invoice</span>
+                        </div>
+                    </label>
                 </div>
             </div>
         </section>
 
         <!-- NEGOTIATION SCRIPTS -->
-        <section class="report-section">
-            <h2 class="section-title">5. Negotiation Scripts</h2>
+        <section class="report-section" id="negotiation-scripts" role="region" aria-label="Communication Scripts for Service Providers">
+            <h2 class="section-title">5. Communication Scripts (for Confidence)</h2>
 
             <div class="script-section">
                 <div class="script-title">Email Template for Quote Request:</div>
-                <div class="script-content">Subject: Quote Request - <span class="script-placeholder">[DECEASED'S NAME]</span> Funeral
+                <div class="script-content" style="font-size: 1rem; line-height: 1.7; padding: 20px; background: #f7fafc; border-radius: 8px;">Subject: Quote Request - <span class="script-placeholder">[DECEASED'S NAME]</span> Funeral
 
 Dear <span class="script-placeholder">[PROVIDER NAME]</span>,
 
@@ -428,29 +918,38 @@ Best regards,
             </div>
 
             <div class="script-section">
-                <div class="script-title">Telephone Script - Key Phrases:</div>
-                <div class="script-content"><strong>Opening:</strong>
-"Hello, I'm looking for quotes for a funeral service and I've seen your CMA prices online..."
+                <div class="script-title">Telephone Script - Confident Approach:</div>
+                <div class="script-content">
+                    <blockquote style="font-style: italic; color: #4a5568; font-size: 1.05rem; line-height: 1.6; padding: 16px; background: #f7fafc; border-radius: 6px; margin: 16px 0;">
+                        "Hello. I'm comparing quotes from several funeral directors for a service for [DECEASED'S NAME]. Can you email your written quote by [DATE]? I have already received quotes in the range of £2,400 to £3,200."
+                    </blockquote>
+                    
+                    <div class="script-explanation" style="margin: 16px 0; padding: 12px; background: #e6f3ff; border-left: 4px solid #3b82f6; border-radius: 6px;">
+                        <strong style="font-size: 1rem; color: #1e40af;">Why this works:</strong>
+                        <span style="display: block; margin-top: 4px; color: #4a5568;">Creates urgency + competition + anchoring (anchoring price low).</span>
+                    </div>
 
-<strong>Key Questions:</strong>
-• "Do you offer any discounts for early morning slots?"
-• "What are your most economical package options?"
-• "Can you match or better this quote from a competitor?"
-• "What additional costs are not included in your basic price?"
-
-<strong>Closing:</strong>
-"Would you be able to email me a written quote?"</div>
+                    <div style="margin-top: 24px;">
+                        <strong style="font-size: 1.1rem; display: block; margin-bottom: 16px; color: var(--navy-primary);">Key Questions to Explore:</strong>
+                        <ul style="font-size: 1.05rem; line-height: 2; padding-left: 24px; list-style: disc; color: #2c3e50;">
+                            <li>"Do you offer any discounts for early morning slots?"</li>
+                            <li>"What are your most economical package options?"</li>
+                            <li>"Can you match or better this quote from a competitor?"</li>
+                            <li>"What additional costs are not included in your basic price?"</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="service-definition">
-                <h4>Important Note on Negotiation</h4>
-                <p>These scripts are provided as examples only. All negotiations and communications with providers are your responsibility. Always verify information and make independent decisions.</p>
+                <h4>Important Note on Communication</h4>
+                <p>These scripts are provided as examples only. All negotiations and communications with providers are your responsibility. Always verify information independently and make independent decisions.</p>
             </div>
         </section>
 
         <!-- FINANCIAL SUMMARY -->
-        <section class="report-section">
-            <h2 class="section-title">6. Financial Summary & Research Support Commitment</h2>
+        <section class="report-section" role="region" aria-label="Financial Summary and Guarantee">
+            <h2 class="section-title">6. Financial Summary & Support Commitment</h2>
 
             <div class="summary-grid">
                 <div class="summary-item">
@@ -463,40 +962,40 @@ Best regards,
                 </div>
                 <div class="summary-item">
                     <div class="summary-number">£1,720*</div>
-                    <div class="summary-label">Potential Savings</div>
+                    <div class="summary-label">Potential Savings (Information Estimate)</div>
                 </div>
                 <div class="summary-item">
                     <div class="summary-number">37%*</div>
-                    <div class="summary-label">Potential % Saved</div>
+                    <div class="summary-label">Potential % Saved (Information Estimate)</div>
                 </div>
             </div>
             
-            <div style="background: rgba(5, 150, 105, 0.1); padding: 20px; border-radius: 8px; border-left: 4px solid var(--success-green); margin: 20px 0;">
-                <h4 style="color: var(--navy-primary); margin-bottom: 10px;">ROI Analysis</h4>
-                <p><strong>Report Cost:</strong> £39 | <strong>Potential Savings:</strong> £1,720* | <strong>Potential ROI:</strong> 4,310%*</p>
-                <p style="font-size: 0.9rem; color: var(--muted-blue); margin-top: 8px;">*All calculations are estimates based on publicly available data. Actual results may vary significantly.</p>
+            <div style="background: rgba(90, 122, 95, 0.1); padding: 24px; border-radius: 8px; border-left: 4px solid var(--sage-green); margin: 28px 0;">
+                <h4 style="color: var(--navy-primary); margin-bottom: 12px; font-weight: 600;">ROI Analysis</h4>
+                <p style="font-size: 1rem;"><strong>Report Cost:</strong> £39 | <strong>Potential Savings (Information Estimate):</strong> £1,720* | <strong>Potential ROI:</strong> 4,410%*</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">*All calculations are estimates based on publicly available data. Actual results may vary significantly.</p>
             </div>
 
             <div class="guarantee-box">
-                <div class="guarantee-title">Research Support Commitment</div>
-                <div class="guarantee-text">If you do not save at least £500 by following our recommendations, we will refund your £39 report fee within 60 days. We stand behind our research with complete confidence.</div>
+                <div class="guarantee-title">Support Commitment</div>
+                <div class="guarantee-text">If you do not save at least £500 by following our information guidance, we will refund your £39 report fee within 60 days. We stand behind our analysis with complete confidence.</div>
             </div>
 
             <div class="service-definition">
                 <h4>Commitment Terms & Conditions</h4>
-                <p><strong>Support applies when:</strong> You purchase our Complete Funeral Cost Optimiser Package, follow our recommendations in good faith, can demonstrate that savings were less than £500, and request a refund within 60 days of purchase.</p>
+                <p><strong>Support applies when:</strong> You purchase our Complete Funeral Cost Implementation Guide, follow our recommendations in good faith, can demonstrate that savings were less than £500, and request a refund within 60 days of purchase.</p>
                 <p><strong>What we need:</strong> Proof of purchase, documentation of funeral costs incurred, evidence that our recommendations were followed, and timeline showing when services were arranged.</p>
             </div>
         </section>
 
         <!-- ONGOING SUPPORT -->
-        <footer class="contact-section">
+        <footer class="contact-section" role="contentinfo">
             <h3 class="contact-title">Ongoing Support & Contact</h3>
             
             <div class="contact-grid">
                 <div class="contact-item">
                     <h4>Email Support</h4>
-                    <p>support@ClearFuneralCosts.co.uk<br>Response within 24 hours (Mon-Fri)</p>
+                    <p>support@clearfuneralcosts.co.uk<br>Response within 24 hours (Mon-Fri)</p>
                 </div>
                 <div class="contact-item">
                     <h4>Support Period</h4>
@@ -509,16 +1008,19 @@ Best regards,
             </div>
 
             <div class="footer-disclaimer">
-                <strong>Important Legal Notice:</strong><br>
-                This report is based on publicly available pricing data as of September 2025. 
-                Pricing data may be outdated or incomplete. Users must verify all information directly with service providers. 
-                Clear Funeral Costs aggregates publicly available funeral pricing data for informational purposes only. 
-                It does not constitute financial, legal, or funeral planning advice. We are not authorised by the Financial Conduct Authority 
-                and do not provide regulated financial services. We recognise bereavement is a challenging time. 
-                For personalised support, consult qualified professionals. We are independent and receive no commissions from funeral directors. 
-                Always verify details before making decisions.
+                <div class="enhanced-disclaimer">
+                    <h4>Important Legal Notice</h4>
+                    <ul>
+                        <li><strong>Information Service Only:</strong> We provide analytical support, not financial advice.</li>
+                        <li><strong>Not FCA Regulated:</strong> We are not authorised by the Financial Conduct Authority.</li>
+                        <li><strong>Verification Required:</strong> All pricing must be confirmed directly with service providers.</li>
+                        <li><strong>No Guarantees:</strong> Savings estimates may vary significantly.</li>
+                    </ul>
+                </div>
             </div>
         </footer>
+        </main>
     </div>
+    
 </body>
 </html>

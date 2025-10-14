@@ -1016,6 +1016,196 @@
             .analysis-overview { grid-template-columns: 1fr; }
             .scenario-title { font-size: 1.3rem; }
         }
+
+        /* Образовательная секция - стили в соответствии с основным дизайном */
+        .education-section {
+            background: var(--warm-cream);
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--sage-green);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+
+        .education-section h2 {
+            color: var(--navy-primary);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .education-intro {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .service-comparison-wrapper {
+            margin: 24px 0;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+
+        .service-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .service-comparison-table th,
+        .service-comparison-table td {
+            padding: 16px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .service-comparison-table th {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-light) 100%);
+            color: var(--pure-white);
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: none;
+        }
+
+        .service-comparison-table tr:hover {
+            background-color: var(--warm-grey-bg);
+        }
+
+        .service-comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .service-comparison-table td strong {
+            color: var(--navy-primary);
+            font-weight: 600;
+        }
+
+        .regional-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .savings-moderate { 
+            color: var(--sage-green); 
+            font-weight: 600; 
+            background: rgba(90, 122, 95, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .savings-good { 
+            color: var(--navy-light); 
+            font-weight: 600; 
+            background: rgba(45, 90, 138, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .savings-high { 
+            color: var(--warm-brown); 
+            font-weight: 600; 
+            background: rgba(107, 86, 68, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .savings-very-high { 
+            color: var(--burgundy-accent); 
+            font-weight: 600; 
+            background: rgba(125, 90, 80, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .guidance-box {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-light) 100%);
+            color: var(--pure-white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 32px;
+            box-shadow: 0 4px 20px rgba(30, 58, 95, 0.2);
+        }
+
+        .guidance-box p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--pure-white);
+        }
+
+        .enhanced-cta {
+            background: var(--pure-white);
+            color: var(--navy-primary);
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: 2px solid var(--pure-white);
+        }
+
+        .enhanced-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            background: var(--warm-grey-bg);
+            color: var(--navy-primary);
+        }
+
+        .guarantee-text {
+            margin-top: 16px;
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .education-section {
+                padding: 24px;
+                margin: 24px 0;
+            }
+            
+            .education-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .education-intro {
+                font-size: 16px;
+            }
+            
+            .service-comparison-table th,
+            .service-comparison-table td {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+            
+            .mobile-hide {
+                display: none;
+            }
+            
+            .guidance-box {
+                padding: 24px;
+            }
+            
+            .guidance-box p {
+                font-size: 16px;
+            }
+            
+            .enhanced-cta {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1032,7 +1222,7 @@
             </div>
             <h1 class="report-title">Your Funeral Cost Analysis</h1>
             <p class="report-subtitle">Information Support for Brighton, East Sussex</p>
-            <p class="report-date">Generated: 1st October 2025</p>
+            <p class="report-date">Generated: <span data-current-date>1st October 2025</span></p>
         </header>
 
         <section class="social-proof">
@@ -1104,25 +1294,88 @@
             </ul>
         </section>
 
+        <!-- ОБРАЗОВАТЕЛЬНАЯ СЕКЦИЯ ДЛЯ "I'M NOT SURE" -->
+        <div id="service-education-section" class="education-section" style="display: none;">
+            <h2>Understanding Your Funeral Service Options in South East England</h2>
+            <p class="education-intro">
+                <em>Since you're exploring different options, here's a comparison based on actual South East England pricing:</em>
+            </p>
+            
+            <div class="service-comparison-wrapper">
+                <table class="service-comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Service Type</th>
+                            <th>What It Includes</th>
+                            <th>South East Cost Range</th>
+                            <th>Best For</th>
+                            <th>Savings Potential</th>
+                            <th class="mobile-hide">Regional Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Traditional Burial</strong></td>
+                            <td>Full church/civil ceremony + ground burial</td>
+                            <td><strong>£5,200 - £7,200</strong></td>
+                            <td>Traditional families prioritising ceremony</td>
+                            <td><span class="savings-moderate">Moderate (15-25%)</span></td>
+                            <td class="regional-note mobile-hide">Higher in Brighton/Surrey, lower in Reading/Kent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traditional Cremation</strong></td>
+                            <td>Full ceremony + cremation</td>
+                            <td><strong>£3,200 - £4,800</strong></td>
+                            <td>Balance of tradition & practicality</td>
+                            <td><span class="savings-good">Good (20-35%)</span></td>
+                            <td class="regional-note mobile-hide">Off-peak savings at Guildford/Reading</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Simple Service + Cremation</strong></td>
+                            <td>Basic ceremony + cremation</td>
+                            <td><strong>£2,200 - £3,400</strong></td>
+                            <td>Meaningful but modest celebration</td>
+                            <td><span class="savings-high">High (25-40%)</span></td>
+                            <td class="regional-note mobile-hide">Best value: Reading/Medway, weekdays</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Direct Cremation</strong></td>
+                            <td>Cremation only (separate celebration possible)</td>
+                            <td><strong>£1,280 - £2,100</strong></td>
+                            <td>Maximum savings, flexible memorial</td>
+                            <td><span class="savings-very-high">Very High (40-65%)</span></td>
+                            <td class="regional-note mobile-hide">Lowest: Reading/Kent area</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="guidance-box">
+                <p><strong>Not sure which option suits your family?</strong> Our premium analysis provides detailed South East England provider comparisons, specific cost breakdowns, and step-by-step implementation guidance tailored to your location and preferences.</p>
+                <a href="#premium-analysis" class="enhanced-cta">Get South East Personalised Analysis - £39</a>
+                <p class="guarantee-text"><small>✓ £500+ savings guarantee for South East England</small></p>
+            </div>
+        </div>
+
         <section class="report-section">
             <h2 class="section-title">Your Three Cost Optimisation Scenarios</h2>
             
             <div class="scenario-card">
                 <div class="scenario-header">
-                    <h3 class="scenario-title">Conservative Approach</h3>
+                    <h3 class="scenario-title"><span id="scenario-1-title">Conservative Approach</span></h3>
                     <div class="scenario-savings">
-                        You might save £500 - £800
-                        <span class="savings-percentage">10-15% potential reduction (information estimate)</span>
+                        <span id="scenario-1-savings">You might save £500 - £800</span>
+                        <span class="savings-percentage" id="scenario-1-percentage">10-15% potential reduction (information estimate)</span>
                     </div>
                 </div>
                 
-                <div class="scenario-summary">Minimal changes to traditional arrangements</div>
+                <div class="scenario-summary" id="scenario-1-subtitle">Minimal changes to traditional arrangements</div>
                 
-                <p class="scenario-description">
+                <p class="scenario-description" id="scenario-1-description">
                     Minimal changes to traditional funeral arrangements with modest potential savings. Simple provider and timing optimisations without disrupting family plans.
                 </p>
                 
-                <ul class="scenario-actions">
+                <ul class="scenario-actions" id="scenario-1-strategies">
                     <li>Compare quotes from 3-5 local funeral directors</li>
                     <li>Explore crematorium off-peak scheduling</li>
                     <li>Review transport and venue arrangements</li>
@@ -1135,18 +1388,33 @@
                 <div class="recommended-badge">RECOMMENDED APPROACH</div>
                 
                 <div class="scenario-header" style="margin-bottom: 0;">
-                    <h3 class="scenario-title" style="margin-top: 10px; margin-bottom: 0;">Strategic Approach (£800-£1,500 potential)</h3>
+                    <h3 class="scenario-title" style="margin-top: 10px; margin-bottom: 0;"><span id="scenario-2-title">Strategic Approach (£800-£1,500 potential)</span></h3>
+                </div>
+                
+                <!-- Savings and percentage block -->
+                <div class="savings-highlight" style="background: rgba(90, 122, 95, 0.1); color: var(--sage-green); padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 5px;">
+                        <span id="scenario-2-savings">You might save £800 - £1,500</span>
+                    </div>
+                    <div style="font-size: 0.9rem; color: var(--sage-green);">
+                        <span id="scenario-2-percentage">(20-30% potential reduction)</span>
+                    </div>
                 </div>
                 
                 <!-- Tagline reusing scenario-summary style with adjusted colors for visual separation -->
-                <div class="scenario-summary" style="background: rgba(90, 122, 95, 0.1); color: var(--sage-green); font-weight: 500; font-size: 1rem; margin-top: 10px;">Most popular with UK families</div>
+                <div class="scenario-summary" style="background: rgba(90, 122, 95, 0.1); color: var(--sage-green); font-weight: 500; font-size: 1rem; margin-top: 10px;" id="scenario-2-subtitle">Most popular with UK families</div>
+                
+                <!-- Description block -->
+                <p class="scenario-description" id="scenario-2-description" style="margin: 15px 0; line-height: 1.6; color: var(--navy-primary);">
+                    Traditional elements maintained while exploring broader provider options and flexible timing for substantial savings opportunities.
+                </p>
                 
                 <div class="actionable-steps">
                     <!-- Heading for actionable steps -->
                     <h4 style="color: var(--navy-primary); font-size: 1.1rem; margin-bottom: 12px; margin-top: 20px; font-weight: 600;">What this involves:</h4>
                     
                     <!-- Actionable steps, reusing scenario-actions style for consistent bullets -->
-                    <ul class="scenario-actions" style="border-top: none; padding-top: 0;">
+                    <ul class="scenario-actions" style="border-top: none; padding-top: 0;" id="scenario-2-strategies">
                         <li>Compare quotes from 3-5 funeral directors in 15-mile radius</li>
                         <li>Request off-peak crematorium slots (9am-11am weekdays)</li>
                         <li>Explore transport cost alternatives</li>
@@ -1164,20 +1432,20 @@
 
             <div class="scenario-card">
                 <div class="scenario-header">
-                    <h3 class="scenario-title">Maximum Savings</h3>
+                    <h3 class="scenario-title"><span id="scenario-3-title">Maximum Savings</span></h3>
                     <div class="scenario-savings">
-                        You might save £2,000 - £2,500
-                        <span class="savings-percentage">45-60% potential reduction (information estimate)</span>
+                        <span id="scenario-3-savings">You might save £2,000 - £2,500</span>
+                        <span class="savings-percentage" id="scenario-3-percentage">45-60% potential reduction (information estimate)</span>
                     </div>
                 </div>
                 
-                <div class="scenario-summary">Modern approach with separate memorial</div>
+                <div class="scenario-summary" id="scenario-3-subtitle">Modern approach with separate memorial</div>
                 
-                <p class="scenario-description">
+                <p class="scenario-description" id="scenario-3-description">
                     Direct cremation approach with separate celebration of life service, maximising potential cost savings through complete service restructuring. Modern approach gaining popularity.
                 </p>
                 
-                <ul class="scenario-actions">
+                <ul class="scenario-actions" id="scenario-3-strategies">
                     <li>Explore Direct Cremation only services</li>
                     <li>Arrange separate memorial service at your own pace</li>
                     <li>Use community venue or personal home for celebration</li>
@@ -1299,7 +1567,7 @@
             </table>
 
             <div class="info-note">
-                Estimated costs based on publicly available data. Always <strong>confirm</strong> current pricing <strong>directly with service providers</strong>. Distance calculations from postcode BN1 4GH.
+                Estimated costs based on publicly available data. Always <strong>confirm</strong> current pricing <strong>directly with service providers</strong>. Distance calculations from postcode <span data-postcode>BN1 4GH</span>.
             </div>
         </section>
 
@@ -1484,6 +1752,308 @@
                 });
             }
         });
+    </script>
+    
+    <!-- Script to populate report with user data from URL parameters -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update current date
+            updateCurrentDate();
+            
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            const postcode = urlParams.get('postcode');
+            const serviceType = urlParams.get('serviceType');
+            
+            // Update report title with user's postcode if available
+            if (postcode) {
+                const reportSubtitle = document.querySelector('.report-subtitle');
+                if (reportSubtitle) {
+                    // Extract area from postcode (first 2 characters)
+                    const area = postcode.substring(0, 2);
+                    let areaName = '';
+                    
+                    // Map postcode areas to readable names
+                    const areaMap = {
+                        'BN': 'Brighton, East Sussex',
+                        'GU': 'Guildford, Surrey', 
+                        'RG': 'Reading, Berkshire',
+                        'SO': 'Southampton, Hampshire',
+                        'PO': 'Portsmouth, Hampshire',
+                        'TN': 'Tunbridge Wells, Kent',
+                        'ME': 'Medway, Kent',
+                        'CT': 'Canterbury, Kent'
+                    };
+                    
+                    areaName = areaMap[area] || `${postcode} area`;
+                    reportSubtitle.textContent = `Information Support for ${areaName}`;
+                }
+            }
+            
+            // Update service type in the report if available
+            if (serviceType) {
+                const serviceTypeMap = {
+                    'traditional': 'Traditional Funeral Service',
+                    'direct': 'Direct Cremation',
+                    'hybrid': 'Simple Service + Cremation',
+                    'burial': 'Burial Service',
+                    'unsure': 'Multiple Service Options'
+                };
+                
+                const serviceName = serviceTypeMap[serviceType] || 'Selected Service';
+                
+                // Find and update any references to service type in the report
+                const serviceElements = document.querySelectorAll('[data-service-type]');
+                serviceElements.forEach(element => {
+                    element.textContent = serviceName;
+                });
+            }
+            
+            // Update postcode references in the report
+            if (postcode) {
+                const postcodeElements = document.querySelectorAll('[data-postcode]');
+                postcodeElements.forEach(element => {
+                    element.textContent = postcode;
+                });
+                
+                // Update the specific postcode reference in the disclaimer
+                const disclaimerText = document.querySelector('.info-note');
+                if (disclaimerText && disclaimerText.textContent.includes('BN1 4GH')) {
+                    disclaimerText.textContent = disclaimerText.textContent.replace('BN1 4GH', postcode);
+                }
+            }
+            
+            // Store user data in localStorage for potential use in questionnaire
+            if (email || postcode || serviceType) {
+                const userData = {
+                    email: email || '',
+                    postcode: postcode || '',
+                    serviceType: serviceType || '',
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem('clearFuneralCosts_userData', JSON.stringify(userData));
+            }
+        });
+        
+        /**
+         * Update current date in the report
+         */
+        function updateCurrentDate() {
+            const dateElement = document.querySelector('[data-current-date]');
+            if (dateElement) {
+                const now = new Date();
+                const options = { 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric' 
+                };
+                const formattedDate = now.toLocaleDateString('en-GB', options);
+                
+                // Add ordinal suffix (1st, 2nd, 3rd, 4th, etc.)
+                const day = now.getDate();
+                const suffix = getOrdinalSuffix(day);
+                const finalDate = formattedDate.replace(day.toString(), day + suffix);
+                
+                dateElement.textContent = finalDate;
+            }
+        }
+        
+        /**
+         * Get ordinal suffix for day
+         */
+        function getOrdinalSuffix(day) {
+            if (day >= 11 && day <= 13) {
+                return 'th';
+            }
+            switch (day % 10) {
+                case 1: return 'st';
+                case 2: return 'nd';
+                case 3: return 'rd';
+                default: return 'th';
+            }
+        }
+
+        // SCENARIO CONTENT MANAGEMENT
+        const SCENARIO_CONTENT = {
+            'not_sure': {
+                scenario1: {
+                    title: 'Traditional Service Optimisation',
+                    savings: 'You might save £800 - £2,000',
+                    percentage: '(15-25% potential reduction)',
+                    subtitle: 'Optimise traditional services while maintaining dignity',
+                    description: 'Traditional burial or cremation services optimised through strategic provider selection and timing adjustments without compromising family expectations or ceremony quality.',
+                    strategies: [
+                        'Compare quotes from funeral directors across South East region',
+                        'Consider off-peak crematorium scheduling (£100-200 savings)',
+                        'Evaluate transport efficiency between Brighton, Surrey and Kent',
+                        'Review venue arrangements for optimal cost-to-quality ratio'
+                    ]
+                },
+                scenario2: {
+                    title: 'Balanced Approach',
+                    savings: 'You might save £1,500 - £3,000',
+                    percentage: '(30-50% potential reduction)',
+                    subtitle: 'Strategic mix of traditional and modern elements',
+                    description: 'Combines meaningful ceremony elements with practical cost-saving strategies. Maintains respect and dignity while achieving substantial savings through service type optimisation.',
+                    strategies: [
+                        'Simple ceremony with professional funeral direction',
+                        'Off-peak crematorium slots for maximum savings',
+                        'Selective traditional elements (flowers, music, readings)',
+                        'Alternative venue options for reception/wake'
+                    ]
+                },
+                scenario3: {
+                    title: 'Maximum Savings Strategy',
+                    savings: 'You might save £3,000 - £5,500',
+                    percentage: '(60-75% potential reduction)',
+                    subtitle: 'Direct cremation with separate celebration of life',
+                    description: 'Direct cremation without funeral service, combined with separate celebration of life event. Offers maximum cost savings while preserving opportunity for meaningful remembrance.',
+                    strategies: [
+                        'Direct cremation with lowest-cost providers',
+                        'Separate celebration event at preferred venue',
+                        'Family-organised flowers and catering',
+                        'Flexible timing for both cremation and celebration'
+                    ]
+                }
+            },
+            'traditional': {
+                scenario1: {
+                    title: 'Conservative Approach',
+                    savings: 'You might save £500 - £800',
+                    percentage: '(10-15% potential reduction)',
+                    subtitle: 'Minimal changes to traditional arrangements',
+                    description: 'Minimal changes to traditional funeral arrangements with modest potential savings. Simple provider and timing optimisations without disrupting family plans.',
+                    strategies: [
+                        'Compare quotes from 3-5 local funeral directors',
+                        'Explore crematorium off-peak scheduling',
+                        'Review transport and venue arrangements'
+                    ]
+                },
+                scenario2: {
+                    title: 'Strategic Approach (£800-£1,500 potential)',
+                    savings: '£800-£1,500 potential',
+                    percentage: '(20-30% potential reduction)',
+                    subtitle: 'Traditional elements maintained',
+                    description: 'Traditional elements maintained while exploring broader provider options and flexible timing for substantial savings opportunities.',
+                    strategies: [
+                        'Expand search radius to 15 miles',
+                        'Off-peak crematorium scheduling',
+                        'Alternative venue considerations'
+                    ]
+                },
+                scenario3: {
+                    title: 'Maximum Savings',
+                    savings: 'Maximum savings potential',
+                    percentage: '(40-60% potential reduction)',
+                    subtitle: 'Complete service restructuring',
+                    description: 'Direct cremation followed by separate celebration of life event, offering maximum cost savings while preserving meaningful remembrance.',
+                    strategies: [
+                        'Direct cremation service',
+                        'Separate celebration venue',
+                        'Family-coordinated arrangements'
+                    ]
+                }
+            }
+        };
+
+        function updateAllScenarios(serviceType) {
+            console.log('updateAllScenarios called with serviceType:', serviceType); // Отладочная информация
+            
+            const content = SCENARIO_CONTENT[serviceType] || SCENARIO_CONTENT['traditional'];
+            console.log('Using content for:', serviceType, content); // Отладочная информация
+            
+            ['scenario1', 'scenario2', 'scenario3'].forEach((scenarioKey, index) => {
+                const scenarioNum = index + 1;
+                const scenario = content[scenarioKey];
+                console.log(`Updating scenario ${scenarioNum}:`, scenario); // Отладочная информация
+                
+                const titleEl = document.getElementById(`scenario-${scenarioNum}-title`);
+                const savingsEl = document.getElementById(`scenario-${scenarioNum}-savings`);
+                const percentageEl = document.getElementById(`scenario-${scenarioNum}-percentage`);
+                const subtitleEl = document.getElementById(`scenario-${scenarioNum}-subtitle`);
+                const descriptionEl = document.getElementById(`scenario-${scenarioNum}-description`);
+                const strategiesEl = document.querySelector(`#scenario-${scenarioNum}-strategies`);
+                
+                console.log(`Elements found for scenario ${scenarioNum}:`, {
+                    titleEl, savingsEl, percentageEl, subtitleEl, descriptionEl, strategiesEl
+                }); // Отладочная информация
+                
+                if (titleEl) {
+                    titleEl.textContent = scenario.title;
+                    console.log(`Updated title for scenario ${scenarioNum}:`, scenario.title);
+                }
+                if (savingsEl) {
+                    savingsEl.textContent = scenario.savings;
+                    console.log(`Updated savings for scenario ${scenarioNum}:`, scenario.savings);
+                }
+                if (percentageEl) {
+                    percentageEl.textContent = scenario.percentage;
+                    console.log(`Updated percentage for scenario ${scenarioNum}:`, scenario.percentage);
+                }
+                if (subtitleEl) {
+                    subtitleEl.textContent = scenario.subtitle;
+                    console.log(`Updated subtitle for scenario ${scenarioNum}:`, scenario.subtitle);
+                }
+                if (descriptionEl) {
+                    descriptionEl.textContent = scenario.description;
+                    console.log(`Updated description for scenario ${scenarioNum}:`, scenario.description);
+                }
+                
+                if (strategiesEl) {
+                    strategiesEl.innerHTML = scenario.strategies.map(strategy => `<li>${strategy}</li>`).join('');
+                    console.log(`Updated strategies for scenario ${scenarioNum}:`, scenario.strategies);
+                }
+            });
+        }
+
+        function handleServiceTypeSelection(serviceType) {
+            console.log('handleServiceTypeSelection called with:', serviceType); // Отладочная информация
+            
+            const educationSection = document.getElementById('service-education-section');
+            console.log('Education section found:', educationSection); // Отладочная информация
+            
+            if (serviceType === 'unsure' || serviceType === 'not_sure') {
+                console.log('Showing education section for unsure users'); // Отладочная информация
+                if (educationSection) {
+                    educationSection.style.display = 'block';
+                }
+                updateAllScenarios('not_sure');
+            } else {
+                console.log('Hiding education section for specific service type'); // Отладочная информация
+                if (educationSection) {
+                    educationSection.style.display = 'none';
+                }
+                updateAllScenarios('traditional');
+            }
+        }
+
+        // Автоматическое определение типа услуги из URL параметров
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceType = urlParams.get('serviceType');
+        console.log('Service type from URL:', serviceType); // Отладочная информация
+        
+        if (serviceType) {
+            handleServiceTypeSelection(serviceType);
+        } else {
+            // Если параметр не передан, показываем стандартный контент
+            handleServiceTypeSelection('traditional');
+        }
+
+        // Для тестирования можно вызвать:
+        // handleServiceTypeSelection('not_sure'); // показать образовательную секцию
+        // handleServiceTypeSelection('traditional'); // скрыть образовательную секцию
+        
+        // Добавляем кнопки для тестирования (только для разработки)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            const testButtons = document.createElement('div');
+            testButtons.style.cssText = 'position: fixed; top: 10px; right: 10px; z-index: 9999; background: #333; color: white; padding: 10px; border-radius: 5px;';
+            testButtons.innerHTML = `
+                <button onclick="handleServiceTypeSelection('unsure')" style="margin: 5px; padding: 5px;">Test: Show Education</button>
+                <button onclick="handleServiceTypeSelection('traditional')" style="margin: 5px; padding: 5px;">Test: Hide Education</button>
+            `;
+            document.body.appendChild(testButtons);
+        }
     </script>
 </body>
 </html>
