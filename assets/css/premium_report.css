@@ -23,12 +23,47 @@
     
     /* Text Colors - UPDATED for better contrast (Compliance Fix: from #6b7280 to #4a5568) */
     --text-muted: #4a5568; 
+    --muted-blue: #374151;
     
     /* Utility Colors */
     --border-subtle: #e0ddd8;
     --success-green: #5a7a5f;
     --burgundy-hover: #6b4a40; /* Added for hover effects */
     --soft-amber: #f59e0b; /* Added for highlight consistency */
+    
+    /* Typography Scale - Unified with main site */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Spacing Scale - Unified with main site */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    
+    /* Container & Layout */
+    --container-max: 1200px;
+    --container-padding: 1rem;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+    --shadow-base: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
 }
 
 /* === BASE STYLES === */
@@ -759,7 +794,10 @@ body {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-    body { font-size: 16px; }
+    body { 
+        font-size: 16px;
+        line-height: 1.6;
+    }
     
     .report-header { padding: 36px 24px; }
     .report-title { font-size: 2rem; }
@@ -784,13 +822,292 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
+    
+    /* === MOBILE TABLE OPTIMIZATION === */
+    .provider-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin: 20px 0;
+    }
+    
+    .provider-table table {
+        width: 100%;
+        min-width: 600px; /* Ensure table doesn't get too cramped */
+        border-collapse: collapse;
+        background: white;
+    }
+    
+    .provider-table th,
+    .provider-table td {
+        padding: 12px 8px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-subtle);
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .provider-table th {
+        background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-light) 100%);
+        color: white;
+        font-weight: 600;
+        font-size: 0.85rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .provider-table tr:hover {
+        background-color: var(--warm-grey-bg);
+    }
+    
+    .provider-table td:first-child {
+        font-weight: 600;
+        color: var(--navy-primary);
+    }
+    
+    .contact-info-table {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        display: block;
+        margin-top: 4px;
+    }
+    
+    /* === MOBILE BUTTON OPTIMIZATION === */
+    .call-button {
+        display: inline-block;
+        padding: 14px 20px;
+        background: linear-gradient(135deg, var(--sage-green) 0%, #4a6b4f 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        min-height: 48px; /* Touch-friendly minimum height */
+        line-height: 1.2;
+        margin: 8px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .call-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        background: linear-gradient(135deg, #4a6b4f 0%, var(--sage-green) 100%);
+    }
+    
+    .call-button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .copy-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-height: 44px; /* Touch-friendly minimum height */
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+    
+    .copy-button .copy-icon {
+        font-size: 1rem;
+    }
+    
+    .copy-button .copy-text {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    
+    /* === MOBILE TYPOGRAPHY OPTIMIZATION === */
+    .report-header h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+    
+    .report-header .subtitle {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .cost-highlight {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .savings-highlight {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .roi-highlight {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+    
+    .implementation-day h3 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+    
+    .task-action {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .task-benefit {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .task-timing {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    /* === MOBILE PROGRESS BAR OPTIMIZATION === */
+    .progress-bar-container {
+        flex-direction: column;
+        gap: 8px;
+        margin: 16px 0;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+    }
+    
+    .progress-percentage {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    .completion-counter,
+    .savings-tracker {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    
+    .achievement-message {
+        font-size: 0.9rem;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 6px;
+    }
+    
+    /* === MOBILE SCRIPT SECTIONS === */
+    .script-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .script-title {
+        font-size: 1rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+    
+    .script-content {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        padding: 16px;
+    }
+    
+    .script-content ul {
+        padding-left: 20px;
+    }
+    
+    .script-content li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
 }
 
 @media (max-width: 480px) {
-    body { font-size: 15px; }
+    body { 
+        font-size: 15px;
+        line-height: 1.5;
+    }
     .report-title { font-size: 1.7rem; }
     .savings-amount { font-size: 2.6rem; }
     .summary-grid { grid-template-columns: 1fr; }
+    
+    /* === EXTRA SMALL MOBILE OPTIMIZATION === */
+    .report-header { padding: 24px 16px; }
+    .report-section { padding: 24px 16px; }
+    .quick-wins-section { padding: 24px 16px; }
+    .personalized-intro { padding: 24px 16px; }
+    
+    .provider-table th,
+    .provider-table td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .call-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
+    
+    .copy-button {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+        min-height: 40px;
+    }
+    
+    .task-checkbox-enhanced {
+        padding: 10px;
+    }
+    
+    .task-action {
+        font-size: 0.85rem;
+    }
+    
+    .task-benefit {
+        font-size: 0.75rem;
+    }
+    
+    .task-timing {
+        font-size: 0.7rem;
+    }
+    
+    .progress-bar-container {
+        margin: 12px 0;
+    }
+    
+    .completion-counter,
+    .savings-tracker {
+        font-size: 0.8rem;
+    }
+    
+    .achievement-message {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
 }
 
 /* === PRINT STYLES === */

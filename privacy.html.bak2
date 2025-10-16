@@ -24,7 +24,7 @@
             <div class="header-content">
                 <div class="logo">
                     <a href="index.html" aria-label="ClearFuneralCosts homepage">
-                    <span class="clear-highlight">Clear</span>FuneralCosts
+                        <span class="clear-highlight">Clear</span>FuneralCosts
                     </a>
                 </div>
                 <nav class="header-nav" role="navigation" aria-label="Main navigation">
@@ -45,6 +45,19 @@
     <main id="main-content" role="main">
         <div class="container">
                 <!-- Privacy Policy Content will be here -->
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="brand-name">
+                    <span class="clear-highlight">Clear</span>FuneralCosts
+                </h1>
+                <a href="/" class="home-link">← Back to Home</a>
+            </div>
+        </div>
+    </header>
 
     <!-- NAVIGATION -->
     <nav class="legal-nav">
@@ -66,7 +79,7 @@
         <div class="container">
             <div class="service-definition-content">
                 <h2 class="service-definition-title">Understanding Our Service</h2>
-                <p class="service-subtitle">We provide independent funeral cost information to help UK families research their options</p>
+                <p style="color: var(--muted-blue); margin-bottom: 20px; font-size: 1.1rem;">We provide independent funeral cost information to help UK families research their options</p>
                 
                 <div class="service-definition-grid">
                     <div class="service-definition-item">
@@ -362,7 +375,7 @@
 
                 <div class="highlight-box">
                     <h4>Our Commitment</h4>
-                    <p>We're committed to helping families research funeral cost options during difficult times. If our information doesn't help you make informed financial decisions, we don't deserve to keep your payment.</p>
+                    <p>We're committed to helping families research funeral cost options during difficult times. If our information doesn't help you save money, we don't deserve to keep your payment.</p>
                 </div>
 
                 <div class="contact-info">
