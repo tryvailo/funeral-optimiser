@@ -13,6 +13,63 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="assets/css/main.css" as="style">
     <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ClearFuneralCosts",
+        "description": "Independent funeral cost information service providing compassionate guidance based on official UK government data",
+        "url": "https://clearfuneralcosts.co.uk",
+        "logo": "https://clearfuneralcosts.co.uk/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "refunds@clearfuneralcosts.co.uk",
+            "availableLanguage": ["English"],
+            "areaServed": "GB"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "foundingDate": "2024",
+        "knowsAbout": [
+            "UK funeral costs",
+            "Government pricing data",
+            "Funeral planning guidance",
+            "Cost comparison analysis"
+        ],
+        "sameAs": [
+            "https://www.trustpilot.com/review/clearfuneralcosts.co.uk",
+            "https://twitter.com/clearfuneralcosts",
+            "https://linkedin.com/company/clearfuneralcosts"
+        ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://clearfuneralcosts.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": "https://clearfuneralcosts.co.uk/privacy.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- SKIP NAVIGATION LINKS -->
@@ -41,6 +98,21 @@
         </div>
     </header>
 
+    <!-- BREADCRUMBS -->
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                    Privacy Policy
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
     <!-- MAIN CONTENT -->
     <main id="main-content" role="main">
         <div class="container">
@@ -625,7 +697,7 @@
                 <h3><span class="clear-highlight">Clear</span>FuneralCosts</h3>
                 <p>Helping UK families research funeral options through transparent cost information based on official government data.</p>
                 <p style="margin-top: 20px;">
-                    support@clearfuneralcosts.co.uk<br>
+                    refunds@clearfuneralcosts.co.uk<br>
                     Available Mon-Fri, 9am-5pm
                 </p>
             </div>
