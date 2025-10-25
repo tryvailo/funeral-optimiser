@@ -15,11 +15,102 @@
     <link rel="preload" href="../assets/css/main.css" as="style">
     <link rel="preload" href="../assets/js/main.js" as="script">
     <link rel="preload" href="../assets/js/regional.js" as="script">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ClearFuneralCosts",
+        "description": "Independent funeral cost information service providing compassionate guidance based on official UK government data",
+        "url": "https://clearfuneralcosts.co.uk",
+        "logo": "https://clearfuneralcosts.co.uk/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "refunds@clearfuneralcosts.co.uk",
+            "availableLanguage": ["English"],
+            "areaServed": "GB"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "foundingDate": "2024",
+        "knowsAbout": [
+            "UK funeral costs",
+            "Government pricing data",
+            "Funeral planning guidance",
+            "Cost comparison analysis"
+        ],
+        "sameAs": [
+            "https://www.trustpilot.com/review/clearfuneralcosts.co.uk",
+            "https://twitter.com/clearfuneralcosts",
+            "https://linkedin.com/company/clearfuneralcosts"
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a funeral cost in South East England?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Funeral costs in South East England typically range from £3,500-£6,000+ due to higher regional costs. However, our analysis shows potential savings of £1,000-£3,000 through informed choices and provider comparison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What factors affect funeral costs in South East England?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Key factors include: crematorium location (London vs regional), service timing (peak vs off-peak), provider selection, and venue choices. Brighton, Reading, and Guildford crematoriums have different pricing structures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I reduce funeral costs in South East England?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reduce costs by: comparing 3-5 local providers, choosing off-peak cremation times, selecting simpler venues, and considering direct cremation. Savings of £1,000-£3,000 are possible while maintaining dignity."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://clearfuneralcosts.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "South East England Funeral Guidance",
+          "item": "https://clearfuneralcosts.co.uk/SouthEast/"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- SKIP NAVIGATION LINKS -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <a href="#calculator" class="skip-link">Skip to calculator</a>
+    <a href="#information" class="skip-link">Skip to information service</a>
     
     <!-- HEADER -->
     <header class="site-header">
@@ -46,36 +137,61 @@
 
     <!-- MAIN CONTENT -->
     <main id="main-content">
+    
+    <!-- BREADCRUMBS -->
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                    South East England Funeral Guidance
+                </li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- HERO SECTION -->
     <section class="regional-hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-headline">
-                        South East England Funeral Guidance: Honouring Your Loved One Within Your Means
+                        Honoring Your Loved One with Dignity – Guidance for South East England Families
                 </h1>
                 <p class="hero-subheadline">
-                        Independent analysis shows families can optimise expenses by £1,000-£3,000 whilst maintaining dignity through informed choices
+                        Compassionate support to help you make informed decisions during difficult times
                 </p>
                 <ul class="hero-proof">
-                    <li>Based on official CMA pricing data from 200+ South East funeral directors</li>
+                    <li>Based on official government pricing data from 200+ South East funeral directors</li>
                     <li>Brighton, Reading & Guildford crematorium information compared</li>
-                        <li>General cost ranges observed across different service types in your region</li>
-                        <li>Educational information delivered within 10 minutes for your understanding</li>
+                    <li>Exploring all options to help you make informed financial decisions</li>
+                    <li>Educational information delivered within 10 minutes for your understanding</li>
                 </ul>
+                
+                
+                <div class="hero-empathetic-text">
+                    <p>We understand this is a difficult time, and we're here to help you navigate your options with confidence and respect.</p>
+                </div>
+                
+                <div class="hero-trust-badge">
+                    <span class="trust-rating">4.8/5 satisfaction from 2,400+ families</span>
+                </div>
             </div>
 
-                <div class="calculator-widget" role="region" aria-labelledby="calculator-heading">
-                    <h2 id="calculator-heading" class="calculator-headline">Free Cost Analysis</h2>
-                <p class="calculator-subheadline">
+                <div class="information-service" role="region" aria-labelledby="information-heading">
+                    <h2 id="information-heading" class="information-headline">Free Cost Information Service</h2>
+                <p class="information-subheadline">
                         Understand funeral costs in your South East England area and investigate your choices with no pressure or commitment
                 </p>
 
-                <div class="calculator-disclaimer">
+                <div class="information-disclaimer">
                     <strong>Information service:</strong> This service provides general price information for exploration purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.
                 </div>
 
                     <div id="message-box" class="message-box" role="alert" aria-live="polite"></div>
-                    <form id="analysisForm" class="calculator-form" aria-label="Funeral cost analysis form">
+                    <form id="analysisForm" class="information-form" aria-label="Funeral cost information form">
                     <div class="form-group">
                         <label class="form-label" for="postcode">Your Postcode</label>
                         <input 
@@ -135,57 +251,24 @@
                             <small id="email-help" class="form-help">Your free analysis will be emailed instantly - we'll never share your email</small>
                         </div>
 
-                            <button type="submit" class="cta-button" id="submitBtn" disabled aria-label="Explore your South East funeral cost options">
-                                Explore Your Options
+                            <button type="submit" class="cta-button" id="submitBtn" disabled aria-label="Get your personalized funeral cost information">
+                                Get Your Information
                         </button>
                     </div>
                 </form>
-                    <p class="micro-disclaimer">
-                        <i>i</i> Information service | We don't arrange funerals | No commissions
-                    </p>
+                
+                <div class="short-disclaimer">
+                    <span class="disclaimer-icon">🛡️</span>
+                    <span class="disclaimer-text">
+                        Independent information service – <a href="#footer-disclaimers" class="disclaimer-link">Verify prices with providers</a>
+                    </span>
+                </div>
                 <div class="trust-indicators">
                     <span class="trust-item">🔒 Secure & Private</span>
-                    <span class="trust-item">📊 Official CMA Data</span>
-                    <span class="trust-item">⚡ Instant Results</span>
+                    <span class="trust-item">📊 Official Government Data</span>
+                    <span class="trust-item">⚡ Instant Information</span>
                     <span class="trust-item">ℹ️ Information Only</span>
                 </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- COMPLIMENTARY GUIDE SECTION -->
-        <section class="complimentary-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">What Our Complimentary Guide Includes</h2>
-                    <p class="section-subtitle">Educational information to help you understand your options</p>
-                </div>
-                
-                <div class="complimentary-grid">
-                    <div class="info-highlight">
-                        <h4>Regional Information Overview</h4>
-                        <p>Brighton, Surrey, Reading, Kent area data compilation from publicly available sources</p>
-                    </div>
-                    
-                    <div class="info-highlight">
-                        <h4>Service Type Education</h4>
-                        <p>Understanding Traditional Burial, Traditional Cremation, Simple Service, and Direct Cremation approaches</p>
-                    </div>
-                    
-                    <div class="info-highlight">
-                        <h4>Cost Range Information</h4>
-                        <p>General cost ranges observed across different service types in your region</p>
-                    </div>
-                    
-                    <div class="info-highlight">
-                        <h4>Planning Considerations</h4>
-                        <p>Educational information about factors that families typically consider</p>
-                    </div>
-                </div>
-                
-                <div class="complimentary-footer">
-                    <p class="social-proof">Trusted by families across South East England</p>
-                    <p class="guarantee">No obligations. Independent information during challenging times.</p>
             </div>
         </div>
     </section>
@@ -195,83 +278,105 @@
         <div class="container">
             <div class="service-definition-content">
                 <h2 class="service-definition-title">What Our Service Provides</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.2rem;">We help South East England families understand funeral costs through independent information analysis</p>
+                <p class="service-definition-subtitle">We help South East England families understand funeral costs through independent information analysis</p>
                 
                 <div class="service-definition-grid">
                     <div class="service-definition-item">
-                            <h4>Regional Cost Analysis</h4>
-                            <p>Specific cost information for South East England based on local funeral directors and crematoria</p>
-                        </div>
-                        
-                        <div class="service-definition-item">
-                            <h4>Provider Information</h4>
-                            <p>Contact details and location information for funeral directors in your area</p>
-                        </div>
-                        
-                        <div class="service-definition-item">
-                            <h4>Service Options</h4>
-                            <p>Clear explanations of different funeral service approaches available in your region</p>
+                        <h3>Regional Information Overview</h3>
+                        <p>Brighton, Surrey, Reading, Kent area data compilation from publicly available sources, including service type education and cost range information.</p>
                     </div>
-                        
                     <div class="service-definition-item">
-                            <h4>Cost Comparisons</h4>
-                            <p>Comparison of costs across different service types and providers in South East England</p>
-                        </div>
+                        <h3>Provider Information</h3>
+                        <p>Contact details and location information for funeral directors in your area, with clear explanations of different service approaches.</p>
+                    </div>
+                    <div class="service-definition-item">
+                        <h3>Cost Comparisons</h3>
+                        <p>Comparison of costs across different service types and providers in South East England, helping you understand regional variations.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- STATISTICS AND HOW IT WORKS SECTION -->
-        <section class="combined-stats-how-it-works">
-            <div class="container">
-                <div class="combined-content">
-                    <!-- STATISTICS SIDE -->
-                    <div class="stats-side">
-                        <h2 class="section-title">South East England Funeral Cost Statistics</h2>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-number">£4,200</div>
-                                <div class="stat-label">Average regional cost</div>
-                                <div class="stat-description">Based on 45 local providers</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">£1,500</div>
-                                <div class="stat-label">Typical variance between providers</div>
-                                <div class="stat-description">Understanding these differences helps families make choices aligned with their values and budget</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">45</div>
-                                <div class="stat-label">Local funeral directors analysed</div>
-                                <div class="stat-description">Within 25 miles</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- HOW IT WORKS SIDE -->
-                    <div class="how-it-works-side">
-                        <h2 class="section-title">How It Works</h2>
-                        <p class="section-subtitle">Simple steps to get your free South East England analysis</p>
-                        
-                        <div class="steps-grid">
-                            <div class="step-card">
-                                <div class="step-number">1</div>
-                                <h3>Enter Your Details</h3>
-                                <p>Provide your postcode and service preferences for South East England</p>
-                            </div>
-                            
-                            <div class="step-card">
-                                <div class="step-number">2</div>
-                                <h3>Get Your Analysis</h3>
-                                <p>Receive your free cost breakdown for your area</p>
-                            </div>
-                            
-                            <div class="step-card">
-                                <div class="step-number">3</div>
-                                <h3>Explore Your Options</h3>
-                                <p>Use the information to make informed decisions</p>
-                            </div>
-                    </div>
+    <!-- SOUTH EAST ENGLAND FUNERAL COST STATISTICS -->
+    <section class="regional-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">South East England Funeral Cost Statistics</h2>
+                <p class="section-subtitle">Understanding regional funeral cost patterns in South East England</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">£4,200</div>
+                    <div class="stat-label">Average regional cost</div>
+                    <div class="stat-description">Based on 45 local providers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">£1,500</div>
+                    <div class="stat-label">Typical variance between providers</div>
+                    <div class="stat-description">Understanding these differences helps families make choices aligned with their values and budget</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Local funeral directors analysed</div>
+                    <div class="stat-description">Within 25 miles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE SUPPORT YOUR EXPLORATION -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How We Support Your Exploration</h2>
+                <p class="section-subtitle">
+                    Our compassionate approach combines official data with practical information to help you understand your possibilities in South East England
+                </p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Understanding Your Area</h3>
+                    <p class="step-description">
+                        We analyse official government pricing data from funeral directors and crematoria within 25 miles to help you understand the local South East England market.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Exploring Your Options</h3>
+                    <p class="step-description">
+                        Clear comparison information about traditional funerals, direct cremation, and hybrid approaches so you can investigate what might suit your family in South East England.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Understanding Cost Variations</h3>
+                    <p class="step-description">
+                        South East funeral costs vary based on timing (weekends vs weekdays), venue choice, service type, and additional services. Our analysis helps you understand these regional factors.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Quality Assured at Every Price Point</h3>
+                    <p class="step-description">
+                        Lower cost doesn't mean lower dignity - it often reflects different business overheads, timing flexibility, or direct relationships rather than intermediaries in South East England.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Ongoing Support</h3>
+                    <p class="step-description">
+                        Questions don't stop after the analysis. We provide ongoing email support to help with your cost exploration when you need it.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Official Data You Can Trust</h3>
+                    <p class="step-description">
+                        All our analysis is based on official government data that funeral directors must publish by law, updated weekly for accuracy.
+                    </p>
                 </div>
             </div>
         </div>
@@ -281,11 +386,11 @@
 
 
     <!-- REGIONAL PROBLEM STATS -->
-    <section class="regional-stats">
+    <section class="regional-problems">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">South East England Families Face These Funeral Cost Challenges</h2>
-                <p class="section-subtitle">CMA analysis reveals the hidden costs families encounter in our region</p>
+                <p class="section-subtitle">Government analysis reveals the hidden costs families encounter in our region</p>
             </div>
 
             <div class="stats-grid">
@@ -305,136 +410,8 @@
             </div>
         </section>
 
-        <!-- WHY COSTS VARY SECTION -->
-        <section class="cost-education">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Understanding Funeral Cost Variations in South East England</h2>
-                    <p class="section-subtitle">Regional factors that affect funeral costs in our area</p>
-                </div>
-                
-                <div class="cost-factors-grid">
-                    <div class="cost-factor-item">
-                        <h3>Time of Service</h3>
-                        <p>Weekends cost more than weekdays</p>
-                    </div>
-                    <div class="cost-factor-item">
-                        <h3>Choice of Venue</h3>
-                        <p>Different crematoria have different fees</p>
-                    </div>
-                    <div class="cost-factor-item">
-                        <h3>Service Type</h3>
-                        <p>Traditional vs direct cremation</p>
-                    </div>
-                    <div class="cost-factor-item">
-                        <h3>Additional Services</h3>
-                        <p>Transport, flowers, catering</p>
-                    </div>
-                </div>
-                
-                <div class="education-conclusion">
-                    <p>Our analysis helps you understand these variations, enabling choices that honour your loved one within your means.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- MAINTAINING DIGNITY SECTION -->
-        <section class="dignity-assurance">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Quality Assured at Every Price Point</h2>
-                    <p class="section-subtitle">Every funeral director we analyse meets UK regulatory standards</p>
-                </div>
-                
-                <div class="dignity-explanation">
-                    <p>Lower cost doesn't mean lower dignity - it often simply reflects different business overheads, timing flexibility, simplified logistics, or direct relationships rather than intermediaries.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- DETAILED GUIDANCE SECTION -->
-        <section class="detailed-guidance-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">When You're Ready for More Detailed Information</h2>
-                    <p class="section-subtitle">Additional guidance for families who want more specific information</p>
-                </div>
-                
-                <div class="guidance-grid">
-                    <div class="section-divider">
-                        <h4>Specific Provider Information</h4>
-                        <p>Contact details and location information for funeral directors in your area</p>
-                        <small class="comparison-note">(rather than just general awareness)</small>
-                    </div>
-                    
-                    <div class="section-divider">
-                        <h4>Implementation Roadmap</h4>
-                        <p>Step-by-step guidance for contacting providers and comparing options</p>
-                        <small class="comparison-note">(rather than just general guidance)</small>
-            </div>
-
-                    <div class="section-divider">
-                        <h4>Communication Templates</h4>
-                        <p>Suggested conversation points and email templates for discussions with providers</p>
-                        <small class="comparison-note">(rather than generic guidance)</small>
-                </div>
-            </div>
-
-                <div class="guidance-footer">
-                    <a href="../questionnaire.html" class="cta-button primary">Get Transparent Pricing (£39)</a>
-                    <p class="guidance-note">Comprehensive information for families who want more specific guidance</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW WE CALCULATE SECTION -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How We Calculate Your Potential Cost Exploration</h2>
-                <p class="section-subtitle">
-                    5-step method with multi-factor scoring (savings × practicality × satisfaction × ease) using South East data
-                </p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Regional Baseline</h3>
-                    <p class="step-description">
-                        Baseline = South East Funeral Director fee + Crematorium fee + Additional costs (from CMA price lists & local crematoria)
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Local Providers</h3>
-                    <p class="step-description">
-                        Compare directors within 15 miles and crematoria within 25 miles; find lower-cost like-for-like options in South East
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Service Options</h3>
-                    <p class="step-description">
-                        Model direct cremation/hybrid/traditional options and pick the best balance of potential cost exploration and dignity
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Timing Strategy</h3>
-                    <p class="step-description">
-                        Investigate off-peak slots and weekday selection to potentially reduce fees at South East crematoria
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">5</div>
-                    <h3 class="step-title">Regional Extras</h3>
-                    <p class="step-description">
-                        Transport, coffin, venue & flowers optimisation specific to South East England market
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- BRIGHTON CASE STUDY SECTION -->
     <section class="examples-section">
@@ -533,7 +510,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"This analysis helped me understand my options during a very difficult time. The information was clear and unbiased."</p>
+                            <p>"The guidance helped us make decisions with confidence during such a difficult time. Having clear information removed so much uncertainty when we were grieving."</p>
                         </div>
                         <div class="testimonial-author">
                             <strong>Sarah M.</strong>
@@ -543,7 +520,7 @@
                     
                 <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"Finally, transparent information about funeral costs. No pressure, just facts."</p>
+                            <p>"We felt supported throughout the process, knowing we were making the right choices. The information gave us peace of mind during an incredibly difficult period."</p>
                         </div>
                         <div class="testimonial-author">
                             <strong>John D.</strong>
@@ -553,14 +530,28 @@
                     
                 <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"The detailed guidance was invaluable. It gave us the confidence to make the right decisions."</p>
+                            <p>"Having clear information removed so much uncertainty when we were grieving. We felt supported throughout the process, knowing we were making the right choices."</p>
                         </div>
                         <div class="testimonial-author">
                             <strong>Margaret L.</strong>
                             <span>Canterbury</span>
                 </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="final-cta" class="final-cta">
+        <div class="cta-content">
+            <h2 class="cta-headline">Ready to Explore Your South East England Funeral Options?</h2>
+            <p class="cta-subheadline">
+                Join thousands of South East England families who've used our compassionate information service to understand possibilities during difficult times.
+            </p>
+            <div class="cta-buttons">
+                <a href="#analysisForm" class="cta-primary">Get Your Information</a>
+                <a href="../questionnaire.html" class="cta-secondary">Get Transparent Pricing (£39)</a>
+            </div>
         </div>
     </section>
 
@@ -575,7 +566,7 @@
             <div class="faq-container">
                 <div class="faq-item" id="faq-1">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
-                        <span>Is this service regulated by the FCA?</span>
+                        <span>Is this a fully licensed service?</span>
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer" id="faq-answer-1" aria-labelledby="faq-question-1">
@@ -599,7 +590,7 @@
                         <span class="faq-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer" id="faq-answer-3" aria-labelledby="faq-question-3">
-                        <p>We display actual current prices taken directly from funeral directors' official CMA-mandated price lists and crematorium published fee schedules—not just estimated ranges. We refresh our database regularly with weekly updates from official sources. However, providers may not always update their online catalogues promptly when prices change. This is precisely why <strong>verification is essential</strong>: the prices we show are accurate to the published data at the time of collection, but you should always <strong>contact providers directly to confirm current costs</strong> before making any commitments.</p>
+                        <p>We display actual current prices taken directly from funeral directors' official government-mandated price lists and crematorium published fee schedules—not just estimated ranges. We refresh our database regularly with weekly updates from official sources. However, providers may not always update their online catalogues promptly when prices change. This is precisely why <strong>we recommend confirming details</strong>: the prices we show are accurate to the published data at the time of collection, but you should always <strong>contact providers directly to confirm current costs</strong> before making any commitments.</p>
                     </div>
                 </div>
 
@@ -676,50 +667,10 @@
                         <p>We're here to help you understand options, explore costs, and approach this difficult process with greater confidence. That's our promise.</p>
                     </div>
 
-                    <div class="story-block contact-block">
-                        <h3>Get in Touch</h3>
-                        <p>Questions about our service? We're here to help.</p>
-                        <p><strong>Email:</strong> <a href="mailto:support@clearfuneralcosts.co.uk">support@clearfuneralcosts.co.uk</a><br>
-                        <strong>Available:</strong> Mon-Fri, 9am-5pm</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- COMPLIANCE SECTION -->
-        <section class="compliance-section">
-            <div class="container">
-                <div class="compliance-content">
-                    <h3 class="compliance-title">Important Information</h3>
-                    
-                    <div class="disclaimer-grid">
-                        <div class="disclaimer-item">
-                            <h4>Information Service Only</h4>
-                            <p>We provide analytical support and educational information based on publicly available data. We do not provide financial, legal, or funeral planning advice.</p>
-                        </div>
-                        
-                        <div class="disclaimer-item">
-                            <h4>Not FCA Regulated</h4>
-                            <p>We are not authorised by the Financial Conduct Authority. We are independent and receive no commissions from funeral directors.</p>
-                        </div>
-                        
-                        <div class="disclaimer-item">
-                            <h4>Verification Required</h4>
-                            <p>All pricing information must be confirmed directly with funeral directors and service providers in your area.</p>
-                        </div>
-                        
-                        <div class="disclaimer-item">
-                            <h4>No Financial Guarantees</h4>
-                            <p>We do not guarantee specific savings amounts or financial outcomes. Cost estimates may vary significantly and should be verified with providers.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="compliance-note">
-                        <p>We recognise bereavement is a challenging time. For personalised support regarding financial or legal matters, please consult qualified professionals.</p>
-                </div>
             </div>
         </div>
     </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -729,27 +680,45 @@
                 <h3><span class="clear-highlight">Clear</span>FuneralCosts</h3>
                 <p>Helping UK families explore funeral options through transparent cost information based on official government data.</p>
                 <p class="contact-note">
-                    support@clearfuneralcosts.co.uk<br>
-                    Available Mon-Fri, 9am-5pm
+                    <strong>Email:</strong> <a href="mailto:refunds@clearfuneralcosts.co.uk">refunds@clearfuneralcosts.co.uk</a><br>
+                    <strong>Hours:</strong> Monday—Friday, 9am—5pm<br>
+                    <strong>Response time:</strong> Within 24 hours
                 </p>
             </div>
             
             <div class="footer-section">
-                <h3>Legal & Compliance</h3>
+                <h3>Legal & Information</h3>
                 <ul class="footer-links">
                     <li><a href="../privacy.html">Privacy Policy</a></li>
                     <li><a href="../privacy.html#terms">Terms of Service</a></li>
                     <li><a href="../privacy.html#refund">Refund Policy</a></li>
-                    <li><a href="../privacy.html#gdpr">GDPR Compliance</a></li>
+                </ul>
+                <p class="footer-disclaimer">Information service only. We recommend confirming all details with providers. Not a fully licensed service.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Regional Information</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">UK-wide funeral costs</a></li>
+                    <li><span class="coming-soon">London funeral costs <small>(Coming soon)</small></span></li>
+                    <li><span class="coming-soon">South West England funeral costs <small>(Coming soon)</small></span></li>
+                    <li><span class="coming-soon">East of England funeral costs <small>(Coming soon)</small></span></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3>Data Sources</h3>
-                <p>Based on CMA Funerals Market Investigation Order 2021</p>
-                <p>Competition and Markets Authority pricing data</p>
-                <p>Independent funeral director verification</p>
-                <p>Weekly data updates from official sources</p>
+                <h3>Trust & Data Sources</h3>
+                <ul class="footer-trust-list">
+                    <li>Based on official UK government data</li>
+                    <li>Independent service - we don't sell funerals</li>
+                    <li>Compassionate support for families</li>
+                </ul>
+                <p class="footer-data-sources">
+                    <strong>Data Sources:</strong> 
+                    <a href="https://www.gov.uk/funeral-payments" target="_blank" rel="noopener">gov.uk funeral payments</a> • 
+                    <a href="https://www.gov.uk/government/statistics/funeral-costs" target="_blank" rel="noopener">CMA funeral market study</a> • 
+                    <a href="https://www.gov.uk/bereavement-support-payment" target="_blank" rel="noopener">Bereavement Support Payment</a>
+                </p>
             </div>
         </div>
         
